@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몬스터 수학개념워크북 - 일차함수 샘플</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#ececee;
+    font-family:'Noto Sans KR','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',sans-serif;
+    color:#111;
+    padding:24px 0;
+  }
+
+  /* ===== 상단 조작 바 (인쇄 시 사라짐) ===== */
+  .toolbar { max-width:760px; margin:0 auto 20px; text-align:center; }
+  .toolbar button {
+    background:#333; color:#fff; border:none; border-radius:6px;
+    padding:11px 26px; font-size:15px; font-weight:700; cursor:pointer;
+  }
+  .toolbar p { margin-top:8px; font-size:13px; color:#666; }
+
+  /* ===== 한 장(A4) ===== */
+  .sheet {
+    width:760px; min-height:1074px; background:#fff; margin:0 auto 28px;
+    padding:36px 40px; box-shadow:0 3px 14px rgba(0,0,0,.10);
+  }
+
+  /* ===== 머리글 ===== */
+  .head { display:flex; border:2px solid #222; margin-bottom:14px; }
+  .head-grade { width:118px; display:flex; flex-direction:column; flex-shrink:0; border-right:2px solid #222; }
+  .head-grade .g1 { background:#EBA23C; color:#fff; font-weight:800; text-align:center;
+    padding:9px 0; font-size:17px; border-bottom:2px solid #222; }
+  .head-grade .g2 { text-align:center; padding:9px 0; font-size:16px; font-weight:700; }
+  .head-title { flex:1; background:#F7EAC5; display:flex; align-items:center; justify-content:center; }
+  .head-title h1 { font-size:33px; font-weight:900; letter-spacing:3px; color:#2e2712; }
+  .head-logo { width:118px; flex-shrink:0; border-left:2px solid #222;
+    display:flex; align-items:center; justify-content:center; padding:6px; }
+  .logo-badge {
+    width:80px; height:80px; border-radius:50%; background:#F26522;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-weight:900; font-size:15px; letter-spacing:1px;
+  }
+
+  /* ===== 본문 표 ===== */
+  table.main { width:100%; border-collapse:collapse; }
+  table.main td { border:1.5px solid #222; padding:0; vertical-align:middle; }
+  .lbl { width:70px; text-align:center; font-weight:800; font-size:15px; }
+  .unit-cell { padding:11px 14px !important; font-size:16px; font-weight:700; }
+  .unit-cell.sub { font-weight:500; color:#333; }
+
+  .kw-cell { padding:0 !important; }
+  .kw-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+  .kw-grid div {
+    border-right:1px solid #ccc; border-bottom:1px solid #ccc;
+    text-align:center; padding:10px 4px; font-size:14px; color:#333;
+  }
+  .kw-grid div:nth-child(4n){ border-right:none; }
+  .kw-grid div:nth-child(n+5){ border-bottom:none; }
+
+  .body-lbl { width:70px; text-align:center; font-weight:800; font-size:16px; }
+  .body-cell { padding:16px 16px !important; }
+  .qnum { font-size:15px; font-weight:800; margin-bottom:5px; }
+  .qtext { font-size:14.5px; line-height:1.75; margin-bottom:16px; padding-left:4px; }
+  .qtext .math { font-family:'Times New Roman',serif; font-style:italic; font-size:16px; }
+
+  /* 빈칸 : 교재식 검정 밑줄/네모 */
+  .blank { display:inline-block; min-width:56px; border-bottom:1.6px solid #111;
+    height:20px; vertical-align:bottom; }
+  .blank.sm { min-width:36px; }
+  .box-blank { display:inline-block; width:34px; height:26px; border:1.4px solid #111;
+    border-radius:3px; vertical-align:middle; }
+
+  /* 그래프 라벨 */
+  .g-label { fill:#fff; stroke:#222; stroke-width:1.2; }
+  .g-txt { font-size:12px; font-weight:600; fill:#111; }
+
+  /* 정의표 */
+  table.def { width:100%; border-collapse:collapse; margin-top:6px; }
+  table.def th, table.def td { border:1.2px solid #333; padding:8px 10px; font-size:13.5px; }
+  table.def th { background:#EFEFEF; font-weight:700; }
+  table.def td.term { text-align:center; font-weight:700; width:110px; background:#FBFBFB; }
+
+  .guide { font-size:12.5px; color:#555; margin:6px 0 10px; }
+  .write-lines { margin-top:8px; }
+  .write-lines div { border-bottom:1.2px dotted #aaa; height:30px; }
+
+  @media print {
+    body { background:#fff; padding:0; }
+    .toolbar { display:none; }
+    .sheet { box-shadow:none; margin:0; width:auto; min-height:auto; page-break-after:always; }
+    @page { size:A4; margin:12mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button onclick="window.print()">인쇄 / PDF 저장</button>
+  <p>디자인 샘플입니다. 인쇄 미리보기로 실제 종이 느낌을 확인해 보세요.</p>
+</div>
+
+<!-- ================= 1단계 : 개념 ================= -->
+<div class="sheet">
+  <div class="head">
+    <div class="head-grade"><div class="g1">중학교</div><div class="g2">2학년</div></div>
+    <div class="head-title"><h1>개념 정리</h1></div>
+    <div class="head-logo"><div class="logo-badge">더몬스터</div></div>
+  </div>
+
+  <table class="main">
+    <tr><td class="lbl">대단원</td><td class="unit-cell">일차함수</td></tr>
+    <tr><td class="lbl">중단원</td><td class="unit-cell sub">일차함수와 그래프</td></tr>
+    <tr><td class="lbl">키워드</td><td class="kw-cell">
+      <div class="kw-grid">
+        <div>일차함수</div><div>기울기</div><div>y절편</div><div>x절편</div>
+        <div>평행이동</div><div>그래프</div><div></div><div></div>
+      </div>
+    </td></tr>
+    <tr>
+      <td class="body-lbl">개념</td>
+      <td class="body-cell">
+        <div class="qnum">1. 일차함수란?</div>
+        <div class="qtext">
+          함수 <span class="math">y = f(x)</span> 에서 <span class="math">y</span>가 <span class="math">x</span>에 대한 일차식
+          <span class="math">y = ax + b</span> <span class="math">(a ≠ 0)</span> 로 나타내어질 때,
+          이 함수를 <b>일차함수</b>라고 한다.
+        </div>
+
+        <div class="qnum">2. 일차함수 <span class="math">y = ax + b</span> 의 그래프</div>
+
+        <svg width="100%" viewBox="0 0 420 240" style="margin:6px 0 12px;">
+          <g stroke="#eee" stroke-width="1">
+            <line x1="20" y1="40" x2="400" y2="40"/><line x1="20" y1="80" x2="400" y2="80"/>
+            <line x1="20" y1="160" x2="400" y2="160"/><line x1="20" y1="200" x2="400" y2="200"/>
+            <line x1="60" y1="20" x2="60" y2="220"/><line x1="100" y1="20" x2="100" y2="220"/>
+            <line x1="180" y1="20" x2="180" y2="220"/><line x1="260" y1="20" x2="260" y2="220"/>
+            <line x1="300" y1="20" x2="300" y2="220"/><line x1="340" y1="20" x2="340" y2="220"/>
+          </g>
+          <line x1="20" y1="120" x2="405" y2="120" stroke="#333" stroke-width="1.5"/>
+          <line x1="220" y1="18" x2="220" y2="225" stroke="#333" stroke-width="1.5"/>
+          <text x="410" y="124" class="g-txt">x</text><text x="224" y="20" class="g-txt">y</text>
+          <text x="224" y="134" class="g-txt" font-size="10">O</text>
+          <line x1="120" y1="240" x2="330" y2="30" stroke="#E8500A" stroke-width="2.5"/>
+          <circle cx="220" cy="160" r="3.5" fill="#E8500A"/>
+          <rect class="g-label" x="150" y="150" width="58" height="22" rx="3"/>
+          <text x="179" y="165" class="g-txt" text-anchor="middle">y절편 b</text>
+          <circle cx="260" cy="120" r="3.5" fill="#E8500A"/>
+          <rect class="g-label" x="268" y="92" width="58" height="22" rx="3"/>
+          <text x="297" y="107" class="g-txt" text-anchor="middle">x절편</text>
+          <rect class="g-label" x="300" y="150" width="72" height="22" rx="3"/>
+          <text x="336" y="165" class="g-txt" text-anchor="middle">기울기 a</text>
+        </svg>
+
+        <table class="def">
+          <tr><th>용어</th><th>의미</th></tr>
+          <tr><td class="term">기울기</td><td><span class="math">x</span>의 증가량에 대한 <span class="math">y</span>의 증가량의 비율. <span class="math">y=ax+b</span> 에서 <span class="math">a</span></td></tr>
+          <tr><td class="term">y절편</td><td>그래프가 <span class="math">y</span>축과 만나는 점의 <span class="math">y</span>좌표. <span class="math">y=ax+b</span> 에서 <span class="math">b</span></td></tr>
+          <tr><td class="term">x절편</td><td>그래프가 <span class="math">x</span>축과 만나는 점의 <span class="math">x</span>좌표</td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- ================= 2단계 : 빈칸 ================= -->
+<div class="sheet">
+  <div class="head">
+    <div class="head-grade"><div class="g1">중학교</div><div class="g2">2학년</div></div>
+    <div class="head-title"><h1>빈칸 채우기</h1></div>
+    <div class="head-logo"><div class="logo-badge">더몬스터</div></div>
+  </div>
+
+  <table class="main">
+    <tr><td class="lbl">대단원</td><td class="unit-cell">일차함수</td></tr>
+    <tr><td class="lbl">중단원</td><td class="unit-cell sub">일차함수와 그래프</td></tr>
+    <tr><td class="lbl">키워드</td><td class="kw-cell">
+      <div class="kw-grid">
+        <div>일차함수</div><div>기울기</div><div>y절편</div><div>x절편</div>
+        <div>평행이동</div><div>그래프</div><div></div><div></div>
+      </div>
+    </td></tr>
+    <tr>
+      <td class="body-lbl">개념</td>
+      <td class="body-cell">
+        <div class="qnum">1. 일차함수란?</div>
+        <div class="qtext">
+          함수 <span class="math">y = f(x)</span> 에서 <span class="math">y</span>가 <span class="math">x</span>에 대한 일차식
+          <span class="math">y = </span><span class="box-blank"></span><span class="math">x + </span><span class="box-blank"></span>
+          <span class="math">(a ≠ 0)</span> 로 나타내어질 때, 이 함수를 <span class="blank"></span> 라고 한다.
+        </div>
+
+        <div class="qnum">2. 일차함수 <span class="math">y = ax + b</span> 의 그래프 : 빈 라벨을 채우시오</div>
+
+        <svg width="100%" viewBox="0 0 420 240" style="margin:6px 0 12px;">
+          <g stroke="#eee" stroke-width="1">
+            <line x1="20" y1="40" x2="400" y2="40"/><line x1="20" y1="80" x2="400" y2="80"/>
+            <line x1="20" y1="160" x2="400" y2="160"/><line x1="20" y1="200" x2="400" y2="200"/>
+            <line x1="60" y1="20" x2="60" y2="220"/><line x1="100" y1="20" x2="100" y2="220"/>
+            <line x1="180" y1="20" x2="180" y2="220"/><line x1="260" y1="20" x2="260" y2="220"/>
+            <line x1="300" y1="20" x2="300" y2="220"/><line x1="340" y1="20" x2="340" y2="220"/>
+          </g>
+          <line x1="20" y1="120" x2="405" y2="120" stroke="#333" stroke-width="1.5"/>
+          <line x1="220" y1="18" x2="220" y2="225" stroke="#333" stroke-width="1.5"/>
+          <text x="410" y="124" class="g-txt">x</text><text x="224" y="20" class="g-txt">y</text>
+          <text x="224" y="134" class="g-txt" font-size="10">O</text>
+          <line x1="120" y1="240" x2="330" y2="30" stroke="#E8500A" stroke-width="2.5"/>
+          <circle cx="220" cy="160" r="3.5" fill="#E8500A"/>
+          <rect class="g-label" x="150" y="150" width="58" height="22" rx="3"/>
+          <circle cx="260" cy="120" r="3.5" fill="#E8500A"/>
+          <rect class="g-label" x="268" y="92" width="58" height="22" rx="3"/>
+          <rect class="g-label" x="300" y="150" width="72" height="22" rx="3"/>
+        </svg>
+
+        <table class="def">
+          <tr><th>용어</th><th>의미</th></tr>
+          <tr><td class="term"><span class="blank sm"></span></td><td><span class="math">x</span>의 증가량에 대한 <span class="math">y</span>의 증가량의 비율. <span class="math">y=ax+b</span> 에서 <span class="box-blank"></span></td></tr>
+          <tr><td class="term"><span class="blank sm"></span></td><td>그래프가 <span class="math">y</span>축과 만나는 점의 <span class="math">y</span>좌표. <span class="math">y=ax+b</span> 에서 <span class="box-blank"></span></td></tr>
+          <tr><td class="term"><span class="blank sm"></span></td><td>그래프가 <span class="math">x</span>축과 만나는 점의 <span class="blank sm"></span>좌표</td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- ================= 3단계 : 백지 TEST ================= -->
+<div class="sheet">
+  <div class="head">
+    <div class="head-grade"><div class="g1">중학교</div><div class="g2">2학년</div></div>
+    <div class="head-title"><h1>백지 TEST</h1></div>
+    <div class="head-logo"><div class="logo-badge">더몬스터</div></div>
+  </div>
+
+  <table class="main">
+    <tr><td class="lbl">대단원</td><td class="unit-cell">일차함수</td></tr>
+    <tr><td class="lbl">중단원</td><td class="unit-cell sub">일차함수와 그래프</td></tr>
+    <tr><td class="lbl">키워드</td><td class="kw-cell">
+      <div class="kw-grid">
+        <div>일차함수</div><div>기울기</div><div>y절편</div><div>x절편</div>
+        <div>평행이동</div><div>그래프</div><div></div><div></div>
+      </div>
+    </td></tr>
+    <tr>
+      <td class="body-lbl">TEST</td>
+      <td class="body-cell">
+        <div class="guide">키워드만 보고 아는 내용을 모두 적으시오.</div>
+
+        <div class="qnum">1. 일차함수란?</div>
+        <div class="write-lines"><div></div><div></div></div>
+
+        <div class="qnum" style="margin-top:16px;">2. 아래 그래프에 기울기, y절편, x절편을 직접 표시하고 설명하시오.</div>
+
+        <svg width="100%" viewBox="0 0 420 240" style="margin:6px 0 12px;">
+          <g stroke="#eee" stroke-width="1">
+            <line x1="20" y1="40" x2="400" y2="40"/><line x1="20" y1="80" x2="400" y2="80"/>
+            <line x1="20" y1="160" x2="400" y2="160"/><line x1="20" y1="200" x2="400" y2="200"/>
+            <line x1="60" y1="20" x2="60" y2="220"/><line x1="100" y1="20" x2="100" y2="220"/>
+            <line x1="180" y1="20" x2="180" y2="220"/><line x1="260" y1="20" x2="260" y2="220"/>
+            <line x1="300" y1="20" x2="300" y2="220"/><line x1="340" y1="20" x2="340" y2="220"/>
+          </g>
+          <line x1="20" y1="120" x2="405" y2="120" stroke="#333" stroke-width="1.5"/>
+          <line x1="220" y1="18" x2="220" y2="225" stroke="#333" stroke-width="1.5"/>
+          <text x="410" y="124" class="g-txt">x</text><text x="224" y="20" class="g-txt">y</text>
+          <text x="224" y="134" class="g-txt" font-size="10">O</text>
+          <line x1="120" y1="240" x2="330" y2="30" stroke="#E8500A" stroke-width="2.5"/>
+        </svg>
+
+        <div class="qnum">3. 용어 정리</div>
+        <table class="def">
+          <tr><th>용어</th><th>의미</th></tr>
+          <tr><td class="term" style="height:32px;">기울기</td><td></td></tr>
+          <tr><td class="term" style="height:32px;">y절편</td><td></td></tr>
+          <tr><td class="term" style="height:32px;">x절편</td><td></td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

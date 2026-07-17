@@ -87,9 +87,96 @@
   .write-lines { margin-top:8px; }
   .write-lines div { border-bottom:1.2px dotted #aaa; height:30px; }
 
+  /* ============================================================
+     앱 화면 (목록 / 편집) — 인쇄 시에는 모두 사라짐
+     ============================================================ */
+  .view[hidden] { display:none; }
+
+  .appbar { max-width:1280px; margin:0 auto 16px; display:flex; gap:10px; align-items:center; padding:0 20px; flex-wrap:wrap; }
+  .appbar .grow { flex:1; }
+  .appbar h2 { font-size:20px; font-weight:800; }
+
+  .btn { background:#333; color:#fff; border:none; border-radius:6px;
+    padding:9px 18px; font-size:14px; font-weight:700; cursor:pointer; }
+  .btn.orange { background:#F26522; }
+  .btn.line { background:#fff; color:#333; border:1.5px solid #bbb; }
+  .btn.small { padding:5px 10px; font-size:12.5px; }
+  .btn:disabled { opacity:.45; cursor:default; }
+
+  .status-msg { font-size:13.5px; color:#0a7a2f; font-weight:700; }
+  .status-msg.warn { color:#c0392b; }
+
+  /* --- 목록 화면 --- */
+  .list-wrap { max-width:900px; margin:0 auto; padding:0 20px; }
+  .card { background:#fff; border:1.5px solid #ccc; border-radius:8px;
+    padding:16px 18px; margin-bottom:12px; display:flex; align-items:center; gap:14px; }
+  .card .c-badge { background:#F7EAC5; border:1.5px solid #EBA23C; border-radius:6px;
+    font-size:12.5px; font-weight:800; padding:4px 8px; white-space:nowrap; }
+  .card .c-info { flex:1; min-width:0; }
+  .card .c-title { font-size:16px; font-weight:800; }
+  .card .c-sub { font-size:13px; color:#666; margin-top:2px; }
+  .card .c-btns { display:flex; gap:6px; flex-wrap:wrap; }
+  .empty-note { text-align:center; color:#777; font-size:14px; padding:40px 0; }
+
+  /* --- 편집 화면 --- */
+  .edit-cols { max-width:1280px; margin:0 auto; padding:0 20px;
+    display:flex; gap:18px; align-items:flex-start; }
+  .edit-left { flex:1; min-width:430px; }
+  .edit-right { width:560px; flex-shrink:0; }
+
+  .panel { background:#fff; border:1.5px solid #ccc; border-radius:8px; padding:16px; margin-bottom:14px; }
+  .panel-title { font-size:15px; font-weight:800; margin-bottom:12px; }
+
+  .frow { display:flex; gap:10px; margin-bottom:10px; align-items:center; }
+  .frow label { width:64px; font-size:13.5px; font-weight:700; flex-shrink:0; }
+  .frow input[type=text], .frow select {
+    flex:1; border:1.5px solid #bbb; border-radius:5px; padding:8px 10px; font-size:14px;
+    font-family:inherit; min-width:0; }
+  .frow input:focus, .frow select:focus { outline:none; border-color:#F26522; }
+  .fhint { font-size:12px; color:#888; margin:-4px 0 10px 74px; }
+
+  /* 빈칸 도구 */
+  .blank-tools { background:#FFF6EF; border:1.5px solid #F26522; border-radius:8px;
+    padding:12px 14px; margin-bottom:14px; position:sticky; top:8px; z-index:5; }
+  .blank-tools .bt-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .blank-tools p { font-size:12.5px; color:#555; margin-top:8px; line-height:1.5; }
+
+  /* 블록 카드 */
+  .blk { border:1.5px solid #ccc; border-radius:8px; margin-bottom:12px; overflow:hidden; }
+  .blk-head { background:#F4F4F4; border-bottom:1.5px solid #ccc; padding:8px 12px;
+    display:flex; align-items:center; gap:8px; }
+  .blk-head .b-type { font-size:13px; font-weight:800; flex:1; }
+  .blk-body { padding:12px; }
+  .blk textarea { width:100%; border:1.5px solid #bbb; border-radius:5px; padding:9px 10px;
+    font-size:14px; font-family:inherit; line-height:1.7; resize:vertical; }
+  .blk textarea:focus { outline:none; border-color:#F26522; }
+  .blk input[type=text], .blk input[type=number] { border:1.5px solid #bbb; border-radius:5px;
+    padding:7px 9px; font-size:13.5px; font-family:inherit; }
+  .blk input:focus { outline:none; border-color:#F26522; }
+  .blk .brow { display:flex; gap:8px; margin-bottom:8px; align-items:center; }
+  .blk .brow label { font-size:12.5px; font-weight:700; width:110px; flex-shrink:0; color:#444; }
+  .blk .brow input[type=text] { flex:1; min-width:0; }
+  .blk .brow input[type=number] { width:64px; }
+  .blk .figure-note { font-size:13px; color:#666; line-height:1.6; }
+  .trow { display:flex; gap:6px; margin-bottom:6px; }
+  .trow input.t-term { width:110px; flex-shrink:0; }
+  .trow input.t-meaning { flex:1; min-width:0; }
+
+  .add-btns { display:flex; gap:8px; }
+
+  /* 미리보기 */
+  .stage-tabs { display:flex; gap:6px; margin-bottom:10px; }
+  .stage-tabs button { flex:1; background:#fff; border:1.5px solid #bbb; border-radius:6px;
+    padding:9px 0; font-size:13.5px; font-weight:700; cursor:pointer; color:#555; }
+  .stage-tabs button.on { background:#333; border-color:#333; color:#fff; }
+  #preview-box { background:#d8d8dc; border:1.5px solid #bbb; border-radius:8px;
+    overflow:auto; height:calc(100vh - 150px); min-height:420px; padding:14px; }
+  #preview-scale { transform:scale(0.68); transform-origin:top left; width:760px; }
+  #preview-scale .sheet { margin:0; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+
   @media print {
     body { background:#fff; padding:0; }
-    .toolbar { display:none; }
+    .toolbar, .appbar, #view-list, #view-edit { display:none !important; }
     .sheet { box-shadow:none; margin:0; width:auto; min-height:auto; page-break-after:always; }
     @page { size:A4; margin:12mm; }
   }
@@ -97,17 +184,89 @@
 </head>
 <body>
 
-<div class="toolbar">
-  <button onclick="window.print()">인쇄 / PDF 저장</button>
-  <p>1단계 검수용 화면입니다. 개념 데이터 1개에서 3장(개념 정리 → 빈칸 채우기 → 백지 TEST)이 자동 생성되었습니다.</p>
+<!-- ================= 화면 1 : 개념 목록 ================= -->
+<div id="view-list" class="view">
+  <div class="appbar">
+    <h2>몬스터 수학개념워크북 생성기</h2>
+    <span class="grow"></span>
+    <button class="btn orange" id="btn-new">새 개념 만들기</button>
+  </div>
+  <div class="list-wrap" id="concept-cards"></div>
 </div>
 
-<div id="sheets"></div>
+<!-- ================= 화면 2 : 개념 편집 ================= -->
+<div id="view-edit" class="view" hidden>
+  <div class="appbar">
+    <button class="btn line" id="btn-back">목록으로</button>
+    <span class="status-msg" id="edit-status"></span>
+    <span class="grow"></span>
+    <button class="btn orange" id="btn-save">저장</button>
+    <button class="btn" id="btn-print-cur">인쇄 / PDF</button>
+  </div>
+
+  <div class="edit-cols">
+    <div class="edit-left">
+
+      <div class="panel">
+        <div class="panel-title">기본 정보</div>
+        <div class="frow">
+          <label>학교</label>
+          <select id="f-school"><option>초등학교</option><option>중학교</option><option>고등학교</option></select>
+          <label style="width:44px;">학년</label>
+          <select id="f-grade"></select>
+        </div>
+        <div class="frow"><label>대단원</label><input type="text" id="f-unitbig" placeholder="예: 분수와 소수"></div>
+        <div class="frow"><label>중단원</label><input type="text" id="f-unitmid" placeholder="예: 분수의 의미"></div>
+        <div class="frow"><label>키워드</label><input type="text" id="f-keywords" placeholder="쉼표(,)로 구분. 예: 분수, 분모, 분자"></div>
+        <div class="fhint">키워드는 세 장 모두의 키워드 칸에 그대로 들어갑니다. (최대 8개 권장)</div>
+      </div>
+
+      <div class="blank-tools">
+        <div class="bt-row">
+          <button class="btn orange" id="btn-blank">선택한 부분 빈칸 지정</button>
+          <button class="btn line" id="btn-unblank">빈칸 해제</button>
+        </div>
+        <p>본문이나 표에서 빈칸으로 만들 단어를 <b>마우스로 선택(드래그)</b>한 뒤 [빈칸 지정]을 누르세요.
+        지정된 단어는 <b>{{ }}</b> 로 표시되며, 1단계에서는 굵은 글씨, 2단계에서는 빈칸이 됩니다.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">내용 블록</div>
+        <div id="block-list"></div>
+        <div class="add-btns">
+          <button class="btn line" id="btn-add-text">+ 설명 문단</button>
+          <button class="btn line" id="btn-add-table">+ 용어 정리표</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="edit-right">
+      <div class="stage-tabs">
+        <button data-stage="1" class="on">1단계 개념 정리</button>
+        <button data-stage="2">2단계 빈칸 채우기</button>
+        <button data-stage="3">3단계 백지 TEST</button>
+      </div>
+      <div id="preview-box"><div id="preview-scale"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 화면 3 : 인쇄 ================= -->
+<div id="view-print" class="view" hidden>
+  <div class="toolbar">
+    <button onclick="window.print()">인쇄 / PDF 저장</button>
+    <button class="btn line" id="btn-print-back" style="margin-left:8px;">돌아가기</button>
+    <p>인쇄 미리보기에서 A4 3장으로 나뉘는 것을 확인한 뒤 인쇄하세요.</p>
+  </div>
+  <div id="print-sheets"></div>
+</div>
 
 <script>
 /* ============================================================
-   몬스터 수학개념워크북 생성기 — 1단계: 렌더링 엔진
-   원본(개념 JSON 1개) → 3장(개념 정리 / 빈칸 채우기 / 백지 TEST) 자동 파생
+   몬스터 수학개념워크북 생성기
+   1단계: 렌더링 엔진 (개념 JSON 1개 → 3장 자동 파생)
+   2단계: 개념 목록 / 편집 화면 / 빈칸 드래그 지정 / 저장
    ============================================================ */
 
 /* ---------- 예제 데이터: 일차함수 (샘플 v2 재현용) ---------- */
@@ -154,7 +313,10 @@ const EXAMPLE_CONCEPT = {
   ]
 };
 
-/* ---------- 공통 유틸 ---------- */
+/* ============================================================
+   1부. 렌더링 엔진 (1단계에서 만든 것 그대로)
+   ============================================================ */
+
 function esc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -163,16 +325,9 @@ function round1(n) { return Math.round(n * 10) / 10; }
 const STAGE_TITLE = { 1: "개념 정리", 2: "빈칸 채우기", 3: "백지 TEST" };
 const STAGE3_GUIDE = "키워드만 보고 아는 내용을 모두 적으시오.";
 
-/* ---------- 문장 렌더링 ----------
-   문법:
-   - $...$        : 수식(이탤릭 세리프)으로 표시
-   - \bk{...}     : 수식 안 네모 빈칸 (1단계: 내용 표시 / 2단계: 네모)
-   - {{...}}      : 낱말 빈칸 (1단계: 굵게 / 2단계: 밑줄 빈칸)
------------------------------------------------------------------- */
-
 // $...$ 안쪽 내용 렌더링 (\bk 처리 포함)
 function renderMathContent(content, stage) {
-  const parts = content.split(/\\bk\{([^}]*)\}/); // 홀수 인덱스 = 빈칸 내용
+  const parts = content.split(/\\bk\{([^}]*)\}/);
   if (stage === 1) {
     return '<span class="math">' + esc(parts.join("")) + "</span>";
   }
@@ -224,17 +379,13 @@ function renderInline(src, stage, ctx) {
   return out;
 }
 
-// 블록 소제목 (단계별로 다른 문구 지원, 항상 전체 내용 표시)
 function headingFor(block, stage) {
   if (!block.heading) return null;
   return block.heading[String(stage)] || block.heading["1"] || null;
 }
 
-/* ---------- 그림 렌더링: coord_graph (좌표평면 + 직선) ----------
-   파라미터(기울기·y절편)만으로 코드가 SVG를 그린다.
------------------------------------------------------------------- */
+/* ---------- 그림: coord_graph (좌표평면 + 직선) ---------- */
 
-// 수학 직선을 화면 영역에 맞게 자르기
 function clipLineToRect(slope, yIntercept, unit, ox, oy, r) {
   const Yat = function (X) { return oy - slope * (X - ox) - unit * yIntercept; };
   if (slope === 0) {
@@ -267,7 +418,6 @@ function renderCoordGraph(block, stage) {
 
   let s = '<svg width="100%" viewBox="0 0 420 240" style="margin:6px 0 12px;">';
 
-  // 격자 (연한 회색)
   s += '<g stroke="#eee" stroke-width="1">';
   for (let gy = 40; gy <= 200; gy += 40) {
     if (gy !== oy) s += '<line x1="20" y1="' + gy + '" x2="400" y2="' + gy + '"/>';
@@ -277,13 +427,11 @@ function renderCoordGraph(block, stage) {
   }
   s += "</g>";
 
-  // 축 (진한 선) + 축 이름
   s += '<line x1="20" y1="120" x2="405" y2="120" stroke="#333" stroke-width="1.5"/>';
   s += '<line x1="220" y1="18" x2="220" y2="225" stroke="#333" stroke-width="1.5"/>';
   s += '<text x="410" y="124" class="g-txt">x</text><text x="224" y="20" class="g-txt">y</text>';
   s += '<text x="224" y="134" class="g-txt" font-size="10">O</text>';
 
-  // 직선 (포인트 컬러)
   const seg = clipLineToRect(slope, yIntercept, unit, ox, oy, { x1: 20, y1: 18, x2: 405, y2: 240 });
   if (seg) {
     s += '<line x1="' + round1(seg[0]) + '" y1="' + round1(seg[1]) +
@@ -291,7 +439,6 @@ function renderCoordGraph(block, stage) {
          '" stroke="#E8500A" stroke-width="2.5"/>';
   }
 
-  // 라벨 (1단계: 글자 포함 / 2단계: 빈 박스 / 3단계: 없음)
   if (stage < 3) {
     (block.labels || []).forEach(function (lb) {
       let dot = null;
@@ -351,7 +498,6 @@ function renderTableBlock(block, stage, opt) {
   out += "<tr><th>" + esc(block.columns[0]) + "</th><th>" + esc(block.columns[1]) + "</th></tr>";
   block.rows.forEach(function (row) {
     if (stage === 3) {
-      // 용어만 남기고 의미 칸은 비움
       const termPlain = row.term.replace(/\{\{|\}\}/g, "");
       out += '<tr><td class="term" style="height:32px;">' + renderInline(termPlain, 1, "term") + "</td><td></td></tr>";
     } else {
@@ -378,14 +524,12 @@ function renderKeywordGrid(keywords) {
 function renderSheet(c, stage) {
   let out = '<div class="sheet">';
 
-  // 머리글: 학년 / 제목 / 로고
   out += '<div class="head">' +
     '<div class="head-grade"><div class="g1">' + esc(c.school) + '</div><div class="g2">' + esc(c.grade) + "</div></div>" +
     '<div class="head-title"><h1>' + STAGE_TITLE[stage] + "</h1></div>" +
     '<div class="head-logo"><div class="logo-badge">더몬스터</div></div>' +
     "</div>";
 
-  // 본문 표: 대단원 / 중단원 / 키워드 / 본문
   out += '<table class="main">';
   out += '<tr><td class="lbl">대단원</td><td class="unit-cell">' + esc(c.unit_big) + "</td></tr>";
   out += '<tr><td class="lbl">중단원</td><td class="unit-cell sub">' + esc(c.unit_mid) + "</td></tr>";
@@ -407,12 +551,551 @@ function renderSheet(c, stage) {
   return out;
 }
 
-// 개념 1개 → 3장
 function renderConcept(c) {
   return [1, 2, 3].map(function (stage) { return renderSheet(c, stage); }).join("\n");
 }
 
-document.getElementById("sheets").innerHTML = renderConcept(EXAMPLE_CONCEPT);
+/* ============================================================
+   2부. 개념 은행 (저장/불러오기)
+   ============================================================ */
+
+const STORE_KEY = "monster_workbook_concepts_v1";
+
+function loadConcepts() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return null;
+}
+
+function saveConcepts(list) {
+  localStorage.setItem(STORE_KEY, JSON.stringify(list));
+}
+
+let concepts = loadConcepts();
+if (!concepts) {
+  concepts = [JSON.parse(JSON.stringify(EXAMPLE_CONCEPT))];
+  saveConcepts(concepts);
+}
+
+/* ============================================================
+   3부. 화면 전환
+   ============================================================ */
+
+let prevView = "view-list";
+
+function showView(id) {
+  ["view-list", "view-edit", "view-print"].forEach(function (v) {
+    document.getElementById(v).hidden = (v !== id);
+  });
+  window.scrollTo(0, 0);
+}
+
+/* ============================================================
+   4부. 개념 목록 화면
+   ============================================================ */
+
+function conceptTitle(c) {
+  return c.unit_mid || c.unit_big || "(제목 없음)";
+}
+
+function renderList() {
+  const wrap = document.getElementById("concept-cards");
+  if (!concepts.length) {
+    wrap.innerHTML = '<div class="empty-note">저장된 개념이 없습니다. [새 개념 만들기]를 눌러 시작하세요.</div>';
+    return;
+  }
+  wrap.innerHTML = concepts.map(function (c, i) {
+    return '<div class="card">' +
+      '<span class="c-badge">' + esc(c.school + " " + c.grade) + "</span>" +
+      '<div class="c-info">' +
+        '<div class="c-title">' + esc(conceptTitle(c)) + "</div>" +
+        '<div class="c-sub">대단원: ' + esc(c.unit_big || "-") + "</div>" +
+      "</div>" +
+      '<div class="c-btns">' +
+        '<button class="btn small" data-act="edit" data-i="' + i + '">편집</button>' +
+        '<button class="btn small line" data-act="print" data-i="' + i + '">인쇄</button>' +
+        '<button class="btn small line" data-act="copy" data-i="' + i + '">복제</button>' +
+        '<button class="btn small line" data-act="del" data-i="' + i + '">삭제</button>' +
+      "</div></div>";
+  }).join("");
+}
+
+document.getElementById("concept-cards").addEventListener("click", function (e) {
+  const btn = e.target.closest("button[data-act]");
+  if (!btn) return;
+  const i = Number(btn.dataset.i);
+  const act = btn.dataset.act;
+  if (act === "edit") openEditor(concepts[i]);
+  else if (act === "print") openPrint(concepts[i], "view-list");
+  else if (act === "copy") {
+    const dup = JSON.parse(JSON.stringify(concepts[i]));
+    dup.id = "c" + Date.now();
+    dup.unit_mid = (dup.unit_mid || "") + " (복사본)";
+    concepts.splice(i + 1, 0, dup);
+    saveConcepts(concepts);
+    renderList();
+  } else if (act === "del") {
+    if (confirm('"' + conceptTitle(concepts[i]) + '" 개념을 삭제할까요? 되돌릴 수 없습니다.')) {
+      concepts.splice(i, 1);
+      saveConcepts(concepts);
+      renderList();
+    }
+  }
+});
+
+document.getElementById("btn-new").addEventListener("click", function () {
+  openEditor(null);
+});
+
+/* ============================================================
+   5부. 개념 편집 화면
+   ============================================================ */
+
+let current = null;      // 지금 편집 중인 개념 (복사본)
+let dirty = false;       // 저장 안 한 변경이 있는지
+let curStage = 1;        // 미리보기 단계
+let lastField = null;    // 마지막으로 선택한 입력칸 (빈칸 지정용)
+let statusTimer = null;
+
+function setStatus(text, warn) {
+  const el = document.getElementById("edit-status");
+  el.textContent = text;
+  el.className = "status-msg" + (warn ? " warn" : "");
+  clearTimeout(statusTimer);
+  if (text) statusTimer = setTimeout(function () { el.textContent = ""; }, 3000);
+}
+
+function markDirty() {
+  dirty = true;
+  schedulePreview();
+}
+
+function newConceptTemplate() {
+  return {
+    id: "",
+    school: "초등학교",
+    grade: "3학년",
+    unit_big: "",
+    unit_mid: "",
+    keywords: [],
+    blocks: [
+      { type: "text", heading: { "1": "1. " }, body: "", stage3: { mode: "lines", lines: 2 } }
+    ]
+  };
+}
+
+function openEditor(c) {
+  current = c ? JSON.parse(JSON.stringify(c)) : newConceptTemplate();
+  dirty = false;
+  curStage = 1;
+  lastField = null;
+  document.querySelectorAll(".stage-tabs button").forEach(function (b) {
+    b.classList.toggle("on", b.dataset.stage === "1");
+  });
+  renderBasicForm();
+  renderBlockForms();
+  renderPreview();
+  setStatus("");
+  showView("view-edit");
+}
+
+/* ----- 기본 정보 폼 ----- */
+
+const GRADE_OPTIONS = { "초등학교": 6, "중학교": 3, "고등학교": 3 };
+
+function renderGradeOptions() {
+  const school = document.getElementById("f-school").value;
+  const gradeSel = document.getElementById("f-grade");
+  const n = GRADE_OPTIONS[school] || 6;
+  let html = "";
+  for (let i = 1; i <= n; i++) html += "<option>" + i + "학년</option>";
+  gradeSel.innerHTML = html;
+}
+
+function renderBasicForm() {
+  document.getElementById("f-school").value = current.school;
+  renderGradeOptions();
+  document.getElementById("f-grade").value = current.grade;
+  if (!document.getElementById("f-grade").value) document.getElementById("f-grade").selectedIndex = 0;
+  document.getElementById("f-unitbig").value = current.unit_big;
+  document.getElementById("f-unitmid").value = current.unit_mid;
+  document.getElementById("f-keywords").value = current.keywords.join(", ");
+}
+
+document.getElementById("f-school").addEventListener("change", function () {
+  current.school = this.value;
+  renderGradeOptions();
+  current.grade = document.getElementById("f-grade").value;
+  markDirty();
+});
+document.getElementById("f-grade").addEventListener("change", function () {
+  current.grade = this.value; markDirty();
+});
+document.getElementById("f-unitbig").addEventListener("input", function () {
+  current.unit_big = this.value; markDirty();
+});
+document.getElementById("f-unitmid").addEventListener("input", function () {
+  current.unit_mid = this.value; markDirty();
+});
+document.getElementById("f-keywords").addEventListener("input", function () {
+  current.keywords = this.value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+  markDirty();
+});
+
+/* ----- 블록 폼 ----- */
+
+const BLOCK_TYPE_NAME = { text: "설명 문단", table: "용어 정리표", figure: "그림", formula: "수식" };
+
+function renderBlockForms() {
+  const wrap = document.getElementById("block-list");
+  wrap.innerHTML = "";
+  current.blocks.forEach(function (block, idx) {
+    wrap.appendChild(buildBlockCard(block, idx));
+  });
+}
+
+function buildBlockCard(block, idx) {
+  const card = document.createElement("div");
+  card.className = "blk";
+
+  const head = document.createElement("div");
+  head.className = "blk-head";
+  head.innerHTML = '<span class="b-type">' + (idx + 1) + ". " + (BLOCK_TYPE_NAME[block.type] || block.type) + "</span>";
+
+  const btnUp = mkBtn("위로", "btn small line");
+  const btnDown = mkBtn("아래로", "btn small line");
+  const btnDel = mkBtn("삭제", "btn small line");
+  btnUp.disabled = idx === 0;
+  btnDown.disabled = idx === current.blocks.length - 1;
+  btnUp.addEventListener("click", function () { moveBlock(idx, -1); });
+  btnDown.addEventListener("click", function () { moveBlock(idx, 1); });
+  btnDel.addEventListener("click", function () {
+    if (confirm("이 블록을 삭제할까요?")) {
+      current.blocks.splice(idx, 1);
+      renderBlockForms(); markDirty();
+    }
+  });
+  head.appendChild(btnUp); head.appendChild(btnDown); head.appendChild(btnDel);
+  card.appendChild(head);
+
+  const body = document.createElement("div");
+  body.className = "blk-body";
+
+  if (block.type === "text") buildTextForm(body, block);
+  else if (block.type === "table") buildTableForm(body, block);
+  else if (block.type === "figure") {
+    body.innerHTML = '<div class="figure-note">그림 블록입니다. (종류: 좌표평면 그래프)<br>' +
+      "그림 내용을 바꾸는 편집 기능은 4단계에서 추가됩니다. 지금은 미리보기와 인쇄에 그대로 나옵니다.</div>";
+  }
+
+  card.appendChild(body);
+  return card;
+}
+
+function mkBtn(text, cls) {
+  const b = document.createElement("button");
+  b.textContent = text;
+  b.className = cls;
+  return b;
+}
+
+function mkRow(labelText, inputEl) {
+  const row = document.createElement("div");
+  row.className = "brow";
+  const lab = document.createElement("label");
+  lab.textContent = labelText;
+  row.appendChild(lab);
+  row.appendChild(inputEl);
+  return row;
+}
+
+function buildTextForm(body, block) {
+  // 소제목
+  const hIn = document.createElement("input");
+  hIn.type = "text";
+  hIn.placeholder = "예: 1. 분수란?";
+  hIn.value = (block.heading && block.heading["1"]) || "";
+  hIn.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    block.heading["1"] = hIn.value;
+    markDirty();
+  });
+  body.appendChild(mkRow("소제목", hIn));
+
+  // 본문
+  const ta = document.createElement("textarea");
+  ta.rows = 5;
+  ta.className = "blankable";
+  ta.placeholder = "개념 설명을 교과서 문체로 입력하세요. 예: 전체를 똑같이 나눈 것 중의 얼마를 나타내는 수를 분수라고 한다.";
+  ta.value = block.body || "";
+  ta.addEventListener("input", function () {
+    block.body = ta.value;
+    markDirty();
+  });
+  body.appendChild(ta);
+
+  // 3단계 설정
+  const qIn = document.createElement("input");
+  qIn.type = "text";
+  qIn.placeholder = "비우면 소제목이 그대로 질문이 됩니다";
+  qIn.value = (block.heading && block.heading["3"]) || "";
+  qIn.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    if (qIn.value) block.heading["3"] = qIn.value;
+    else delete block.heading["3"];
+    markDirty();
+  });
+  const row1 = mkRow("백지 TEST 질문", qIn);
+  row1.style.marginTop = "8px";
+  body.appendChild(row1);
+
+  const nIn = document.createElement("input");
+  nIn.type = "number";
+  nIn.min = 1; nIn.max = 12;
+  nIn.value = (block.stage3 && block.stage3.lines) || 2;
+  nIn.addEventListener("input", function () {
+    if (!block.stage3) block.stage3 = { mode: "lines" };
+    block.stage3.lines = Math.max(1, Math.min(12, Number(nIn.value) || 2));
+    markDirty();
+  });
+  body.appendChild(mkRow("답안 줄 수", nIn));
+}
+
+function buildTableForm(body, block) {
+  // 소제목 (1·2단계)
+  const hIn = document.createElement("input");
+  hIn.type = "text";
+  hIn.placeholder = "비워도 됩니다 (표만 나옴)";
+  hIn.value = (block.heading && block.heading["1"]) || "";
+  hIn.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    if (hIn.value) block.heading["1"] = hIn.value;
+    else delete block.heading["1"];
+    markDirty();
+  });
+  body.appendChild(mkRow("소제목", hIn));
+
+  // 백지 TEST 소제목 (3단계)
+  const h3In = document.createElement("input");
+  h3In.type = "text";
+  h3In.placeholder = "예: 3. 용어 정리";
+  h3In.value = (block.heading && block.heading["3"]) || "";
+  h3In.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    if (h3In.value) block.heading["3"] = h3In.value;
+    else delete block.heading["3"];
+    markDirty();
+  });
+  body.appendChild(mkRow("백지 TEST 소제목", h3In));
+
+  // 행 목록
+  const rowsWrap = document.createElement("div");
+  rowsWrap.style.marginTop = "8px";
+  body.appendChild(rowsWrap);
+
+  function renderRows() {
+    rowsWrap.innerHTML = "";
+    block.rows.forEach(function (row, ri) {
+      const tr = document.createElement("div");
+      tr.className = "trow";
+
+      const termIn = document.createElement("input");
+      termIn.type = "text";
+      termIn.className = "t-term blankable";
+      termIn.placeholder = "용어";
+      termIn.value = row.term;
+      termIn.addEventListener("input", function () { row.term = termIn.value; markDirty(); });
+
+      const meanIn = document.createElement("input");
+      meanIn.type = "text";
+      meanIn.className = "t-meaning blankable";
+      meanIn.placeholder = "의미";
+      meanIn.value = row.meaning;
+      meanIn.addEventListener("input", function () { row.meaning = meanIn.value; markDirty(); });
+
+      const delBtn = mkBtn("삭제", "btn small line");
+      delBtn.addEventListener("click", function () {
+        block.rows.splice(ri, 1);
+        renderRows(); markDirty();
+      });
+
+      tr.appendChild(termIn); tr.appendChild(meanIn); tr.appendChild(delBtn);
+      rowsWrap.appendChild(tr);
+    });
+  }
+  renderRows();
+
+  const addBtn = mkBtn("+ 행 추가", "btn small line");
+  addBtn.addEventListener("click", function () {
+    block.rows.push({ term: "", meaning: "" });
+    renderRows(); markDirty();
+  });
+  body.appendChild(addBtn);
+}
+
+function moveBlock(idx, delta) {
+  const j = idx + delta;
+  if (j < 0 || j >= current.blocks.length) return;
+  const t = current.blocks[idx];
+  current.blocks[idx] = current.blocks[j];
+  current.blocks[j] = t;
+  renderBlockForms(); markDirty();
+}
+
+document.getElementById("btn-add-text").addEventListener("click", function () {
+  current.blocks.push({ type: "text", heading: { "1": "" }, body: "", stage3: { mode: "lines", lines: 2 } });
+  renderBlockForms(); markDirty();
+});
+document.getElementById("btn-add-table").addEventListener("click", function () {
+  current.blocks.push({ type: "table", heading: {}, columns: ["용어", "의미"], rows: [{ term: "", meaning: "" }] });
+  renderBlockForms(); markDirty();
+});
+
+/* ----- 빈칸 지정 (드래그 후 버튼) ----- */
+
+document.addEventListener("focusin", function (e) {
+  if (e.target.classList && e.target.classList.contains("blankable")) lastField = e.target;
+});
+
+// 버튼을 눌러도 입력칸 선택이 풀리지 않게
+["btn-blank", "btn-unblank"].forEach(function (id) {
+  document.getElementById(id).addEventListener("mousedown", function (e) { e.preventDefault(); });
+});
+
+document.getElementById("btn-blank").addEventListener("click", function () {
+  const f = lastField;
+  if (!f || !document.body.contains(f)) {
+    setStatus("빈칸으로 만들 단어를 먼저 본문에서 마우스로 선택하세요.", true);
+    return;
+  }
+  let s = f.selectionStart, e2 = f.selectionEnd;
+  const v = f.value;
+  if (s === e2) {
+    setStatus("빈칸으로 만들 단어를 먼저 마우스로 선택(드래그)하세요.", true);
+    return;
+  }
+  while (s < e2 && /\s/.test(v[s])) s++;
+  while (e2 > s && /\s/.test(v[e2 - 1])) e2--;
+  if (s === e2) { setStatus("빈칸으로 만들 단어를 선택하세요.", true); return; }
+  const sel = v.slice(s, e2);
+  if (sel.includes("{{") || sel.includes("}}")) {
+    setStatus("이미 빈칸으로 지정된 부분이 포함되어 있습니다.", true);
+    return;
+  }
+  // 이미 {{ }} 안에 있는지 확인
+  const before = v.slice(0, s);
+  if ((before.match(/\{\{/g) || []).length > (before.match(/\}\}/g) || []).length) {
+    setStatus("이미 빈칸으로 지정된 부분입니다.", true);
+    return;
+  }
+  f.value = v.slice(0, s) + "{{" + sel + "}}" + v.slice(e2);
+  f.dispatchEvent(new Event("input", { bubbles: true }));
+  f.focus();
+  f.setSelectionRange(s, e2 + 4);
+  setStatus('"' + sel + '" 이(가) 빈칸으로 지정되었습니다.');
+});
+
+document.getElementById("btn-unblank").addEventListener("click", function () {
+  const f = lastField;
+  if (!f || !document.body.contains(f)) {
+    setStatus("해제할 빈칸이 있는 입력칸을 먼저 클릭하세요.", true);
+    return;
+  }
+  const s = f.selectionStart, e2 = f.selectionEnd;
+  const v = f.value;
+  const re = /\{\{(.+?)\}\}/g;
+  let m, hit = null;
+  while ((m = re.exec(v))) {
+    if (s <= m.index + m[0].length && e2 >= m.index) { hit = m; break; }
+  }
+  if (!hit) {
+    setStatus("선택한 위치에 지정된 빈칸이 없습니다. 빈칸 단어를 클릭한 뒤 다시 누르세요.", true);
+    return;
+  }
+  f.value = v.slice(0, hit.index) + hit[1] + v.slice(hit.index + hit[0].length);
+  f.dispatchEvent(new Event("input", { bubbles: true }));
+  f.focus();
+  f.setSelectionRange(hit.index, hit.index + hit[1].length);
+  setStatus('"' + hit[1] + '" 빈칸이 해제되었습니다.');
+});
+
+/* ----- 미리보기 ----- */
+
+let previewTimer = null;
+function schedulePreview() {
+  clearTimeout(previewTimer);
+  previewTimer = setTimeout(renderPreview, 120);
+}
+
+function renderPreview() {
+  if (!current) return;
+  document.getElementById("preview-scale").innerHTML = renderSheet(current, curStage);
+}
+
+document.querySelectorAll(".stage-tabs button").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    curStage = Number(btn.dataset.stage);
+    document.querySelectorAll(".stage-tabs button").forEach(function (b) {
+      b.classList.toggle("on", b === btn);
+    });
+    renderPreview();
+  });
+});
+
+/* ----- 저장 / 이동 ----- */
+
+document.getElementById("btn-save").addEventListener("click", function () {
+  if (!current.unit_big && !current.unit_mid) {
+    setStatus("대단원이나 중단원 이름을 먼저 입력하세요.", true);
+    return;
+  }
+  if (!current.id) current.id = "c" + Date.now();
+  const idx = concepts.findIndex(function (c) { return c.id === current.id; });
+  const copy = JSON.parse(JSON.stringify(current));
+  if (idx >= 0) concepts[idx] = copy;
+  else concepts.push(copy);
+  saveConcepts(concepts);
+  dirty = false;
+  setStatus("저장되었습니다.");
+});
+
+document.getElementById("btn-back").addEventListener("click", function () {
+  if (dirty && !confirm("저장하지 않은 변경이 있습니다. 저장하지 않고 목록으로 갈까요?")) return;
+  current = null;
+  renderList();
+  showView("view-list");
+});
+
+document.getElementById("btn-print-cur").addEventListener("click", function () {
+  openPrint(current, "view-edit");
+});
+
+window.addEventListener("beforeunload", function (e) {
+  if (dirty) { e.preventDefault(); e.returnValue = ""; }
+});
+
+/* ============================================================
+   6부. 인쇄 화면
+   ============================================================ */
+
+function openPrint(c, from) {
+  prevView = from || "view-list";
+  document.getElementById("print-sheets").innerHTML = renderConcept(c);
+  showView("view-print");
+}
+
+document.getElementById("btn-print-back").addEventListener("click", function () {
+  showView(prevView);
+});
+
+/* ============================================================
+   시작
+   ============================================================ */
+
+renderList();
+showView("view-list");
 </script>
 
 </body>

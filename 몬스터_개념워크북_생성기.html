@@ -187,6 +187,16 @@
   #preview-box g.fig-label { cursor:move; }
   #preview-box g.fig-label:hover rect.g-label { stroke:#E8500A; }
 
+  /* 창(설정 / AI 초안) */
+  .modal-bg { position:fixed; inset:0; background:rgba(0,0,0,.45);
+    display:flex; align-items:center; justify-content:center; z-index:50; }
+  .modal-bg[hidden] { display:none; }
+  .modal { background:#fff; border-radius:10px; padding:22px; width:480px; max-width:92vw;
+    box-shadow:0 8px 30px rgba(0,0,0,.25); }
+  .modal h3 { font-size:17px; font-weight:800; margin-bottom:14px; }
+  .modal .m-btns { display:flex; gap:8px; justify-content:flex-end; margin-top:16px; }
+  .modal .fnote { font-size:12px; color:#888; margin-top:10px; line-height:1.5; }
+
   @media print {
     body { background:#fff; padding:0; }
     .toolbar, .appbar, #view-list, #view-edit, .offline-note { display:none !important; }
@@ -207,6 +217,8 @@
   <div class="appbar">
     <h2>몬스터 수학개념워크북 생성기</h2>
     <span class="grow"></span>
+    <button class="btn line" id="btn-settings">설정</button>
+    <button class="btn" id="btn-ai">AI로 초안 만들기</button>
     <button class="btn orange" id="btn-new">새 개념 만들기</button>
   </div>
   <div class="list-wrap" id="concept-cards"></div>
@@ -281,6 +293,47 @@
     <p>인쇄 미리보기에서 A4 3장으로 나뉘는 것을 확인한 뒤 인쇄하세요.</p>
   </div>
   <div id="print-sheets"></div>
+</div>
+
+<!-- ================= 창 : 설정 ================= -->
+<div class="modal-bg" id="modal-settings" hidden>
+  <div class="modal">
+    <h3>설정</h3>
+    <div class="frow"><label style="width:80px;">API 키</label>
+      <input type="password" id="set-apikey" placeholder="sk-ant-..."></div>
+    <div class="fhint" style="margin-left:90px;">클로드(Claude) API 키. 이 컴퓨터의 브라우저에만 저장되며, AI 초안 만들기에만 쓰입니다.</div>
+    <div class="frow"><label style="width:80px;">학원 로고</label>
+      <input type="file" id="set-logo" accept="image/*" style="flex:1; font-size:13px;"></div>
+    <div class="frow" id="logo-preview-row" hidden>
+      <label style="width:80px;"></label>
+      <img id="logo-preview" alt="로고 미리보기" style="max-height:56px; max-width:130px;">
+      <button class="btn small line" id="btn-logo-del">로고 제거</button>
+    </div>
+    <div class="fhint" style="margin-left:90px;">로고를 올리면 모든 장의 오른쪽 위 칸에 들어갑니다. 없으면 "더몬스터" 배지가 나옵니다.</div>
+    <div class="m-btns"><button class="btn" id="btn-set-close">닫기</button></div>
+  </div>
+</div>
+
+<!-- ================= 창 : AI 초안 ================= -->
+<div class="modal-bg" id="modal-ai" hidden>
+  <div class="modal">
+    <h3>AI로 개념 초안 만들기</h3>
+    <div class="frow">
+      <label>학교</label>
+      <select id="ai-school"><option>초등학교</option><option>중학교</option><option>고등학교</option></select>
+      <label style="width:44px;">학년</label>
+      <select id="ai-grade"></select>
+    </div>
+    <div class="frow"><label>대단원</label><input type="text" id="ai-unitbig" placeholder="예: 분수와 소수"></div>
+    <div class="frow"><label>개념명</label><input type="text" id="ai-concept" placeholder="예: 분수의 의미 (전체와 부분)"></div>
+    <div class="fhint">개념 목차표에 있는 이름을 그대로 넣으면 가장 좋습니다.</div>
+    <p id="ai-status" style="font-size:13px; color:#c0392b; margin:8px 0 0; min-height:18px;"></p>
+    <div class="m-btns">
+      <button class="btn line" id="btn-ai-cancel">취소</button>
+      <button class="btn orange" id="btn-ai-go">초안 만들기</button>
+    </div>
+    <p class="fnote">만들어진 초안은 바로 저장되지 않습니다. 편집 화면에서 검토·수정한 뒤 [저장]을 눌러야 개념 은행에 들어갑니다.</p>
+  </div>
 </div>
 
 <script>
@@ -1136,6 +1189,15 @@ function renderTableBlock(block, stage, opt) {
   return out;
 }
 
+/* ---------- 로고 ---------- */
+
+function logoHTML() {
+  let logo = null;
+  try { logo = localStorage.getItem("mw_logo"); } catch (e) {}
+  if (logo) return '<img src="' + logo + '" alt="로고" style="max-width:104px; max-height:86px; object-fit:contain;">';
+  return '<div class="logo-badge">더몬스터</div>';
+}
+
 /* ---------- 한 장(sheet) 조립 ---------- */
 
 function renderKeywordGrid(keywords) {
@@ -1154,7 +1216,7 @@ function renderSheet(c, stage) {
   out += '<div class="head">' +
     '<div class="head-grade"><div class="g1">' + esc(c.school) + '</div><div class="g2">' + esc(c.grade) + "</div></div>" +
     '<div class="head-title"><h1>' + STAGE_TITLE[stage] + "</h1></div>" +
-    '<div class="head-logo"><div class="logo-badge">더몬스터</div></div>' +
+    '<div class="head-logo">' + logoHTML() + "</div>" +
     "</div>";
 
   out += '<table class="main">';
@@ -2338,6 +2400,218 @@ window.addEventListener("load", function () {
 
 document.getElementById("btn-print-back").addEventListener("click", function () {
   showView(prevView);
+});
+
+/* ============================================================
+   7부. 설정 (API 키 / 로고)
+   ============================================================ */
+
+function refreshLogoPreview() {
+  const logo = localStorage.getItem("mw_logo");
+  const row = document.getElementById("logo-preview-row");
+  if (logo) {
+    document.getElementById("logo-preview").src = logo;
+    row.hidden = false;
+  } else {
+    row.hidden = true;
+  }
+}
+
+document.getElementById("btn-settings").addEventListener("click", function () {
+  document.getElementById("set-apikey").value = localStorage.getItem("mw_api_key") || "";
+  refreshLogoPreview();
+  document.getElementById("modal-settings").hidden = false;
+});
+document.getElementById("btn-set-close").addEventListener("click", function () {
+  document.getElementById("modal-settings").hidden = true;
+});
+document.getElementById("set-apikey").addEventListener("input", function () {
+  localStorage.setItem("mw_api_key", this.value.trim());
+});
+document.getElementById("set-logo").addEventListener("change", function () {
+  const file = this.files && this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function () {
+    const data = reader.result;
+    if (data.length > 1500000) {
+      alert("로고 그림이 너무 큽니다. 더 작은 그림 파일(1MB 이하)을 사용해 주세요.");
+      return;
+    }
+    localStorage.setItem("mw_logo", data);
+    refreshLogoPreview();
+  };
+  reader.readAsDataURL(file);
+});
+document.getElementById("btn-logo-del").addEventListener("click", function () {
+  localStorage.removeItem("mw_logo");
+  document.getElementById("set-logo").value = "";
+  refreshLogoPreview();
+});
+
+/* ============================================================
+   8부. AI 초안 만들기 (Claude API)
+   - 초안은 편집 화면으로만 열리며, [저장]을 눌러야 보관된다.
+   ============================================================ */
+
+function aiGradeOptions() {
+  const school = document.getElementById("ai-school").value;
+  const sel = document.getElementById("ai-grade");
+  const n = GRADE_OPTIONS[school] || 6;
+  let html = "";
+  for (let i = 1; i <= n; i++) html += "<option>" + i + "학년</option>";
+  sel.innerHTML = html;
+}
+document.getElementById("ai-school").addEventListener("change", aiGradeOptions);
+
+document.getElementById("btn-ai").addEventListener("click", function () {
+  aiGradeOptions();
+  document.getElementById("ai-status").textContent = "";
+  document.getElementById("modal-ai").hidden = false;
+});
+document.getElementById("btn-ai-cancel").addEventListener("click", function () {
+  document.getElementById("modal-ai").hidden = true;
+});
+
+function buildDraftPrompt(school, grade, unitBig, conceptName) {
+  return "다음 개념의 학원용 개념 정리 워크북 초안을 만들어라.\n\n" +
+    "- 학교/학년: " + school + " " + grade + "\n" +
+    "- 대단원: " + unitBig + "\n" +
+    "- 개념명: " + conceptName + "\n\n" +
+    "규칙:\n" +
+    "1. " + school + " " + grade + " 2022 개정 교육과정 수준에 정확히 맞춘다. 그 학년에서 배우지 않는 용어·기호는 절대 쓰지 않는다.\n" +
+    '2. 설명은 교과서 문체("~라고 한다")로 전체 5~8문장. text 블록 1~2개로 나눈다.\n' +
+    '3. 학생이 외워야 할 핵심 단어·숫자를 {{ }}로 감싼다(전체 3~6개). 예: "이 수를 {{분수}}라고 한다."\n' +
+    "4. 수식이 필요하면 formula 블록(KaTeX용 LaTeX). 수식 안 빈칸은 \\bk{...} 로 감싼다.\n" +
+    "5. 문장 안의 수·식·기호는 $...$ 로 감싼다. 예: $\\dfrac{1}{4}$\n" +
+    "6. 용어 정리표(table)를 되도록 포함한다(2~4행, 용어 칸은 {{ }}로 감싼다).\n" +
+    "7. 그림이 도움이 되는 개념이면 figure 블록을 정확히 1개, 아래 스펙대로 포함한다.\n" +
+    "8. 반드시 JSON 하나만 출력한다. 다른 설명 금지.\n\n" +
+    "JSON 형식:\n" +
+    '{"keywords":["4~8개"],"blocks":[\n' +
+    '{"type":"text","heading":"1. 소제목","body":"설명...","lines":2},\n' +
+    '{"type":"formula","heading":"2. 소제목","latex":"..."},\n' +
+    '{"type":"figure","figure_type":"...","heading":"3. 소제목","params":{},"labels":[]},\n' +
+    '{"type":"table","heading3":"4. 용어 정리","rows":[{"term":"{{용어}}","meaning":"뜻"}]}\n' +
+    "]}\n\n" +
+    "figure 스펙(필요할 때만 이 중 하나):\n" +
+    '- 평면도형: {"figure_type":"basic_shape","params":{"shape":"triangle|right_triangle|rectangle|square|parallelogram|trapezoid|rhombus|polygon","n":5,"showBaseHeight":true,"showVertexLabels":false,"showDiagonals":false,"width":70},"labels":[{"key":"bottom","text":"밑변 6cm","blank":false},{"key":"height","text":"높이 4cm","blank":true}]}\n' +
+    '- 분수 모델: {"figure_type":"fraction_fig","params":{"model":"bar","den":4,"num":3,"width":70},"labels":[{"key":"caption","blank":true}]} (model은 bar 또는 circle)\n' +
+    '- 입체도형: {"figure_type":"solid_fig","params":{"solid":"cuboid|cube|prism|pyramid|cylinder|cone|sphere","mode":"oblique","n":5,"width":70},"labels":[{"key":"(아래 참고)","text":"가로 6cm","blank":false}]}\n' +
+    "  라벨 키: cuboid/cube는 garo,sero,nopi / prism,pyramid는 nopi,mitmyeon,yeopmyeon / cylinder는 banjireum,nopi,mitmyeon / cone은 nopi,banjireum,mitmyeon / sphere는 banjireum,jungsim. 전개도는 mode:\"net\" (cuboid/cube/cylinder만)\n" +
+    '- 그래프: {"figure_type":"stat_chart","params":{"chart":"bar|line|band|pie|picto","unit":"명","cats":[{"name":"항목","value":8}],"width":100}}\n' +
+    '- 좌표평면(중등 이상): {"figure_type":"coord_graph","params":{"slope":1,"yIntercept":-1}}';
+}
+
+function aiToConcept(school, grade, unitBig, conceptName, ai) {
+  const c = { id: "", school: school, grade: grade, unit_big: unitBig, unit_mid: conceptName,
+    keywords: Array.isArray(ai.keywords) ? ai.keywords.slice(0, 8).map(String) : [], blocks: [] };
+  (ai.blocks || []).forEach(function (b) {
+    if (!b || !b.type) return;
+    if (b.type === "text" && b.body) {
+      c.blocks.push({ type: "text", heading: b.heading ? { "1": String(b.heading) } : {},
+        body: String(b.body), stage3: { mode: "lines", lines: Math.max(1, Math.min(12, b.lines || 2)) } });
+    } else if (b.type === "formula" && b.latex) {
+      c.blocks.push({ type: "formula", heading: b.heading ? { "1": String(b.heading) } : {},
+        latex: String(b.latex), stage3: { mode: "lines", lines: 2 } });
+    } else if (b.type === "table" && Array.isArray(b.rows)) {
+      const heading = {};
+      if (b.heading) heading["1"] = String(b.heading);
+      if (b.heading3) heading["3"] = String(b.heading3);
+      const rows = b.rows.filter(function (r) { return r && r.term; })
+        .map(function (r) { return { term: String(r.term), meaning: String(r.meaning || "") }; });
+      if (rows.length) c.blocks.push({ type: "table", heading: heading, columns: ["용어", "의미"], rows: rows });
+    } else if (b.type === "figure" && FIGURE_TYPE_NAME[b.figure_type]) {
+      const base = defaultFigureBlock(b.figure_type);
+      base.heading = b.heading ? { "1": String(b.heading) } : {};
+      if (b.params && typeof b.params === "object") {
+        Object.assign(base.params, b.params);
+      }
+      if (b.figure_type === "stat_chart") {
+        base.params.cats = (base.params.cats || []).filter(function (x) { return x && x.name; })
+          .map(function (x) { return { name: String(x.name), value: Number(x.value) || 0 }; });
+        if (!base.params.cats.length) return;
+      }
+      if (b.figure_type !== "coord_graph" && Array.isArray(b.labels)) {
+        b.labels.forEach(function (al) {
+          if (!al || !al.key) return;
+          const slot = base.labels.find(function (l) { return l.key === al.key; });
+          if (slot) {
+            if (al.text != null) slot.text = String(al.text);
+            slot.blank = !!al.blank;
+          }
+        });
+      }
+      c.blocks.push(base);
+    }
+  });
+  if (!c.blocks.length) throw new Error("초안 내용이 비어 있습니다.");
+  return c;
+}
+
+async function callClaudeDraft(school, grade, unitBig, conceptName) {
+  const key = localStorage.getItem("mw_api_key");
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-api-key": key,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true"
+    },
+    body: JSON.stringify({
+      model: "claude-sonnet-5",
+      max_tokens: 3500,
+      system: "너는 한국 초·중·고 수학 개념 교재 집필 전문가다. 요청된 JSON 형식만 정확히 출력한다.",
+      messages: [{ role: "user", content: buildDraftPrompt(school, grade, unitBig, conceptName) }]
+    })
+  });
+  if (!res.ok) {
+    if (res.status === 401) throw new Error("API 키가 올바르지 않습니다. [설정]에서 키를 확인해 주세요.");
+    if (res.status === 429) throw new Error("요청이 너무 잦습니다. 잠시 후 다시 시도해 주세요.");
+    throw new Error("AI 요청에 실패했습니다 (오류 번호 " + res.status + "). 잠시 후 다시 시도해 주세요.");
+  }
+  const data = await res.json();
+  const text = (data.content && data.content[0] && data.content[0].text) || "";
+  const a = text.indexOf("{"), b = text.lastIndexOf("}");
+  if (a < 0 || b < 0) throw new Error("AI 답변을 이해하지 못했습니다. 다시 시도해 주세요.");
+  let parsed;
+  try { parsed = JSON.parse(text.slice(a, b + 1)); }
+  catch (e) { throw new Error("AI 답변을 이해하지 못했습니다. 다시 시도해 주세요."); }
+  return aiToConcept(school, grade, unitBig, conceptName, parsed);
+}
+
+document.getElementById("btn-ai-go").addEventListener("click", async function () {
+  const statusEl = document.getElementById("ai-status");
+  const key = localStorage.getItem("mw_api_key");
+  if (!key) {
+    statusEl.textContent = "먼저 [설정]에서 API 키를 넣어 주세요.";
+    return;
+  }
+  const school = document.getElementById("ai-school").value;
+  const grade = document.getElementById("ai-grade").value;
+  const unitBig = document.getElementById("ai-unitbig").value.trim();
+  const conceptName = document.getElementById("ai-concept").value.trim();
+  if (!unitBig || !conceptName) {
+    statusEl.textContent = "대단원과 개념명을 입력해 주세요.";
+    return;
+  }
+  const btn = this;
+  btn.disabled = true;
+  btn.textContent = "만드는 중... (10~30초)";
+  statusEl.textContent = "";
+  try {
+    const draft = await callClaudeDraft(school, grade, unitBig, conceptName);
+    document.getElementById("modal-ai").hidden = true;
+    openEditor(draft);
+    dirty = true;
+    setStatus("AI 초안입니다. 내용을 검토·수정한 뒤 [저장]을 눌러야 보관됩니다.", true);
+  } catch (e) {
+    statusEl.textContent = e.message || "오류가 발생했습니다. 다시 시도해 주세요.";
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "초안 만들기";
+  }
 });
 
 /* ============================================================

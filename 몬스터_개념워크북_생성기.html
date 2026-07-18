@@ -1889,8 +1889,12 @@ function lineCells(content) {
   }
   const toks = tokenizeCells(content);
   const sig = toks.map(function (c) { return c.t; }).join("");
+  // 글자 칸이 모두 짧은 연결어(예: "8의","은")일 때만 열 정렬 — 문장형 예시는 제외
+  const shortText = toks.every(function (c) {
+    return c.t !== "T" || c.v.replace(/\s/g, "").length <= 6;
+  });
   return { cells: toks.map(function (c) { return { v: c.v }; }),
-           sig: "RW" + sig, alignable: toks.length >= 2 && sig.indexOf("M") >= 0 };
+           sig: "RW" + sig, alignable: toks.length >= 2 && sig.indexOf("M") >= 0 && shortText };
 }
 
 // 본문 여러 줄 처리: "* "로 시작하는 줄은 항목(•)으로,

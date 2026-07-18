@@ -2486,7 +2486,8 @@ function buildDraftPrompt(school, grade, unitBig, conceptName) {
     "5. 문장 안의 수·식·기호는 $...$ 로 감싼다. 예: $\\dfrac{1}{4}$\n" +
     "6. 용어 정리표(table)를 되도록 포함한다(2~4행, 용어 칸은 {{ }}로 감싼다).\n" +
     "7. 그림이 도움이 되는 개념이면 figure 블록을 정확히 1개, 아래 스펙대로 포함한다.\n" +
-    "8. 반드시 JSON 하나만 출력한다. 다른 설명 금지.\n\n" +
+    "8. 반드시 JSON 하나만 출력한다. 다른 설명 금지.\n" +
+    '9. JSON 문자열 안의 백슬래시는 반드시 2개로 겹쳐 쓴다. 예: "\\\\dfrac{1}{2}", "\\\\bk{a}", "$\\\\ge$"\n\n' +
     "JSON 형식:\n" +
     '{"keywords":["4~8개"],"blocks":[\n' +
     '{"type":"text","heading":"1. 소제목","body":"설명...","lines":2},\n' +
@@ -2549,7 +2550,41 @@ function aiToConcept(school, grade, unitBig, conceptName, ai) {
   return c;
 }
 
-async function callClaudeDraft(school, grade, unitBig, conceptName) {
+// AI가 백슬래시를 한 번만 쓰는 등 형식을 살짝 틀려도 고쳐서 읽기
+function repairJSONText(t) {
+  // \dfrac 처럼 JSON에서 허용되지 않는 백슬래시 → 두 개로
+  t = t.replace(/\\\\|\\(?=[^"\\/nrtu])/g, function (m) { return m === "\\\\" ? m : "\\\\"; });
+  // 마지막 쉼표 제거
+  t = t.replace(/,\s*([}\]])/g, "$1");
+  return t;
+}
+
+// \b, \f 가 특수문자로 잘못 읽힌 경우 원래 글자로 복원
+function fixEscapes(v) {
+  if (typeof v === "string") return v.replace(/\x08/g, "\\b").replace(/\f/g, "\\f");
+  if (Array.isArray(v)) return v.map(fixEscapes);
+  if (v && typeof v === "object") {
+    const o = {};
+    Object.keys(v).forEach(function (k) { o[k] = fixEscapes(v[k]); });
+    return o;
+  }
+  return v;
+}
+
+function parseDraftText(text) {
+  const a = text.indexOf("{"), b = text.lastIndexOf("}");
+  if (a < 0 || b < 0) return null;
+  const jsonText = text.slice(a, b + 1);
+  let parsed = null;
+  try { parsed = JSON.parse(jsonText); }
+  catch (e1) {
+    try { parsed = JSON.parse(repairJSONText(jsonText)); }
+    catch (e2) { return null; }
+  }
+  return fixEscapes(parsed);
+}
+
+async function callClaudeOnce(school, grade, unitBig, conceptName) {
   const key = localStorage.getItem("mw_api_key");
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -2561,8 +2596,8 @@ async function callClaudeDraft(school, grade, unitBig, conceptName) {
     },
     body: JSON.stringify({
       model: "claude-sonnet-5",
-      max_tokens: 3500,
-      system: "너는 한국 초·중·고 수학 개념 교재 집필 전문가다. 요청된 JSON 형식만 정확히 출력한다.",
+      max_tokens: 8000,
+      system: "너는 한국 초·중·고 수학 개념 교재 집필 전문가다. 요청된 JSON 형식만 정확히 출력한다. JSON 문자열 안의 백슬래시는 반드시 \\\\ 로 두 번 쓴다.",
       messages: [{ role: "user", content: buildDraftPrompt(school, grade, unitBig, conceptName) }]
     })
   });
@@ -2572,13 +2607,22 @@ async function callClaudeDraft(school, grade, unitBig, conceptName) {
     throw new Error("AI 요청에 실패했습니다 (오류 번호 " + res.status + "). 잠시 후 다시 시도해 주세요.");
   }
   const data = await res.json();
-  const text = (data.content && data.content[0] && data.content[0].text) || "";
-  const a = text.indexOf("{"), b = text.lastIndexOf("}");
-  if (a < 0 || b < 0) throw new Error("AI 답변을 이해하지 못했습니다. 다시 시도해 주세요.");
-  let parsed;
-  try { parsed = JSON.parse(text.slice(a, b + 1)); }
-  catch (e) { throw new Error("AI 답변을 이해하지 못했습니다. 다시 시도해 주세요."); }
-  return aiToConcept(school, grade, unitBig, conceptName, parsed);
+  return (data.content && data.content[0] && data.content[0].text) || "";
+}
+
+async function callClaudeDraft(school, grade, unitBig, conceptName) {
+  // 답변 해석에 실패하면 1번 자동으로 다시 만들어 본다
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const text = await callClaudeOnce(school, grade, unitBig, conceptName);
+    const parsed = parseDraftText(text);
+    if (parsed) {
+      try { return aiToConcept(school, grade, unitBig, conceptName, parsed); }
+      catch (e) { if (attempt === 2) throw e; }
+    } else {
+      console.error("AI 초안 해석 실패 원문:", text);
+    }
+    if (attempt === 2) throw new Error("AI 답변을 이해하지 못했습니다. [초안 만들기]를 한 번 더 눌러 주세요.");
+  }
 }
 
 document.getElementById("btn-ai-go").addEventListener("click", async function () {

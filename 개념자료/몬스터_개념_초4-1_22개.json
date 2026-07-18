@@ -1,0 +1,1646 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-4-1-01",
+      "outlineNo": "4-1-01",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "큰 수",
+      "unit_mid": "만, 다섯 자리 수",
+      "keywords": [
+        "큰 수",
+        "만",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 만과 다섯 자리 수"
+          },
+          "body": "* 1000이 10개인 수를 10000 또는 1만이라 쓰고 {{만}}이라고 읽는다.\n* 다섯 자리 수는 만의 자리부터 차례로 읽는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "만",
+              "meaning": "1000이 10개인 수, 10000"
+            },
+            {
+              "term": "자리",
+              "meaning": "일·십·백·천·만의 자리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 10000은 1000이 {{10}}개인 수이다.\n* 27000 = 2만 {{7000}}.\n* 5만은 {{50000}} 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-02",
+      "outlineNo": "4-1-02",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "큰 수",
+      "unit_mid": "십만, 백만, 천만",
+      "keywords": [
+        "큰 수",
+        "십만",
+        "천만"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 십만·백만·천만"
+          },
+          "body": "* 10000이 10개면 {{십만}}, 100개면 {{백만}}, 1000개면 {{천만}}이다.\n* 네 자리마다 자리가 커진다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "십만",
+              "meaning": "10000이 10개 (100000)"
+            },
+            {
+              "term": "백만",
+              "meaning": "10000이 100개"
+            },
+            {
+              "term": "천만",
+              "meaning": "10000이 1000개"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 100000은 만이 {{10}}개.\n* 3400000 = {{340}}만.\n* 천만은 1 다음에 0이 {{7}}개인 수이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-03",
+      "outlineNo": "4-1-03",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "큰 수",
+      "unit_mid": "억과 조",
+      "keywords": [
+        "큰 수",
+        "억",
+        "조"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 억과 조"
+          },
+          "body": "* 1000만이 10개인 수를 {{억}}(1억)이라고 한다.\n* 1000억이 10개인 수를 {{조}}라고 한다.\n* 큰 수는 네 자리씩 끊어 읽는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "억",
+              "meaning": "1000만이 10개, 1 다음 0이 8개"
+            },
+            {
+              "term": "조",
+              "meaning": "1000억이 10개, 1 다음 0이 12개"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 1억은 1 다음에 0이 {{8}}개.\n* 1조는 1 다음에 0이 {{12}}개.\n* 억, 조는 네 자리씩 끊어 {{읽는다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-04",
+      "outlineNo": "4-1-04",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "큰 수",
+      "unit_mid": "자릿값과 뛰어 세기",
+      "keywords": [
+        "자릿값",
+        "뛰어 세기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 자릿값과 뛰어 세기"
+          },
+          "body": "* 각 자리 숫자가 나타내는 값을 {{자릿값}}이라고 한다.\n* 일정한 수만큼 커지거나 작아지게 세는 것을 {{뛰어 세기}}라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "1000씩 뛰어 세기",
+                "min": 3000,
+                "max": 8000,
+                "step": 1000,
+                "range": null,
+                "points": [
+                  4000,
+                  5000
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "자릿값",
+              "meaning": "숫자가 그 자리에서 나타내는 값"
+            },
+            {
+              "term": "뛰어 세기",
+              "meaning": "일정한 수만큼 커지게(작아지게) 세기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 5273에서 2의 자릿값은 {{200}}.\n* 3000부터 1000씩 뛰면 3000, 4000, {{5000}}, 6000.\n* 4700에서 100씩 3번 뛰면 {{5000}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-05",
+      "outlineNo": "4-1-05",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "큰 수",
+      "unit_mid": "큰 수의 크기 비교",
+      "keywords": [
+        "큰 수",
+        "크기 비교"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 큰 수의 크기 비교"
+          },
+          "body": "* 자리 수가 많은 쪽이 더 {{크다}}.\n* 자리 수가 같으면 높은 자리 수부터 차례로 비교한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "수직선에서 오른쪽에 있을수록 큰 수",
+                "min": 0,
+                "max": 50000,
+                "step": 10000,
+                "range": null,
+                "points": [
+                  20000,
+                  40000
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "자리 수",
+              "meaning": "수를 이루는 숫자의 개수"
+            },
+            {
+              "term": "크기 비교",
+              "meaning": "자리 수 → 높은 자리 순서로 비교"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 32000과 9800 중 큰 수는 {{32000}}.\n* 45000과 47000 중 큰 수는 {{47000}}.\n* 자리 수가 같으면 {{높은}} 자리부터 비교한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-06",
+      "outlineNo": "4-1-06",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "각도",
+      "unit_mid": "각의 크기, 1도(°)",
+      "keywords": [
+        "각도",
+        "1도",
+        "직각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 각의 크기와 1도"
+          },
+          "body": "* 직각을 똑같이 90으로 나눈 것 중 하나의 각의 크기를 {{1도}}라 하고 1°로 쓴다.\n* 직각은 {{90}}°이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 각의 크기",
+            "3": "2. 각을 그리거나 크기를 표시해 보시오."
+          },
+          "params": {
+            "degrees": 40,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "1도(1°)",
+              "meaning": "직각을 90으로 나눈 것 중 하나"
+            },
+            {
+              "term": "직각",
+              "meaning": "90°"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 직각은 {{90}}°.\n* 직각 두 개를 이으면 {{180}}°.\n* 각이 클수록 두 변이 벌어진 정도가 {{크다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-07",
+      "outlineNo": "4-1-07",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "각도",
+      "unit_mid": "각도기로 각도 재기, 각 그리기",
+      "keywords": [
+        "각도기",
+        "각도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 각도기로 각도 재기"
+          },
+          "body": "* 각도기의 중심을 각의 꼭짓점에, 밑금을 한 변에 맞춘다.\n* 다른 변이 가리키는 눈금을 읽는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 각의 크기",
+            "3": "2. 각을 그리거나 크기를 표시해 보시오."
+          },
+          "params": {
+            "degrees": 60,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "각도기",
+              "meaning": "각의 크기를 재는 도구"
+            },
+            {
+              "term": "밑금",
+              "meaning": "각도기의 0°에 맞추는 선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 각도기의 중심은 각의 {{꼭짓점}}에 맞춘다.\n* 0°부터 시작해 다른 변의 {{눈금}}을 읽는다.\n* 60°인 각은 직각보다 {{작다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-08",
+      "outlineNo": "4-1-08",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "각도",
+      "unit_mid": "예각과 둔각",
+      "keywords": [
+        "예각",
+        "둔각",
+        "직각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 예각과 둔각"
+          },
+          "body": "* 0°보다 크고 직각(90°)보다 작은 각을 {{예각}}이라고 한다.\n* 직각보다 크고 180°보다 작은 각을 {{둔각}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 각의 크기",
+            "3": "2. 각을 그리거나 크기를 표시해 보시오."
+          },
+          "params": {
+            "degrees": 50,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "예각",
+              "meaning": "0°보다 크고 90°보다 작은 각"
+            },
+            {
+              "term": "둔각",
+              "meaning": "90°보다 크고 180°보다 작은 각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 50°는 {{예각}}.\n* 120°는 {{둔각}}.\n* 90°는 예각도 둔각도 아닌 {{직각}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-09",
+      "outlineNo": "4-1-09",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "각도",
+      "unit_mid": "각도의 합과 차",
+      "keywords": [
+        "각도",
+        "합",
+        "차"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 각도의 합과 차"
+          },
+          "body": "* 각도의 합과 차는 자연수처럼 더하고 뺀다.\n* 답에 단위 °를 붙여 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 각의 크기",
+            "3": "2. 각을 그리거나 크기를 표시해 보시오."
+          },
+          "params": {
+            "degrees": 70,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "각도의 합",
+              "meaning": "두 각도를 더한 값"
+            },
+            {
+              "term": "각도의 차",
+              "meaning": "두 각도를 뺀 값"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 30° + 40° = {{70}}°.\n* 120° − 45° = {{75}}°.\n* 90° + 30° = {{120}}° (둔각).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-10",
+      "outlineNo": "4-1-10",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "각도",
+      "unit_mid": "삼각형 세 각의 크기의 합 (180°)",
+      "keywords": [
+        "삼각형",
+        "각",
+        "180도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각형 세 각의 합"
+          },
+          "body": "* 삼각형의 세 각의 크기의 합은 항상 {{180}}°이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 삼각형의 세 각",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "width": 72,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "세 각의 합",
+              "meaning": "180°"
+            },
+            {
+              "term": "정삼각형",
+              "meaning": "세 각이 모두 60°"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 60° + 70° + 50° = {{180}}°.\n* 두 각이 90°, 40°이면 나머지 각은 {{50}}°.\n* 정삼각형의 한 각은 {{60}}°.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-11",
+      "outlineNo": "4-1-11",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "각도",
+      "unit_mid": "사각형 네 각의 크기의 합 (360°)",
+      "keywords": [
+        "사각형",
+        "각",
+        "360도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 사각형 네 각의 합"
+          },
+          "body": "* 사각형의 네 각의 크기의 합은 항상 {{360}}°이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 사각형의 네 각",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "rectangle",
+            "width": 72,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "네 각의 합",
+              "meaning": "360°"
+            },
+            {
+              "term": "직사각형",
+              "meaning": "네 각이 모두 90°"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 90° × 4 = {{360}}°.\n* 세 각이 90°, 90°, 100°이면 나머지 각은 {{80}}°.\n* 사각형은 삼각형 {{2}}개로 나눌 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-12",
+      "outlineNo": "4-1-12",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "곱셈과 나눗셈",
+      "unit_mid": "(세 자리 수)×(두 자리 수)",
+      "keywords": [
+        "곱셈",
+        "부분곱"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (세 자리 수)×(두 자리 수)"
+          },
+          "body": "* 두 자리 수를 일의 자리와 십의 자리로 나누어 각각 곱한 뒤 더한다.\n* 십의 자리 곱은 한 자리 왼쪽으로 옮겨 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "×",
+            "operands": [
+              123,
+              12
+            ],
+            "width": 65
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "부분곱",
+              "meaning": "일·십의 자리로 각각 곱한 값"
+            },
+            {
+              "term": "자리 맞추기",
+              "meaning": "십의 자리 곱은 한 칸 왼쪽"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 123 × 12 = {{1476}}.\n* 214 × 21 = {{4494}}.\n* 305 × 13 = {{3965}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-13",
+      "outlineNo": "4-1-13",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "곱셈과 나눗셈",
+      "unit_mid": "(두세 자리 수)÷(두 자리 수)",
+      "keywords": [
+        "나눗셈",
+        "몫",
+        "나머지"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (두세 자리 수)÷(두 자리 수)"
+          },
+          "body": "* 높은 자리부터 나누고, 몫을 위에 쓴다.\n* 나머지는 나누는 수보다 작아야 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "÷",
+            "operands": [
+              156,
+              12
+            ],
+            "width": 58,
+            "showSteps": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "몫",
+              "meaning": "나눗셈의 결과"
+            },
+            {
+              "term": "나머지",
+              "meaning": "나누어떨어지지 않고 남는 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 156 ÷ 12 = {{13}}.\n* 84 ÷ 12 = {{7}}.\n* 90 ÷ 14 = 6 … 나머지 {{6}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-14",
+      "outlineNo": "4-1-14",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "곱셈과 나눗셈",
+      "unit_mid": "몫과 나머지 확인 (검산)",
+      "keywords": [
+        "검산",
+        "몫",
+        "나머지"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 검산"
+          },
+          "body": "* (나누는 수) × (몫) + (나머지) = (나누어지는 수) 이면 계산이 맞다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "÷",
+            "operands": [
+              90,
+              14
+            ],
+            "width": 58,
+            "showSteps": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "검산",
+              "meaning": "계산이 맞는지 확인하는 것"
+            },
+            {
+              "term": "검산식",
+              "meaning": "나누는 수 × 몫 + 나머지"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 90 ÷ 14 = 6 … 6 → 14 × 6 + 6 = {{90}}.\n* 100 ÷ 13 = 7 … 9 → 13 × 7 + 9 = {{100}}.\n* 나머지는 나누는 수보다 {{작다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-15",
+      "outlineNo": "4-1-15",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "평면도형의 이동",
+      "unit_mid": "밀기",
+      "keywords": [
+        "이동",
+        "밀기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 밀기"
+          },
+          "body": "* 도형을 일정한 방향으로 밀어도 모양과 크기는 {{변하지 않는다}}.\n* 위치만 바뀐다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 밀기 전 도형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "right_triangle",
+            "width": 72,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "밀기",
+              "meaning": "도형을 방향대로 옮기기"
+            },
+            {
+              "term": "변하지 않는 것",
+              "meaning": "모양과 크기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 밀어도 도형의 모양은 {{변하지 않는다}}.\n* 밀면 {{위치}}만 바뀐다.\n* 오른쪽으로 5칸 밀어도 방향은 {{그대로}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-16",
+      "outlineNo": "4-1-16",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "평면도형의 이동",
+      "unit_mid": "뒤집기",
+      "keywords": [
+        "이동",
+        "뒤집기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 뒤집기"
+          },
+          "body": "* 도형을 뒤집으면 모양과 크기는 그대로지만 {{방향}}이 바뀐다.\n* 왼쪽·오른쪽·위·아래로 뒤집을 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 뒤집기 전 도형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "right_triangle",
+            "width": 72,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "뒤집기",
+              "meaning": "도형을 거울처럼 뒤집기"
+            },
+            {
+              "term": "바뀌는 것",
+              "meaning": "방향(좌우·상하)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 오른쪽으로 뒤집으면 {{좌우}}가 바뀐다.\n* 위로 뒤집으면 {{상하}}가 바뀐다.\n* 뒤집어도 크기는 {{그대로}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-17",
+      "outlineNo": "4-1-17",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "평면도형의 이동",
+      "unit_mid": "돌리기",
+      "keywords": [
+        "이동",
+        "돌리기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 돌리기"
+          },
+          "body": "* 도형을 한 점을 중심으로 돌리면 {{방향}}이 바뀐다.\n* 90°, 180° 등으로 돌릴 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 돌리기 전 도형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "right_triangle",
+            "width": 72,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "돌리기",
+              "meaning": "한 점을 중심으로 회전하기"
+            },
+            {
+              "term": "바뀌는 것",
+              "meaning": "도형의 방향"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 시계 방향으로 90° 돌리면 방향이 {{바뀐다}}.\n* 180° 돌리면 처음과 {{반대}} 방향.\n* 돌려도 모양·크기는 {{그대로}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-18",
+      "outlineNo": "4-1-18",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "평면도형의 이동",
+      "unit_mid": "무늬 꾸미기 (이동의 활용)",
+      "keywords": [
+        "이동",
+        "무늬"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 무늬 꾸미기"
+          },
+          "body": "* 밀기·뒤집기·돌리기를 이용해 규칙적인 무늬를 만든다.\n* 한 조각을 반복해 무늬를 채운다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 기본 조각",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "square",
+            "width": 72,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "무늬",
+              "meaning": "도형을 반복해 만든 규칙적 모양"
+            },
+            {
+              "term": "이동",
+              "meaning": "밀기·뒤집기·돌리기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 한 조각을 {{반복}}해 무늬를 만든다.\n* 밀기·뒤집기·{{돌리기}}로 꾸민다.\n* 규칙을 알면 다음 무늬를 {{예상}}할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-19",
+      "outlineNo": "4-1-19",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "막대그래프",
+      "unit_mid": "막대그래프의 뜻과 특징",
+      "keywords": [
+        "막대그래프",
+        "눈금"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 막대그래프"
+          },
+          "body": "* 조사한 수를 막대의 길이로 나타낸 그래프를 {{막대그래프}}라고 한다.\n* 막대가 길수록 수가 크다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 막대그래프",
+            "3": "2. 막대그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "명",
+            "cats": [
+              {
+                "name": "빨강",
+                "value": 6
+              },
+              {
+                "name": "파랑",
+                "value": 4
+              },
+              {
+                "name": "노랑",
+                "value": 8
+              }
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "none"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "막대그래프",
+              "meaning": "수를 막대 길이로 나타낸 그래프"
+            },
+            {
+              "term": "눈금",
+              "meaning": "막대의 값을 읽는 기준 선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 막대가 길수록 수가 {{크다}}.\n* 가장 긴 막대가 가장 {{많은}} 항목.\n* 눈금 한 칸이 2명이면 막대 4칸은 {{8}}명.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-20",
+      "outlineNo": "4-1-20",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "막대그래프",
+      "unit_mid": "막대그래프 그리기와 해석",
+      "keywords": [
+        "막대그래프",
+        "그리기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 막대그래프 그리기"
+          },
+          "body": "* 가로에 항목, 세로에 수를 정하고 막대를 그린다.\n* 눈금 한 칸의 크기를 알맞게 정한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 막대그래프",
+            "3": "2. 막대그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "명",
+            "cats": [
+              {
+                "name": "사과",
+                "value": 5
+              },
+              {
+                "name": "배",
+                "value": 3
+              },
+              {
+                "name": "감",
+                "value": 7
+              }
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "none"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "눈금 한 칸",
+              "meaning": "막대 값을 읽는 단위"
+            },
+            {
+              "term": "제목",
+              "meaning": "무엇을 조사했는지 나타냄"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 한 칸이 1명이면 5명은 {{5}}칸.\n* 가장 많은 항목은 {{감}}.\n* 사과와 배의 수의 차는 {{2}}명.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-21",
+      "outlineNo": "4-1-21",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "규칙 찾기",
+      "unit_mid": "수의 배열에서 규칙 찾기",
+      "keywords": [
+        "규칙",
+        "배열"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 수의 배열에서 규칙 찾기"
+          },
+          "body": "* 수가 늘어나거나 줄어드는 규칙을 찾는다.\n* 몇씩 커지는지(작아지는지)를 살펴본다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "2씩 커지는 규칙",
+                "min": 0,
+                "max": 10,
+                "step": 2,
+                "range": null,
+                "points": [
+                  2,
+                  4,
+                  6,
+                  8
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "규칙",
+              "meaning": "수가 변하는 일정한 방법"
+            },
+            {
+              "term": "뛰는 수",
+              "meaning": "몇씩 커지는지/작아지는지"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2, 4, 6, 8 다음은 {{10}} (2씩 커짐).\n* 3, 6, 9, 12 다음은 {{15}} (3씩 커짐).\n* 20, 17, 14 다음은 {{11}} (3씩 작아짐).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-1-22",
+      "outlineNo": "4-1-22",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "규칙 찾기",
+      "unit_mid": "계산식에서 규칙 찾기",
+      "keywords": [
+        "규칙",
+        "계산식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 계산식에서 규칙 찾기"
+          },
+          "body": "* 계산식이 나열된 것에서 규칙을 찾는다.\n* 더하는 수나 결과가 어떻게 변하는지 살펴본다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "계산식 규칙",
+              "meaning": "식이 변하는 일정한 방법"
+            },
+            {
+              "term": "확인",
+              "meaning": "다음 식을 예상해 맞는지 확인"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 1+2=3, 2+3=5, 3+4=7 다음은 4+5={{9}}.\n* 10×1=10, 10×2=20 다음은 10×3={{30}}.\n* 규칙을 알면 다음 식을 {{예상}}할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

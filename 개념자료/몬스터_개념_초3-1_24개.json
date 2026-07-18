@@ -1,0 +1,948 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-3-1-01",
+      "outlineNo": "3-1-01",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "덧셈과 뺄셈",
+      "unit_mid": "받아올림이 있는 세 자리 수의 덧셈",
+      "keywords": [
+        "덧셈",
+        "받아올림",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 받아올림이 있는 덧셈"
+          },
+          "body": "* 같은 자리 수끼리 더하고, 그 합이 10이거나 10보다 크면 바로 윗자리로 {{1}}을 올려 준다.\n* 이렇게 윗자리로 올려 계산하는 것을 {{받아올림}}이라고 한다.\n* 일의 자리부터 차례로 더한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "3": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "{{받아올림}}",
+              "meaning": "한 자리의 합이 10이거나 넘을 때 윗자리로 1을 올리는 것"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-02",
+      "outlineNo": "3-1-02",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "덧셈과 뺄셈",
+      "unit_mid": "받아내림이 있는 세 자리 수의 뺄셈",
+      "keywords": [
+        "뺄셈",
+        "받아내림",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 받아내림이 있는 뺄셈"
+          },
+          "body": "* 같은 자리 수끼리 빼되, 뺄 수 없으면 바로 윗자리에서 {{10}}을 빌려 온다.\n* 이렇게 윗자리에서 빌려 계산하는 것을 {{받아내림}}이라고 한다.\n* 일의 자리부터 차례로 뺀다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "3": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "{{받아내림}}",
+              "meaning": "뺄 수 없을 때 윗자리에서 10을 빌려 오는 것"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-03",
+      "outlineNo": "3-1-03",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "덧셈과 뺄셈",
+      "unit_mid": "덧셈과 뺄셈의 관계, 어림하여 계산하기",
+      "keywords": [
+        "덧셈",
+        "뺄셈",
+        "어림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 덧셈과 뺄셈의 관계"
+          },
+          "body": "* 덧셈식은 뺄셈식으로, 뺄셈식은 덧셈식으로 바꿀 수 있다.\n* 예: 260 + 150 = 410 이면 410 − 150 = {{260}} 이다.\n* 서로 반대가 되는 관계를 이용하면 답이 맞는지 {{확인}}할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "2. 어림하여 계산하기"
+          },
+          "body": "* 몇백쯤인지 {{어림}}하여 대략의 값을 먼저 구할 수 있다.\n* 어림한 값과 실제 계산한 값을 비교하면 잘못된 계산을 찾기 쉽다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-04",
+      "outlineNo": "3-1-04",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "평면도형",
+      "unit_mid": "선분, 직선, 반직선",
+      "keywords": [
+        "선분",
+        "직선",
+        "반직선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 여러 가지 선"
+          },
+          "body": "* 두 점을 곧게 이은 선을 {{선분}}이라고 한다.\n* 선분을 양쪽으로 끝없이 늘인 곧은 선을 {{직선}}이라고 한다.\n* 한 점에서 시작하여 한쪽으로 끝없이 늘인 곧은 선을 {{반직선}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "3": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "{{선분}}",
+              "meaning": "두 점을 곧게 이은 선"
+            },
+            {
+              "term": "{{직선}}",
+              "meaning": "선분을 양쪽으로 끝없이 늘인 곧은 선"
+            },
+            {
+              "term": "{{반직선}}",
+              "meaning": "한 점에서 한쪽으로만 끝없이 늘인 곧은 선"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-05",
+      "outlineNo": "3-1-05",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "평면도형",
+      "unit_mid": "각과 꼭짓점, 변",
+      "keywords": [
+        "각",
+        "꼭짓점",
+        "변"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 각"
+          },
+          "body": "* 한 점에서 그은 두 반직선으로 이루어진 도형을 {{각}}이라고 한다.\n* 두 반직선이 만나는 점을 {{꼭짓점}}, 두 반직선을 각각 {{변}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 각의 각 부분"
+          },
+          "params": {
+            "degrees": 55,
+            "width": 55
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "각",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "3": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "{{꼭짓점}}",
+              "meaning": "각을 이루는 두 반직선이 만나는 점"
+            },
+            {
+              "term": "{{변}}",
+              "meaning": "각을 이루는 두 반직선"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-06",
+      "outlineNo": "3-1-06",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "평면도형",
+      "unit_mid": "직각",
+      "keywords": [
+        "직각",
+        "각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직각"
+          },
+          "body": "* 종이를 반듯하게 두 번 접었을 때 생기는 각을 {{직각}}이라고 한다.\n* 직각은 크기가 정해진 각으로, 직각 표시(ㄱ 모양)로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 직각"
+          },
+          "params": {
+            "degrees": 90,
+            "width": 55
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "직각",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-07",
+      "outlineNo": "3-1-07",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "평면도형",
+      "unit_mid": "직각삼각형",
+      "keywords": [
+        "직각삼각형",
+        "직각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직각삼각형"
+          },
+          "body": "* 한 각이 {{직각}}인 삼각형을 {{직각삼각형}}이라고 한다.\n* 직각인 곳에는 직각 표시를 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 직각삼각형"
+          },
+          "params": {
+            "shape": "right_triangle",
+            "width": 60
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-08",
+      "outlineNo": "3-1-08",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "평면도형",
+      "unit_mid": "직사각형과 정사각형",
+      "keywords": [
+        "직사각형",
+        "정사각형",
+        "직각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직사각형과 정사각형"
+          },
+          "body": "* 네 각이 모두 {{직각}}인 사각형을 {{직사각형}}이라고 한다.\n* 네 각이 모두 직각이고 네 변의 길이가 모두 {{같은}} 사각형을 {{정사각형}}이라고 한다.\n* 정사각형은 직사각형이라고 할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 직사각형"
+          },
+          "params": {
+            "shape": "rectangle",
+            "width": 60
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-09",
+      "outlineNo": "3-1-09",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "나눗셈",
+      "unit_mid": "나눗셈의 의미 (똑같이 나누기, 묶어 세기)",
+      "keywords": [
+        "나눗셈",
+        "똑같이 나누기",
+        "묶어 세기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 나눗셈의 의미"
+          },
+          "body": "* 전체를 몇 묶음으로 {{똑같이}} 나눌 때 한 묶음의 수를 구하는 계산이 나눗셈이다.\n* 전체를 몇 개씩 {{묶어}} 셀 때 묶음의 수를 구할 때에도 나눗셈을 쓴다.\n* 예: 사탕 12개를 4명이 똑같이 나누면 한 명이 3개를 갖는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 12를 똑같이 4묶음으로 나눈 그림"
+          },
+          "params": {
+            "model": "circle",
+            "den": 4,
+            "num": 1,
+            "width": 60,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-10",
+      "outlineNo": "3-1-10",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "나눗셈",
+      "unit_mid": "몫, 나눗셈식 읽고 쓰기",
+      "keywords": [
+        "나눗셈",
+        "몫"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 나눗셈식과 몫"
+          },
+          "body": "* 12 ÷ 4 = 3 에서 나눗셈의 결과인 3을 {{몫}}이라고 한다.\n* 12 ÷ 4 = 3 은 “12 나누기 4는 3과 같다”라고 읽는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "3": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "{{몫}}",
+              "meaning": "나눗셈을 하여 나온 결과"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-11",
+      "outlineNo": "3-1-11",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "나눗셈",
+      "unit_mid": "곱셈과 나눗셈의 관계",
+      "keywords": [
+        "곱셈",
+        "나눗셈",
+        "관계"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈과 나눗셈의 관계"
+          },
+          "body": "* 하나의 곱셈식으로 두 개의 나눗셈식을 만들 수 있다.\n* 예: 4 × 3 = 12 이면 12 ÷ 4 = {{3}}, 12 ÷ 3 = {{4}} 이다.\n* 나눗셈의 몫은 곱셈으로 확인할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-12",
+      "outlineNo": "3-1-12",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "곱셈",
+      "unit_mid": "(두 자리 수)×(한 자리 수)의 원리 (올림 없음)",
+      "keywords": [
+        "곱셈",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 올림이 없는 곱셈"
+          },
+          "body": "* 두 자리 수를 {{십의 자리}}와 일의 자리로 나누어 각각 곱한 뒤 더한다.\n* 예: 23 × 2 는 20 × 2 = 40, 3 × 2 = 6 이므로 답은 {{46}} 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-13",
+      "outlineNo": "3-1-13",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "곱셈",
+      "unit_mid": "(두 자리 수)×(한 자리 수)의 원리 (올림 있음)",
+      "keywords": [
+        "곱셈",
+        "올림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 올림이 있는 곱셈"
+          },
+          "body": "* 일의 자리끼리 곱한 값이 10이거나 넘으면 십의 자리로 {{올림}}한다.\n* 올림한 수는 십의 자리 곱에 더해 준다.\n* 예: 27 × 3 은 7 × 3 = 21 에서 2를 올림한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-14",
+      "outlineNo": "3-1-14",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "길이와 시간",
+      "unit_mid": "1mm, 1cm와 mm의 관계",
+      "keywords": [
+        "mm",
+        "cm",
+        "길이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 밀리미터(mm)"
+          },
+          "body": "* 1cm를 똑같이 10칸으로 나눈 것 중 한 칸의 길이가 {{1mm}}이다.\n* 1cm = {{10}}mm 이다.\n* 밀리미터는 자에서 작은 눈금 한 칸의 길이이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-15",
+      "outlineNo": "3-1-15",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "길이와 시간",
+      "unit_mid": "1km, km와 m의 관계",
+      "keywords": [
+        "km",
+        "m",
+        "길이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 킬로미터(km)"
+          },
+          "body": "* 1000m를 {{1km}}라 하고 “1킬로미터”라고 읽는다.\n* 1km = {{1000}}m 이다.\n* 킬로미터는 먼 거리를 나타낼 때 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-16",
+      "outlineNo": "3-1-16",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "길이와 시간",
+      "unit_mid": "1초, 분과 초의 관계",
+      "keywords": [
+        "초",
+        "분",
+        "시간"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 초와 분의 관계"
+          },
+          "body": "* 시계의 초바늘이 작은 눈금 한 칸을 갈 때 걸리는 시간이 {{1초}}이다.\n* 1분 = {{60}}초 이다.\n* 초바늘이 시계를 한 바퀴 돌면 1분이 지난 것이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-17",
+      "outlineNo": "3-1-17",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "길이와 시간",
+      "unit_mid": "시간의 덧셈과 뺄셈",
+      "keywords": [
+        "시간",
+        "덧셈",
+        "뺄셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 시간의 덧셈과 뺄셈"
+          },
+          "body": "* 시간은 시는 시끼리, 분은 분끼리, 초는 초끼리 계산한다.\n* 초가 60이거나 넘으면 {{60}}초를 1분으로 받아올림한다.\n* 뺄 수 없을 때에는 1분을 60초로 바꾸어 {{받아내림}}한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-18",
+      "outlineNo": "3-1-18",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수와 소수",
+      "unit_mid": "분수의 의미 (전체와 부분)",
+      "keywords": [
+        "분수",
+        "전체",
+        "부분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분수"
+          },
+          "body": "* 전체를 똑같이 나눈 것 중의 얼마를 나타내는 수를 {{분수}}라고 한다.\n* 전체를 4로 똑같이 나눈 것 중의 3은 사분의 삼이라 하고 3/4 로 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 색칠한 부분을 분수로 나타내기"
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 3,
+            "width": 60,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-19",
+      "outlineNo": "3-1-19",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수와 소수",
+      "unit_mid": "분모, 분자, 분수 읽고 쓰기",
+      "keywords": [
+        "분수",
+        "분모",
+        "분자"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분모와 분자"
+          },
+          "body": "* 분수에서 가로선 아래쪽의 수를 {{분모}}, 위쪽의 수를 {{분자}}라고 한다.\n* 분모는 전체를 몇으로 나누었는지, 분자는 그중 몇을 나타내는지 알려 준다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 분수 모델"
+          },
+          "params": {
+            "model": "circle",
+            "den": 4,
+            "num": 1,
+            "width": 60,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "3": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "{{분모}}",
+              "meaning": "가로선 아래쪽의 수, 전체를 나눈 수"
+            },
+            {
+              "term": "{{분자}}",
+              "meaning": "가로선 위쪽의 수, 나타내는 부분의 수"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-20",
+      "outlineNo": "3-1-20",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수와 소수",
+      "unit_mid": "단위분수",
+      "keywords": [
+        "단위분수",
+        "분자",
+        "분모"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 단위분수"
+          },
+          "body": "* 분자가 {{1}}인 분수를 {{단위분수}}라고 한다.\n* 1/2, 1/3, 1/4 와 같은 분수가 단위분수이다.\n* 단위분수는 분모가 클수록 크기가 {{작다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 단위분수 4분의 1"
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 1,
+            "width": 60,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-21",
+      "outlineNo": "3-1-21",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수와 소수",
+      "unit_mid": "분수의 크기 비교 (분모가 같을 때, 단위분수끼리)",
+      "keywords": [
+        "분수",
+        "크기 비교"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분수의 크기 비교"
+          },
+          "body": "* 분모가 같은 분수는 분자가 {{클수록}} 크다. 예: 3/5 > 2/5\n* 단위분수는 분모가 {{작을수록}} 크다. 예: 1/2 > 1/3",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 그림으로 크기 비교"
+          },
+          "params": {
+            "model": "bar",
+            "den": 5,
+            "num": 3,
+            "width": 60,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-22",
+      "outlineNo": "3-1-22",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수와 소수",
+      "unit_mid": "소수의 의미, 소수 읽고 쓰기",
+      "keywords": [
+        "소수",
+        "소수점"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수"
+          },
+          "body": "* 1을 똑같이 10으로 나눈 것 중의 하나를 0.1 이라 쓰고 {{영 점 일}}이라고 읽는다.\n* 0.1, 0.2 와 같은 수를 {{소수}}라 하고, ‘.’을 {{소수점}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "3": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "{{소수}}",
+              "meaning": "0.1, 0.2처럼 소수점을 쓴 수"
+            },
+            {
+              "term": "{{소수점}}",
+              "meaning": "소수에서 찍는 점 ‘.’"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-23",
+      "outlineNo": "3-1-23",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수와 소수",
+      "unit_mid": "소수의 크기 비교",
+      "keywords": [
+        "소수",
+        "크기 비교"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수의 크기 비교"
+          },
+          "body": "* 소수는 수직선에서 {{오른쪽}}에 있을수록 큰 수이다.\n* 0.7과 0.5를 비교하면 0.7이 더 {{크다}}.\n* 소수점 앞의 수가 같으면 소수점 뒤의 수를 비교한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-1-24",
+      "outlineNo": "3-1-24",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수와 소수",
+      "unit_mid": "분수와 소수의 관계 (0.1 = 1/10)",
+      "keywords": [
+        "분수",
+        "소수",
+        "관계"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분수와 소수의 관계"
+          },
+          "body": "* 1을 똑같이 10으로 나눈 것 중의 하나는 분수로 {{1/10}}, 소수로 0.1 이다.\n* 즉 0.1 = 1/10 이다.\n* 0.3 = 3/10 처럼 소수는 분모가 10인 분수로 바꿀 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

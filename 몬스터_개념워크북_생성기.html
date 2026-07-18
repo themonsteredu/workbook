@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>몬스터 수학개념워크북 생성기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" onload="onKatexLoad()"></script>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -72,6 +74,15 @@
   .blank.sm { min-width:36px; }
   .box-blank { display:inline-block; width:34px; height:26px; border:1.4px solid #111;
     border-radius:3px; vertical-align:middle; }
+
+  /* 수식 (KaTeX) */
+  .katex { font-size: 1.06em; }
+  .formula-line { padding: 2px 4px 14px; font-size: 15px; }
+
+  /* 인터넷 없을 때 안내 */
+  .offline-note { background:#FFF6DF; border:1.5px solid #EBA23C; color:#5a4300;
+    font-size:13px; padding:8px 14px; border-radius:6px;
+    max-width:760px; margin:0 auto 14px; text-align:center; }
 
   /* 그래프 라벨 */
   .g-label { fill:#fff; stroke:#222; stroke-width:1.2; }
@@ -176,13 +187,18 @@
 
   @media print {
     body { background:#fff; padding:0; }
-    .toolbar, .appbar, #view-list, #view-edit { display:none !important; }
+    .toolbar, .appbar, #view-list, #view-edit, .offline-note { display:none !important; }
     .sheet { box-shadow:none; margin:0; width:auto; min-height:auto; page-break-after:always; }
     @page { size:A4; margin:12mm; }
   }
 </style>
 </head>
 <body>
+
+<div id="offline-note" class="offline-note" hidden>
+  인터넷 연결이 없어 수식이 교과서 수식 모양으로 보이지 않을 수 있습니다.
+  인터넷을 연결한 뒤 새로고침하면 정상 표시됩니다.
+</div>
 
 <!-- ================= 화면 1 : 개념 목록 ================= -->
 <div id="view-list" class="view">
@@ -235,6 +251,7 @@
         <div id="block-list"></div>
         <div class="add-btns">
           <button class="btn line" id="btn-add-text">+ 설명 문단</button>
+          <button class="btn line" id="btn-add-formula">+ 수식</button>
           <button class="btn line" id="btn-add-table">+ 용어 정리표</button>
         </div>
       </div>
@@ -313,6 +330,39 @@ const EXAMPLE_CONCEPT = {
   ]
 };
 
+/* ---------- 예제 데이터: 수식 검수용 (분수·루트 포함) ---------- */
+const FORMULA_EXAMPLE = {
+  id: "example-formula-01",
+  school: "중학교",
+  grade: "3학년",
+  unit_big: "실수와 그 연산",
+  unit_mid: "제곱근과 실수 (수식 예제)",
+  keywords: ["제곱근", "근호", "루트", "분수"],
+  blocks: [
+    {
+      type: "text",
+      heading: { "1": "1. 제곱근이란?" },
+      body: "어떤 수 $x$를 제곱하여 $a$가 될 때, 즉 $x^2 = \\bk{a}$ 일 때, $x$를 $a$의 {{제곱근}}이라고 한다. 양수 $a$의 제곱근은 양수와 음수 2개가 있다.",
+      stage3: { mode: "lines", lines: 2 }
+    },
+    {
+      type: "formula",
+      heading: { "1": "2. 제곱근의 성질" },
+      latex: "\\sqrt{a^2} = |a|, \\quad \\sqrt{\\dfrac{1}{4}} = \\bk{\\dfrac{1}{2}}, \\quad \\pm\\sqrt{2}",
+      stage3: { mode: "lines", lines: 2 }
+    },
+    {
+      type: "table",
+      heading: { "3": "3. 용어 정리" },
+      columns: ["용어", "의미"],
+      rows: [
+        { term: "{{제곱근}}", meaning: "제곱하여 $a$가 되는 수" },
+        { term: "{{근호}}", meaning: "기호 $\\sqrt{\\phantom{a}}$. \"루트\"라고 읽는다" }
+      ]
+    }
+  ]
+};
+
 /* ============================================================
    1부. 렌더링 엔진 (1단계에서 만든 것 그대로)
    ============================================================ */
@@ -325,18 +375,57 @@ function round1(n) { return Math.round(n * 10) / 10; }
 const STAGE_TITLE = { 1: "개념 정리", 2: "빈칸 채우기", 3: "백지 TEST" };
 const STAGE3_GUIDE = "키워드만 보고 아는 내용을 모두 적으시오.";
 
+/* ----- 수식 렌더링 (KaTeX, 없으면 단순 표시) ----- */
+
+function katexAvailable() { return typeof katex !== "undefined"; }
+
+// 수식 한 조각을 그리기
+function renderMathSeg(tex) {
+  if (!tex) return "";
+  if (katexAvailable()) {
+    try {
+      return katex.renderToString(tex, { throwOnError: false });
+    } catch (e) {}
+  }
+  return '<span class="math">' + esc(tex) + "</span>";
+}
+
+// \bk{...} 를 찾아 [일반, 빈칸내용, 일반, 빈칸내용, ...] 로 쪼개기 (중괄호 짝 맞춰서)
+function splitBk(src) {
+  const parts = [];
+  let start = 0, i = 0;
+  while (true) {
+    const k = src.indexOf("\\bk{", i);
+    if (k < 0) break;
+    let depth = 1, j = k + 4;
+    while (j < src.length && depth > 0) {
+      if (src[j] === "{") depth++;
+      else if (src[j] === "}") depth--;
+      j++;
+    }
+    parts.push(src.slice(start, k));
+    parts.push(src.slice(k + 4, depth === 0 ? j - 1 : j));
+    start = j; i = j;
+  }
+  parts.push(src.slice(start));
+  return parts;
+}
+
 // $...$ 안쪽 내용 렌더링 (\bk 처리 포함)
 function renderMathContent(content, stage) {
-  const parts = content.split(/\\bk\{([^}]*)\}/);
+  const parts = splitBk(content);
   if (stage === 1) {
-    return '<span class="math">' + esc(parts.join("")) + "</span>";
+    return renderMathSeg(parts.join(""));
   }
   let out = "";
   parts.forEach(function (p, i) {
     if (i % 2 === 0) {
-      if (p !== "") out += '<span class="math">' + esc(p) + "</span>";
+      if (p !== "") out += renderMathSeg(p);
     } else {
-      out += '<span class="box-blank"></span>';
+      // 빈칸 네모: 정답 길이에 비례한 폭 (최소 폭 보장)
+      const plainLen = p.replace(/\\[a-zA-Z]+/g, "#").replace(/[{}]/g, "").length;
+      const w = Math.max(34, 16 + plainLen * 9);
+      out += '<span class="box-blank" style="width:' + w + 'px"></span>';
     }
   });
   return out;
@@ -482,6 +571,24 @@ function renderTextBlock(block, stage, opt) {
   return out;
 }
 
+function renderFormulaBlock(block, stage, opt) {
+  let out = "";
+  const h = headingFor(block, stage);
+  if (stage === 3) {
+    const st3 = block.stage3 || { mode: "lines", lines: 2 };
+    if (h) out += '<div class="qnum"' + (opt.marginTop ? ' style="margin-top:16px;"' : "") + ">" + renderInline(h, 1, "text") + "</div>";
+    if (st3.mode === "lines") {
+      out += '<div class="write-lines">';
+      for (let i = 0; i < (st3.lines || 2); i++) out += "<div></div>";
+      out += "</div>";
+    }
+    return out;
+  }
+  if (h) out += '<div class="qnum">' + renderInline(h, 1, "text") + "</div>";
+  out += '<div class="formula-line">' + renderMathContent(block.latex || "", stage) + "</div>";
+  return out;
+}
+
 function renderFigureBlock(block, stage, opt) {
   let out = "";
   const h = headingFor(block, stage);
@@ -542,9 +649,10 @@ function renderSheet(c, stage) {
   c.blocks.forEach(function (block) {
     const opt = { marginTop: stage === 3 && prevWasLines };
     if (block.type === "text") out += renderTextBlock(block, stage, opt);
+    else if (block.type === "formula") out += renderFormulaBlock(block, stage, opt);
     else if (block.type === "figure") out += renderFigureBlock(block, stage, opt);
     else if (block.type === "table") out += renderTableBlock(block, stage, opt);
-    prevWasLines = stage === 3 && block.type === "text";
+    prevWasLines = stage === 3 && (block.type === "text" || block.type === "formula");
   });
 
   out += "</td></tr></table></div>";
@@ -577,6 +685,14 @@ let concepts = loadConcepts();
 if (!concepts) {
   concepts = [JSON.parse(JSON.stringify(EXAMPLE_CONCEPT))];
   saveConcepts(concepts);
+}
+// 수식 예제 1회 넣기 (검수용, 삭제해도 다시 생기지 않음)
+if (!localStorage.getItem("mw_seed_formula_v1")) {
+  if (!concepts.some(function (c) { return c.id === FORMULA_EXAMPLE.id; })) {
+    concepts.push(JSON.parse(JSON.stringify(FORMULA_EXAMPLE)));
+    saveConcepts(concepts);
+  }
+  localStorage.setItem("mw_seed_formula_v1", "1");
 }
 
 /* ============================================================
@@ -784,6 +900,7 @@ function buildBlockCard(block, idx) {
   body.className = "blk-body";
 
   if (block.type === "text") buildTextForm(body, block);
+  else if (block.type === "formula") buildFormulaForm(body, block);
   else if (block.type === "table") buildTableForm(body, block);
   else if (block.type === "figure") {
     body.innerHTML = '<div class="figure-note">그림 블록입니다. (종류: 좌표평면 그래프)<br>' +
@@ -850,6 +967,102 @@ function buildTextForm(body, block) {
   const row1 = mkRow("백지 TEST 질문", qIn);
   row1.style.marginTop = "8px";
   body.appendChild(row1);
+
+  const nIn = document.createElement("input");
+  nIn.type = "number";
+  nIn.min = 1; nIn.max = 12;
+  nIn.value = (block.stage3 && block.stage3.lines) || 2;
+  nIn.addEventListener("input", function () {
+    if (!block.stage3) block.stage3 = { mode: "lines" };
+    block.stage3.lines = Math.max(1, Math.min(12, Number(nIn.value) || 2));
+    markDirty();
+  });
+  body.appendChild(mkRow("답안 줄 수", nIn));
+}
+
+/* ----- 수식 블록 폼: 버튼 팔레트로 입력 ----- */
+
+// 팔레트 버튼: [표시 이름, 끼워 넣을 내용, 끼운 뒤 선택해 줄 부분]
+const FORMULA_PALETTE = [
+  ["분수",   "\\dfrac{1}{2}", "1"],
+  ["제곱",   "x^{2}",         "2"],
+  ["루트",   "\\sqrt{2}",     "2"],
+  ["≤",     "≤",             null],
+  ["≥",     "≥",             null],
+  ["±",     "±",             null],
+  ["π",     "π",             null],
+  ["도(°)", "90^\\circ",     "90"],
+  ["|x|",   "|x|",           "x"]
+];
+
+function insertSnippet(field, text, selectPart) {
+  const s = field.selectionStart, e = field.selectionEnd, v = field.value;
+  field.value = v.slice(0, s) + text + v.slice(e);
+  let selS = s + text.length, selE = selS;
+  if (selectPart) {
+    const k = text.indexOf(selectPart);
+    if (k >= 0) { selS = s + k; selE = selS + selectPart.length; }
+  }
+  field.focus();
+  field.setSelectionRange(selS, selE);
+  field.dispatchEvent(new Event("input", { bubbles: true }));
+}
+
+function buildFormulaForm(body, block) {
+  // 소제목
+  const hIn = document.createElement("input");
+  hIn.type = "text";
+  hIn.placeholder = "예: 2. 분수의 나눗셈 공식 (비워도 됩니다)";
+  hIn.value = (block.heading && block.heading["1"]) || "";
+  hIn.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    if (hIn.value) block.heading["1"] = hIn.value;
+    else delete block.heading["1"];
+    markDirty();
+  });
+  body.appendChild(mkRow("소제목", hIn));
+
+  // 수식 입력칸
+  const ta = document.createElement("textarea");
+  ta.rows = 2;
+  ta.className = "blankable";
+  ta.dataset.marker = "bk";
+  ta.placeholder = "아래 버튼을 눌러 수식을 만드세요. 숫자와 글자는 직접 고치면 됩니다.";
+  ta.value = block.latex || "";
+  ta.addEventListener("input", function () {
+    block.latex = ta.value;
+    markDirty();
+  });
+  body.appendChild(ta);
+
+  // 버튼 팔레트
+  const pal = document.createElement("div");
+  pal.style.cssText = "display:flex; gap:6px; flex-wrap:wrap; margin:8px 0;";
+  FORMULA_PALETTE.forEach(function (item) {
+    const b = mkBtn(item[0], "btn small line");
+    b.addEventListener("mousedown", function (e) { e.preventDefault(); });
+    b.addEventListener("click", function () { insertSnippet(ta, item[1], item[2]); });
+    pal.appendChild(b);
+  });
+  body.appendChild(pal);
+
+  const hint = document.createElement("div");
+  hint.style.cssText = "font-size:12px; color:#888; margin-bottom:8px;";
+  hint.textContent = "수식 안에서 빈칸을 만들려면: 빈칸으로 만들 부분을 선택한 뒤 위의 [선택한 부분 빈칸 지정]을 누르세요. 결과는 오른쪽 미리보기에서 바로 확인됩니다.";
+  body.appendChild(hint);
+
+  // 3단계 설정
+  const qIn = document.createElement("input");
+  qIn.type = "text";
+  qIn.placeholder = "비우면 소제목이 그대로 질문이 됩니다";
+  qIn.value = (block.heading && block.heading["3"]) || "";
+  qIn.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    if (qIn.value) block.heading["3"] = qIn.value;
+    else delete block.heading["3"];
+    markDirty();
+  });
+  body.appendChild(mkRow("백지 TEST 질문", qIn));
 
   const nIn = document.createElement("input");
   nIn.type = "number";
@@ -952,6 +1165,10 @@ document.getElementById("btn-add-table").addEventListener("click", function () {
   current.blocks.push({ type: "table", heading: {}, columns: ["용어", "의미"], rows: [{ term: "", meaning: "" }] });
   renderBlockForms(); markDirty();
 });
+document.getElementById("btn-add-formula").addEventListener("click", function () {
+  current.blocks.push({ type: "formula", heading: {}, latex: "", stage3: { mode: "lines", lines: 2 } });
+  renderBlockForms(); markDirty();
+});
 
 /* ----- 빈칸 지정 (드래그 후 버튼) ----- */
 
@@ -964,12 +1181,32 @@ document.addEventListener("focusin", function (e) {
   document.getElementById(id).addEventListener("mousedown", function (e) { e.preventDefault(); });
 });
 
+// 수식 칸(\bk{ })의 빈칸 위치 목록 찾기 (중괄호 짝 맞춰서)
+function findBkRanges(v) {
+  const out = [];
+  let i = 0;
+  while (true) {
+    const k = v.indexOf("\\bk{", i);
+    if (k < 0) break;
+    let depth = 1, j = k + 4;
+    while (j < v.length && depth > 0) {
+      if (v[j] === "{") depth++;
+      else if (v[j] === "}") depth--;
+      j++;
+    }
+    out.push({ start: k, end: j, inner: v.slice(k + 4, j - 1) });
+    i = j;
+  }
+  return out;
+}
+
 document.getElementById("btn-blank").addEventListener("click", function () {
   const f = lastField;
   if (!f || !document.body.contains(f)) {
     setStatus("빈칸으로 만들 단어를 먼저 본문에서 마우스로 선택하세요.", true);
     return;
   }
+  const isFormula = f.dataset.marker === "bk";
   let s = f.selectionStart, e2 = f.selectionEnd;
   const v = f.value;
   if (s === e2) {
@@ -980,20 +1217,39 @@ document.getElementById("btn-blank").addEventListener("click", function () {
   while (e2 > s && /\s/.test(v[e2 - 1])) e2--;
   if (s === e2) { setStatus("빈칸으로 만들 단어를 선택하세요.", true); return; }
   const sel = v.slice(s, e2);
-  if (sel.includes("{{") || sel.includes("}}")) {
-    setStatus("이미 빈칸으로 지정된 부분이 포함되어 있습니다.", true);
-    return;
+
+  if (isFormula) {
+    // 수식 칸: \bk{ } 로 감싸기
+    if (sel.includes("\\bk{")) { setStatus("이미 빈칸으로 지정된 부분이 포함되어 있습니다.", true); return; }
+    if (findBkRanges(v).some(function (r) { return s < r.end && e2 > r.start; })) {
+      setStatus("이미 빈칸으로 지정된 부분입니다.", true); return;
+    }
+    let depth = 0;
+    for (const ch of sel) {
+      if (ch === "{") depth++;
+      else if (ch === "}") depth--;
+      if (depth < 0) break;
+    }
+    if (depth !== 0) { setStatus("수식의 묶음이 잘리게 선택되었습니다. 조금 넓게(묶음 전체를) 선택해 보세요.", true); return; }
+    f.value = v.slice(0, s) + "\\bk{" + sel + "}" + v.slice(e2);
+    f.dispatchEvent(new Event("input", { bubbles: true }));
+    f.focus();
+    f.setSelectionRange(s, e2 + 5);
+  } else {
+    if (sel.includes("{{") || sel.includes("}}")) {
+      setStatus("이미 빈칸으로 지정된 부분이 포함되어 있습니다.", true);
+      return;
+    }
+    const before = v.slice(0, s);
+    if ((before.match(/\{\{/g) || []).length > (before.match(/\}\}/g) || []).length) {
+      setStatus("이미 빈칸으로 지정된 부분입니다.", true);
+      return;
+    }
+    f.value = v.slice(0, s) + "{{" + sel + "}}" + v.slice(e2);
+    f.dispatchEvent(new Event("input", { bubbles: true }));
+    f.focus();
+    f.setSelectionRange(s, e2 + 4);
   }
-  // 이미 {{ }} 안에 있는지 확인
-  const before = v.slice(0, s);
-  if ((before.match(/\{\{/g) || []).length > (before.match(/\}\}/g) || []).length) {
-    setStatus("이미 빈칸으로 지정된 부분입니다.", true);
-    return;
-  }
-  f.value = v.slice(0, s) + "{{" + sel + "}}" + v.slice(e2);
-  f.dispatchEvent(new Event("input", { bubbles: true }));
-  f.focus();
-  f.setSelectionRange(s, e2 + 4);
   setStatus('"' + sel + '" 이(가) 빈칸으로 지정되었습니다.');
 });
 
@@ -1005,20 +1261,29 @@ document.getElementById("btn-unblank").addEventListener("click", function () {
   }
   const s = f.selectionStart, e2 = f.selectionEnd;
   const v = f.value;
-  const re = /\{\{(.+?)\}\}/g;
-  let m, hit = null;
-  while ((m = re.exec(v))) {
-    if (s <= m.index + m[0].length && e2 >= m.index) { hit = m; break; }
+  let hit = null;
+
+  if (f.dataset.marker === "bk") {
+    hit = findBkRanges(v).find(function (r) { return s <= r.end && e2 >= r.start; }) || null;
+  } else {
+    const re = /\{\{(.+?)\}\}/g;
+    let m;
+    while ((m = re.exec(v))) {
+      if (s <= m.index + m[0].length && e2 >= m.index) {
+        hit = { start: m.index, end: m.index + m[0].length, inner: m[1] };
+        break;
+      }
+    }
   }
   if (!hit) {
     setStatus("선택한 위치에 지정된 빈칸이 없습니다. 빈칸 단어를 클릭한 뒤 다시 누르세요.", true);
     return;
   }
-  f.value = v.slice(0, hit.index) + hit[1] + v.slice(hit.index + hit[0].length);
+  f.value = v.slice(0, hit.start) + hit.inner + v.slice(hit.end);
   f.dispatchEvent(new Event("input", { bubbles: true }));
   f.focus();
-  f.setSelectionRange(hit.index, hit.index + hit[1].length);
-  setStatus('"' + hit[1] + '" 빈칸이 해제되었습니다.');
+  f.setSelectionRange(hit.start, hit.start + hit.inner.length);
+  setStatus('"' + hit.inner + '" 빈칸이 해제되었습니다.');
 });
 
 /* ----- 미리보기 ----- */
@@ -1080,11 +1345,34 @@ window.addEventListener("beforeunload", function (e) {
    6부. 인쇄 화면
    ============================================================ */
 
+let lastPrint = null;
+
 function openPrint(c, from) {
   prevView = from || "view-list";
+  lastPrint = c;
   document.getElementById("print-sheets").innerHTML = renderConcept(c);
   showView("view-print");
 }
+
+/* ----- 수식 도구(KaTeX) 로딩 처리 ----- */
+
+function rerenderMath() {
+  if (current) renderPreview();
+  if (lastPrint && !document.getElementById("view-print").hidden) {
+    document.getElementById("print-sheets").innerHTML = renderConcept(lastPrint);
+  }
+}
+
+function onKatexLoad() {
+  document.getElementById("offline-note").hidden = true;
+  rerenderMath();
+}
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    if (!katexAvailable()) document.getElementById("offline-note").hidden = false;
+  }, 1500);
+});
 
 document.getElementById("btn-print-back").addEventListener("click", function () {
   showView(prevView);

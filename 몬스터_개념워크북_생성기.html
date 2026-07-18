@@ -128,6 +128,43 @@
   .list-toolbar input:focus { outline:none; border-color:#F26522; }
   .list-toolbar .sel-all { font-size:13px; font-weight:600; color:#444; display:inline-flex; align-items:center; gap:5px; cursor:pointer; }
   .card .c-chk { flex-shrink:0; }
+
+  /* --- 목차 화면 --- */
+  .outline-wrap { max-width:1000px; margin:0 auto; padding:0 20px; }
+  .ol-toolbar { display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+  .ol-toolbar .grow { flex:1; }
+  .ol-toolbar select, .ol-toolbar input[type=text] { border:1.5px solid #bbb; border-radius:6px;
+    padding:7px 10px; font-size:14px; font-family:inherit; }
+  .ol-toolbar input[type=text] { width:200px; }
+  .ol-toolbar .sel-all { font-size:13px; font-weight:600; color:#444; display:inline-flex; align-items:center; gap:5px; cursor:pointer; }
+  .ol-progress { font-size:13.5px; font-weight:700; color:#444; }
+  .ol-progress b { color:#F26522; }
+  .ol-sem { font-size:15px; font-weight:800; margin:18px 0 8px; padding-bottom:5px; border-bottom:2px solid #EBA23C; }
+  .ol-unit { font-size:13.5px; font-weight:800; color:#555; background:#F4F4F4;
+    padding:6px 12px; margin:10px 0 4px; border-radius:5px; display:flex; align-items:center; gap:8px; }
+  .ol-unit .u-add { margin-left:auto; }
+  .ol-row { display:flex; align-items:center; gap:10px; padding:7px 12px; border-bottom:1px solid #eee; }
+  .ol-row:hover { background:#FCFAF7; }
+  .ol-no { font-size:11.5px; color:#999; font-weight:700; width:52px; flex-shrink:0; }
+  .ol-name { flex:1; min-width:0; font-size:14px; border:1.5px solid transparent; border-radius:5px;
+    padding:4px 7px; font-family:inherit; background:transparent; }
+  .ol-name:focus { outline:none; border-color:#F26522; background:#fff; }
+  .ol-fig { font-size:11px; color:#666; background:#EEE; border-radius:10px; padding:2px 9px; white-space:nowrap; flex-shrink:0; }
+  .ol-fig.none { visibility:hidden; }
+  .ol-state { font-size:11.5px; font-weight:700; width:52px; text-align:center; flex-shrink:0; }
+  .ol-state.done { color:#0a7a2f; }
+  .ol-state.todo { color:#bbb; }
+  .ol-chk { flex-shrink:0; display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:700; color:#444; }
+  .ol-row-btns { display:flex; gap:5px; flex-shrink:0; }
+
+  /* 일괄 생성 바 */
+  .bulk-bar { max-width:1280px; margin:0 auto 14px; padding:8px 20px; display:flex;
+    align-items:center; gap:10px; background:#FFF6EF; border:1.5px solid #F26522; border-radius:8px; }
+  .bulk-bar[hidden] { display:none; }
+  .bulk-bar .grow { flex:1; }
+  .bulk-bar .bulk-tag { font-weight:800; color:#F26522; font-size:13px; }
+  .bulk-bar #bulk-count { font-size:13.5px; color:#444; font-weight:700; }
+  .btn.small.orange { background:#F26522; color:#fff; }
   .card { background:#fff; border:1.5px solid #ccc; border-radius:8px;
     padding:16px 18px; margin-bottom:12px; display:flex; align-items:center; gap:14px; }
   .card .c-badge { background:#F7EAC5; border:1.5px solid #EBA23C; border-radius:6px;
@@ -228,6 +265,7 @@
     <span class="grow"></span>
     <button class="btn line" id="btn-settings">설정</button>
     <button class="btn line" id="btn-backup">백업</button>
+    <button class="btn line" id="btn-outline">목차</button>
     <button class="btn" id="btn-ai">AI로 초안 만들기</button>
     <button class="btn orange" id="btn-new">새 개념 만들기</button>
   </div>
@@ -259,6 +297,28 @@
   </div>
 </div>
 
+<!-- ================= 화면 1.5 : 목차 (커리큘럼) ================= -->
+<div id="view-outline" class="view" hidden>
+  <div class="appbar">
+    <button class="btn line" id="btn-outline-back">목록으로</button>
+    <h2 style="font-size:18px;">목차 (커리큘럼)</h2>
+    <span class="grow"></span>
+    <span id="outline-progress" class="ol-progress"></span>
+    <button class="btn" id="btn-bulk-gen" disabled>확정 개념 일괄 생성</button>
+  </div>
+  <div class="outline-wrap">
+    <div class="ol-toolbar">
+      <select id="ol-grade"><option value="">전체 학년</option></select>
+      <input type="text" id="ol-search" placeholder="개념 검색">
+      <label class="sel-all"><input type="checkbox" id="ol-only-confirmed"> 확정만</label>
+      <label class="sel-all"><input type="checkbox" id="ol-only-ungen"> 미생성만</label>
+      <span class="grow"></span>
+      <button class="btn small line" id="btn-ol-reset">초기 목차로 되돌리기</button>
+    </div>
+    <div id="outline-body"></div>
+  </div>
+</div>
+
 <!-- ================= 화면 2 : 개념 편집 ================= -->
 <div id="view-edit" class="view" hidden>
   <div class="appbar">
@@ -267,6 +327,15 @@
     <span class="grow"></span>
     <button class="btn orange" id="btn-save">저장</button>
     <button class="btn" id="btn-print-cur">인쇄 / PDF</button>
+  </div>
+
+  <div id="bulk-bar" class="bulk-bar" hidden>
+    <span class="bulk-tag">일괄 생성</span>
+    <span id="bulk-count"></span>
+    <span class="grow"></span>
+    <button class="btn small orange" id="btn-bulk-next">저장하고 다음 ▶</button>
+    <button class="btn small line" id="btn-bulk-skip">건너뛰기</button>
+    <button class="btn small line" id="btn-bulk-stop">일괄 중단</button>
   </div>
 
   <div class="edit-cols">
@@ -454,6 +523,9 @@ const FORMULA_EXAMPLE = {
     }
   ]
 };
+
+/* ---------- 초등 목차 씨앗 데이터 (초3~초6, 189개) ---------- */
+const OUTLINE_SEED = [{"no":"3-1-01","grade":"3학년","sem":"1학기","unit":"덧셈과 뺄셈","name":"받아올림이 있는 세 자리 수의 덧셈","fig":""},{"no":"3-1-02","grade":"3학년","sem":"1학기","unit":"덧셈과 뺄셈","name":"받아내림이 있는 세 자리 수의 뺄셈","fig":""},{"no":"3-1-03","grade":"3학년","sem":"1학기","unit":"덧셈과 뺄셈","name":"덧셈과 뺄셈의 관계, 어림하여 계산하기","fig":""},{"no":"3-1-04","grade":"3학년","sem":"1학기","unit":"평면도형","name":"선분, 직선, 반직선","fig":"basic_shape"},{"no":"3-1-05","grade":"3학년","sem":"1학기","unit":"평면도형","name":"각과 꼭짓점, 변","fig":"angle_fig"},{"no":"3-1-06","grade":"3학년","sem":"1학기","unit":"평면도형","name":"직각","fig":"angle_fig"},{"no":"3-1-07","grade":"3학년","sem":"1학기","unit":"평면도형","name":"직각삼각형","fig":"basic_shape"},{"no":"3-1-08","grade":"3학년","sem":"1학기","unit":"평면도형","name":"직사각형과 정사각형","fig":"basic_shape"},{"no":"3-1-09","grade":"3학년","sem":"1학기","unit":"나눗셈","name":"나눗셈의 의미 (똑같이 나누기, 묶어 세기)","fig":"fraction_fig"},{"no":"3-1-10","grade":"3학년","sem":"1학기","unit":"나눗셈","name":"몫, 나눗셈식 읽고 쓰기","fig":""},{"no":"3-1-11","grade":"3학년","sem":"1학기","unit":"나눗셈","name":"곱셈과 나눗셈의 관계","fig":""},{"no":"3-1-12","grade":"3학년","sem":"1학기","unit":"곱셈","name":"(두 자리 수)×(한 자리 수)의 원리 (올림 없음)","fig":""},{"no":"3-1-13","grade":"3학년","sem":"1학기","unit":"곱셈","name":"(두 자리 수)×(한 자리 수)의 원리 (올림 있음)","fig":""},{"no":"3-1-14","grade":"3학년","sem":"1학기","unit":"길이와 시간","name":"1mm, 1cm와 mm의 관계","fig":"number_line"},{"no":"3-1-15","grade":"3학년","sem":"1학기","unit":"길이와 시간","name":"1km, km와 m의 관계","fig":"number_line"},{"no":"3-1-16","grade":"3학년","sem":"1학기","unit":"길이와 시간","name":"1초, 분과 초의 관계","fig":""},{"no":"3-1-17","grade":"3학년","sem":"1학기","unit":"길이와 시간","name":"시간의 덧셈과 뺄셈","fig":""},{"no":"3-1-18","grade":"3학년","sem":"1학기","unit":"분수와 소수","name":"분수의 의미 (전체와 부분)","fig":"fraction_fig"},{"no":"3-1-19","grade":"3학년","sem":"1학기","unit":"분수와 소수","name":"분모, 분자, 분수 읽고 쓰기","fig":"fraction_fig"},{"no":"3-1-20","grade":"3학년","sem":"1학기","unit":"분수와 소수","name":"단위분수","fig":"fraction_fig"},{"no":"3-1-21","grade":"3학년","sem":"1학기","unit":"분수와 소수","name":"분수의 크기 비교 (분모가 같을 때, 단위분수끼리)","fig":"fraction_fig"},{"no":"3-1-22","grade":"3학년","sem":"1학기","unit":"분수와 소수","name":"소수의 의미, 소수 읽고 쓰기","fig":"number_line"},{"no":"3-1-23","grade":"3학년","sem":"1학기","unit":"분수와 소수","name":"소수의 크기 비교","fig":"number_line"},{"no":"3-1-24","grade":"3학년","sem":"1학기","unit":"분수와 소수","name":"분수와 소수의 관계 (0.1 = 1/10)","fig":"number_line"},{"no":"3-2-01","grade":"3학년","sem":"2학기","unit":"곱셈","name":"(세 자리 수)×(한 자리 수)","fig":""},{"no":"3-2-02","grade":"3학년","sem":"2학기","unit":"곱셈","name":"(두 자리 수)×(두 자리 수)","fig":""},{"no":"3-2-03","grade":"3학년","sem":"2학기","unit":"나눗셈","name":"(두 자리 수)÷(한 자리 수)","fig":""},{"no":"3-2-04","grade":"3학년","sem":"2학기","unit":"나눗셈","name":"나머지의 의미, 나머지가 있는 나눗셈","fig":""},{"no":"3-2-05","grade":"3학년","sem":"2학기","unit":"나눗셈","name":"검산","fig":""},{"no":"3-2-06","grade":"3학년","sem":"2학기","unit":"원","name":"원의 중심, 반지름","fig":"circle_fig"},{"no":"3-2-07","grade":"3학년","sem":"2학기","unit":"원","name":"지름, 지름과 반지름의 관계","fig":"circle_fig"},{"no":"3-2-08","grade":"3학년","sem":"2학기","unit":"원","name":"컴퍼스로 원 그리기, 원을 이용한 모양","fig":"circle_fig"},{"no":"3-2-09","grade":"3학년","sem":"2학기","unit":"분수","name":"전체의 분수만큼 (부분 구하기)","fig":"fraction_fig"},{"no":"3-2-10","grade":"3학년","sem":"2학기","unit":"분수","name":"진분수, 가분수","fig":"fraction_fig"},{"no":"3-2-11","grade":"3학년","sem":"2학기","unit":"분수","name":"대분수, 대분수와 가분수의 관계","fig":"fraction_fig"},{"no":"3-2-12","grade":"3학년","sem":"2학기","unit":"분수","name":"분모가 같은 분수의 크기 비교","fig":"fraction_fig"},{"no":"3-2-13","grade":"3학년","sem":"2학기","unit":"들이와 무게","name":"1L와 1mL, 들이의 단위 관계","fig":""},{"no":"3-2-14","grade":"3학년","sem":"2학기","unit":"들이와 무게","name":"들이의 덧셈과 뺄셈","fig":""},{"no":"3-2-15","grade":"3학년","sem":"2학기","unit":"들이와 무게","name":"1kg, 1g, 1t, 무게의 단위 관계","fig":""},{"no":"3-2-16","grade":"3학년","sem":"2학기","unit":"들이와 무게","name":"무게의 덧셈과 뺄셈","fig":""},{"no":"3-2-17","grade":"3학년","sem":"2학기","unit":"자료의 정리","name":"표로 나타내기","fig":"stat_chart"},{"no":"3-2-18","grade":"3학년","sem":"2학기","unit":"자료의 정리","name":"그림그래프","fig":"stat_chart"},{"no":"3-2-19","grade":"3학년","sem":"2학기","unit":"자료의 정리","name":"그림그래프로 나타내기","fig":"stat_chart"},{"no":"3-2-20","grade":"3학년","sem":"2학기","unit":"(보강)","name":"곱셈 어림하기","fig":""},{"no":"3-2-21","grade":"3학년","sem":"2학기","unit":"(보강)","name":"나눗셈 활용 문장제 구조","fig":""},{"no":"3-2-22","grade":"3학년","sem":"2학기","unit":"(보강)","name":"분수 문장제 구조 (전체-부분)","fig":"fraction_fig"},{"no":"3-2-23","grade":"3학년","sem":"2학기","unit":"(보강)","name":"들이·무게 어림","fig":""},{"no":"4-1-01","grade":"4학년","sem":"1학기","unit":"큰 수","name":"만, 다섯 자리 수","fig":""},{"no":"4-1-02","grade":"4학년","sem":"1학기","unit":"큰 수","name":"십만, 백만, 천만","fig":""},{"no":"4-1-03","grade":"4학년","sem":"1학기","unit":"큰 수","name":"억과 조","fig":""},{"no":"4-1-04","grade":"4학년","sem":"1학기","unit":"큰 수","name":"자릿값과 뛰어 세기","fig":""},{"no":"4-1-05","grade":"4학년","sem":"1학기","unit":"큰 수","name":"큰 수의 크기 비교","fig":""},{"no":"4-1-06","grade":"4학년","sem":"1학기","unit":"각도","name":"각의 크기, 1도(°)","fig":"angle_fig"},{"no":"4-1-07","grade":"4학년","sem":"1학기","unit":"각도","name":"각도기로 각도 재기, 각 그리기","fig":"angle_fig"},{"no":"4-1-08","grade":"4학년","sem":"1학기","unit":"각도","name":"예각과 둔각","fig":"angle_fig"},{"no":"4-1-09","grade":"4학년","sem":"1학기","unit":"각도","name":"각도의 합과 차","fig":"angle_fig"},{"no":"4-1-10","grade":"4학년","sem":"1학기","unit":"각도","name":"삼각형 세 각의 크기의 합 (180°)","fig":"basic_shape"},{"no":"4-1-11","grade":"4학년","sem":"1학기","unit":"각도","name":"사각형 네 각의 크기의 합 (360°)","fig":"basic_shape"},{"no":"4-1-12","grade":"4학년","sem":"1학기","unit":"곱셈과 나눗셈","name":"(세 자리 수)×(두 자리 수)","fig":""},{"no":"4-1-13","grade":"4학년","sem":"1학기","unit":"곱셈과 나눗셈","name":"(두세 자리 수)÷(두 자리 수)","fig":""},{"no":"4-1-14","grade":"4학년","sem":"1학기","unit":"곱셈과 나눗셈","name":"몫과 나머지 확인 (검산)","fig":""},{"no":"4-1-15","grade":"4학년","sem":"1학기","unit":"평면도형의 이동","name":"밀기","fig":"basic_shape"},{"no":"4-1-16","grade":"4학년","sem":"1학기","unit":"평면도형의 이동","name":"뒤집기","fig":"basic_shape"},{"no":"4-1-17","grade":"4학년","sem":"1학기","unit":"평면도형의 이동","name":"돌리기","fig":"basic_shape"},{"no":"4-1-18","grade":"4학년","sem":"1학기","unit":"평면도형의 이동","name":"무늬 꾸미기 (이동의 활용)","fig":"basic_shape"},{"no":"4-1-19","grade":"4학년","sem":"1학기","unit":"막대그래프","name":"막대그래프의 뜻과 특징","fig":"stat_chart"},{"no":"4-1-20","grade":"4학년","sem":"1학기","unit":"막대그래프","name":"막대그래프 그리기와 해석","fig":"stat_chart"},{"no":"4-1-21","grade":"4학년","sem":"1학기","unit":"규칙 찾기","name":"수의 배열에서 규칙 찾기","fig":""},{"no":"4-1-22","grade":"4학년","sem":"1학기","unit":"규칙 찾기","name":"계산식에서 규칙 찾기","fig":""},{"no":"4-2-01","grade":"4학년","sem":"2학기","unit":"분수의 덧셈과 뺄셈","name":"분모가 같은 진분수의 덧셈","fig":"fraction_fig"},{"no":"4-2-02","grade":"4학년","sem":"2학기","unit":"분수의 덧셈과 뺄셈","name":"분모가 같은 진분수의 뺄셈","fig":"fraction_fig"},{"no":"4-2-03","grade":"4학년","sem":"2학기","unit":"분수의 덧셈과 뺄셈","name":"대분수의 덧셈","fig":"fraction_fig"},{"no":"4-2-04","grade":"4학년","sem":"2학기","unit":"분수의 덧셈과 뺄셈","name":"대분수의 뺄셈 (받아내림 포함), 자연수-분수","fig":"fraction_fig"},{"no":"4-2-05","grade":"4학년","sem":"2학기","unit":"삼각형","name":"이등변삼각형과 그 성질","fig":"basic_shape"},{"no":"4-2-06","grade":"4학년","sem":"2학기","unit":"삼각형","name":"정삼각형과 그 성질","fig":"basic_shape"},{"no":"4-2-07","grade":"4학년","sem":"2학기","unit":"삼각형","name":"예각삼각형, 둔각삼각형","fig":"basic_shape"},{"no":"4-2-08","grade":"4학년","sem":"2학기","unit":"삼각형","name":"삼각형 분류 (변·각 기준)","fig":"basic_shape"},{"no":"4-2-09","grade":"4학년","sem":"2학기","unit":"소수의 덧셈과 뺄셈","name":"소수 두 자리 수, 소수 세 자리 수","fig":"number_line"},{"no":"4-2-10","grade":"4학년","sem":"2학기","unit":"소수의 덧셈과 뺄셈","name":"소수의 크기 비교","fig":"number_line"},{"no":"4-2-11","grade":"4학년","sem":"2학기","unit":"소수의 덧셈과 뺄셈","name":"소수 사이의 관계 (10배, 1/10)","fig":""},{"no":"4-2-12","grade":"4학년","sem":"2학기","unit":"소수의 덧셈과 뺄셈","name":"소수의 덧셈","fig":""},{"no":"4-2-13","grade":"4학년","sem":"2학기","unit":"소수의 덧셈과 뺄셈","name":"소수의 뺄셈","fig":""},{"no":"4-2-14","grade":"4학년","sem":"2학기","unit":"사각형","name":"수직과 수선","fig":"basic_shape"},{"no":"4-2-15","grade":"4학년","sem":"2학기","unit":"사각형","name":"평행과 평행선","fig":"basic_shape"},{"no":"4-2-16","grade":"4학년","sem":"2학기","unit":"사각형","name":"평행선 사이의 거리","fig":"basic_shape"},{"no":"4-2-17","grade":"4학년","sem":"2학기","unit":"사각형","name":"사다리꼴","fig":"basic_shape"},{"no":"4-2-18","grade":"4학년","sem":"2학기","unit":"사각형","name":"평행사변형과 그 성질","fig":"basic_shape"},{"no":"4-2-19","grade":"4학년","sem":"2학기","unit":"사각형","name":"마름모와 그 성질","fig":"basic_shape"},{"no":"4-2-20","grade":"4학년","sem":"2학기","unit":"사각형","name":"여러 가지 사각형의 관계","fig":"basic_shape"},{"no":"4-2-21","grade":"4학년","sem":"2학기","unit":"꺾은선그래프","name":"꺾은선그래프의 뜻과 특징","fig":"stat_chart"},{"no":"4-2-22","grade":"4학년","sem":"2학기","unit":"꺾은선그래프","name":"꺾은선그래프 그리기와 해석","fig":"stat_chart"},{"no":"4-2-23","grade":"4학년","sem":"2학기","unit":"다각형","name":"다각형, 정다각형","fig":"basic_shape"},{"no":"4-2-24","grade":"4학년","sem":"2학기","unit":"다각형","name":"대각선","fig":"basic_shape"},{"no":"5-1-01","grade":"5학년","sem":"1학기","unit":"자연수의 혼합 계산","name":"덧셈·뺄셈이 섞인 식의 계산 순서","fig":""},{"no":"5-1-02","grade":"5학년","sem":"1학기","unit":"자연수의 혼합 계산","name":"곱셈·나눗셈이 섞인 식의 계산 순서","fig":""},{"no":"5-1-03","grade":"5학년","sem":"1학기","unit":"자연수의 혼합 계산","name":"사칙이 섞인 식, 괄호가 있는 식","fig":""},{"no":"5-1-04","grade":"5학년","sem":"1학기","unit":"약수와 배수","name":"약수","fig":""},{"no":"5-1-05","grade":"5학년","sem":"1학기","unit":"약수와 배수","name":"배수","fig":""},{"no":"5-1-06","grade":"5학년","sem":"1학기","unit":"약수와 배수","name":"약수와 배수의 관계","fig":""},{"no":"5-1-07","grade":"5학년","sem":"1학기","unit":"약수와 배수","name":"공약수와 최대공약수","fig":""},{"no":"5-1-08","grade":"5학년","sem":"1학기","unit":"약수와 배수","name":"공배수와 최소공배수","fig":""},{"no":"5-1-09","grade":"5학년","sem":"1학기","unit":"약수와 배수","name":"최대공약수·최소공배수 구하는 방법","fig":""},{"no":"5-1-10","grade":"5학년","sem":"1학기","unit":"규칙과 대응","name":"두 양 사이의 대응 관계","fig":""},{"no":"5-1-11","grade":"5학년","sem":"1학기","unit":"규칙과 대응","name":"□, △를 사용한 대응식","fig":""},{"no":"5-1-12","grade":"5학년","sem":"1학기","unit":"약분과 통분","name":"크기가 같은 분수","fig":"fraction_fig"},{"no":"5-1-13","grade":"5학년","sem":"1학기","unit":"약분과 통분","name":"약분, 기약분수","fig":""},{"no":"5-1-14","grade":"5학년","sem":"1학기","unit":"약분과 통분","name":"통분, 공통분모","fig":""},{"no":"5-1-15","grade":"5학년","sem":"1학기","unit":"약분과 통분","name":"분수의 크기 비교","fig":""},{"no":"5-1-16","grade":"5학년","sem":"1학기","unit":"약분과 통분","name":"분수와 소수의 크기 비교","fig":"number_line"},{"no":"5-1-17","grade":"5학년","sem":"1학기","unit":"분수의 덧셈과 뺄셈","name":"분모가 다른 진분수의 덧셈","fig":"fraction_fig"},{"no":"5-1-18","grade":"5학년","sem":"1학기","unit":"분수의 덧셈과 뺄셈","name":"분모가 다른 대분수의 덧셈","fig":""},{"no":"5-1-19","grade":"5학년","sem":"1학기","unit":"분수의 덧셈과 뺄셈","name":"분모가 다른 진분수의 뺄셈","fig":"fraction_fig"},{"no":"5-1-20","grade":"5학년","sem":"1학기","unit":"분수의 덧셈과 뺄셈","name":"분모가 다른 대분수의 뺄셈","fig":""},{"no":"5-1-21","grade":"5학년","sem":"1학기","unit":"다각형의 둘레와 넓이","name":"정다각형·사각형의 둘레","fig":"basic_shape"},{"no":"5-1-22","grade":"5학년","sem":"1학기","unit":"다각형의 둘레와 넓이","name":"넓이의 단위 1cm², 1m², 1km²","fig":"basic_shape"},{"no":"5-1-23","grade":"5학년","sem":"1학기","unit":"다각형의 둘레와 넓이","name":"직사각형의 넓이","fig":"basic_shape"},{"no":"5-1-24","grade":"5학년","sem":"1학기","unit":"다각형의 둘레와 넓이","name":"평행사변형의 넓이","fig":"basic_shape"},{"no":"5-1-25","grade":"5학년","sem":"1학기","unit":"다각형의 둘레와 넓이","name":"삼각형의 넓이","fig":"basic_shape"},{"no":"5-1-26","grade":"5학년","sem":"1학기","unit":"다각형의 둘레와 넓이","name":"사다리꼴의 넓이","fig":"basic_shape"},{"no":"5-1-27","grade":"5학년","sem":"1학기","unit":"다각형의 둘레와 넓이","name":"마름모의 넓이","fig":"basic_shape"},{"no":"5-2-01","grade":"5학년","sem":"2학기","unit":"수의 범위와 어림하기","name":"이상과 이하","fig":"number_line"},{"no":"5-2-02","grade":"5학년","sem":"2학기","unit":"수의 범위와 어림하기","name":"초과와 미만","fig":"number_line"},{"no":"5-2-03","grade":"5학년","sem":"2학기","unit":"수의 범위와 어림하기","name":"수의 범위를 수직선에 나타내기","fig":"number_line"},{"no":"5-2-04","grade":"5학년","sem":"2학기","unit":"수의 범위와 어림하기","name":"올림","fig":""},{"no":"5-2-05","grade":"5학년","sem":"2학기","unit":"수의 범위와 어림하기","name":"버림","fig":""},{"no":"5-2-06","grade":"5학년","sem":"2학기","unit":"수의 범위와 어림하기","name":"반올림","fig":""},{"no":"5-2-07","grade":"5학년","sem":"2학기","unit":"분수의 곱셈","name":"(분수)×(자연수)","fig":"fraction_fig"},{"no":"5-2-08","grade":"5학년","sem":"2학기","unit":"분수의 곱셈","name":"(자연수)×(분수)","fig":"fraction_fig"},{"no":"5-2-09","grade":"5학년","sem":"2학기","unit":"분수의 곱셈","name":"(진분수)×(진분수)","fig":"fraction_fig"},{"no":"5-2-10","grade":"5학년","sem":"2학기","unit":"분수의 곱셈","name":"(대분수)×(대분수), 세 분수의 곱셈","fig":""},{"no":"5-2-11","grade":"5학년","sem":"2학기","unit":"합동과 대칭","name":"도형의 합동","fig":"basic_shape"},{"no":"5-2-12","grade":"5학년","sem":"2학기","unit":"합동과 대칭","name":"대응점, 대응변, 대응각","fig":"basic_shape"},{"no":"5-2-13","grade":"5학년","sem":"2학기","unit":"합동과 대칭","name":"선대칭도형과 그 성질","fig":"basic_shape"},{"no":"5-2-14","grade":"5학년","sem":"2학기","unit":"합동과 대칭","name":"점대칭도형과 그 성질","fig":"basic_shape"},{"no":"5-2-15","grade":"5학년","sem":"2학기","unit":"소수의 곱셈","name":"(소수)×(자연수)","fig":""},{"no":"5-2-16","grade":"5학년","sem":"2학기","unit":"소수의 곱셈","name":"(자연수)×(소수)","fig":""},{"no":"5-2-17","grade":"5학년","sem":"2학기","unit":"소수의 곱셈","name":"(소수)×(소수)","fig":""},{"no":"5-2-18","grade":"5학년","sem":"2학기","unit":"소수의 곱셈","name":"곱의 소수점 위치 규칙","fig":""},{"no":"5-2-19","grade":"5학년","sem":"2학기","unit":"직육면체","name":"직육면체와 정육면체","fig":"solid_fig"},{"no":"5-2-20","grade":"5학년","sem":"2학기","unit":"직육면체","name":"면, 모서리, 꼭짓점 / 밑면과 옆면","fig":"solid_fig"},{"no":"5-2-21","grade":"5학년","sem":"2학기","unit":"직육면체","name":"직육면체의 겨냥도","fig":"solid_fig"},{"no":"5-2-22","grade":"5학년","sem":"2학기","unit":"직육면체","name":"직육면체의 전개도","fig":"solid_fig"},{"no":"5-2-23","grade":"5학년","sem":"2학기","unit":"평균과 가능성","name":"평균의 뜻과 구하기","fig":"stat_chart"},{"no":"5-2-24","grade":"5학년","sem":"2학기","unit":"평균과 가능성","name":"일이 일어날 가능성","fig":""},{"no":"6-1-01","grade":"6학년","sem":"1학기","unit":"분수의 나눗셈","name":"(자연수)÷(자연수)의 몫을 분수로","fig":"fraction_fig"},{"no":"6-1-02","grade":"6학년","sem":"1학기","unit":"분수의 나눗셈","name":"(분수)÷(자연수)","fig":"fraction_fig"},{"no":"6-1-03","grade":"6학년","sem":"1학기","unit":"분수의 나눗셈","name":"(대분수)÷(자연수)","fig":""},{"no":"6-1-04","grade":"6학년","sem":"1학기","unit":"각기둥과 각뿔","name":"각기둥, 밑면과 옆면","fig":"solid_fig"},{"no":"6-1-05","grade":"6학년","sem":"1학기","unit":"각기둥과 각뿔","name":"각기둥의 구성 요소 (모서리, 꼭짓점, 높이)","fig":"solid_fig"},{"no":"6-1-06","grade":"6학년","sem":"1학기","unit":"각기둥과 각뿔","name":"각기둥의 전개도","fig":"solid_fig"},{"no":"6-1-07","grade":"6학년","sem":"1학기","unit":"각기둥과 각뿔","name":"각뿔과 그 구성 요소","fig":"solid_fig"},{"no":"6-1-08","grade":"6학년","sem":"1학기","unit":"소수의 나눗셈","name":"(소수)÷(자연수)","fig":""},{"no":"6-1-09","grade":"6학년","sem":"1학기","unit":"소수의 나눗셈","name":"몫의 소수점 위치, 몫 어림하기","fig":""},{"no":"6-1-10","grade":"6학년","sem":"1학기","unit":"소수의 나눗셈","name":"(자연수)÷(자연수)의 몫을 소수로","fig":""},{"no":"6-1-11","grade":"6학년","sem":"1학기","unit":"비와 비율","name":"두 수의 비교, 비의 뜻","fig":""},{"no":"6-1-12","grade":"6학년","sem":"1학기","unit":"비와 비율","name":"기준량과 비교하는 양, 비율","fig":""},{"no":"6-1-13","grade":"6학년","sem":"1학기","unit":"비와 비율","name":"백분율 (%)","fig":""},{"no":"6-1-14","grade":"6학년","sem":"1학기","unit":"비와 비율","name":"비율의 활용 (속력·인구밀도·할인율 등)","fig":""},{"no":"6-1-15","grade":"6학년","sem":"1학기","unit":"여러 가지 그래프","name":"그림그래프 (큰 수)","fig":"stat_chart"},{"no":"6-1-16","grade":"6학년","sem":"1학기","unit":"여러 가지 그래프","name":"띠그래프","fig":"stat_chart"},{"no":"6-1-17","grade":"6학년","sem":"1학기","unit":"여러 가지 그래프","name":"원그래프","fig":"stat_chart"},{"no":"6-1-18","grade":"6학년","sem":"1학기","unit":"여러 가지 그래프","name":"목적에 맞는 그래프 선택","fig":"stat_chart"},{"no":"6-1-19","grade":"6학년","sem":"1학기","unit":"직육면체의 부피와 겉넓이","name":"부피의 단위 1cm³, 1m³","fig":"solid_fig"},{"no":"6-1-20","grade":"6학년","sem":"1학기","unit":"직육면체의 부피와 겉넓이","name":"직육면체의 부피","fig":"solid_fig"},{"no":"6-1-21","grade":"6학년","sem":"1학기","unit":"직육면체의 부피와 겉넓이","name":"정육면체의 부피","fig":"solid_fig"},{"no":"6-1-22","grade":"6학년","sem":"1학기","unit":"직육면체의 부피와 겉넓이","name":"직육면체의 겉넓이","fig":"solid_fig"},{"no":"6-1-23","grade":"6학년","sem":"1학기","unit":"(보강)","name":"비와 비율 문장제 구조","fig":""},{"no":"6-2-01","grade":"6학년","sem":"2학기","unit":"분수의 나눗셈","name":"분모가 같은 (분수)÷(분수)","fig":"fraction_fig"},{"no":"6-2-02","grade":"6학년","sem":"2학기","unit":"분수의 나눗셈","name":"분모가 다른 (분수)÷(분수)","fig":""},{"no":"6-2-03","grade":"6학년","sem":"2학기","unit":"분수의 나눗셈","name":"(자연수)÷(분수), 나눗셈을 곱셈으로 바꾸기","fig":""},{"no":"6-2-04","grade":"6학년","sem":"2학기","unit":"소수의 나눗셈","name":"(소수)÷(소수)","fig":""},{"no":"6-2-05","grade":"6학년","sem":"2학기","unit":"소수의 나눗셈","name":"(자연수)÷(소수), 몫을 반올림하여 나타내기","fig":""},{"no":"6-2-06","grade":"6학년","sem":"2학기","unit":"공간과 입체","name":"쌓기나무의 개수 (위·앞·옆에서 본 모양)","fig":"solid_fig"},{"no":"6-2-07","grade":"6학년","sem":"2학기","unit":"공간과 입체","name":"층별로 나타낸 모양","fig":"solid_fig"},{"no":"6-2-08","grade":"6학년","sem":"2학기","unit":"비례식과 비례배분","name":"비의 성질","fig":""},{"no":"6-2-09","grade":"6학년","sem":"2학기","unit":"비례식과 비례배분","name":"간단한 자연수의 비로 나타내기","fig":""},{"no":"6-2-10","grade":"6학년","sem":"2학기","unit":"비례식과 비례배분","name":"비례식, 외항과 내항","fig":""},{"no":"6-2-11","grade":"6학년","sem":"2학기","unit":"비례식과 비례배분","name":"비례식의 성질 (외항의 곱 = 내항의 곱)","fig":""},{"no":"6-2-12","grade":"6학년","sem":"2학기","unit":"비례식과 비례배분","name":"비례배분","fig":""},{"no":"6-2-13","grade":"6학년","sem":"2학기","unit":"원의 넓이","name":"원주, 원주율","fig":"circle_fig"},{"no":"6-2-14","grade":"6학년","sem":"2학기","unit":"원의 넓이","name":"원주와 지름 구하기","fig":"circle_fig"},{"no":"6-2-15","grade":"6학년","sem":"2학기","unit":"원의 넓이","name":"원의 넓이 어림, 원의 넓이 공식","fig":"circle_fig"},{"no":"6-2-16","grade":"6학년","sem":"2학기","unit":"원의 넓이","name":"여러 가지 원의 넓이 활용","fig":"circle_fig"},{"no":"6-2-17","grade":"6학년","sem":"2학기","unit":"원기둥, 원뿔, 구","name":"원기둥과 그 구성 요소","fig":"solid_fig"},{"no":"6-2-18","grade":"6학년","sem":"2학기","unit":"원기둥, 원뿔, 구","name":"원기둥의 전개도","fig":"solid_fig"},{"no":"6-2-19","grade":"6학년","sem":"2학기","unit":"원기둥, 원뿔, 구","name":"원뿔과 그 구성 요소","fig":"solid_fig"},{"no":"6-2-20","grade":"6학년","sem":"2학기","unit":"원기둥, 원뿔, 구","name":"구와 그 구성 요소","fig":"solid_fig"},{"no":"6-2-21","grade":"6학년","sem":"2학기","unit":"(보강)","name":"비례식 활용 문장제 구조","fig":""},{"no":"6-2-22","grade":"6학년","sem":"2학기","unit":"(보강)","name":"원주율 활용 문장제 구조","fig":"circle_fig"}];
 
 /* ============================================================
    1부. 렌더링 엔진 (1단계에서 만든 것 그대로)
@@ -1662,7 +1734,7 @@ if (!localStorage.getItem("mw_seed_formula_v1")) {
 let prevView = "view-list";
 
 function showView(id) {
-  ["view-list", "view-edit", "view-print"].forEach(function (v) {
+  ["view-list", "view-outline", "view-edit", "view-print"].forEach(function (v) {
     document.getElementById(v).hidden = (v !== id);
   });
   window.scrollTo(0, 0);
@@ -1842,6 +1914,8 @@ function openEditor(c) {
   renderBlockForms();
   renderPreview();
   setStatus("");
+  const bb = document.getElementById("bulk-bar");
+  if (bb) bb.hidden = !bulkActive;
   showView("view-edit");
 }
 
@@ -2915,10 +2989,10 @@ document.querySelectorAll(".stage-tabs button").forEach(function (btn) {
 
 /* ----- 저장 / 이동 ----- */
 
-document.getElementById("btn-save").addEventListener("click", function () {
+function saveCurrent() {
   if (!current.unit_big && !current.unit_mid) {
     setStatus("대단원이나 중단원 이름을 먼저 입력하세요.", true);
-    return;
+    return false;
   }
   if (!current.id) current.id = "c" + Date.now();
   const idx = concepts.findIndex(function (c) { return c.id === current.id; });
@@ -2928,7 +3002,10 @@ document.getElementById("btn-save").addEventListener("click", function () {
   saveConcepts(concepts);
   dirty = false;
   setStatus("저장되었습니다.");
-});
+  return true;
+}
+
+document.getElementById("btn-save").addEventListener("click", function () { saveCurrent(); });
 
 document.getElementById("btn-back").addEventListener("click", function () {
   if (dirty && !confirm("저장하지 않은 변경이 있습니다. 저장하지 않고 목록으로 갈까요?")) return;
@@ -3336,9 +3413,301 @@ document.getElementById("btn-ai-go").addEventListener("click", async function ()
 });
 
 /* ============================================================
+   9부. 목차 (커리큘럼)
+   ============================================================ */
+
+const OUTLINE_KEY = "mw_outline_v1";
+let outline = loadOutline();
+
+function loadOutline() {
+  try {
+    const raw = localStorage.getItem(OUTLINE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return seedOutline();
+}
+function seedOutline() {
+  return OUTLINE_SEED.map(function (o) {
+    return { no: o.no, grade: o.grade, sem: o.sem, school: "초등학교", unit: o.unit, name: o.name, fig: o.fig, confirmed: false };
+  });
+}
+function saveOutline() { localStorage.setItem(OUTLINE_KEY, JSON.stringify(outline)); }
+
+let olFilter = { grade: "", search: "", confirmedOnly: false, ungenOnly: false };
+
+function isGenerated(no) {
+  return concepts.some(function (c) { return c.outlineNo === no; });
+}
+
+function outlineStats() {
+  const total = outline.length;
+  const confirmed = outline.filter(function (o) { return o.confirmed; }).length;
+  const generated = outline.filter(function (o) { return isGenerated(o.no); }).length;
+  return { total: total, confirmed: confirmed, generated: generated };
+}
+
+function fillOlGradeOptions() {
+  const sel = document.getElementById("ol-grade");
+  const grades = [];
+  outline.forEach(function (o) { if (grades.indexOf(o.grade) < 0) grades.push(o.grade); });
+  let html = '<option value="">전체 학년</option>';
+  grades.forEach(function (g) { html += '<option value="' + g + '">' + g + "</option>"; });
+  const cur = sel.value;
+  sel.innerHTML = html;
+  sel.value = cur;
+}
+
+const FIG_LABEL = {
+  fraction_fig: "분수모델", basic_shape: "도형", circle_fig: "원", angle_fig: "각도",
+  number_line: "수직선", stat_chart: "그래프", solid_fig: "입체", coord_graph: "좌표"
+};
+
+function renderOutline() {
+  fillOlGradeOptions();
+  const st = outlineStats();
+  document.getElementById("outline-progress").innerHTML =
+    "전체 <b>" + st.total + "</b> · 확정 <b>" + st.confirmed + "</b> · 생성 <b>" + st.generated + "</b>";
+  const bulkN = outline.filter(function (o) { return o.confirmed && !isGenerated(o.no); }).length;
+  const bulkBtn = document.getElementById("btn-bulk-gen");
+  bulkBtn.textContent = "확정 개념 일괄 생성 (" + bulkN + ")";
+  bulkBtn.disabled = bulkN === 0;
+
+  const q = olFilter.search.trim().toLowerCase();
+  const rows = outline.filter(function (o) {
+    if (olFilter.grade && o.grade !== olFilter.grade) return false;
+    if (olFilter.confirmedOnly && !o.confirmed) return false;
+    if (olFilter.ungenOnly && isGenerated(o.no)) return false;
+    if (q && (o.unit + " " + o.name).toLowerCase().indexOf(q) < 0) return false;
+    return true;
+  });
+
+  const body = document.getElementById("outline-body");
+  if (!rows.length) {
+    body.innerHTML = '<div class="empty-note">조건에 맞는 개념이 없습니다.</div>';
+    return;
+  }
+
+  // 학년·학기 → 대단원 그룹
+  let html = "";
+  let curSem = "", curUnit = "";
+  rows.forEach(function (o) {
+    const semKey = o.grade + " " + o.sem;
+    if (semKey !== curSem) {
+      curSem = semKey; curUnit = "";
+      html += '<div class="ol-sem">' + esc("초등학교 " + semKey) + "</div>";
+    }
+    if (o.unit !== curUnit) {
+      curUnit = o.unit;
+      html += '<div class="ol-unit">' + esc(o.unit) +
+        '<button class="btn small line u-add" data-act="addrow" data-grade="' + esc(o.grade) + '" data-sem="' + esc(o.sem) + '" data-unit="' + esc(o.unit) + '">+ 개념 추가</button></div>';
+    }
+    const gen = isGenerated(o.no);
+    const figName = FIG_LABEL[o.fig] || "";
+    html += '<div class="ol-row" data-no="' + esc(o.no) + '">' +
+      '<span class="ol-no">' + esc(o.no) + "</span>" +
+      '<input class="ol-name" data-act="rename" value="' + esc(o.name).replace(/"/g, "&quot;") + '">' +
+      '<span class="ol-fig' + (figName ? "" : " none") + '">' + esc(figName || "-") + "</span>" +
+      '<span class="ol-state ' + (gen ? "done" : "todo") + '">' + (gen ? "생성됨" : "미생성") + "</span>" +
+      '<label class="ol-chk"><input type="checkbox" data-act="confirm"' + (o.confirmed ? " checked" : "") + "> 확정</label>" +
+      '<div class="ol-row-btns">' +
+        (gen
+          ? '<button class="btn small line" data-act="open">열기</button>'
+          : '<button class="btn small" data-act="ai">AI 초안</button><button class="btn small line" data-act="blank">빈 개념</button>') +
+        '<button class="btn small line" data-act="delrow">삭제</button>' +
+      "</div></div>";
+  });
+  body.innerHTML = html;
+}
+
+function outlineRowByNo(no) { return outline.find(function (o) { return o.no === no; }); }
+
+// 목차 항목 → 편집용 빈 개념
+function outlineToBlank(o) {
+  const c = {
+    id: "", outlineNo: o.no, school: o.school || "초등학교", grade: o.grade,
+    unit_big: o.unit, unit_mid: o.name, keywords: [], blocks: [
+      { type: "text", heading: { "1": "1. " }, body: "", stage3: { mode: "lines", lines: 2 } }
+    ]
+  };
+  if (o.fig) c.blocks.push(defaultFigureBlock(o.fig));
+  return c;
+}
+
+document.getElementById("btn-outline").addEventListener("click", function () {
+  renderOutline();
+  showView("view-outline");
+});
+document.getElementById("btn-outline-back").addEventListener("click", function () {
+  renderList();
+  showView("view-list");
+});
+document.getElementById("ol-grade").addEventListener("change", function () { olFilter.grade = this.value; renderOutline(); });
+document.getElementById("ol-search").addEventListener("input", function () { olFilter.search = this.value; renderOutline(); });
+document.getElementById("ol-only-confirmed").addEventListener("change", function () { olFilter.confirmedOnly = this.checked; renderOutline(); });
+document.getElementById("ol-only-ungen").addEventListener("change", function () { olFilter.ungenOnly = this.checked; renderOutline(); });
+
+document.getElementById("btn-ol-reset").addEventListener("click", function () {
+  if (!confirm("목차를 초기 상태(초3~초6, 189개)로 되돌릴까요? 목차에서 수정·추가·확정한 내용이 사라집니다. (만들어 둔 개념은 그대로 남습니다.)")) return;
+  outline = seedOutline();
+  saveOutline();
+  renderOutline();
+});
+
+document.getElementById("outline-body").addEventListener("input", function (e) {
+  const inp = e.target;
+  if (inp.dataset.act === "rename") {
+    const no = inp.closest(".ol-row").dataset.no;
+    const o = outlineRowByNo(no);
+    if (o) { o.name = inp.value; saveOutline(); }
+  }
+});
+
+document.getElementById("outline-body").addEventListener("change", function (e) {
+  const inp = e.target;
+  if (inp.dataset.act === "confirm") {
+    const no = inp.closest(".ol-row").dataset.no;
+    const o = outlineRowByNo(no);
+    if (o) { o.confirmed = inp.checked; saveOutline(); renderOutline(); }
+  }
+});
+
+document.getElementById("outline-body").addEventListener("click", function (e) {
+  const btn = e.target.closest("button[data-act]");
+  if (!btn) return;
+  const act = btn.dataset.act;
+  if (act === "addrow") {
+    const grade = btn.dataset.grade, sem = btn.dataset.sem, unit = btn.dataset.unit;
+    const name = prompt("추가할 개념 이름을 입력하세요.", "");
+    if (!name) return;
+    const no = "new-" + Math.random().toString(36).slice(2, 7);
+    // 같은 단원 마지막 위치에 삽입
+    let idx = -1;
+    for (let i = 0; i < outline.length; i++) {
+      if (outline[i].grade === grade && outline[i].sem === sem && outline[i].unit === unit) idx = i;
+    }
+    const row = { no: no, grade: grade, sem: sem, school: "초등학교", unit: unit, name: name, fig: "", confirmed: false };
+    if (idx >= 0) outline.splice(idx + 1, 0, row); else outline.push(row);
+    saveOutline(); renderOutline();
+    return;
+  }
+  const row = btn.closest(".ol-row");
+  if (!row) return;
+  const no = row.dataset.no;
+  const o = outlineRowByNo(no);
+  if (!o) return;
+  if (act === "delrow") {
+    if (confirm('"' + o.name + '" 을(를) 목차에서 지울까요? (이미 만든 개념은 그대로 남습니다.)')) {
+      outline = outline.filter(function (x) { return x.no !== no; });
+      saveOutline(); renderOutline();
+    }
+  } else if (act === "open") {
+    const c = concepts.find(function (x) { return x.outlineNo === no; });
+    if (c) openEditor(c);
+  } else if (act === "blank") {
+    openEditor(outlineToBlank(o));
+    dirty = true;
+    setStatus("목차에서 새 개념을 열었습니다. 내용을 입력하고 [저장]을 누르세요.");
+  } else if (act === "ai") {
+    generateFromOutline(o);
+  }
+});
+
+async function generateFromOutline(o) {
+  const key = localStorage.getItem("mw_api_key");
+  if (!key) { alert("먼저 [설정]에서 API 키를 넣어 주세요."); return; }
+  const btn = document.querySelector('.ol-row[data-no="' + CSS.escape(o.no) + '"] button[data-act="ai"]');
+  if (btn) { btn.disabled = true; btn.textContent = "생성 중..."; }
+  try {
+    const draft = await callClaudeDraft(o.school || "초등학교", o.grade, o.unit, o.name);
+    draft.outlineNo = o.no;
+    openEditor(draft);
+    dirty = true;
+    setStatus("AI 초안입니다. 검토·수정 후 [저장]을 눌러야 보관됩니다.", true);
+  } catch (e) {
+    alert(e.message || "초안 만들기에 실패했습니다. 다시 시도해 주세요.");
+    renderOutline();
+  }
+}
+
+/* ----- 확정 개념 일괄 생성 (한 개씩 검토) ----- */
+
+let bulkQueue = [];
+let bulkActive = false;
+
+document.getElementById("btn-bulk-gen").addEventListener("click", function () {
+  const key = localStorage.getItem("mw_api_key");
+  if (!key) { alert("먼저 [설정]에서 API 키를 넣어 주세요."); return; }
+  const todo = outline.filter(function (o) { return o.confirmed && !isGenerated(o.no); });
+  if (!todo.length) return;
+  if (!confirm("확정된 개념 " + todo.length + "개를 순서대로 AI로 만듭니다.\n한 개씩 화면에 열리면 검토한 뒤 [저장하고 다음]을 누르세요.\n지금 시작할까요?")) return;
+  bulkQueue = todo.slice();
+  bulkActive = true;
+  processNextBulk();
+});
+
+async function processNextBulk() {
+  if (!bulkActive) return;
+  if (!bulkQueue.length) {
+    bulkActive = false;
+    updateBulkBar();
+    alert("일괄 생성이 끝났습니다.");
+    renderOutline();
+    showView("view-outline");
+    return;
+  }
+  const o = bulkQueue[0];
+  updateBulkBar("만드는 중: " + o.name);
+  try {
+    const draft = await callClaudeDraft(o.school || "초등학교", o.grade, o.unit, o.name);
+    draft.outlineNo = o.no;
+    openEditor(draft);
+    dirty = true;
+    updateBulkBar();
+  } catch (e) {
+    if (!confirm('"' + o.name + '" 만들기에 실패했습니다.\n(' + (e.message || "") + ")\n이 개념을 건너뛰고 계속할까요?")) {
+      bulkActive = false; bulkQueue = []; updateBulkBar();
+      showView("view-outline"); renderOutline();
+      return;
+    }
+    bulkQueue.shift();
+    processNextBulk();
+  }
+}
+
+function updateBulkBar(statusText) {
+  const bar = document.getElementById("bulk-bar");
+  if (!bulkActive) { bar.hidden = true; return; }
+  bar.hidden = false;
+  const done = document.getElementById("bulk-count");
+  done.textContent = statusText || ("남은 개념 " + bulkQueue.length + "개");
+}
+
+document.getElementById("btn-bulk-next").addEventListener("click", function () {
+  // 저장하고 다음
+  if (saveCurrent()) {
+    bulkQueue.shift();
+    processNextBulk();
+  }
+});
+document.getElementById("btn-bulk-skip").addEventListener("click", function () {
+  if (!confirm("이 개념을 저장하지 않고 건너뛸까요?")) return;
+  bulkQueue.shift();
+  processNextBulk();
+});
+document.getElementById("btn-bulk-stop").addEventListener("click", function () {
+  if (!confirm("일괄 생성을 멈출까요? 지금까지 저장한 것은 그대로 남습니다.")) return;
+  bulkActive = false; bulkQueue = [];
+  updateBulkBar();
+  current = null;
+  renderOutline();
+  showView("view-outline");
+});
+
+/* ============================================================
    시작
    ============================================================ */
 
+ensureIds();
 renderList();
 showView("view-list");
 </script>

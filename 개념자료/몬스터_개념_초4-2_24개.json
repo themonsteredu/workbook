@@ -1,0 +1,1854 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-4-2-01",
+      "outlineNo": "4-2-01",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "분수의 덧셈과 뺄셈",
+      "unit_mid": "분모가 같은 진분수의 덧셈",
+      "keywords": [
+        "분수",
+        "덧셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분모가 같은 진분수의 덧셈"
+          },
+          "body": "* 분모가 같은 분수의 덧셈은 분모는 그대로 두고 {{분자}}끼리 더한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 분수 모델",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 5,
+            "num": 3,
+            "width": 78,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "진분수 덧셈",
+              "meaning": "분모는 그대로, 분자끼리 더함"
+            },
+            {
+              "term": "분모",
+              "meaning": "분수 아래쪽 수, 그대로 둔다"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{1}{5}$ + $\\dfrac{2}{5}$ = {{$\\dfrac{3}{5}$}}.\n* $\\dfrac{2}{6}$ + $\\dfrac{3}{6}$ = {{$\\dfrac{5}{6}$}}.\n* $\\dfrac{3}{8}$ + $\\dfrac{4}{8}$ = {{$\\dfrac{7}{8}$}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-02",
+      "outlineNo": "4-2-02",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "분수의 덧셈과 뺄셈",
+      "unit_mid": "분모가 같은 진분수의 뺄셈",
+      "keywords": [
+        "분수",
+        "뺄셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분모가 같은 진분수의 뺄셈"
+          },
+          "body": "* 분모가 같은 분수의 뺄셈은 분모는 그대로 두고 분자끼리 뺀다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 분수 모델",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 5,
+            "num": 3,
+            "width": 78,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "진분수 뺄셈",
+              "meaning": "분모는 그대로, 분자끼리 뺀다"
+            },
+            {
+              "term": "분자",
+              "meaning": "분수 위쪽 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{4}{5}$ − $\\dfrac{1}{5}$ = {{$\\dfrac{3}{5}$}}.\n* $\\dfrac{5}{6}$ − $\\dfrac{2}{6}$ = {{$\\dfrac{3}{6}$}}.\n* $\\dfrac{7}{8}$ − $\\dfrac{3}{8}$ = {{$\\dfrac{4}{8}$}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-03",
+      "outlineNo": "4-2-03",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "분수의 덧셈과 뺄셈",
+      "unit_mid": "대분수의 덧셈",
+      "keywords": [
+        "대분수",
+        "덧셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대분수의 덧셈"
+          },
+          "body": "* 자연수는 자연수끼리, 분수는 분수끼리 더한다.\n* 분수 부분의 합이 1이거나 넘으면 자연수로 받아올림한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 대분수 그림",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 7,
+            "width": 78,
+            "showCaption": true,
+            "mixed": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대분수 덧셈",
+              "meaning": "자연수끼리, 분수끼리 더함"
+            },
+            {
+              "term": "받아올림",
+              "meaning": "분수 합이 1이 넘으면 자연수로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $1\\dfrac{1}{4}$ + $1\\dfrac{2}{4}$ = {{$2\\dfrac{3}{4}$}}.\n* $2\\dfrac{2}{5}$ + $1\\dfrac{1}{5}$ = {{$3\\dfrac{3}{5}$}}.\n* $\\dfrac{3}{6}$ + $1\\dfrac{2}{6}$ = {{$1\\dfrac{5}{6}$}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-04",
+      "outlineNo": "4-2-04",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "분수의 덧셈과 뺄셈",
+      "unit_mid": "대분수의 뺄셈 (받아내림 포함), 자연수-분수",
+      "keywords": [
+        "대분수",
+        "뺄셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대분수의 뺄셈"
+          },
+          "body": "* 자연수끼리, 분수끼리 뺀다.\n* 분수 부분을 뺄 수 없으면 자연수에서 1을 받아내림한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 대분수 그림",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 5,
+            "width": 78,
+            "showCaption": true,
+            "mixed": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대분수 뺄셈",
+              "meaning": "자연수끼리, 분수끼리 뺀다"
+            },
+            {
+              "term": "받아내림",
+              "meaning": "분수를 뺄 수 없으면 자연수에서 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $3\\dfrac{1}{4}$ − $1\\dfrac{2}{4}$ = {{$1\\dfrac{3}{4}$}}.\n* 3 − $\\dfrac{1}{4}$ = {{$2\\dfrac{3}{4}$}}.\n* $2\\dfrac{1}{5}$ − $\\dfrac{3}{5}$ = {{$1\\dfrac{3}{5}$}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-05",
+      "outlineNo": "4-2-05",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "삼각형",
+      "unit_mid": "이등변삼각형과 그 성질",
+      "keywords": [
+        "삼각형",
+        "이등변삼각형"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이등변삼각형"
+          },
+          "body": "* 두 변의 길이가 같은 삼각형을 {{이등변삼각형}}이라고 한다.\n* 이등변삼각형은 두 밑각의 크기가 {{같다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 이등변삼각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이등변삼각형",
+              "meaning": "두 변의 길이가 같은 삼각형"
+            },
+            {
+              "term": "두 밑각",
+              "meaning": "크기가 서로 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 두 변이 같으면 {{이등변삼각형}}.\n* 두 밑각의 크기는 {{같다}}.\n* 한 밑각이 50°이면 다른 밑각도 {{50}}°.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-06",
+      "outlineNo": "4-2-06",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "삼각형",
+      "unit_mid": "정삼각형과 그 성질",
+      "keywords": [
+        "삼각형",
+        "정삼각형"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정삼각형"
+          },
+          "body": "* 세 변의 길이가 모두 같은 삼각형을 {{정삼각형}}이라고 한다.\n* 정삼각형은 세 각이 모두 {{60}}°이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 정삼각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "정삼각형",
+              "meaning": "세 변의 길이가 모두 같은 삼각형"
+            },
+            {
+              "term": "세 각",
+              "meaning": "모두 60°"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 세 변이 같으면 {{정삼각형}}.\n* 정삼각형의 한 각은 {{60}}°.\n* 정삼각형은 이등변삼각형이라고 {{할 수 있다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-07",
+      "outlineNo": "4-2-07",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "삼각형",
+      "unit_mid": "예각삼각형, 둔각삼각형",
+      "keywords": [
+        "삼각형",
+        "예각",
+        "둔각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 예각삼각형과 둔각삼각형"
+          },
+          "body": "* 세 각이 모두 예각인 삼각형을 {{예각삼각형}}이라고 한다.\n* 한 각이 둔각인 삼각형을 {{둔각삼각형}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 삼각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "예각삼각형",
+              "meaning": "세 각이 모두 예각"
+            },
+            {
+              "term": "둔각삼각형",
+              "meaning": "한 각이 둔각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 세 각이 모두 90°보다 작으면 {{예각삼각형}}.\n* 한 각이 100°이면 {{둔각삼각형}}.\n* 한 각이 직각이면 {{직각}}삼각형.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-08",
+      "outlineNo": "4-2-08",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "삼각형",
+      "unit_mid": "삼각형 분류 (변·각 기준)",
+      "keywords": [
+        "삼각형",
+        "분류"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각형의 분류"
+          },
+          "body": "* 삼각형은 변의 길이나 각의 크기로 분류할 수 있다.\n* 변 기준: 이등변·정삼각형 / 각 기준: 예각·직각·둔각삼각형",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 삼각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "right_triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "변으로 분류",
+              "meaning": "이등변삼각형, 정삼각형"
+            },
+            {
+              "term": "각으로 분류",
+              "meaning": "예각·직각·둔각삼각형"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 세 변이 같으면 {{정삼각형}}.\n* 한 각이 직각이면 {{직각}}삼각형.\n* 한 삼각형이 두 기준으로 분류될 수 {{있다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-09",
+      "outlineNo": "4-2-09",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "소수의 덧셈과 뺄셈",
+      "unit_mid": "소수 두 자리 수, 소수 세 자리 수",
+      "keywords": [
+        "소수",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수 두 자리·세 자리 수"
+          },
+          "body": "* 0.01은 0.1을 똑같이 10으로 나눈 것 중 하나이다.\n* 소수 둘째 자리, 셋째 자리까지 나타낼 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "0.1을 10칸으로 나누면 한 칸이 0.01",
+                "min": 0,
+                "max": 0.1,
+                "step": 0.01,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "소수 둘째 자리",
+              "meaning": "0.01의 자리"
+            },
+            {
+              "term": "소수 셋째 자리",
+              "meaning": "0.001의 자리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 0.25는 소수 {{둘째}} 자리 수.\n* 0.1을 10으로 나누면 {{0.01}}.\n* 0.375에서 5는 소수 {{셋째}} 자리.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-10",
+      "outlineNo": "4-2-10",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "소수의 덧셈과 뺄셈",
+      "unit_mid": "소수의 크기 비교",
+      "keywords": [
+        "소수",
+        "크기 비교"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수의 크기 비교"
+          },
+          "body": "* 높은 자리 수부터 차례로 비교한다.\n* 소수점 아래 자리 수가 다르면 0을 채워 비교한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "0.5와 0.7의 위치",
+                "min": 0,
+                "max": 1,
+                "step": 0.1,
+                "range": null,
+                "points": [
+                  0.5,
+                  0.7
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "크기 비교",
+              "meaning": "높은 자리부터 차례로 비교"
+            },
+            {
+              "term": "자리 맞추기",
+              "meaning": "빈 자리는 0으로 채움"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 0.7과 0.5 중 큰 수는 {{0.7}}.\n* 0.5와 0.05 중 큰 수는 {{0.5}}.\n* 0.68과 0.7 중 큰 수는 {{0.7}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-11",
+      "outlineNo": "4-2-11",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "소수의 덧셈과 뺄셈",
+      "unit_mid": "소수 사이의 관계 (10배, 1/10)",
+      "keywords": [
+        "소수",
+        "10배"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수 사이의 관계"
+          },
+          "body": "* 소수를 10배 하면 소수점이 오른쪽으로 한 칸 옮겨간다.\n* 1/10을 하면 소수점이 왼쪽으로 한 칸 옮겨간다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "10배",
+              "meaning": "소수점이 오른쪽으로 한 칸"
+            },
+            {
+              "term": "1/10",
+              "meaning": "소수점이 왼쪽으로 한 칸"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 0.5의 10배는 {{5}}.\n* 3의 1/10은 {{0.3}}.\n* 0.07의 10배는 {{0.7}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-12",
+      "outlineNo": "4-2-12",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "소수의 덧셈과 뺄셈",
+      "unit_mid": "소수의 덧셈",
+      "keywords": [
+        "소수",
+        "덧셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수의 덧셈"
+          },
+          "body": "* 소수점의 자리를 맞추어 세로로 쓴 뒤 같은 자리끼리 더한다.\n* 답에도 소수점을 자리에 맞춰 그대로 내려 찍는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "+",
+            "operands": [
+              "0.6",
+              "0.7"
+            ],
+            "width": 58
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "소수의 덧셈",
+              "meaning": "소수점을 맞추어 더함"
+            },
+            {
+              "term": "소수점",
+              "meaning": "답에도 자리에 맞춰 찍음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 0.6 + 0.7 = {{1.3}}.\n* 3.4 + 2.8 = {{6.2}}.\n* 1.25 + 0.5 = {{1.75}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-13",
+      "outlineNo": "4-2-13",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "소수의 덧셈과 뺄셈",
+      "unit_mid": "소수의 뺄셈",
+      "keywords": [
+        "소수",
+        "뺄셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수의 뺄셈"
+          },
+          "body": "* 소수점의 자리를 맞추어 세로로 쓴 뒤 같은 자리끼리 뺀다.\n* 자리가 모자라면 0을 채워 계산한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "−",
+            "operands": [
+              "1.2",
+              "0.7"
+            ],
+            "width": 58
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "소수의 뺄셈",
+              "meaning": "소수점을 맞추어 뺀다"
+            },
+            {
+              "term": "자리 채우기",
+              "meaning": "빈 자리는 0으로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1.2 − 0.7 = {{0.5}}.\n* 5 − 1.7 = {{3.3}}.\n* 4.35 − 1.5 = {{2.85}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-14",
+      "outlineNo": "4-2-14",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "사각형",
+      "unit_mid": "수직과 수선",
+      "keywords": [
+        "수직",
+        "수선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 수직과 수선"
+          },
+          "body": "* 두 직선이 만나 이루는 각이 직각일 때 두 직선은 서로 {{수직}}이라고 한다.\n* 수직인 두 직선에서 한 직선을 다른 직선의 {{수선}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 수직(직각)",
+            "3": "2. 각을 표시해 보시오."
+          },
+          "params": {
+            "degrees": 90,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "수직",
+              "meaning": "두 직선이 직각으로 만남"
+            },
+            {
+              "term": "수선",
+              "meaning": "수직으로 만나는 직선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 두 직선이 이루는 각이 {{직각}}이면 수직.\n* 수직으로 만나는 직선을 {{수선}}이라 한다.\n* 수직인 두 직선이 이루는 각은 {{90}}°.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-15",
+      "outlineNo": "4-2-15",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "사각형",
+      "unit_mid": "평행과 평행선",
+      "keywords": [
+        "평행",
+        "평행선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 평행과 평행선"
+          },
+          "body": "* 서로 만나지 않는 두 직선을 {{평행}}하다고 한다.\n* 평행한 두 직선을 {{평행선}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 평행선(평행사변형)",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "parallelogram",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "평행",
+              "meaning": "두 직선이 만나지 않음"
+            },
+            {
+              "term": "평행선",
+              "meaning": "서로 평행한 두 직선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 만나지 않는 두 직선은 {{평행}}.\n* 평행한 두 직선을 {{평행선}}이라 한다.\n* 평행선은 아무리 늘여도 {{만나지 않는다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-16",
+      "outlineNo": "4-2-16",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "사각형",
+      "unit_mid": "평행선 사이의 거리",
+      "keywords": [
+        "평행선",
+        "거리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 평행선 사이의 거리"
+          },
+          "body": "* 평행선의 한 직선에서 다른 직선에 수직으로 그은 선분의 길이를 {{평행선 사이의 거리}}라고 한다.\n* 평행선 사이의 거리는 어디에서 재도 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 평행선 사이의 거리",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "parallelogram",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "평행선 사이의 거리",
+              "meaning": "수직으로 잰 선분의 길이"
+            },
+            {
+              "term": "특징",
+              "meaning": "어디서 재도 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 평행선 사이의 거리는 {{수직}}으로 잰다.\n* 어느 곳에서 재도 거리는 {{같다}}.\n* 평행선 사이 거리가 3cm면 어디서나 {{3}}cm.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-17",
+      "outlineNo": "4-2-17",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "사각형",
+      "unit_mid": "사다리꼴",
+      "keywords": [
+        "사각형",
+        "사다리꼴"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 사다리꼴"
+          },
+          "body": "* 평행한 변이 한 쌍이라도 있는 사각형을 {{사다리꼴}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 사다리꼴",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "trapezoid",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "사다리꼴",
+              "meaning": "평행한 변이 한 쌍인 사각형"
+            },
+            {
+              "term": "평행한 변",
+              "meaning": "마주 보는 한 쌍"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 평행한 변이 한 쌍 있으면 {{사다리꼴}}.\n* 평행사변형도 사다리꼴이라고 {{할 수 있다}}.\n* 사다리꼴의 평행한 변은 {{만나지 않는다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-18",
+      "outlineNo": "4-2-18",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "사각형",
+      "unit_mid": "평행사변형과 그 성질",
+      "keywords": [
+        "사각형",
+        "평행사변형"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 평행사변형"
+          },
+          "body": "* 마주 보는 두 쌍의 변이 서로 평행한 사각형을 {{평행사변형}}이라고 한다.\n* 마주 보는 변의 길이와 각의 크기가 각각 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 평행사변형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "parallelogram",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "평행사변형",
+              "meaning": "두 쌍의 변이 평행한 사각형"
+            },
+            {
+              "term": "성질",
+              "meaning": "마주 보는 변·각이 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 두 쌍의 변이 평행하면 {{평행사변형}}.\n* 마주 보는 변의 길이는 {{같다}}.\n* 마주 보는 각의 크기도 {{같다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-19",
+      "outlineNo": "4-2-19",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "사각형",
+      "unit_mid": "마름모와 그 성질",
+      "keywords": [
+        "사각형",
+        "마름모"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 마름모"
+          },
+          "body": "* 네 변의 길이가 모두 같은 사각형을 {{마름모}}라고 한다.\n* 마주 보는 각의 크기가 같고, 두 대각선은 서로 수직으로 만난다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 마름모",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "rhombus",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "마름모",
+              "meaning": "네 변의 길이가 모두 같은 사각형"
+            },
+            {
+              "term": "두 대각선",
+              "meaning": "서로 수직으로 만남"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 네 변이 모두 같으면 {{마름모}}.\n* 마름모의 두 대각선은 서로 {{수직}}.\n* 마름모는 평행사변형이라고 {{할 수 있다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-20",
+      "outlineNo": "4-2-20",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "사각형",
+      "unit_mid": "여러 가지 사각형의 관계",
+      "keywords": [
+        "사각형",
+        "관계"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 여러 가지 사각형의 관계"
+          },
+          "body": "* 사각형은 성질에 따라 사다리꼴·평행사변형·마름모·직사각형·정사각형으로 나뉜다.\n* 정사각형은 마름모이면서 직사각형이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 정사각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "square",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "정사각형",
+              "meaning": "네 변·네 각이 모두 같은 사각형"
+            },
+            {
+              "term": "포함 관계",
+              "meaning": "정사각형은 직사각형·마름모"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 정사각형은 {{마름모}}이면서 직사각형.\n* 평행사변형은 {{사다리꼴}}이라고 할 수 있다.\n* 네 각이 직각인 사각형은 {{직사각형}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-21",
+      "outlineNo": "4-2-21",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "꺾은선그래프",
+      "unit_mid": "꺾은선그래프의 뜻과 특징",
+      "keywords": [
+        "꺾은선그래프"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 꺾은선그래프"
+          },
+          "body": "* 수량을 점으로 찍고 선분으로 이어 나타낸 그래프를 {{꺾은선그래프}}라고 한다.\n* 시간에 따라 변하는 양의 변화를 알기 쉽다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 꺾은선그래프",
+            "3": "2. 꺾은선그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "line",
+            "unit": "°C",
+            "cats": [
+              {
+                "name": "1월",
+                "value": 10
+              },
+              {
+                "name": "2월",
+                "value": 14
+              },
+              {
+                "name": "3월",
+                "value": 12
+              },
+              {
+                "name": "4월",
+                "value": 18
+              }
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "none"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "꺾은선그래프",
+              "meaning": "점을 선분으로 이은 그래프"
+            },
+            {
+              "term": "특징",
+              "meaning": "변화의 정도를 알기 쉬움"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 선이 오르면 값이 {{늘어난다}}.\n* 선이 가파를수록 변화가 {{크다}}.\n* 시간에 따른 변화를 볼 때 {{꺾은선}}그래프가 좋다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-22",
+      "outlineNo": "4-2-22",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "꺾은선그래프",
+      "unit_mid": "꺾은선그래프 그리기와 해석",
+      "keywords": [
+        "꺾은선그래프",
+        "그리기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 꺾은선그래프 그리기"
+          },
+          "body": "* 가로에 시간, 세로에 수량을 정하고 점을 찍어 선분으로 잇는다.\n* 물결선(≈)으로 필요 없는 부분을 줄일 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 꺾은선그래프",
+            "3": "2. 꺾은선그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "line",
+            "unit": "명",
+            "cats": [
+              {
+                "name": "월",
+                "value": 3
+              },
+              {
+                "name": "화",
+                "value": 5
+              },
+              {
+                "name": "수",
+                "value": 4
+              },
+              {
+                "name": "목",
+                "value": 7
+              }
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "none"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "점 찍기",
+              "meaning": "가로·세로가 만나는 곳에 점"
+            },
+            {
+              "term": "물결선",
+              "meaning": "생략할 부분을 줄이는 표시"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 점을 찍고 {{선분}}으로 잇는다.\n* 가장 높은 점이 가장 {{큰}} 값.\n* 필요 없는 아래 부분은 {{물결선}}으로 줄인다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-23",
+      "outlineNo": "4-2-23",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "다각형",
+      "unit_mid": "다각형, 정다각형",
+      "keywords": [
+        "다각형",
+        "정다각형"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 다각형과 정다각형"
+          },
+          "body": "* 선분으로만 둘러싸인 도형을 {{다각형}}이라고 한다.\n* 변의 길이가 모두 같고 각의 크기가 모두 같은 다각형을 {{정다각형}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 오각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "polygon",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "다각형",
+              "meaning": "선분으로만 둘러싸인 도형"
+            },
+            {
+              "term": "정다각형",
+              "meaning": "변·각이 모두 같은 다각형"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 변이 5개인 다각형은 {{오각형}}.\n* 변·각이 모두 같은 육각형은 {{정육각형}}.\n* 변이 많을수록 {{원}}에 가까워진다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-4-2-24",
+      "outlineNo": "4-2-24",
+      "school": "초등학교",
+      "grade": "4학년",
+      "unit_big": "다각형",
+      "unit_mid": "대각선",
+      "keywords": [
+        "다각형",
+        "대각선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대각선"
+          },
+          "body": "* 다각형에서 이웃하지 않는 두 꼭짓점을 이은 선분을 {{대각선}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 대각선",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "polygon",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대각선",
+              "meaning": "이웃하지 않는 꼭짓점을 이은 선분"
+            },
+            {
+              "term": "사각형의 대각선",
+              "meaning": "2개"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 사각형의 대각선은 {{2}}개.\n* 오각형의 대각선은 {{5}}개.\n* 삼각형은 대각선이 {{0}}개.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

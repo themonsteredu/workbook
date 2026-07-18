@@ -1,0 +1,1861 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-3-2-01",
+      "outlineNo": "3-2-01",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "곱셈",
+      "unit_mid": "(세 자리 수)×(한 자리 수)",
+      "keywords": [
+        "곱셈",
+        "올림",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (세 자리 수)×(한 자리 수)"
+          },
+          "body": "* 각 자리의 수에 곱하는 수를 곱한다.\n* 각 자리의 곱이 10이거나 넘으면 윗자리로 {{올림}}한다.\n* 일의 자리부터 차례로 곱한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "×",
+            "operands": [
+              213,
+              3
+            ],
+            "width": 60,
+            "showCarry": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "올림",
+              "meaning": "자리의 곱이 10이 넘을 때 윗자리로 올리는 것"
+            },
+            {
+              "term": "세 자리 수",
+              "meaning": "백의 자리까지 있는 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 213 × 3 = {{639}}\n* 124 × 2 = {{248}}\n* 152 × 4 = {{608}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-02",
+      "outlineNo": "3-2-02",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "곱셈",
+      "unit_mid": "(두 자리 수)×(두 자리 수)",
+      "keywords": [
+        "곱셈",
+        "부분곱",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (두 자리 수)×(두 자리 수)"
+          },
+          "body": "* 곱하는 수를 일의 자리와 십의 자리로 나누어 각각 곱한 뒤 더한다.\n* 십의 자리로 곱한 값은 한 자리 {{왼쪽}}으로 옮겨 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "×",
+            "operands": [
+              24,
+              13
+            ],
+            "width": 60
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "부분곱",
+              "meaning": "일의 자리·십의 자리로 각각 곱한 값"
+            },
+            {
+              "term": "자리 맞추기",
+              "meaning": "십의 자리 곱은 한 칸 왼쪽에 씀"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 24 × 13 = {{312}}\n* 32 × 21 = {{672}}\n* 45 × 12 = {{540}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-03",
+      "outlineNo": "3-2-03",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "나눗셈",
+      "unit_mid": "(두 자리 수)÷(한 자리 수)",
+      "keywords": [
+        "나눗셈",
+        "몫",
+        "자리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (두 자리 수)÷(한 자리 수)"
+          },
+          "body": "* 높은 자리부터 차례로 나눈다.\n* 각 자리의 몫을 위에 쓰고, 남은 수는 다음 자리로 내려 계산한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "÷",
+            "operands": [
+              48,
+              3
+            ],
+            "width": 55,
+            "showSteps": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "몫",
+              "meaning": "나눗셈을 하여 나온 결과"
+            },
+            {
+              "term": "나누어지는 수",
+              "meaning": "나눗셈에서 전체가 되는 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 48 ÷ 3 = {{16}}\n* 96 ÷ 4 = {{24}}\n* 84 ÷ 6 = {{14}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-04",
+      "outlineNo": "3-2-04",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "나눗셈",
+      "unit_mid": "나머지의 의미, 나머지가 있는 나눗셈",
+      "keywords": [
+        "나눗셈",
+        "나머지"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 나머지"
+          },
+          "body": "* 나누어떨어지지 않고 남는 수를 {{나머지}}라고 한다.\n* 나머지는 항상 나누는 수보다 {{작다}}.\n* 나머지가 0이면 나누어떨어진다고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "÷",
+            "operands": [
+              17,
+              5
+            ],
+            "width": 55,
+            "showSteps": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "나머지",
+              "meaning": "나누어떨어지지 않고 남는 수"
+            },
+            {
+              "term": "나누어떨어진다",
+              "meaning": "나머지가 0인 경우"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 17 ÷ 5 = 3 … 나머지 {{2}}\n* 23 ÷ 4 = 5 … 나머지 {{3}}\n* 30 ÷ 7 = 4 … 나머지 {{2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-05",
+      "outlineNo": "3-2-05",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "나눗셈",
+      "unit_mid": "검산",
+      "keywords": [
+        "나눗셈",
+        "검산",
+        "나머지"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 검산"
+          },
+          "body": "* 나눗셈이 맞는지 확인하는 것을 {{검산}}이라고 한다.\n* (나누는 수) × (몫) + (나머지) = (나누어지는 수) 이면 맞다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈과 검산",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "÷",
+            "operands": [
+              17,
+              5
+            ],
+            "width": 55,
+            "showSteps": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "검산",
+              "meaning": "계산이 맞는지 확인하는 것"
+            },
+            {
+              "term": "검산식",
+              "meaning": "나누는 수 × 몫 + 나머지"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 17 ÷ 5 = 3 … 2 → 5 × 3 + 2 = {{17}}\n* 26 ÷ 4 = 6 … 2 → 4 × 6 + 2 = {{26}}\n* 나머지는 나누는 수보다 {{작다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-06",
+      "outlineNo": "3-2-06",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "원",
+      "unit_mid": "원의 중심, 반지름",
+      "keywords": [
+        "원",
+        "중심",
+        "반지름"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원의 중심과 반지름"
+          },
+          "body": "* 원의 한가운데 점을 {{중심}}이라고 한다.\n* 중심에서 원 위의 한 점까지 이은 선분을 {{반지름}}이라고 한다.\n* 한 원에서 반지름은 모두 길이가 {{같다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원의 각 부분",
+            "3": "2. 원을 그리고 각 부분을 표시해 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 60
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "중심",
+              "meaning": "원의 한가운데 점"
+            },
+            {
+              "term": "반지름",
+              "meaning": "중심에서 원 위의 점까지 이은 선분"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 원의 한가운데 점은 {{중심}}이다.\n* 한 원의 반지름은 모두 길이가 {{같다}}.\n* 반지름이 3cm인 원의 반지름은 모두 {{3}}cm.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-07",
+      "outlineNo": "3-2-07",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "원",
+      "unit_mid": "지름, 지름과 반지름의 관계",
+      "keywords": [
+        "원",
+        "지름",
+        "반지름"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 지름"
+          },
+          "body": "* 원의 중심을 지나 원 위의 두 점을 이은 선분을 {{지름}}이라고 한다.\n* 지름은 반지름의 {{2}}배이다.\n* (지름) = (반지름) × 2",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 지름과 반지름",
+            "3": "2. 원을 그리고 각 부분을 표시해 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": true,
+            "showCircumference": false,
+            "width": 60
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            },
+            {
+              "key": "jireum",
+              "text": "지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "지름",
+              "meaning": "중심을 지나 원 위의 두 점을 이은 선분"
+            },
+            {
+              "term": "지름과 반지름",
+              "meaning": "지름 = 반지름 × 2"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 반지름이 4cm이면 지름은 {{8}}cm.\n* 지름이 10cm이면 반지름은 {{5}}cm.\n* 지름은 반지름의 {{2}}배이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-08",
+      "outlineNo": "3-2-08",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "원",
+      "unit_mid": "컴퍼스로 원 그리기, 원을 이용한 모양",
+      "keywords": [
+        "원",
+        "컴퍼스",
+        "반지름"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 컴퍼스로 원 그리기"
+          },
+          "body": "* 컴퍼스의 침을 {{중심}}에 꽂고 벌린 만큼이 반지름이 된다.\n* 컴퍼스를 한 바퀴 돌리면 원이 그려진다.\n* 반지름을 크게 벌릴수록 큰 원이 그려진다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원 그리기",
+            "3": "2. 원을 그리고 각 부분을 표시해 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 60
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "컴퍼스",
+              "meaning": "원을 그리는 도구"
+            },
+            {
+              "term": "반지름",
+              "meaning": "컴퍼스를 벌린 길이"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 컴퍼스 침을 꽂는 곳은 원의 {{중심}}.\n* 컴퍼스를 많이 벌리면 {{큰}} 원이 그려진다.\n* 벌린 길이가 원의 {{반지름}}이 된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-09",
+      "outlineNo": "3-2-09",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수",
+      "unit_mid": "전체의 분수만큼 (부분 구하기)",
+      "keywords": [
+        "분수",
+        "전체",
+        "부분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 전체의 분수만큼"
+          },
+          "body": "* 전체를 똑같이 분모만큼 나눈 뒤 분자만큼의 개수를 구한다.\n* 예: 8의 3/4 은 8을 4묶음(2개씩)으로 나눈 것 중 3묶음이므로 6이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 색칠한 부분",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 3,
+            "width": 76,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "전체의 분수만큼",
+              "meaning": "전체를 나눈 뒤 분자만큼 세기"
+            },
+            {
+              "term": "한 묶음",
+              "meaning": "전체 ÷ 분모"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 8의 1/4 은 {{2}}.\n* 12의 2/3 은 {{8}}.\n* 10의 3/5 은 {{6}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-10",
+      "outlineNo": "3-2-10",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수",
+      "unit_mid": "진분수, 가분수",
+      "keywords": [
+        "분수",
+        "진분수",
+        "가분수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 진분수와 가분수"
+          },
+          "body": "* 분자가 분모보다 작은 분수를 {{진분수}}라고 한다.\n* 분자가 분모와 같거나 큰 분수를 {{가분수}}라고 한다.\n* 분모와 분자가 같으면 1과 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 진분수 3/4",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 3,
+            "width": 76,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "진분수",
+              "meaning": "분자가 분모보다 작은 분수"
+            },
+            {
+              "term": "가분수",
+              "meaning": "분자가 분모와 같거나 큰 분수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 3/4 은 {{진분수}}이다.\n* 5/4, 4/4 는 {{가분수}}이다.\n* 4/4 는 {{1}}과 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-11",
+      "outlineNo": "3-2-11",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수",
+      "unit_mid": "대분수, 대분수와 가분수의 관계",
+      "keywords": [
+        "분수",
+        "대분수",
+        "가분수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대분수"
+          },
+          "body": "* 자연수와 진분수로 이루어진 분수를 {{대분수}}라고 한다.\n* 가분수는 대분수로, 대분수는 가분수로 바꿀 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 분수 모델",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 3,
+            "width": 76,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대분수",
+              "meaning": "자연수와 진분수로 이루어진 분수"
+            },
+            {
+              "term": "가분수↔대분수",
+              "meaning": "서로 바꾸어 나타낼 수 있음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 7/4 = 1과 {{3/4}}.\n* 2와 1/3 = {{7/3}}.\n* 대분수 1과 2/5 의 자연수 부분은 {{1}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-12",
+      "outlineNo": "3-2-12",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "분수",
+      "unit_mid": "분모가 같은 분수의 크기 비교",
+      "keywords": [
+        "분수",
+        "크기 비교"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분모가 같은 분수의 크기 비교"
+          },
+          "body": "* 분모가 같은 분수는 분자가 {{클수록}} 크다.\n* 가분수와 대분수는 같은 형태로 바꾸어 비교한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 그림으로 비교",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 5,
+            "num": 3,
+            "width": 76,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "분모가 같을 때",
+              "meaning": "분자가 클수록 크다"
+            },
+            {
+              "term": "대분수 비교",
+              "meaning": "자연수 부분을 먼저 비교"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 3/5 와 4/5 중 큰 것은 {{4/5}}.\n* 7/4 와 5/4 중 큰 것은 {{7/4}}.\n* 자연수 부분이 클수록 대분수가 {{크다}}.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-13",
+      "outlineNo": "3-2-13",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "들이와 무게",
+      "unit_mid": "1L와 1mL, 들이의 단위 관계",
+      "keywords": [
+        "들이",
+        "L",
+        "mL"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 들이의 단위"
+          },
+          "body": "* 들이의 단위에는 리터(L)와 밀리리터(mL)가 있다.\n* 1L = {{1000}}mL 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "1L = 1000mL",
+                "min": 0,
+                "max": 1000,
+                "step": 100,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "1L",
+              "meaning": "1000mL"
+            },
+            {
+              "term": "들이",
+              "meaning": "그릇에 담을 수 있는 양"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2L = {{2000}}mL.\n* 1L 500mL = {{1500}}mL.\n* 3000mL = {{3}}L.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-14",
+      "outlineNo": "3-2-14",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "들이와 무게",
+      "unit_mid": "들이의 덧셈과 뺄셈",
+      "keywords": [
+        "들이",
+        "덧셈",
+        "뺄셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 들이의 덧셈과 뺄셈"
+          },
+          "body": "* 들이는 L는 L끼리, mL는 mL끼리 계산한다.\n* mL가 1000이거나 넘으면 1L로 {{받아올림}}한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. mL끼리 더하기(세로셈)",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "+",
+            "operands": [
+              400,
+              700
+            ],
+            "width": 60,
+            "showCarry": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "받아올림",
+              "meaning": "mL가 1000이 넘으면 1L로 올림"
+            },
+            {
+              "term": "단위 맞추기",
+              "meaning": "L는 L끼리, mL는 mL끼리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1L 400mL + 700mL = {{2}}L 100mL.\n* 2L 600mL − 800mL = 1L {{800}}mL.\n* 500mL + 700mL = {{1200}}mL = 1L 200mL.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-15",
+      "outlineNo": "3-2-15",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "들이와 무게",
+      "unit_mid": "1kg, 1g, 1t, 무게의 단위 관계",
+      "keywords": [
+        "무게",
+        "kg",
+        "g",
+        "t"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 무게의 단위"
+          },
+          "body": "* 무게의 단위에는 g, kg, t이 있다.\n* 1kg = {{1000}}g, 1t = {{1000}}kg 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "1kg = 1000g",
+                "min": 0,
+                "max": 1000,
+                "step": 100,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "1kg",
+              "meaning": "1000g"
+            },
+            {
+              "term": "1t",
+              "meaning": "1000kg"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2kg = {{2000}}g.\n* 1kg 300g = {{1300}}g.\n* 4000kg = {{4}}t.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-16",
+      "outlineNo": "3-2-16",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "들이와 무게",
+      "unit_mid": "무게의 덧셈과 뺄셈",
+      "keywords": [
+        "무게",
+        "덧셈",
+        "뺄셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 무게의 덧셈과 뺄셈"
+          },
+          "body": "* 무게는 kg은 kg끼리, g은 g끼리 계산한다.\n* g이 1000이거나 넘으면 1kg으로 {{받아올림}}한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. g끼리 더하기(세로셈)",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "+",
+            "operands": [
+              600,
+              800
+            ],
+            "width": 60,
+            "showCarry": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "받아올림",
+              "meaning": "g이 1000이 넘으면 1kg으로 올림"
+            },
+            {
+              "term": "단위 맞추기",
+              "meaning": "kg은 kg끼리, g은 g끼리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1kg 600g + 800g = {{2}}kg 400g.\n* 3kg 200g − 500g = 2kg {{700}}g.\n* 700g + 800g = {{1500}}g = 1kg 500g.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-17",
+      "outlineNo": "3-2-17",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "자료의 정리",
+      "unit_mid": "표로 나타내기",
+      "keywords": [
+        "자료",
+        "표",
+        "합계"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 표로 나타내기"
+          },
+          "body": "* 조사한 자료를 항목별로 세어 {{표}}로 나타낸다.\n* 표를 보면 각 항목의 수와 합계를 한눈에 알 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 좋아하는 과일(표·그래프)",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "명",
+            "cats": [
+              {
+                "name": "사과",
+                "value": 4
+              },
+              {
+                "name": "배",
+                "value": 3
+              },
+              {
+                "name": "감",
+                "value": 5
+              }
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "none"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "표",
+              "meaning": "자료를 항목과 수로 정리한 것"
+            },
+            {
+              "term": "합계",
+              "meaning": "모든 항목 수의 합"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 사과 4, 배 3, 감 5명이면 합계는 {{12}}명.\n* 가장 많은 항목은 {{감}}.\n* 표는 수와 {{합계}}를 한눈에 보여 준다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-18",
+      "outlineNo": "3-2-18",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "자료의 정리",
+      "unit_mid": "그림그래프",
+      "keywords": [
+        "자료",
+        "그림그래프"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 그림그래프"
+          },
+          "body": "* 자료의 수를 {{그림}}의 크기나 개수로 나타낸 그래프를 그림그래프라고 한다.\n* 큰 그림과 작은 그림으로 단위를 다르게 나타낼 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 그림그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "picto",
+            "unit": "명",
+            "cats": [
+              {
+                "name": "사과",
+                "value": 24
+              },
+              {
+                "name": "배",
+                "value": 13
+              },
+              {
+                "name": "감",
+                "value": 32
+              }
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "none"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "그림그래프",
+              "meaning": "자료를 그림으로 나타낸 그래프"
+            },
+            {
+              "term": "단위 그림",
+              "meaning": "큰 그림·작은 그림으로 수를 표시"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 큰 그림 1개가 10명, 작은 그림 1개가 1명.\n* 큰 그림 2개는 {{20}}명.\n* 그림그래프는 많고 적음을 {{한눈에}} 보여 준다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-19",
+      "outlineNo": "3-2-19",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "자료의 정리",
+      "unit_mid": "그림그래프로 나타내기",
+      "keywords": [
+        "자료",
+        "그림그래프",
+        "단위"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 그림그래프로 나타내기"
+          },
+          "body": "* 자료를 알맞은 단위로 정해 그림그래프로 그린다.\n* 수가 크면 큰 그림의 단위를 크게 정한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 반별 학생 수(그림그래프)",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "picto",
+            "unit": "명",
+            "cats": [
+              {
+                "name": "1반",
+                "value": 30
+              },
+              {
+                "name": "2반",
+                "value": 24
+              },
+              {
+                "name": "3반",
+                "value": 18
+              }
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "none"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "단위 정하기",
+              "meaning": "수의 크기에 맞게 그림 단위를 정함"
+            },
+            {
+              "term": "그림 개수",
+              "meaning": "수 ÷ 단위"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 30을 큰 그림(10) 단위로 그리면 큰 그림 {{3}}개.\n* 24를 10·1 단위로 그리면 큰 그림 2개, 작은 그림 {{4}}개.\n* 단위를 크게 하면 그림 수가 {{적어}}진다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-20",
+      "outlineNo": "3-2-20",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "(보강)",
+      "unit_mid": "곱셈 어림하기",
+      "keywords": [
+        "곱셈",
+        "어림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈 어림하기"
+          },
+          "body": "* 몇십, 몇백쯤으로 {{어림}}하여 곱을 대략 구한다.\n* 어림한 값으로 답이 맞는지 가늠할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "column_calc",
+          "heading": {
+            "1": "2. 세로셈으로 확인",
+            "3": "2. 세로셈으로 계산해 보시오."
+          },
+          "params": {
+            "op": "×",
+            "operands": [
+              312,
+              3
+            ],
+            "width": 60,
+            "showCarry": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "어림",
+              "meaning": "대략의 값으로 짐작하기"
+            },
+            {
+              "term": "반올림 어림",
+              "meaning": "가까운 몇십·몇백으로 보기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 312 × 3 은 약 300 × 3 = {{900}} 쯤.\n* 48 × 5 는 약 50 × 5 = {{250}} 쯤.\n* 어림값과 실제 값을 비교해 답을 {{확인}}한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-21",
+      "outlineNo": "3-2-21",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "(보강)",
+      "unit_mid": "나눗셈 활용 문장제 구조",
+      "keywords": [
+        "나눗셈",
+        "문장제"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 나눗셈 문장제 구조"
+          },
+          "body": "* 전체 수를 똑같이 나누거나 묶는 상황은 나눗셈으로 나타낸다.\n* (전체) ÷ (묶음 수 또는 한 묶음의 수)로 식을 세운다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 전체와 묶음의 관계",
+            "3": "2. 관계를 이루는 수를 채워 보시오."
+          },
+          "params": {
+            "op": "×",
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "width": 65
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "전체",
+              "meaning": "나누어지는 수"
+            },
+            {
+              "term": "몫",
+              "meaning": "한 묶음의 수 또는 묶음의 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 사탕 12개를 4명이 나누면 12 ÷ 4 = {{3}}개.\n* 공책 20권을 5권씩 묶으면 20 ÷ 5 = {{4}}묶음.\n* 전체를 똑같이 나눌 때는 {{나눗셈}}을 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-22",
+      "outlineNo": "3-2-22",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "(보강)",
+      "unit_mid": "분수 문장제 구조 (전체-부분)",
+      "keywords": [
+        "분수",
+        "문장제",
+        "전체"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분수 문장제 구조"
+          },
+          "body": "* 전체의 분수만큼을 구하는 문장제는 전체를 나누어 생각한다.\n* 전체 ÷ 분모 × 분자로 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 전체의 3/4",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 3,
+            "width": 76,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "전체",
+              "meaning": "기준이 되는 수"
+            },
+            {
+              "term": "분수만큼",
+              "meaning": "전체 ÷ 분모 × 분자"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 사과 12개의 3/4 은 {{9}}개.\n* 20의 2/5 는 {{8}}.\n* 전체 ÷ 분모 × 분자 로 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-3-2-23",
+      "outlineNo": "3-2-23",
+      "school": "초등학교",
+      "grade": "3학년",
+      "unit_big": "(보강)",
+      "unit_mid": "들이·무게 어림",
+      "keywords": [
+        "들이",
+        "무게",
+        "어림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 들이·무게 어림"
+          },
+          "body": "* 실제로 재기 전에 들이·무게를 {{어림}}해 본다.\n* 아는 물건과 비교하면 어림하기 쉽다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 어림하기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "어림해 보기 (0mL ~ 1000mL)",
+                "min": 0,
+                "max": 1000,
+                "step": 100,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "어림",
+              "meaning": "대략의 양을 짐작하기"
+            },
+            {
+              "term": "기준 물건",
+              "meaning": "비교할 수 있는 익숙한 물건"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 물 한 컵은 약 {{200}}mL 쯤.\n* 우유 한 팩은 약 1L = {{1000}}mL.\n* 수박 한 통은 약 몇 {{kg}}쯤인지 어림한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

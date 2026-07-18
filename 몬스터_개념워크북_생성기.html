@@ -2349,6 +2349,25 @@ function buildTextForm(body, block) {
   });
   body.appendChild(ta);
 
+  // 수식 넣기 팔레트 (본문에 분수·대분수 등 수식 삽입)
+  const pal = document.createElement("div");
+  pal.style.cssText = "display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin:8px 0;";
+  const plab = document.createElement("span");
+  plab.textContent = "수식 넣기:";
+  plab.style.cssText = "font-size:12px; color:#666; margin-right:2px;";
+  pal.appendChild(plab);
+  TEXT_MATH_PALETTE.forEach(function (item) {
+    const b = mkBtn(item[0], "btn small line");
+    b.addEventListener("mousedown", function (e) { e.preventDefault(); });
+    b.addEventListener("click", function () { insertSnippet(ta, item[1], item[2]); });
+    pal.appendChild(b);
+  });
+  body.appendChild(pal);
+  const mhint = document.createElement("div");
+  mhint.style.cssText = "font-size:12px; color:#888; margin-bottom:8px; line-height:1.5;";
+  mhint.textContent = "버튼을 누르면 커서 위치에 수식이 들어갑니다. 파란색으로 선택된 숫자를 눌러 고쳐 쓰세요. 분수 전체를 마우스로 선택한 뒤 [선택한 부분 빈칸 지정]을 누르면 답 빈칸이 됩니다.";
+  body.appendChild(mhint);
+
   // 3단계 설정
   const qIn = document.createElement("input");
   qIn.type = "text";
@@ -2389,6 +2408,16 @@ const FORMULA_PALETTE = [
   ["π",     "π",             null],
   ["도(°)", "90^\\circ",     "90"],
   ["|x|",   "|x|",           "x"]
+];
+
+// 본문(설명·예시)에 넣는 수식 — $...$ 로 감싸서 삽입
+const TEXT_MATH_PALETTE = [
+  ["분수",   "$\\dfrac{1}{2}$",  "1"],
+  ["대분수", "$1\\dfrac{1}{2}$", "1"],
+  ["×",     "×",                null],
+  ["÷",     "÷",                null],
+  ["제곱",   "$x^{2}$",          "x"],
+  ["루트",   "$\\sqrt{2}$",      "2"]
 ];
 
 function insertSnippet(field, text, selectPart) {

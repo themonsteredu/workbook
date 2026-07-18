@@ -86,8 +86,8 @@
   /* 항목 사이 세로 간격 — 분수 수식이 들어가도 붙어 보이지 않게 넉넉히 */
   .qtext .li { display:block; padding-left:18px; text-indent:-18px; margin:10px 0; }
   .qtext .li-p { display:block; margin:10px 0; }
-  /* 인라인 분수(KaTeX)가 줄 높이를 크게 늘리지 않도록 */
-  .qtext .katex { font-size:1.05em; }
+  /* 인라인 분수(KaTeX): 줄 높이 안정 + 좌우 여백을 줘서 연산자와 붙지 않게 */
+  .qtext .katex { font-size:1.05em; margin:0 6px; }
   .qtext .math { font-family:'Times New Roman',serif; font-style:italic; font-size:16px; }
   .math { font-family:'Times New Roman',serif; font-style:italic; font-size:16px; }
 

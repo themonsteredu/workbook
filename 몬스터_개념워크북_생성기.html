@@ -805,10 +805,10 @@ function renderFractionFig(block, stage) {
   }
   s += "</svg>";
 
-  // 분수 글자 (그림 바로 아래, 크게)
+  // 분수 글자 (그림 바로 아래, 크게 — 가로선을 넉넉하게)
   if (!bare && p.showCaption !== false) {
     const cap = labOf(block, "caption");
-    const tex = "\\dfrac{" + num + "}{" + den + "}";
+    const tex = "\\dfrac{\\;" + num + "\\;}{\\;" + den + "\\;}";
     let inner;
     if (stage === 2 && cap && cap.blank) {
       inner = '<span class="box-blank" style="width:48px; height:52px;"></span>';
@@ -2551,9 +2551,13 @@ function aiToConcept(school, grade, unitBig, conceptName, ai) {
 }
 
 // AI가 백슬래시를 한 번만 쓰는 등 형식을 살짝 틀려도 고쳐서 읽기
+// 원칙: \\(두 개), \" , \/ , \uXXXX 만 그대로 두고, 나머지 백슬래시는 전부 글자 그대로로 살린다.
+// (수식 명령 \dfrac, \times, \neq, \underline 등이 어떤 형태로 와도 복원됨)
 function repairJSONText(t) {
-  // \dfrac 처럼 JSON에서 허용되지 않는 백슬래시 → 두 개로
-  t = t.replace(/\\\\|\\(?=[^"\\/nrtu])/g, function (m) { return m === "\\\\" ? m : "\\\\"; });
+  t = t.replace(/\\\\|\\u[0-9a-fA-F]{4}|\\["\/]|\\./g, function (m) {
+    if (m === "\\\\" || m === '\\"' || m === "\\/" || m.length === 6) return m;
+    return "\\\\" + m.slice(1);
+  });
   // 마지막 쉼표 제거
   t = t.replace(/,\s*([}\]])/g, "$1");
   return t;
@@ -2576,9 +2580,10 @@ function parseDraftText(text) {
   if (a < 0 || b < 0) return null;
   const jsonText = text.slice(a, b + 1);
   let parsed = null;
-  try { parsed = JSON.parse(jsonText); }
+  // 항상 고쳐 읽기를 먼저 시도 (\times 같은 표기가 조용히 깨지는 것도 방지)
+  try { parsed = JSON.parse(repairJSONText(jsonText)); }
   catch (e1) {
-    try { parsed = JSON.parse(repairJSONText(jsonText)); }
+    try { parsed = JSON.parse(jsonText); }
     catch (e2) { return null; }
   }
   return fixEscapes(parsed);
@@ -2607,7 +2612,10 @@ async function callClaudeOnce(school, grade, unitBig, conceptName) {
     throw new Error("AI 요청에 실패했습니다 (오류 번호 " + res.status + "). 잠시 후 다시 시도해 주세요.");
   }
   const data = await res.json();
-  return (data.content && data.content[0] && data.content[0].text) || "";
+  return (data.content || [])
+    .filter(function (c) { return c && c.type === "text"; })
+    .map(function (c) { return c.text; })
+    .join("");
 }
 
 async function callClaudeDraft(school, grade, unitBig, conceptName) {

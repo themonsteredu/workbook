@@ -184,6 +184,8 @@
     overflow:auto; height:calc(100vh - 150px); min-height:420px; padding:14px; }
   #preview-scale { transform:scale(0.68); transform-origin:top left; width:760px; }
   #preview-scale .sheet { margin:0; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+  #preview-box g.fig-label { cursor:move; }
+  #preview-box g.fig-label:hover rect.g-label { stroke:#E8500A; }
 
   @media print {
     body { background:#fff; padding:0; }
@@ -243,7 +245,8 @@
           <button class="btn line" id="btn-unblank">빈칸 해제</button>
         </div>
         <p>본문이나 표에서 빈칸으로 만들 단어를 <b>마우스로 선택(드래그)</b>한 뒤 [빈칸 지정]을 누르세요.
-        지정된 단어는 <b>{{ }}</b> 로 표시되며, 1단계에서는 굵은 글씨, 2단계에서는 빈칸이 됩니다.</p>
+        지정된 단어는 <b>{{ }}</b> 로 표시되며, 1단계에서는 굵은 글씨, 2단계에서는 빈칸이 됩니다.
+        그림의 <b>이름표는 오른쪽 미리보기에서 마우스로 끌어</b> 위치를 옮길 수 있습니다.</p>
       </div>
 
       <div class="panel">
@@ -252,6 +255,7 @@
         <div class="add-btns">
           <button class="btn line" id="btn-add-text">+ 설명 문단</button>
           <button class="btn line" id="btn-add-formula">+ 수식</button>
+          <button class="btn line" id="btn-add-figure">+ 그림</button>
           <button class="btn line" id="btn-add-table">+ 용어 정리표</button>
         </div>
       </div>
@@ -529,16 +533,18 @@ function renderCoordGraph(block, stage) {
   }
 
   if (stage < 3) {
-    (block.labels || []).forEach(function (lb) {
+    (block.labels || []).forEach(function (lb, li) {
       let dot = null;
       if (lb.anchor === "y_intercept") dot = [ox, oy - unit * yIntercept];
       if (lb.anchor === "x_intercept" && slope !== 0) dot = [ox + unit * (-yIntercept / slope), oy];
       if (dot) s += '<circle cx="' + round1(dot[0]) + '" cy="' + round1(dot[1]) + '" r="3.5" fill="#E8500A"/>';
       const b = lb.box;
+      s += '<g class="fig-label" data-lkey="cg:' + li + '">';
       s += '<rect class="g-label" x="' + b.x + '" y="' + b.y + '" width="' + b.w + '" height="22" rx="3"/>';
       if (stage === 1 || !lb.blank) {
         s += '<text x="' + (b.x + b.w / 2) + '" y="' + (b.y + 15) + '" class="g-txt" text-anchor="middle">' + esc(lb.text) + "</text>";
       }
+      s += "</g>";
     });
   }
 
@@ -546,8 +552,515 @@ function renderCoordGraph(block, stage) {
   return s;
 }
 
+/* ---------- 그림 공통 도우미 ---------- */
+
+function svgOpen(widthPct) {
+  const w = widthPct && widthPct < 100 ? widthPct : 100;
+  return '<svg width="' + w + '%" viewBox="0 0 420 240" style="margin:6px auto 12px; display:block;">';
+}
+
+function polyPath(pts) {
+  return pts.map(function (p, i) { return (i ? "L" : "M") + round1(p[0]) + " " + round1(p[1]); }).join("") + "Z";
+}
+
+function labOf(block, key) {
+  return (block.labels || []).find(function (l) { return l.key === key; }) || null;
+}
+
+// 라벨(이름표) 그리기: 박스 + 글자 + 지시선. 미리보기에서 끌어서 이동 가능.
+function drawFigLabel(block, stage, key, cx, cy, anchor) {
+  const lab = labOf(block, key);
+  if (!lab || !lab.text) return "";
+  const adj = (block.labelAdjust && block.labelAdjust[key]) || { dx: 0, dy: 0 };
+  cx += adj.dx || 0; cy += adj.dy || 0;
+  const w = Math.max(38, lab.text.length * 10.5 + 16), h = 22;
+  const x = cx - w / 2, y = cy - h / 2;
+  let s = '<g class="fig-label" data-lkey="' + key + '">';
+  if (anchor) {
+    const d = Math.hypot(anchor[0] - cx, anchor[1] - cy);
+    if (d > 34) {
+      s += '<line x1="' + round1(cx) + '" y1="' + round1(cy) + '" x2="' + round1(anchor[0]) + '" y2="' + round1(anchor[1]) + '" stroke="#999" stroke-width="1"/>';
+      s += '<circle cx="' + round1(anchor[0]) + '" cy="' + round1(anchor[1]) + '" r="2.5" fill="#E8500A"/>';
+    }
+  }
+  s += '<rect class="g-label" x="' + round1(x) + '" y="' + round1(y) + '" width="' + round1(w) + '" height="' + h + '" rx="3"/>';
+  if (!(stage === 2 && lab.blank)) {
+    s += '<text x="' + round1(cx) + '" y="' + round1(y + 15) + '" class="g-txt" text-anchor="middle">' + esc(lab.text) + "</text>";
+  }
+  s += "</g>";
+  return s;
+}
+
+function drawRightAngle(x, y, d1, d2) {
+  const k = 11;
+  const p1 = [x + d1[0] * k, y + d1[1] * k];
+  const pc = [x + (d1[0] + d2[0]) * k, y + (d1[1] + d2[1]) * k];
+  const p2 = [x + d2[0] * k, y + d2[1] * k];
+  return '<polyline points="' + round1(p1[0]) + "," + round1(p1[1]) + " " + round1(pc[0]) + "," + round1(pc[1]) + " " + round1(p2[0]) + "," + round1(p2[1]) + '" fill="none" stroke="#555" stroke-width="1.2"/>';
+}
+
+/* ---------- 그림 1 : basic_shape (평면도형) ---------- */
+
+function shapeGeom(p) {
+  const shape = p.shape || "triangle";
+  let pts, bottomA = null, hLine = null, hAnchor = null, hOff = [44, 0], rightAngleAt = -1;
+  switch (shape) {
+    case "right_triangle":
+      pts = [[140, 200], [330, 200], [140, 70]];
+      rightAngleAt = 0; hAnchor = [140, 135]; hOff = [-46, 0];
+      break;
+    case "rectangle":
+      pts = [[120, 190], [320, 190], [320, 70], [120, 70]];
+      hAnchor = [320, 130]; hOff = [44, 0];
+      break;
+    case "square":
+      pts = [[150, 190], [290, 190], [290, 50], [150, 50]];
+      hAnchor = [290, 120]; hOff = [44, 0];
+      break;
+    case "parallelogram":
+      pts = [[110, 190], [290, 190], [340, 70], [160, 70]];
+      hLine = [[160, 70], [160, 190]]; hAnchor = [160, 130]; hOff = [46, 0];
+      break;
+    case "trapezoid":
+      pts = [[110, 190], [330, 190], [270, 70], [170, 70]];
+      hLine = [[200, 70], [200, 190]]; hAnchor = [200, 130]; hOff = [46, 0];
+      break;
+    case "rhombus":
+      pts = [[220, 210], [320, 130], [220, 50], [120, 130]];
+      bottomA = [220, 210];
+      break;
+    case "polygon": {
+      const n = Math.max(5, Math.min(10, p.n || 5));
+      pts = [];
+      for (let i = 0; i < n; i++) {
+        const a = Math.PI / 2 + i * 2 * Math.PI / n;
+        pts.push([220 + 85 * Math.cos(a), 130 + 85 * Math.sin(a)]);
+      }
+      bottomA = [220, 215];
+      break;
+    }
+    default:
+      pts = [[130, 200], [330, 200], [230, 60]];
+      hLine = [[230, 60], [230, 200]]; hAnchor = [230, 130]; hOff = [48, 0];
+  }
+  if (!bottomA) bottomA = [(pts[0][0] + pts[1][0]) / 2, Math.max(pts[0][1], pts[1][1])];
+  return { pts: pts, bottomA: bottomA, hLine: hLine, hAnchor: hAnchor, hOff: hOff, rightAngleAt: rightAngleAt };
+}
+
+function renderBasicShape(block, stage) {
+  const p = block.params || {};
+  const st3 = block.stage3 || "frame";
+  if (stage === 3 && st3 === "none") return "";
+  const bare = stage === 3;
+  const g = shapeGeom(p);
+  let s = svgOpen(p.width);
+
+  s += '<path d="' + polyPath(g.pts) + '" fill="none" stroke="#333" stroke-width="2"/>';
+
+  if (!bare) {
+    if (p.showDiagonals) {
+      const n = g.pts.length;
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 2; j < n; j++) {
+          if (i === 0 && j === n - 1) continue;
+          s += '<line x1="' + round1(g.pts[i][0]) + '" y1="' + round1(g.pts[i][1]) + '" x2="' + round1(g.pts[j][0]) + '" y2="' + round1(g.pts[j][1]) + '" stroke="#999" stroke-width="1.3" stroke-dasharray="5 4"/>';
+        }
+      }
+    }
+    if (g.rightAngleAt >= 0) s += drawRightAngle(g.pts[g.rightAngleAt][0], g.pts[g.rightAngleAt][1], [1, 0], [0, -1]);
+    if (p.showBaseHeight && g.hLine) {
+      s += '<line x1="' + g.hLine[0][0] + '" y1="' + g.hLine[0][1] + '" x2="' + g.hLine[1][0] + '" y2="' + g.hLine[1][1] + '" stroke="#E8500A" stroke-width="2" stroke-dasharray="6 4"/>';
+      s += drawRightAngle(g.hLine[1][0], g.hLine[1][1], [0, -1], [-1, 0]);
+    }
+    if (p.showVertexLabels) {
+      const cxm = g.pts.reduce(function (a, q) { return a + q[0]; }, 0) / g.pts.length;
+      const cym = g.pts.reduce(function (a, q) { return a + q[1]; }, 0) / g.pts.length;
+      g.pts.forEach(function (v, i) {
+        const dx = v[0] - cxm, dy = v[1] - cym, d = Math.hypot(dx, dy) || 1;
+        s += '<text x="' + round1(v[0] + dx / d * 16) + '" y="' + round1(v[1] + dy / d * 16 + 4) + '" class="g-txt" text-anchor="middle">' + "ABCDEFGHIJ"[i] + "</text>";
+      });
+    }
+    // 라벨: 아랫변 / 높이
+    s += drawFigLabel(block, stage, "bottom", g.bottomA[0], g.bottomA[1] + 20, [g.bottomA[0], g.bottomA[1]]);
+    if (p.showBaseHeight && g.hAnchor) {
+      s += drawFigLabel(block, stage, "height", g.hAnchor[0] + g.hOff[0], g.hAnchor[1] + g.hOff[1], g.hAnchor);
+    }
+  }
+  s += "</svg>";
+  return s;
+}
+
+/* ---------- 그림 2 : fraction_fig (분수 모델) ---------- */
+
+function fracArc(cx, cy, r, a0, a1) {
+  const x0 = cx + r * Math.cos(a0), y0 = cy + r * Math.sin(a0);
+  const x1 = cx + r * Math.cos(a1), y1 = cy + r * Math.sin(a1);
+  const large = a1 - a0 > Math.PI ? 1 : 0;
+  return "M" + round1(cx) + " " + round1(cy) + "L" + round1(x0) + " " + round1(y0) +
+    "A" + r + " " + r + " 0 " + large + " 1 " + round1(x1) + " " + round1(y1) + "Z";
+}
+
+function renderFractionFig(block, stage) {
+  const p = block.params || {};
+  const st3 = block.stage3 || "frame";
+  if (stage === 3 && st3 === "none") return "";
+  const bare = stage === 3;
+  const den = Math.max(1, Math.min(20, p.den || 4));
+  const num = Math.max(0, Math.min(den * 4, p.num == null ? 3 : p.num));
+  const wholes = Math.max(1, Math.ceil(num / den) || 1);
+  const FILL = "#F6C295";
+  let s = svgOpen(p.width);
+
+  if ((p.model || "bar") === "circle") {
+    const r = wholes > 2 ? 44 : 55;
+    const gap = 24;
+    const totalW = wholes * r * 2 + (wholes - 1) * gap;
+    let cx = (420 - totalW) / 2 + r;
+    for (let w = 0; w < wholes; w++) {
+      for (let i = 0; i < den; i++) {
+        const a0 = -Math.PI / 2 + i * 2 * Math.PI / den;
+        const a1 = -Math.PI / 2 + (i + 1) * 2 * Math.PI / den;
+        const filled = !bare && w * den + i < num;
+        if (den === 1) {
+          s += '<circle cx="' + round1(cx) + '" cy="120" r="' + r + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.6"/>';
+        } else {
+          s += '<path d="' + fracArc(cx, 120, r, a0, a1) + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.4"/>';
+        }
+      }
+      s += '<circle cx="' + round1(cx) + '" cy="120" r="' + r + '" fill="none" stroke="#333" stroke-width="2"/>';
+      cx += r * 2 + gap;
+    }
+  } else {
+    const gap = 16;
+    const barW = Math.min(190, (380 - (wholes - 1) * gap) / wholes);
+    const barH = 62, y0 = 89;
+    let bx = (420 - (barW * wholes + gap * (wholes - 1))) / 2;
+    for (let w = 0; w < wholes; w++) {
+      for (let i = 0; i < den; i++) {
+        const cw = barW / den;
+        const filled = !bare && w * den + i < num;
+        s += '<rect x="' + round1(bx + i * cw) + '" y="' + y0 + '" width="' + round1(cw) + '" height="' + barH + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.2"/>';
+      }
+      s += '<rect x="' + round1(bx) + '" y="' + y0 + '" width="' + round1(barW) + '" height="' + barH + '" fill="none" stroke="#333" stroke-width="2"/>';
+      bx += barW + gap;
+    }
+  }
+  s += "</svg>";
+
+  // 분수 글자 (그림 아래)
+  if (!bare && p.showCaption !== false) {
+    const cap = labOf(block, "caption");
+    const tex = "\\dfrac{" + num + "}{" + den + "}";
+    let inner;
+    if (stage === 2 && cap && cap.blank) {
+      inner = '<span class="box-blank" style="width:44px; height:40px;"></span>';
+    } else {
+      inner = renderMathSeg(tex);
+    }
+    s += '<div style="text-align:center; margin:-4px 0 12px;">' + inner + "</div>";
+  }
+  return s;
+}
+
+/* ---------- 그림 3 : solid_fig (입체도형) ---------- */
+
+function renderSolidFig(block, stage) {
+  const p = block.params || {};
+  const st3 = block.stage3 || "frame";
+  if (stage === 3 && st3 === "none") return "";
+  const bare = stage === 3;
+  const solid = p.solid || "cuboid";
+  let s = svgOpen(p.width);
+  const SOL = 'stroke="#333" stroke-width="1.8" fill="none"';
+  const HID = 'stroke="#999" stroke-width="1.4" fill="none" stroke-dasharray="5 4"';
+  const ACC = 'stroke="#E8500A" stroke-width="1.8"';
+  const anchors = {}; // key → [라벨중심x, y, 지시점x, y]
+
+  function L(a, b, style) {
+    s += '<line x1="' + round1(a[0]) + '" y1="' + round1(a[1]) + '" x2="' + round1(b[0]) + '" y2="' + round1(b[1]) + '" ' + style + "/>";
+  }
+
+  if ((p.mode === "net") && (solid === "cuboid" || solid === "cube" || solid === "cylinder")) {
+    /* --- 전개도 --- */
+    if (solid === "cylinder") {
+      const r = 30, rw = 210, rh = 84;
+      const rx = (420 - rw) / 2, ry = (240 - rh) / 2 + 8;
+      s += '<rect x="' + rx + '" y="' + ry + '" width="' + rw + '" height="' + rh + '" ' + SOL + "/>";
+      s += '<circle cx="210" cy="' + (ry - r) + '" r="' + r + '" ' + SOL + "/>";
+      s += '<circle cx="210" cy="' + (ry + rh + r) + '" r="' + r + '" ' + SOL + "/>";
+      L([210, ry - r], [210 + r, ry - r], ACC);
+      s += '<circle cx="210" cy="' + (ry - r) + '" r="2" fill="#E8500A"/>';
+      anchors.banjireum = [285, ry - r - 12, 210 + r / 2, ry - r];
+      anchors.nopi = [rx + rw + 42, ry + rh / 2, rx + rw, ry + rh / 2];
+      anchors.mitmyeon = [110, ry + rh + r, 210 - r / 2, ry + rh + r];
+    } else {
+      let gw = p.garo || 4, sd = p.sero || 3, hh = p.nopi || 2;
+      if (solid === "cube") { gw = 3; sd = 3; hh = 3; }
+      const W = 2 * gw + 2 * sd, H = hh + 2 * sd;
+      const sc = Math.min(370 / W, 214 / H);
+      const g2 = gw * sc, s2 = sd * sc, h2 = hh * sc;
+      const x0 = (420 - (2 * g2 + 2 * s2)) / 2, ymid = (240 - h2) / 2 + (s2 - s2) / 2;
+      const yTop = (240 - (h2 + 2 * s2)) / 2 + s2;
+      // 가운데 줄: 옆면(세로) 앞면(가로) 옆면 뒷면
+      const xs = [x0, x0 + s2, x0 + s2 + g2, x0 + 2 * s2 + g2, x0 + 2 * s2 + 2 * g2];
+      const ws = [s2, g2, s2, g2];
+      for (let i = 0; i < 4; i++) s += '<rect x="' + round1(xs[i]) + '" y="' + round1(yTop) + '" width="' + round1(ws[i]) + '" height="' + round1(h2) + '" ' + SOL + "/>";
+      // 앞면 위·아래: 윗면/밑면 (가로×세로)
+      s += '<rect x="' + round1(xs[1]) + '" y="' + round1(yTop - s2) + '" width="' + round1(g2) + '" height="' + round1(s2) + '" ' + SOL + "/>";
+      s += '<rect x="' + round1(xs[1]) + '" y="' + round1(yTop + h2) + '" width="' + round1(g2) + '" height="' + round1(s2) + '" ' + SOL + "/>";
+      anchors.garo = [xs[1] + g2 / 2, Math.min(228, yTop + h2 + s2 + 14), xs[1] + g2 / 2, yTop + h2 + s2];
+      anchors.sero = [xs[1] + g2 + 46, yTop - s2 / 2, xs[1] + g2, yTop - s2 / 2];
+      anchors.nopi = [Math.max(36, xs[0] - 34), yTop + h2 / 2, xs[0], yTop + h2 / 2];
+    }
+  } else if (solid === "cuboid" || solid === "cube") {
+    const cube = solid === "cube";
+    const x1 = cube ? 150 : 120, x2 = cube ? 270 : 280;
+    const y1 = cube ? 90 : 100, y2 = cube ? 210 : 200;
+    const ox = cube ? 50 : 60, oy = cube ? -35 : -40;
+    const A = [x1, y2], B = [x2, y2], C = [x2, y1], D = [x1, y1];
+    const A2 = [A[0] + ox, A[1] + oy], B2 = [B[0] + ox, B[1] + oy], C2 = [C[0] + ox, C[1] + oy], D2 = [D[0] + ox, D[1] + oy];
+    [[A, B], [B, C], [C, D], [D, A], [B, B2], [C, C2], [D, D2], [B2, C2], [C2, D2]].forEach(function (e) { L(e[0], e[1], SOL); });
+    if (p.showHidden !== false) [[A, A2], [A2, B2], [A2, D2]].forEach(function (e) { L(e[0], e[1], HID); });
+    anchors.garo = [(A[0] + B[0]) / 2, A[1] + 20, (A[0] + B[0]) / 2, A[1]];
+    anchors.sero = [(B[0] + B2[0]) / 2 + 42, (B[1] + B2[1]) / 2 + 14, (B[0] + B2[0]) / 2, (B[1] + B2[1]) / 2];
+    anchors.nopi = [B[0] + 44, (B[1] + C[1]) / 2 - 14, B[0], (B[1] + C[1]) / 2];
+  } else if (solid === "prism" || solid === "pyramid") {
+    const n = Math.max(3, Math.min(8, p.n || 5));
+    const cx = 220, rx = 95, ry = 24;
+    const botY = solid === "prism" ? 190 : 185, topY = 85;
+    function ring(yc) {
+      const out = [];
+      for (let i = 0; i < n; i++) {
+        const a = -Math.PI / 2 + i * 2 * Math.PI / n;
+        out.push([cx + rx * Math.cos(a), yc + ry * Math.sin(a), Math.sin(a)]);
+      }
+      return out;
+    }
+    const bot = ring(botY);
+    if (solid === "prism") {
+      const top = ring(topY);
+      for (let i = 0; i < n; i++) {
+        const j = (i + 1) % n;
+        L(top[i], top[j], SOL);
+        L(bot[i], bot[j], (bot[i][2] + bot[j][2]) / 2 >= -0.05 ? SOL : (p.showHidden !== false ? HID : "stroke=\"none\""));
+        L(top[i], bot[i], bot[i][2] >= -0.05 ? SOL : (p.showHidden !== false ? HID : "stroke=\"none\""));
+      }
+      const rmost = bot.reduce(function (a, b) { return b[0] > a[0] ? b : a; });
+      anchors.nopi = [rmost[0] + 46, (topY + botY) / 2, rmost[0], (topY + rmost[1]) / 2 + 20];
+      anchors.mitmyeon = [110, 226, cx - 30, botY + ry / 2];
+      anchors.yeopmyeon = [330, 40, cx + rx * 0.55, (topY + botY) / 2 + ry];
+    } else {
+      const apex = [220, 48];
+      for (let i = 0; i < n; i++) {
+        const j = (i + 1) % n;
+        L(bot[i], bot[j], (bot[i][2] + bot[j][2]) / 2 >= -0.05 ? SOL : (p.showHidden !== false ? HID : "stroke=\"none\""));
+        L(apex, bot[i], bot[i][2] >= -0.05 ? SOL : (p.showHidden !== false ? HID : "stroke=\"none\""));
+      }
+      if (!bare && labOf(block, "nopi") && labOf(block, "nopi").text) {
+        L(apex, [220, botY], 'stroke="#E8500A" stroke-width="1.8" stroke-dasharray="6 4"');
+        s += drawRightAngle(220, botY, [0, -1], [1, 0]);
+      }
+      anchors.nopi = [258, 118, 220, 118];
+      anchors.mitmyeon = [110, 226, cx - 30, botY + ry / 2];
+      anchors.yeopmyeon = [335, 70, cx + rx * 0.45, (apex[1] + botY) / 2 + 16];
+    }
+  } else if (solid === "cylinder") {
+    s += '<ellipse cx="220" cy="80" rx="85" ry="22" ' + SOL + "/>";
+    L([135, 80], [135, 190], SOL); L([305, 80], [305, 190], SOL);
+    s += '<path d="M135 190 A85 22 0 0 0 305 190" ' + SOL + "/>";
+    if (p.showHidden !== false) s += '<path d="M135 190 A85 22 0 0 1 305 190" ' + HID + "/>";
+    if (!bare && labOf(block, "banjireum") && labOf(block, "banjireum").text) {
+      L([220, 80], [305, 80], ACC);
+      s += '<circle cx="220" cy="80" r="2.2" fill="#E8500A"/>';
+    }
+    anchors.banjireum = [262, 54, 262, 80];
+    anchors.nopi = [345, 135, 305, 135];
+    anchors.mitmyeon = [110, 224, 200, 196];
+  } else if (solid === "cone") {
+    const apex = [220, 52];
+    L(apex, [130, 185], SOL); L(apex, [310, 185], SOL);
+    s += '<path d="M130 185 A90 22 0 0 0 310 185" ' + SOL + "/>";
+    if (p.showHidden !== false) s += '<path d="M130 185 A90 22 0 0 1 310 185" ' + HID + "/>";
+    if (!bare && labOf(block, "nopi") && labOf(block, "nopi").text) {
+      L(apex, [220, 185], 'stroke="#E8500A" stroke-width="1.8" stroke-dasharray="6 4"');
+      s += drawRightAngle(220, 185, [0, -1], [1, 0]);
+    }
+    if (!bare && labOf(block, "banjireum") && labOf(block, "banjireum").text) {
+      L([220, 185], [310, 185], ACC);
+      s += '<circle cx="220" cy="185" r="2.2" fill="#E8500A"/>';
+    }
+    anchors.nopi = [255, 116, 220, 116];
+    anchors.banjireum = [265, 212, 265, 185];
+    anchors.mitmyeon = [110, 224, 175, 192];
+  } else if (solid === "sphere") {
+    s += '<circle cx="220" cy="128" r="82" ' + SOL + "/>";
+    s += '<path d="M138 128 A82 20 0 0 0 302 128" ' + SOL + "/>";
+    if (p.showHidden !== false) s += '<path d="M138 128 A82 20 0 0 1 302 128" ' + HID + "/>";
+    if (!bare && labOf(block, "banjireum") && labOf(block, "banjireum").text) {
+      L([220, 128], [302, 128], ACC);
+    }
+    s += '<circle cx="220" cy="128" r="2.4" fill="#E8500A"/>';
+    anchors.banjireum = [262, 104, 262, 128];
+    anchors.jungsim = [130, 60, 220, 128];
+  }
+
+  if (!bare) {
+    Object.keys(anchors).forEach(function (key) {
+      const a = anchors[key];
+      s += drawFigLabel(block, stage, key, a[0], a[1], [a[2], a[3]]);
+    });
+  }
+  s += "</svg>";
+  return s;
+}
+
+/* ---------- 그림 4 : stat_chart (그래프·표) ---------- */
+
+function niceStep(max) {
+  const raw = Math.max(1, max) / 4;
+  const pow = Math.pow(10, Math.floor(Math.log10(raw)));
+  for (const m of [1, 2, 5, 10]) {
+    if (raw <= m * pow) return m * pow;
+  }
+  return 10 * pow;
+}
+
+const CHART_PALETTE = ["#F2A46F", "#F7C79B", "#FBE3C8", "#E4DDD2", "#D9D9D9", "#C9CFD6"];
+
+function renderStatChart(block, stage) {
+  const p = block.params || {};
+  const st3 = block.stage3 || "frame";
+  if (stage === 3 && st3 === "none") return "";
+  const bare = stage === 3;
+  const cats = (p.cats || []).filter(function (c) { return c.name; });
+  const chart = p.chart || "bar";
+  let s = svgOpen(p.width);
+  if (!cats.length) { return s + "</svg>"; }
+  const maxV = Math.max.apply(null, cats.map(function (c) { return Number(c.value) || 0; }).concat([1]));
+  const total = cats.reduce(function (a, c) { return a + (Number(c.value) || 0); }, 0) || 1;
+
+  if (chart === "bar" || chart === "line") {
+    const x0 = 70, x1 = 400, y0 = 202, y1 = 38;
+    const step = niceStep(maxV);
+    const top = Math.ceil(maxV / step) * step || step;
+    for (let v = step; v <= top; v += step) {
+      const y = y0 - (v / top) * (y0 - y1);
+      s += '<line x1="' + x0 + '" y1="' + round1(y) + '" x2="' + x1 + '" y2="' + round1(y) + '" stroke="#e5e5e5" stroke-width="1"/>';
+      s += '<text x="' + (x0 - 7) + '" y="' + round1(y + 4) + '" text-anchor="end" font-size="11" fill="#333">' + v + "</text>";
+    }
+    s += '<text x="' + (x0 - 7) + '" y="' + (y0 + 4) + '" text-anchor="end" font-size="11" fill="#333">0</text>';
+    s += '<line x1="' + x0 + '" y1="' + (y1 - 10) + '" x2="' + x0 + '" y2="' + y0 + '" stroke="#333" stroke-width="1.5"/>';
+    s += '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + (x1 + 6) + '" y2="' + y0 + '" stroke="#333" stroke-width="1.5"/>';
+    if (p.unit) s += '<text x="' + x0 + '" y="' + (y1 - 16) + '" text-anchor="middle" font-size="11" fill="#333">(' + esc(p.unit) + ")</text>";
+    const slot = (x1 - x0) / cats.length;
+    cats.forEach(function (c, i) {
+      const cx = x0 + slot * (i + 0.5);
+      s += '<text x="' + round1(cx) + '" y="' + (y0 + 17) + '" text-anchor="middle" font-size="11.5" fill="#111">' + esc(c.name) + "</text>";
+    });
+    if (!bare) {
+      if (chart === "bar") {
+        cats.forEach(function (c, i) {
+          const cx = x0 + slot * (i + 0.5);
+          const v = Number(c.value) || 0;
+          const h = (v / top) * (y0 - y1);
+          const bw = Math.min(46, slot * 0.5);
+          s += '<rect x="' + round1(cx - bw / 2) + '" y="' + round1(y0 - h) + '" width="' + round1(bw) + '" height="' + round1(h) + '" fill="#E8500A"/>';
+        });
+      } else {
+        const ptsArr = cats.map(function (c, i) {
+          const v = Number(c.value) || 0;
+          return [x0 + slot * (i + 0.5), y0 - (v / top) * (y0 - y1)];
+        });
+        s += '<polyline points="' + ptsArr.map(function (q) { return round1(q[0]) + "," + round1(q[1]); }).join(" ") + '" fill="none" stroke="#E8500A" stroke-width="2.5"/>';
+        ptsArr.forEach(function (q) {
+          s += '<circle cx="' + round1(q[0]) + '" cy="' + round1(q[1]) + '" r="3.8" fill="#E8500A"/>';
+        });
+      }
+    }
+  } else if (chart === "band") {
+    const x0 = 40, bw = 340, y0 = 100, bh = 52;
+    for (let t = 0; t <= 10; t++) {
+      const x = x0 + bw * t / 10;
+      s += '<line x1="' + round1(x) + '" y1="' + (y0 - 8) + '" x2="' + round1(x) + '" y2="' + y0 + '" stroke="#666" stroke-width="1"/>';
+      s += '<text x="' + round1(x) + '" y="' + (y0 - 13) + '" text-anchor="middle" font-size="9" fill="#555">' + t * 10 + "</text>";
+    }
+    let x = x0;
+    cats.forEach(function (c, i) {
+      const w = bw * (Number(c.value) || 0) / total;
+      s += '<rect x="' + round1(x) + '" y="' + y0 + '" width="' + round1(w) + '" height="' + bh + '" fill="' + (bare ? "none" : CHART_PALETTE[i % CHART_PALETTE.length]) + '" stroke="#333" stroke-width="1.2"/>';
+      if (!bare && w > 30) {
+        s += '<text x="' + round1(x + w / 2) + '" y="' + (y0 + 22) + '" text-anchor="middle" font-size="10.5" fill="#111">' + esc(c.name) + "</text>";
+        s += '<text x="' + round1(x + w / 2) + '" y="' + (y0 + 38) + '" text-anchor="middle" font-size="10" fill="#333">' + Math.round((Number(c.value) || 0) / total * 100) + "%</text>";
+      }
+      x += w;
+    });
+    s += '<rect x="' + x0 + '" y="' + y0 + '" width="' + bw + '" height="' + bh + '" fill="none" stroke="#333" stroke-width="1.6"/>';
+    if (p.unit) s += '<text x="' + (x0 + bw) + '" y="' + (y0 + bh + 18) + '" text-anchor="end" font-size="10.5" fill="#555">(단위: %)</text>';
+  } else if (chart === "pie") {
+    const cx = 210, cy = 128, r = 86;
+    for (let t = 0; t < 20; t++) {
+      const a = -Math.PI / 2 + t * Math.PI / 10;
+      const l = t % 5 === 0 ? 8 : 4;
+      s += '<line x1="' + round1(cx + (r) * Math.cos(a)) + '" y1="' + round1(cy + r * Math.sin(a)) + '" x2="' + round1(cx + (r + l) * Math.cos(a)) + '" y2="' + round1(cy + (r + l) * Math.sin(a)) + '" stroke="#666" stroke-width="1"/>';
+      if (t % 5 === 0) {
+        s += '<text x="' + round1(cx + (r + 20) * Math.cos(a)) + '" y="' + round1(cy + (r + 20) * Math.sin(a) + 3) + '" text-anchor="middle" font-size="9.5" fill="#555">' + t * 5 + "</text>";
+      }
+    }
+    if (!bare) {
+      let acc = 0;
+      cats.forEach(function (c, i) {
+        const v = Number(c.value) || 0;
+        const a0 = -Math.PI / 2 + acc / total * 2 * Math.PI;
+        const a1 = -Math.PI / 2 + (acc + v) / total * 2 * Math.PI;
+        s += '<path d="' + fracArc(cx, cy, r, a0, a1) + '" fill="' + CHART_PALETTE[i % CHART_PALETTE.length] + '" stroke="#333" stroke-width="1.2"/>';
+        const am = (a0 + a1) / 2;
+        if (v / total > 0.06) {
+          s += '<text x="' + round1(cx + r * 0.58 * Math.cos(am)) + '" y="' + round1(cy + r * 0.58 * Math.sin(am)) + '" text-anchor="middle" font-size="10.5" fill="#111">' + esc(c.name) + "</text>";
+          s += '<text x="' + round1(cx + r * 0.58 * Math.cos(am)) + '" y="' + round1(cy + r * 0.58 * Math.sin(am) + 14) + '" text-anchor="middle" font-size="10" fill="#333">' + Math.round(v / total * 100) + "%</text>";
+        }
+        acc += v;
+      });
+    }
+    s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#333" stroke-width="1.6"/>';
+  } else if (chart === "picto") {
+    const bigUnit = maxV >= 10 ? Math.pow(10, String(Math.floor(maxV)).length - 1) : 1;
+    const smallUnit = bigUnit > 1 ? bigUnit / 10 : 0;
+    const x0 = 60, x1 = 400, rowH = Math.min(42, 168 / cats.length);
+    const yStart = 52;
+    s += '<line x1="' + x0 + '" y1="' + (yStart - rowH / 2) + '" x2="' + x1 + '" y2="' + (yStart - rowH / 2) + '" stroke="#333" stroke-width="1.4"/>';
+    cats.forEach(function (c, i) {
+      const y = yStart + i * rowH;
+      s += '<line x1="' + x0 + '" y1="' + round1(y + rowH / 2) + '" x2="' + x1 + '" y2="' + round1(y + rowH / 2) + '" stroke="#ccc" stroke-width="1"/>';
+      s += '<text x="' + (x0 + 40) + '" y="' + round1(y + 4) + '" text-anchor="middle" font-size="11.5" fill="#111">' + esc(c.name) + "</text>";
+      if (!bare) {
+        const v = Number(c.value) || 0;
+        const nb = Math.floor(v / bigUnit);
+        const ns = smallUnit ? Math.round((v % bigUnit) / smallUnit) : 0;
+        let ix = x0 + 90;
+        for (let k = 0; k < nb; k++) { s += '<circle cx="' + ix + '" cy="' + round1(y) + '" r="8.5" fill="#E8500A"/>'; ix += 22; }
+        for (let k = 0; k < ns; k++) { s += '<circle cx="' + ix + '" cy="' + round1(y) + '" r="4" fill="#F5B98F"/>'; ix += 12; }
+      }
+    });
+    s += '<line x1="' + x0 + '" y1="' + round1(yStart + cats.length * rowH - rowH / 2) + '" x2="' + x1 + '" y2="' + round1(yStart + cats.length * rowH - rowH / 2) + '" stroke="#333" stroke-width="1.4"/>';
+    s += '<line x1="' + (x0 + 80) + '" y1="' + (yStart - rowH / 2) + '" x2="' + (x0 + 80) + '" y2="' + round1(yStart + cats.length * rowH - rowH / 2) + '" stroke="#ccc" stroke-width="1"/>';
+    // 범례
+    s += '<circle cx="300" cy="26" r="8.5" fill="#E8500A"/><text x="313" y="30" font-size="11" fill="#333">' + bigUnit + esc(p.unit || "") + "</text>";
+    if (smallUnit) s += '<circle cx="352" cy="26" r="4" fill="#F5B98F"/><text x="361" y="30" font-size="11" fill="#333">' + smallUnit + esc(p.unit || "") + "</text>";
+  }
+  s += "</svg>";
+  return s;
+}
+
+/* ---------- 그림 종류별 연결 ---------- */
+
 function renderFigure(block, stage) {
-  if (block.figure_type === "coord_graph") return renderCoordGraph(block, stage);
+  switch (block.figure_type) {
+    case "coord_graph": return renderCoordGraph(block, stage);
+    case "basic_shape": return renderBasicShape(block, stage);
+    case "fraction_fig": return renderFractionFig(block, stage);
+    case "solid_fig": return renderSolidFig(block, stage);
+    case "stat_chart": return renderStatChart(block, stage);
+  }
   return "";
 }
 
@@ -593,7 +1106,7 @@ function renderFigureBlock(block, stage, opt) {
   let out = "";
   const h = headingFor(block, stage);
   if (h) out += '<div class="qnum"' + (opt.marginTop ? ' style="margin-top:16px;"' : "") + ">" + renderInline(h, 1, "text") + "</div>";
-  out += renderFigure(block, stage);
+  out += '<div class="fig-wrap"' + (opt.bi != null ? ' data-bi="' + opt.bi + '"' : "") + ">" + renderFigure(block, stage) + "</div>";
   return out;
 }
 
@@ -646,8 +1159,8 @@ function renderSheet(c, stage) {
   if (stage === 3) out += '<div class="guide">' + esc(STAGE3_GUIDE) + "</div>";
 
   let prevWasLines = false;
-  c.blocks.forEach(function (block) {
-    const opt = { marginTop: stage === 3 && prevWasLines };
+  c.blocks.forEach(function (block, bi) {
+    const opt = { marginTop: stage === 3 && prevWasLines, bi: bi };
     if (block.type === "text") out += renderTextBlock(block, stage, opt);
     else if (block.type === "formula") out += renderFormulaBlock(block, stage, opt);
     else if (block.type === "figure") out += renderFigureBlock(block, stage, opt);
@@ -686,6 +1199,60 @@ if (!concepts) {
   concepts = [JSON.parse(JSON.stringify(EXAMPLE_CONCEPT))];
   saveConcepts(concepts);
 }
+// 그림 예제 2개 1회 넣기 (검수용, 삭제해도 다시 생기지 않음)
+const FIGURE_EXAMPLES = [
+  {
+    id: "example-fig-01", school: "초등학교", grade: "5학년",
+    unit_big: "다각형의 둘레와 넓이", unit_mid: "삼각형의 넓이 (그림 예제)",
+    keywords: ["삼각형", "밑변", "높이", "넓이", "분수"],
+    blocks: [
+      { type: "text", heading: { "1": "1. 삼각형의 넓이" },
+        body: "삼각형의 넓이는 밑변의 길이와 높이를 곱한 뒤 {{2}}로 나누어 구한다.",
+        stage3: { mode: "lines", lines: 2 } },
+      { type: "figure", figure_type: "basic_shape",
+        heading: { "1": "2. 밑변과 높이", "3": "2. 삼각형에 밑변과 높이를 직접 표시하시오." },
+        params: { shape: "triangle", width: 70, showBaseHeight: true },
+        labels: [{ key: "bottom", text: "밑변 6cm", blank: false }, { key: "height", text: "높이 4cm", blank: true }],
+        labelAdjust: {}, stage3: "frame" },
+      { type: "figure", figure_type: "fraction_fig",
+        heading: { "1": "3. 분수 모델 (색칠한 부분)", "3": "3. 4분의 3만큼 직접 색칠하고 분수로 쓰시오." },
+        params: { model: "bar", den: 4, num: 3, width: 70, showCaption: true },
+        labels: [{ key: "caption", text: "분수", blank: true }],
+        labelAdjust: {}, stage3: "frame" }
+    ]
+  },
+  {
+    id: "example-fig-02", school: "초등학교", grade: "5학년",
+    unit_big: "직육면체", unit_mid: "직육면체와 막대그래프 (그림 예제)",
+    keywords: ["직육면체", "가로", "세로", "높이", "막대그래프"],
+    blocks: [
+      { type: "figure", figure_type: "solid_fig",
+        heading: { "1": "1. 직육면체의 겨냥도", "3": "1. 직육면체의 겨냥도를 직접 그리시오." },
+        params: { solid: "cuboid", mode: "oblique", width: 70 },
+        labels: [
+          { key: "garo", text: "가로 6cm", blank: false },
+          { key: "sero", text: "세로 4cm", blank: false },
+          { key: "nopi", text: "높이 5cm", blank: true }
+        ],
+        labelAdjust: {}, stage3: "frame" },
+      { type: "figure", figure_type: "stat_chart",
+        heading: { "1": "2. 좋아하는 과일 조사 (막대그래프)", "3": "2. 조사한 내용을 막대그래프로 직접 그리시오." },
+        params: { chart: "bar", unit: "명", width: 100,
+          cats: [{ name: "사과", value: 8 }, { name: "바나나", value: 6 }, { name: "포도", value: 10 }, { name: "딸기", value: 4 }] },
+        labels: [], labelAdjust: {}, stage3: "frame" }
+    ]
+  }
+];
+if (!localStorage.getItem("mw_seed_figures_v1")) {
+  FIGURE_EXAMPLES.forEach(function (ex) {
+    if (!concepts.some(function (c) { return c.id === ex.id; })) {
+      concepts.push(JSON.parse(JSON.stringify(ex)));
+    }
+  });
+  saveConcepts(concepts);
+  localStorage.setItem("mw_seed_figures_v1", "1");
+}
+
 // 수식 예제 1회 넣기 (검수용, 삭제해도 다시 생기지 않음)
 if (!localStorage.getItem("mw_seed_formula_v1")) {
   if (!concepts.some(function (c) { return c.id === FORMULA_EXAMPLE.id; })) {
@@ -878,7 +1445,9 @@ function buildBlockCard(block, idx) {
 
   const head = document.createElement("div");
   head.className = "blk-head";
-  head.innerHTML = '<span class="b-type">' + (idx + 1) + ". " + (BLOCK_TYPE_NAME[block.type] || block.type) + "</span>";
+  let typeName = BLOCK_TYPE_NAME[block.type] || block.type;
+  if (block.type === "figure") typeName = "그림 · " + (FIGURE_TYPE_NAME[block.figure_type] || "");
+  head.innerHTML = '<span class="b-type">' + (idx + 1) + ". " + typeName + "</span>";
 
   const btnUp = mkBtn("위로", "btn small line");
   const btnDown = mkBtn("아래로", "btn small line");
@@ -902,10 +1471,7 @@ function buildBlockCard(block, idx) {
   if (block.type === "text") buildTextForm(body, block);
   else if (block.type === "formula") buildFormulaForm(body, block);
   else if (block.type === "table") buildTableForm(body, block);
-  else if (block.type === "figure") {
-    body.innerHTML = '<div class="figure-note">그림 블록입니다. (종류: 좌표평면 그래프)<br>' +
-      "그림 내용을 바꾸는 편집 기능은 4단계에서 추가됩니다. 지금은 미리보기와 인쇄에 그대로 나옵니다.</div>";
-  }
+  else if (block.type === "figure") buildFigureForm(body, block);
 
   card.appendChild(body);
   return card;
@@ -1076,6 +1642,343 @@ function buildFormulaForm(body, block) {
   body.appendChild(mkRow("답안 줄 수", nIn));
 }
 
+/* ----- 그림 블록 폼 ----- */
+
+const FIGURE_TYPE_NAME = {
+  basic_shape: "도형", fraction_fig: "분수 모델", solid_fig: "입체도형",
+  stat_chart: "그래프", coord_graph: "좌표평면 그래프"
+};
+
+const SOLID_LABEL_DEFAULTS = {
+  cuboid:   [["garo", "가로"], ["sero", "세로"], ["nopi", "높이"]],
+  cube:     [["garo", "가로"], ["sero", "세로"], ["nopi", "높이"]],
+  prism:    [["nopi", "높이"], ["mitmyeon", "밑면"], ["yeopmyeon", "옆면"]],
+  pyramid:  [["nopi", "높이"], ["mitmyeon", "밑면"], ["yeopmyeon", "옆면"]],
+  cylinder: [["banjireum", "반지름"], ["nopi", "높이"], ["mitmyeon", "밑면"]],
+  cone:     [["nopi", "높이"], ["banjireum", "반지름"], ["mitmyeon", "밑면"]],
+  sphere:   [["banjireum", "반지름"], ["jungsim", "중심"]]
+};
+
+function defaultFigureBlock(figType) {
+  const b = { type: "figure", figure_type: figType, heading: {}, params: { width: 70 }, labels: [], labelAdjust: {}, stage3: "frame" };
+  if (figType === "basic_shape") {
+    b.params.shape = "triangle"; b.params.showBaseHeight = true;
+    b.labels = [{ key: "bottom", text: "밑변", blank: false }, { key: "height", text: "높이", blank: false }];
+  } else if (figType === "fraction_fig") {
+    b.params.model = "bar"; b.params.den = 4; b.params.num = 3; b.params.showCaption = true;
+    b.labels = [{ key: "caption", text: "분수", blank: false }];
+  } else if (figType === "solid_fig") {
+    b.params.solid = "cuboid"; b.params.mode = "oblique"; b.params.n = 5;
+    b.labels = SOLID_LABEL_DEFAULTS.cuboid.map(function (d) { return { key: d[0], text: d[1], blank: false }; });
+  } else if (figType === "stat_chart") {
+    b.params.chart = "bar"; b.params.unit = "명"; b.params.width = 100;
+    b.params.cats = [{ name: "가", value: 5 }, { name: "나", value: 8 }, { name: "다", value: 6 }];
+  } else if (figType === "coord_graph") {
+    b.params = { slope: 1, yIntercept: -1, unit: 40, width: 100 };
+    b.labels = [
+      { text: "y절편", anchor: "y_intercept", blank: false, box: { x: 150, y: 150, w: 58 } },
+      { text: "x절편", anchor: "x_intercept", blank: false, box: { x: 268, y: 92, w: 58 } },
+      { text: "기울기", anchor: "on_line", blank: false, box: { x: 300, y: 150, w: 72 } }
+    ];
+    b.stage3 = "axes_only";
+  }
+  return b;
+}
+
+function mkSelect(options, value, onChange) {
+  const sel = document.createElement("select");
+  sel.style.cssText = "border:1.5px solid #bbb; border-radius:5px; padding:7px 9px; font-size:13.5px; font-family:inherit;";
+  options.forEach(function (o) {
+    const op = document.createElement("option");
+    op.value = o[0]; op.textContent = o[1];
+    sel.appendChild(op);
+  });
+  sel.value = value;
+  sel.addEventListener("change", function () { onChange(sel.value); });
+  return sel;
+}
+
+function mkCheck(labelText, checked, onChange) {
+  const wrap = document.createElement("label");
+  wrap.style.cssText = "display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:600; color:#444; margin-right:12px; cursor:pointer;";
+  const cb = document.createElement("input");
+  cb.type = "checkbox"; cb.checked = !!checked;
+  cb.addEventListener("change", function () { onChange(cb.checked); });
+  wrap.appendChild(cb);
+  wrap.appendChild(document.createTextNode(labelText));
+  return wrap;
+}
+
+function mkNum(value, min, max, onChange) {
+  const inp = document.createElement("input");
+  inp.type = "number"; inp.min = min; inp.max = max; inp.value = value;
+  inp.addEventListener("input", function () {
+    const v = Number(inp.value);
+    if (!isNaN(v)) onChange(v);
+  });
+  return inp;
+}
+
+// 라벨(이름표) 글자 + 빈칸 체크 줄
+function mkLabelRow(block, key, title) {
+  let lab = labOf(block, key);
+  if (!lab) { lab = { key: key, text: "", blank: false }; block.labels.push(lab); }
+  const row = document.createElement("div");
+  row.className = "brow";
+  const l = document.createElement("label");
+  l.textContent = title;
+  const inp = document.createElement("input");
+  inp.type = "text"; inp.value = lab.text || ""; inp.placeholder = "비우면 표시 안 함";
+  inp.addEventListener("input", function () { lab.text = inp.value; markDirty(); });
+  const cb = mkCheck("빈칸", lab.blank, function (v) { lab.blank = v; markDirty(); });
+  cb.style.marginRight = "0"; cb.style.flexShrink = "0";
+  row.appendChild(l); row.appendChild(inp); row.appendChild(cb);
+  return row;
+}
+
+function mkStage3Row(block, options) {
+  const row = document.createElement("div");
+  row.className = "brow";
+  const l = document.createElement("label");
+  l.textContent = "백지 TEST에서";
+  const sel = mkSelect(options, block.stage3 || options[0][0], function (v) { block.stage3 = v; markDirty(); });
+  row.appendChild(l); row.appendChild(sel);
+  return row;
+}
+
+function mkWidthRow(block) {
+  const row = document.createElement("div");
+  row.className = "brow";
+  const l = document.createElement("label");
+  l.textContent = "그림 크기";
+  const sel = mkSelect([["100", "크게"], ["70", "중간"], ["50", "작게"]], String(block.params.width || 100), function (v) {
+    block.params.width = Number(v); markDirty();
+  });
+  row.appendChild(l); row.appendChild(sel);
+  return row;
+}
+
+function buildFigureForm(body, block) {
+  if (!block.params) block.params = {};
+  if (!block.labels) block.labels = [];
+
+  // 소제목 / 백지 질문
+  const hIn = document.createElement("input");
+  hIn.type = "text"; hIn.placeholder = "예: 2. 밑변과 높이 (비워도 됩니다)";
+  hIn.value = (block.heading && block.heading["1"]) || "";
+  hIn.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    if (hIn.value) block.heading["1"] = hIn.value; else delete block.heading["1"];
+    markDirty();
+  });
+  body.appendChild(mkRow("소제목", hIn));
+
+  // 그림 종류
+  const typeRow = document.createElement("div");
+  typeRow.className = "brow";
+  const tl = document.createElement("label");
+  tl.textContent = "그림 종류";
+  const typeSel = mkSelect(
+    [["basic_shape", "도형"], ["fraction_fig", "분수 모델"], ["solid_fig", "입체도형"], ["stat_chart", "그래프"], ["coord_graph", "좌표평면(중등)"]],
+    block.figure_type,
+    function (v) {
+      const fresh = defaultFigureBlock(v);
+      block.figure_type = v;
+      block.params = fresh.params;
+      block.labels = fresh.labels;
+      block.labelAdjust = {};
+      block.stage3 = fresh.stage3;
+      renderBlockForms(); markDirty();
+    });
+  typeRow.appendChild(tl); typeRow.appendChild(typeSel);
+  body.appendChild(typeRow);
+
+  const p = block.params;
+
+  if (block.figure_type === "basic_shape") {
+    const row = document.createElement("div");
+    row.className = "brow";
+    const l = document.createElement("label");
+    l.textContent = "모양";
+    row.appendChild(l);
+    row.appendChild(mkSelect(
+      [["triangle", "삼각형"], ["right_triangle", "직각삼각형"], ["rectangle", "직사각형"], ["square", "정사각형"],
+       ["parallelogram", "평행사변형"], ["trapezoid", "사다리꼴"], ["rhombus", "마름모"], ["polygon", "정다각형"]],
+      p.shape || "triangle",
+      function (v) { p.shape = v; renderBlockForms(); markDirty(); }));
+    if ((p.shape || "triangle") === "polygon") {
+      const nl = document.createElement("label");
+      nl.textContent = "변 개수"; nl.style.width = "56px";
+      row.appendChild(nl);
+      row.appendChild(mkNum(p.n || 5, 5, 10, function (v) { p.n = Math.max(5, Math.min(10, v)); markDirty(); }));
+    }
+    body.appendChild(row);
+
+    const opts = document.createElement("div");
+    opts.style.margin = "4px 0 8px";
+    opts.appendChild(mkCheck("밑변·높이 표시", p.showBaseHeight, function (v) { p.showBaseHeight = v; markDirty(); }));
+    opts.appendChild(mkCheck("꼭짓점 기호(A,B,C)", p.showVertexLabels, function (v) { p.showVertexLabels = v; markDirty(); }));
+    opts.appendChild(mkCheck("대각선 표시", p.showDiagonals, function (v) { p.showDiagonals = v; markDirty(); }));
+    body.appendChild(opts);
+
+    body.appendChild(mkLabelRow(block, "bottom", "아랫변 이름표"));
+    body.appendChild(mkLabelRow(block, "height", "높이 이름표"));
+    body.appendChild(mkWidthRow(block));
+    body.appendChild(mkStage3Row(block, [["frame", "외곽만 남김"], ["none", "그림 없음"]]));
+
+  } else if (block.figure_type === "fraction_fig") {
+    const row = document.createElement("div");
+    row.className = "brow";
+    const l = document.createElement("label");
+    l.textContent = "모양";
+    row.appendChild(l);
+    row.appendChild(mkSelect([["bar", "막대"], ["circle", "원"]], p.model || "bar", function (v) { p.model = v; markDirty(); }));
+    const dl = document.createElement("label"); dl.textContent = "분모"; dl.style.width = "40px";
+    row.appendChild(dl);
+    row.appendChild(mkNum(p.den || 4, 1, 20, function (v) { p.den = Math.max(1, Math.min(20, v)); markDirty(); }));
+    const nl = document.createElement("label"); nl.textContent = "분자"; nl.style.width = "40px";
+    row.appendChild(nl);
+    row.appendChild(mkNum(p.num == null ? 3 : p.num, 0, 80, function (v) { p.num = Math.max(0, v); markDirty(); }));
+    body.appendChild(row);
+
+    const opts = document.createElement("div");
+    opts.style.margin = "4px 0 8px";
+    opts.appendChild(mkCheck("그림 아래 분수 표시", p.showCaption !== false, function (v) { p.showCaption = v; markDirty(); }));
+    let cap = labOf(block, "caption");
+    if (!cap) { cap = { key: "caption", text: "분수", blank: false }; block.labels.push(cap); }
+    opts.appendChild(mkCheck("분수를 빈칸으로", cap.blank, function (v) { cap.blank = v; markDirty(); }));
+    body.appendChild(opts);
+    const hint = document.createElement("div");
+    hint.style.cssText = "font-size:12px; color:#888; margin-bottom:8px;";
+    hint.textContent = "분자가 분모보다 크면(가분수) 모형이 여러 개 자동으로 그려집니다.";
+    body.appendChild(hint);
+    body.appendChild(mkWidthRow(block));
+    body.appendChild(mkStage3Row(block, [["frame", "칸만 남김(색칠 없음)"], ["none", "그림 없음"]]));
+
+  } else if (block.figure_type === "solid_fig") {
+    const row = document.createElement("div");
+    row.className = "brow";
+    const l = document.createElement("label");
+    l.textContent = "입체";
+    row.appendChild(l);
+    row.appendChild(mkSelect(
+      [["cuboid", "직육면체"], ["cube", "정육면체"], ["prism", "각기둥"], ["pyramid", "각뿔"],
+       ["cylinder", "원기둥"], ["cone", "원뿔"], ["sphere", "구"]],
+      p.solid || "cuboid",
+      function (v) {
+        p.solid = v;
+        if (p.mode === "net" && !(v === "cuboid" || v === "cube" || v === "cylinder")) p.mode = "oblique";
+        block.labels = (SOLID_LABEL_DEFAULTS[v] || []).map(function (d) { return { key: d[0], text: d[1], blank: false }; });
+        block.labelAdjust = {};
+        renderBlockForms(); markDirty();
+      }));
+    if ((p.solid || "cuboid") === "prism" || p.solid === "pyramid") {
+      const nl = document.createElement("label");
+      nl.textContent = "밑면 변 수"; nl.style.width = "70px";
+      row.appendChild(nl);
+      row.appendChild(mkNum(p.n || 5, 3, 8, function (v) { p.n = Math.max(3, Math.min(8, v)); markDirty(); }));
+    }
+    body.appendChild(row);
+
+    const opts = document.createElement("div");
+    opts.style.margin = "4px 0 8px";
+    if (p.solid === "cuboid" || p.solid === "cube" || p.solid === "cylinder" || !p.solid) {
+      const mrow = document.createElement("span");
+      mrow.style.marginRight = "12px";
+      const msel = mkSelect([["oblique", "겨냥도"], ["net", "전개도"]], p.mode || "oblique", function (v) { p.mode = v; markDirty(); });
+      msel.style.marginRight = "12px";
+      opts.appendChild(msel);
+      opts.appendChild(mrow);
+    }
+    opts.appendChild(mkCheck("보이지 않는 모서리(점선)", p.showHidden !== false, function (v) { p.showHidden = v; markDirty(); }));
+    body.appendChild(opts);
+
+    (SOLID_LABEL_DEFAULTS[p.solid || "cuboid"] || []).forEach(function (d) {
+      body.appendChild(mkLabelRow(block, d[0], d[1] + " 이름표"));
+    });
+    body.appendChild(mkWidthRow(block));
+    body.appendChild(mkStage3Row(block, [["frame", "그림만(이름표 없음)"], ["none", "그림 없음"]]));
+
+  } else if (block.figure_type === "stat_chart") {
+    const row = document.createElement("div");
+    row.className = "brow";
+    const l = document.createElement("label");
+    l.textContent = "종류";
+    row.appendChild(l);
+    row.appendChild(mkSelect(
+      [["bar", "막대그래프"], ["line", "꺾은선그래프"], ["band", "띠그래프"], ["pie", "원그래프"], ["picto", "그림그래프"]],
+      p.chart || "bar",
+      function (v) { p.chart = v; markDirty(); }));
+    const ul = document.createElement("label"); ul.textContent = "단위"; ul.style.width = "40px";
+    row.appendChild(ul);
+    const uIn = document.createElement("input");
+    uIn.type = "text"; uIn.style.width = "70px"; uIn.value = p.unit || "";
+    uIn.placeholder = "명";
+    uIn.addEventListener("input", function () { p.unit = uIn.value; markDirty(); });
+    row.appendChild(uIn);
+    body.appendChild(row);
+
+    if (!p.cats) p.cats = [];
+    const rowsWrap = document.createElement("div");
+    rowsWrap.style.marginTop = "6px";
+    body.appendChild(rowsWrap);
+    function renderCatRows() {
+      rowsWrap.innerHTML = "";
+      p.cats.forEach(function (c, ci) {
+        const tr = document.createElement("div");
+        tr.className = "trow";
+        const nameIn = document.createElement("input");
+        nameIn.type = "text"; nameIn.className = "t-term"; nameIn.placeholder = "항목";
+        nameIn.value = c.name || "";
+        nameIn.addEventListener("input", function () { c.name = nameIn.value; markDirty(); });
+        const valIn = document.createElement("input");
+        valIn.type = "number"; valIn.style.width = "90px"; valIn.value = c.value;
+        valIn.addEventListener("input", function () { c.value = Number(valIn.value) || 0; markDirty(); });
+        const del = mkBtn("삭제", "btn small line");
+        del.addEventListener("click", function () { p.cats.splice(ci, 1); renderCatRows(); markDirty(); });
+        tr.appendChild(nameIn); tr.appendChild(valIn); tr.appendChild(del);
+        rowsWrap.appendChild(tr);
+      });
+    }
+    renderCatRows();
+    const addBtn = mkBtn("+ 항목 추가", "btn small line");
+    addBtn.style.marginBottom = "8px";
+    addBtn.addEventListener("click", function () { p.cats.push({ name: "", value: 0 }); renderCatRows(); markDirty(); });
+    body.appendChild(addBtn);
+    body.appendChild(mkWidthRow(block));
+    body.appendChild(mkStage3Row(block, [["frame", "뼈대만(축·칸만)"], ["none", "그림 없음"]]));
+
+  } else if (block.figure_type === "coord_graph") {
+    const row = document.createElement("div");
+    row.className = "brow";
+    const l1 = document.createElement("label"); l1.textContent = "기울기";
+    row.appendChild(l1);
+    row.appendChild(mkNum(p.slope == null ? 1 : p.slope, -10, 10, function (v) { p.slope = v; markDirty(); }));
+    const l2 = document.createElement("label"); l2.textContent = "y절편"; l2.style.width = "48px";
+    row.appendChild(l2);
+    row.appendChild(mkNum(p.yIntercept == null ? -1 : p.yIntercept, -10, 10, function (v) { p.yIntercept = v; markDirty(); }));
+    body.appendChild(row);
+    const hint = document.createElement("div");
+    hint.style.cssText = "font-size:12px; color:#888; margin-bottom:8px;";
+    hint.textContent = "직선과 점은 숫자에 맞춰 자동으로 그려집니다. 이름표는 미리보기에서 끌어 옮길 수 있습니다.";
+    body.appendChild(hint);
+    body.appendChild(mkStage3Row(block, [["axes_only", "축·직선만 남김"], ["none", "그림 없음"]]));
+  }
+
+  // 백지 TEST 질문
+  const qIn = document.createElement("input");
+  qIn.type = "text"; qIn.placeholder = "비우면 소제목이 그대로 나옵니다";
+  qIn.value = (block.heading && block.heading["3"]) || "";
+  qIn.addEventListener("input", function () {
+    if (!block.heading) block.heading = {};
+    if (qIn.value) block.heading["3"] = qIn.value; else delete block.heading["3"];
+    markDirty();
+  });
+  const qRow = mkRow("백지 TEST 질문", qIn);
+  qRow.style.marginTop = "6px";
+  body.appendChild(qRow);
+}
+
 function buildTableForm(body, block) {
   // 소제목 (1·2단계)
   const hIn = document.createElement("input");
@@ -1167,6 +2070,10 @@ document.getElementById("btn-add-table").addEventListener("click", function () {
 });
 document.getElementById("btn-add-formula").addEventListener("click", function () {
   current.blocks.push({ type: "formula", heading: {}, latex: "", stage3: { mode: "lines", lines: 2 } });
+  renderBlockForms(); markDirty();
+});
+document.getElementById("btn-add-figure").addEventListener("click", function () {
+  current.blocks.push(defaultFigureBlock("basic_shape"));
   renderBlockForms(); markDirty();
 });
 
@@ -1285,6 +2192,55 @@ document.getElementById("btn-unblank").addEventListener("click", function () {
   f.setSelectionRange(hit.start, hit.start + hit.inner.length);
   setStatus('"' + hit.inner + '" 빈칸이 해제되었습니다.');
 });
+
+/* ----- 그림 이름표 끌어서 옮기기 (미리보기 전용) ----- */
+
+(function () {
+  const pb = document.getElementById("preview-box");
+  let drag = null;
+
+  pb.addEventListener("pointerdown", function (e) {
+    if (!current) return;
+    const g = e.target.closest ? e.target.closest("g[data-lkey]") : null;
+    if (!g) return;
+    const wrap = g.closest("[data-bi]");
+    if (!wrap) return;
+    const block = current.blocks[Number(wrap.dataset.bi)];
+    if (!block) return;
+    const svg = g.ownerSVGElement;
+    const rect = svg.getBoundingClientRect();
+    const scale = rect.width / 420;
+    const key = g.dataset.lkey;
+    let orig;
+    if (key.indexOf("cg:") === 0) {
+      const lb = block.labels[Number(key.slice(3))];
+      if (!lb) return;
+      orig = { x: lb.box.x, y: lb.box.y, lb: lb };
+    } else {
+      if (!block.labelAdjust) block.labelAdjust = {};
+      const a = block.labelAdjust[key] || { dx: 0, dy: 0 };
+      orig = { dx: a.dx || 0, dy: a.dy || 0 };
+    }
+    drag = { block: block, key: key, sx: e.clientX, sy: e.clientY, scale: scale, orig: orig };
+    e.preventDefault();
+  });
+
+  window.addEventListener("pointermove", function (e) {
+    if (!drag) return;
+    const ddx = (e.clientX - drag.sx) / drag.scale;
+    const ddy = (e.clientY - drag.sy) / drag.scale;
+    if (drag.key.indexOf("cg:") === 0) {
+      drag.orig.lb.box.x = Math.round(drag.orig.x + ddx);
+      drag.orig.lb.box.y = Math.round(drag.orig.y + ddy);
+    } else {
+      drag.block.labelAdjust[drag.key] = { dx: Math.round(drag.orig.dx + ddx), dy: Math.round(drag.orig.dy + ddy) };
+    }
+    dirty = true;
+    renderPreview();
+  });
+
+  window.addEventListener("pointerup", function () { drag = null; });
+})();
 
 /* ----- 미리보기 ----- */
 

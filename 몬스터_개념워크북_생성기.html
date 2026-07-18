@@ -709,36 +709,41 @@ function renderFractionFig(block, stage) {
   const num = Math.max(0, Math.min(den * 4, p.num == null ? 3 : p.num));
   const wholes = Math.max(1, Math.ceil(num / den) || 1);
   const FILL = "#F6C295";
-  let s = svgOpen(p.width);
+  // 그림 높이를 내용에 딱 맞춰서 (분수 글자가 그림 바로 아래 붙도록)
+  const circle = (p.model || "bar") === "circle";
+  const r = wholes > 2 ? 44 : 55;
+  const H = circle ? r * 2 + 8 : 70;
+  const w = p.width && p.width < 100 ? p.width : 100;
+  let s = '<svg width="' + w + '%" viewBox="0 0 420 ' + H + '" style="margin:6px auto 0; display:block;">';
 
-  if ((p.model || "bar") === "circle") {
-    const r = wholes > 2 ? 44 : 55;
+  if (circle) {
+    const cy = H / 2;
     const gap = 24;
     const totalW = wholes * r * 2 + (wholes - 1) * gap;
     let cx = (420 - totalW) / 2 + r;
-    for (let w = 0; w < wholes; w++) {
+    for (let wi = 0; wi < wholes; wi++) {
       for (let i = 0; i < den; i++) {
         const a0 = -Math.PI / 2 + i * 2 * Math.PI / den;
         const a1 = -Math.PI / 2 + (i + 1) * 2 * Math.PI / den;
-        const filled = !bare && w * den + i < num;
+        const filled = !bare && wi * den + i < num;
         if (den === 1) {
-          s += '<circle cx="' + round1(cx) + '" cy="120" r="' + r + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.6"/>';
+          s += '<circle cx="' + round1(cx) + '" cy="' + round1(cy) + '" r="' + r + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.6"/>';
         } else {
-          s += '<path d="' + fracArc(cx, 120, r, a0, a1) + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.4"/>';
+          s += '<path d="' + fracArc(cx, cy, r, a0, a1) + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.4"/>';
         }
       }
-      s += '<circle cx="' + round1(cx) + '" cy="120" r="' + r + '" fill="none" stroke="#333" stroke-width="2"/>';
+      s += '<circle cx="' + round1(cx) + '" cy="' + round1(cy) + '" r="' + r + '" fill="none" stroke="#333" stroke-width="2"/>';
       cx += r * 2 + gap;
     }
   } else {
     const gap = 16;
     const barW = Math.min(190, (380 - (wholes - 1) * gap) / wholes);
-    const barH = 62, y0 = 89;
+    const barH = 62, y0 = 4;
     let bx = (420 - (barW * wholes + gap * (wholes - 1))) / 2;
-    for (let w = 0; w < wholes; w++) {
+    for (let wi = 0; wi < wholes; wi++) {
       for (let i = 0; i < den; i++) {
         const cw = barW / den;
-        const filled = !bare && w * den + i < num;
+        const filled = !bare && wi * den + i < num;
         s += '<rect x="' + round1(bx + i * cw) + '" y="' + y0 + '" width="' + round1(cw) + '" height="' + barH + '" fill="' + (filled ? FILL : "none") + '" stroke="#333" stroke-width="1.2"/>';
       }
       s += '<rect x="' + round1(bx) + '" y="' + y0 + '" width="' + round1(barW) + '" height="' + barH + '" fill="none" stroke="#333" stroke-width="2"/>';
@@ -747,17 +752,19 @@ function renderFractionFig(block, stage) {
   }
   s += "</svg>";
 
-  // 분수 글자 (그림 아래)
+  // 분수 글자 (그림 바로 아래, 크게)
   if (!bare && p.showCaption !== false) {
     const cap = labOf(block, "caption");
     const tex = "\\dfrac{" + num + "}{" + den + "}";
     let inner;
     if (stage === 2 && cap && cap.blank) {
-      inner = '<span class="box-blank" style="width:44px; height:40px;"></span>';
+      inner = '<span class="box-blank" style="width:48px; height:52px;"></span>';
     } else {
       inner = renderMathSeg(tex);
     }
-    s += '<div style="text-align:center; margin:-4px 0 12px;">' + inner + "</div>";
+    s += '<div style="text-align:center; font-size:22px; margin:10px 0 14px;">' + inner + "</div>";
+  } else {
+    s += '<div style="margin-bottom:14px;"></div>';
   }
   return s;
 }
@@ -1156,7 +1163,6 @@ function renderSheet(c, stage) {
   out += '<tr><td class="lbl">키워드</td><td class="kw-cell">' + renderKeywordGrid(c.keywords) + "</td></tr>";
 
   out += '<tr><td class="body-lbl">' + (stage === 3 ? "TEST" : "개념") + '</td><td class="body-cell">';
-  if (stage === 3) out += '<div class="guide">' + esc(STAGE3_GUIDE) + "</div>";
 
   let prevWasLines = false;
   c.blocks.forEach(function (block, bi) {

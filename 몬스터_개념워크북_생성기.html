@@ -127,8 +127,9 @@
   table.def th, table.def td { border:1.2px solid #333; padding:10px 12px; font-size:15px;
     word-break:keep-all; line-height:1.5; }
   table.def th { background:#EFEFEF; font-weight:700; }
-  /* 용어 칸: 용어가 한 단어면 줄바꿈 없이, 칸 너비는 내용에 맞춰 자동 */
-  table.def td.term { text-align:center; font-weight:700; min-width:82px; white-space:nowrap;
+  /* 용어 칸: 글자 폭에 맞춰 최소화(width:1% 축소 트릭) → 의미 칸이 넓게 남음 */
+  table.def td.term, table.def th:first-child { width:1%; white-space:nowrap; }
+  table.def td.term { text-align:center; font-weight:700; min-width:82px;
     background:#FBFBFB; }
 
   .guide { font-size:12.5px; color:#555; margin:6px 0 10px; }

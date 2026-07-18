@@ -81,22 +81,22 @@
   .body-fill > .bf-blk { margin-bottom:26px; }
   .body-fill > .bf-blk:last-child { margin-bottom:0; }
   .body-fill > .bf-blk > .qtext:last-child { margin-bottom:0; }
-  .qnum { font-size:15px; font-weight:800; margin-bottom:5px; }
-  .qtext { font-size:14.5px; line-height:1.8; margin-bottom:16px; padding-left:4px; word-break:keep-all; }
+  .qnum { font-size:17px; font-weight:800; margin-bottom:9px; }
+  .qtext { font-size:16.5px; line-height:2.05; margin-bottom:18px; padding-left:4px; word-break:keep-all; }
   /* 항목 사이 세로 간격 — 분수 수식이 들어가도 붙어 보이지 않게 넉넉히 */
-  .qtext .li { display:block; padding-left:16px; text-indent:-16px; margin:7px 0; }
-  .qtext .li-p { display:block; margin:7px 0; }
+  .qtext .li { display:block; padding-left:18px; text-indent:-18px; margin:10px 0; }
+  .qtext .li-p { display:block; margin:10px 0; }
   /* 인라인 분수(KaTeX)가 줄 높이를 크게 늘리지 않도록 */
   .qtext .katex { font-size:1.05em; }
   .qtext .math { font-family:'Times New Roman',serif; font-style:italic; font-size:16px; }
   .math { font-family:'Times New Roman',serif; font-style:italic; font-size:16px; }
 
-  /* 빈칸 : 교재식 검정 밑줄/네모 */
-  .blank { display:inline-block; min-width:56px; border-bottom:1.6px solid #111;
-    height:20px; vertical-align:bottom; }
-  .blank.sm { min-width:36px; }
-  .box-blank { display:inline-block; width:34px; height:26px; border:1.4px solid #111;
-    border-radius:3px; vertical-align:middle; }
+  /* 빈칸 : 교재식 검정 밑줄/네모 (답 쓰기 넉넉하게) */
+  .blank { display:inline-block; min-width:88px; border-bottom:2px solid #111;
+    height:26px; margin:0 3px; vertical-align:bottom; }
+  .blank.sm { min-width:60px; }
+  .box-blank { display:inline-block; width:46px; height:32px; border:1.6px solid #111;
+    border-radius:3px; margin:0 2px; vertical-align:middle; }
 
   /* 수식 (KaTeX) */
   .katex { font-size: 1.06em; }
@@ -114,16 +114,16 @@
   /* 정의표 */
   table.def { width:100%; border-collapse:collapse; margin-top:6px; }
   /* 한글은 띄어쓰기 단위로만 줄바꿈 (단어 중간에서 끊기지 않게) */
-  table.def th, table.def td { border:1.2px solid #333; padding:8px 10px; font-size:13.5px;
-    word-break:keep-all; line-height:1.45; }
+  table.def th, table.def td { border:1.2px solid #333; padding:10px 12px; font-size:15px;
+    word-break:keep-all; line-height:1.5; }
   table.def th { background:#EFEFEF; font-weight:700; }
   /* 용어 칸: 용어가 한 단어면 줄바꿈 없이, 칸 너비는 내용에 맞춰 자동 */
   table.def td.term { text-align:center; font-weight:700; min-width:82px; white-space:nowrap;
     background:#FBFBFB; }
 
   .guide { font-size:12.5px; color:#555; margin:6px 0 10px; }
-  .write-lines { margin-top:8px; }
-  .write-lines div { border-bottom:1.2px dotted #aaa; height:30px; }
+  .write-lines { margin-top:10px; }
+  .write-lines div { border-bottom:1.2px dotted #aaa; height:38px; }
 
   /* ============================================================
      앱 화면 (목록 / 편집) — 인쇄 시에는 모두 사라짐

@@ -59,7 +59,7 @@
   table.main { width:100%; border-collapse:collapse; }
   table.main td { border:1.5px solid #222; padding:0; vertical-align:middle; }
   .lbl { width:70px; text-align:center; font-weight:800; font-size:15px; }
-  .unit-cell { padding:11px 14px !important; font-size:16px; font-weight:700; }
+  .unit-cell { padding:11px 14px !important; font-size:16px; font-weight:700; word-break:keep-all; }
   .unit-cell.sub { font-weight:500; color:#333; }
 
   .kw-cell { padding:0 !important; }
@@ -82,7 +82,7 @@
   .body-fill > .bf-blk:last-child { margin-bottom:0; }
   .body-fill > .bf-blk > .qtext:last-child { margin-bottom:0; }
   .qnum { font-size:15px; font-weight:800; margin-bottom:5px; }
-  .qtext { font-size:14.5px; line-height:1.75; margin-bottom:16px; padding-left:4px; }
+  .qtext { font-size:14.5px; line-height:1.75; margin-bottom:16px; padding-left:4px; word-break:keep-all; }
   .qtext .li { display:block; padding-left:16px; text-indent:-16px; margin:2px 0; }
   .qtext .li-p { display:block; margin:2px 0; }
   .qtext .math { font-family:'Times New Roman',serif; font-style:italic; font-size:16px; }
@@ -110,9 +110,13 @@
 
   /* 정의표 */
   table.def { width:100%; border-collapse:collapse; margin-top:6px; }
-  table.def th, table.def td { border:1.2px solid #333; padding:8px 10px; font-size:13.5px; }
+  /* 한글은 띄어쓰기 단위로만 줄바꿈 (단어 중간에서 끊기지 않게) */
+  table.def th, table.def td { border:1.2px solid #333; padding:8px 10px; font-size:13.5px;
+    word-break:keep-all; line-height:1.45; }
   table.def th { background:#EFEFEF; font-weight:700; }
-  table.def td.term { text-align:center; font-weight:700; width:110px; background:#FBFBFB; }
+  /* 용어 칸: 용어가 한 단어면 줄바꿈 없이, 칸 너비는 내용에 맞춰 자동 */
+  table.def td.term { text-align:center; font-weight:700; min-width:82px; white-space:nowrap;
+    background:#FBFBFB; }
 
   .guide { font-size:12.5px; color:#555; margin:6px 0 10px; }
   .write-lines { margin-top:8px; }

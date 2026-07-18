@@ -843,7 +843,8 @@
             "den": 4,
             "num": 7,
             "width": 76,
-            "showCaption": true
+            "showCaption": true,
+            "mixed": true
           },
           "labels": [
             {

@@ -141,24 +141,22 @@
           }
         },
         {
-          "type": "table",
+          "type": "figure",
+          "figure_type": "bond_fig",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "2. 부분과 전체로 알아보기",
+            "3": "2. 부분과 전체 수를 채워 보시오."
           },
-          "columns": [
-            "용어",
-            "의미"
-          ],
-          "rows": [
-            {
-              "term": "덧셈과 뺄셈의 관계",
-              "meaning": "덧셈식↔뺄셈식으로 바꾸어 답을 확인"
-            },
-            {
-              "term": "어림",
-              "meaning": "몇백쯤인지 대략 구하기"
-            }
-          ]
+          "params": {
+            "op": "+",
+            "whole": 410,
+            "part1": 260,
+            "part2": 150,
+            "width": 65
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
         },
         {
           "type": "text",
@@ -198,28 +196,19 @@
           }
         },
         {
-          "type": "table",
+          "type": "figure",
+          "figure_type": "line_fig",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "2. 여러 가지 선",
+            "3": "2. 선분·반직선·직선을 그려 보시오."
           },
-          "columns": [
-            "용어",
-            "의미"
-          ],
-          "rows": [
-            {
-              "term": "선분",
-              "meaning": "두 점을 곧게 이은 선"
-            },
-            {
-              "term": "직선",
-              "meaning": "선분을 양쪽으로 끝없이 늘인 곧은 선"
-            },
-            {
-              "term": "반직선",
-              "meaning": "한 점에서 한쪽으로만 끝없이 늘인 곧은 선"
-            }
-          ]
+          "params": {
+            "kind": "all",
+            "width": 88
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -532,24 +521,23 @@
           }
         },
         {
-          "type": "table",
+          "type": "figure",
+          "figure_type": "column_calc",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "2. 세로셈으로 알아보기",
+            "3": "2. 나눗셈을 세로셈으로 계산해 보시오."
           },
-          "columns": [
-            "용어",
-            "의미"
-          ],
-          "rows": [
-            {
-              "term": "몫",
-              "meaning": "나눗셈을 하여 나온 결과"
-            },
-            {
-              "term": "나눗셈식",
-              "meaning": "÷ 기호를 써서 나타낸 식"
-            }
-          ]
+          "params": {
+            "op": "÷",
+            "operands": [
+              12,
+              4
+            ],
+            "width": 55
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "answer_blank"
         },
         {
           "type": "text",
@@ -589,24 +577,22 @@
           }
         },
         {
-          "type": "table",
+          "type": "figure",
+          "figure_type": "bond_fig",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "2. 곱셈과 나눗셈의 관계",
+            "3": "2. 관계를 이루는 수를 채워 보시오."
           },
-          "columns": [
-            "용어",
-            "의미"
-          ],
-          "rows": [
-            {
-              "term": "곱셈식",
-              "meaning": "(한 묶음의 수) × (묶음 수) = (전체)"
-            },
-            {
-              "term": "나눗셈식",
-              "meaning": "(전체) ÷ (묶음 수) = (한 묶음의 수)"
-            }
-          ]
+          "params": {
+            "op": "×",
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "width": 65
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
         },
         {
           "type": "text",
@@ -880,24 +866,22 @@
           }
         },
         {
-          "type": "table",
+          "type": "figure",
+          "figure_type": "clock_fig",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "2. 시계로 알아보기",
+            "3": "2. 시계에 시각을 나타내어 보시오."
           },
-          "columns": [
-            "용어",
-            "의미"
-          ],
-          "rows": [
-            {
-              "term": "1분",
-              "meaning": "60초"
-            },
-            {
-              "term": "1시간",
-              "meaning": "60분"
-            }
-          ]
+          "params": {
+            "hour": 10,
+            "minute": 10,
+            "showSecond": true,
+            "second": 30,
+            "width": 55
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -937,24 +921,22 @@
           }
         },
         {
-          "type": "table",
+          "type": "figure",
+          "figure_type": "clock_fig",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "2. 시계로 알아보기",
+            "3": "2. 시계에 시각을 나타내어 보시오."
           },
-          "columns": [
-            "용어",
-            "의미"
-          ],
-          "rows": [
-            {
-              "term": "받아올림",
-              "meaning": "초가 60이 넘으면 60초를 1분으로 올림"
-            },
-            {
-              "term": "받아내림",
-              "meaning": "초가 모자라면 1분을 60초로 바꿔 내림"
-            }
-          ]
+          "params": {
+            "hour": 4,
+            "minute": 20,
+            "showSecond": false,
+            "second": 0,
+            "width": 55
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",

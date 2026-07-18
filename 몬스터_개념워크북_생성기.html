@@ -121,6 +121,13 @@
 
   /* --- 목록 화면 --- */
   .list-wrap { max-width:900px; margin:0 auto; padding:0 20px; }
+  .list-toolbar { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .list-toolbar .grow { flex:1; }
+  .list-toolbar input[type=text] { width:300px; max-width:60%; border:1.5px solid #bbb;
+    border-radius:6px; padding:8px 12px; font-size:14px; font-family:inherit; }
+  .list-toolbar input:focus { outline:none; border-color:#F26522; }
+  .list-toolbar .sel-all { font-size:13px; font-weight:600; color:#444; display:inline-flex; align-items:center; gap:5px; cursor:pointer; }
+  .card .c-chk { flex-shrink:0; }
   .card { background:#fff; border:1.5px solid #ccc; border-radius:8px;
     padding:16px 18px; margin-bottom:12px; display:flex; align-items:center; gap:14px; }
   .card .c-badge { background:#F7EAC5; border:1.5px solid #EBA23C; border-radius:6px;
@@ -220,10 +227,36 @@
     <h2>몬스터 수학개념워크북 생성기</h2>
     <span class="grow"></span>
     <button class="btn line" id="btn-settings">설정</button>
+    <button class="btn line" id="btn-backup">백업</button>
     <button class="btn" id="btn-ai">AI로 초안 만들기</button>
     <button class="btn orange" id="btn-new">새 개념 만들기</button>
   </div>
-  <div class="list-wrap" id="concept-cards"></div>
+  <div class="list-wrap">
+    <div class="list-toolbar">
+      <input type="text" id="search-box" placeholder="개념 검색 (단원·개념명·키워드)">
+      <span class="grow"></span>
+      <label class="sel-all"><input type="checkbox" id="chk-all"> 전체 선택</label>
+      <button class="btn small" id="btn-bundle-print" disabled>선택 묶음 인쇄 (0)</button>
+    </div>
+    <div id="concept-cards"></div>
+  </div>
+</div>
+
+<!-- ================= 창 : 백업 ================= -->
+<div class="modal-bg" id="modal-backup" hidden>
+  <div class="modal">
+    <h3>백업 (내보내기 / 가져오기)</h3>
+    <p style="font-size:13px; color:#555; line-height:1.6; margin-bottom:12px;">
+      개념은 이 컴퓨터의 브라우저에만 저장됩니다. 다른 컴퓨터로 옮기거나 안전하게 보관하려면 파일로 내보내세요.</p>
+    <div class="m-btns" style="justify-content:flex-start;">
+      <button class="btn orange" id="btn-export">파일로 내보내기</button>
+      <button class="btn line" id="btn-import">파일에서 가져오기</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </div>
+    <p id="backup-status" style="font-size:13px; color:#0a7a2f; font-weight:700; margin-top:10px; min-height:18px;"></p>
+    <p class="fnote">가져오기를 하면 같은 개념은 덮어쓰고, 새 개념은 추가됩니다. 기존 개념이 사라지지 않습니다.</p>
+    <div class="m-btns"><button class="btn" id="btn-backup-close">닫기</button></div>
+  </div>
 </div>
 
 <!-- ================= 화면 2 : 개념 편집 ================= -->
@@ -623,12 +656,11 @@ function labOf(block, key) {
 }
 
 // 라벨(이름표) 그리기: 박스 + 글자 + 지시선. 미리보기에서 끌어서 이동 가능.
-function drawFigLabel(block, stage, key, cx, cy, anchor) {
-  const lab = labOf(block, key);
-  if (!lab || !lab.text) return "";
+function drawLabelCore(block, stage, key, text, blank, cx, cy, anchor) {
+  if (!text) return "";
   const adj = (block.labelAdjust && block.labelAdjust[key]) || { dx: 0, dy: 0 };
   cx += adj.dx || 0; cy += adj.dy || 0;
-  const w = Math.max(38, lab.text.length * 10.5 + 16), h = 22;
+  const w = Math.max(38, text.length * 10.5 + 16), h = 22;
   const x = cx - w / 2, y = cy - h / 2;
   let s = '<g class="fig-label" data-lkey="' + key + '">';
   if (anchor) {
@@ -639,11 +671,24 @@ function drawFigLabel(block, stage, key, cx, cy, anchor) {
     }
   }
   s += '<rect class="g-label" x="' + round1(x) + '" y="' + round1(y) + '" width="' + round1(w) + '" height="' + h + '" rx="3"/>';
-  if (!(stage === 2 && lab.blank)) {
-    s += '<text x="' + round1(cx) + '" y="' + round1(y + 15) + '" class="g-txt" text-anchor="middle">' + esc(lab.text) + "</text>";
+  if (!(stage === 2 && blank)) {
+    s += '<text x="' + round1(cx) + '" y="' + round1(y + 15) + '" class="g-txt" text-anchor="middle">' + esc(text) + "</text>";
   }
   s += "</g>";
   return s;
+}
+
+function drawFigLabel(block, stage, key, cx, cy, anchor) {
+  const lab = labOf(block, key);
+  if (!lab || !lab.text) return "";
+  return drawLabelCore(block, stage, key, lab.text, lab.blank, cx, cy, anchor);
+}
+
+// 글자를 비우면 자동 글자(예: 각도 값)를 쓰는 라벨
+function drawAutoLabel(block, stage, key, cx, cy, anchor, autoText) {
+  const lab = labOf(block, key);
+  const text = (lab && lab.text) ? lab.text : autoText;
+  return drawLabelCore(block, stage, key, text, lab ? lab.blank : false, cx, cy, anchor);
 }
 
 function drawRightAngle(x, y, d1, d2) {
@@ -897,6 +942,95 @@ function renderNumberLine(block, stage) {
   return out + '<div style="margin-bottom:8px;"></div>';
 }
 
+/* ---------- 그림 2.6 : circle_fig (원) ---------- */
+
+function renderCircleFig(block, stage) {
+  const p = block.params || {};
+  const st3 = block.stage3 || "frame";
+  if (stage === 3 && st3 === "none") return "";
+  const bare = stage === 3;
+  const cx = 210, cy = 120, r = 82;
+  const w = p.width && p.width < 100 ? p.width : 100;
+  let s = '<svg width="' + w + '%" viewBox="0 0 420 240" style="margin:6px auto 12px; display:block;">';
+
+  s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#333" stroke-width="2"/>';
+
+  const anchors = {};
+  if (!bare) {
+    // 중심점
+    s += '<circle cx="' + cx + '" cy="' + cy + '" r="2.6" fill="#333"/>';
+    anchors.jungsim = [cx - 118, cy + 4, cx, cy];
+
+    // 반지름 (오른쪽 위 방향)
+    if (p.showRadius !== false) {
+      const rx = cx + r * Math.cos(-Math.PI / 5), ry = cy + r * Math.sin(-Math.PI / 5);
+      s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + round1(rx) + '" y2="' + round1(ry) + '" stroke="#E8500A" stroke-width="2"/>';
+      s += '<circle cx="' + round1(rx) + '" cy="' + round1(ry) + '" r="2.6" fill="#E8500A"/>';
+      anchors.banjireum = [cx + r + 44, cy - 34, (cx + rx) / 2, (cy + ry) / 2];
+    }
+    // 지름 (가로 방향)
+    if (p.showDiameter) {
+      s += '<line x1="' + (cx - r) + '" y1="' + cy + '" x2="' + (cx + r) + '" y2="' + cy + '" stroke="#E8500A" stroke-width="2" stroke-dasharray="7 4"/>';
+      anchors.jireum = [cx, cy + r + 26, cx - r / 2, cy];
+    }
+    // 원주
+    if (p.showCircumference) {
+      const ax = cx + r * Math.cos(-Math.PI * 0.72), ay = cy + r * Math.sin(-Math.PI * 0.72);
+      anchors.wonju = [cx - r - 40, cy - r + 4, ax, ay];
+    }
+    Object.keys(anchors).forEach(function (key) {
+      const a = anchors[key];
+      s += drawFigLabel(block, stage, key, a[0], a[1], [a[2], a[3]]);
+    });
+  }
+  s += "</svg>";
+  return s;
+}
+
+/* ---------- 그림 2.7 : angle_fig (각도) ---------- */
+
+function renderAngleFig(block, stage) {
+  const p = block.params || {};
+  const st3 = block.stage3 || "frame";
+  if (stage === 3 && st3 === "none") return "";
+  const bare = stage === 3;
+  let deg = Number(p.degrees);
+  if (isNaN(deg)) deg = 50;
+  deg = Math.max(1, Math.min(359, deg));
+  const vx = 150, vy = 168, len = 150;
+  const w = p.width && p.width < 100 ? p.width : 100;
+  let s = '<svg width="' + w + '%" viewBox="0 0 420 240" style="margin:6px auto 12px; display:block;">';
+
+  const rad = deg * Math.PI / 180;
+  // 한 변은 수평(오른쪽), 다른 변은 위로 deg
+  const p1 = [vx + len, vy];
+  const p2 = [vx + len * Math.cos(-rad), vy + len * Math.sin(-rad)];
+  s += '<line x1="' + vx + '" y1="' + vy + '" x2="' + p1[0] + '" y2="' + p1[1] + '" stroke="#333" stroke-width="2"/>';
+  s += '<line x1="' + vx + '" y1="' + vy + '" x2="' + round1(p2[0]) + '" y2="' + round1(p2[1]) + '" stroke="#333" stroke-width="2"/>';
+
+  if (!bare) {
+    // 직각이면 네모, 아니면 호
+    if (Math.abs(deg - 90) < 0.5) {
+      const k = 18;
+      s += '<polyline points="' + (vx + k) + "," + vy + " " + (vx + k) + "," + (vy - k) + " " + vx + "," + (vy - k) + '" fill="none" stroke="#E8500A" stroke-width="1.6"/>';
+    } else {
+      const ar = 34;
+      const ax0 = vx + ar, ay0 = vy;
+      const ax1 = vx + ar * Math.cos(-rad), ay1 = vy + ar * Math.sin(-rad);
+      const large = deg > 180 ? 1 : 0;
+      s += '<path d="M' + ax0 + ' ' + ay0 + ' A' + ar + ' ' + ar + ' 0 ' + large + ' 0 ' + round1(ax1) + ' ' + round1(ay1) + '" fill="none" stroke="#E8500A" stroke-width="1.6"/>';
+    }
+    // 꼭짓점 점
+    s += '<circle cx="' + vx + '" cy="' + vy + '" r="2.6" fill="#333"/>';
+    // 각도 값 라벨 (비우면 자동으로 "50°")
+    const mid = -rad / 2;
+    const lx = vx + 62 * Math.cos(mid), ly = vy + 62 * Math.sin(mid);
+    s += drawAutoLabel(block, stage, "angle", lx, ly, [vx + 30 * Math.cos(mid), vy + 30 * Math.sin(mid)], deg + "°");
+  }
+  s += "</svg>";
+  return s;
+}
+
 /* ---------- 그림 3 : solid_fig (입체도형) ---------- */
 
 function renderSolidFig(block, stage) {
@@ -913,6 +1047,51 @@ function renderSolidFig(block, stage) {
 
   function L(a, b, style) {
     s += '<line x1="' + round1(a[0]) + '" y1="' + round1(a[1]) + '" x2="' + round1(b[0]) + '" y2="' + round1(b[1]) + '" ' + style + "/>";
+  }
+
+  if (solid === "stack") {
+    /* --- 쌓기나무 (칸별 쌓은 개수) --- */
+    const layers = (p.layers && p.layers.length) ? p.layers : [[1, 1], [1, 1]];
+    const rows = layers.length;
+    const cols = layers.reduce(function (m, r) { return Math.max(m, r.length); }, 1);
+    let maxH = 1;
+    layers.forEach(function (r) { r.forEach(function (v) { maxH = Math.max(maxH, v || 0); }); });
+
+    const u = 24, v = 13, ht = 26; // 가로 반칸, 세로 반칸, 큐브 높이
+    const ox = 210 - (cols - rows) / 2 * u;
+    const oy = 120 - (cols + rows) * v / 2 + maxH * ht / 2;
+    // (i=열, j=행, k=높이) 격자점 → 화면. 행(j)이 클수록 앞(아래), 열(i)이 클수록 오른쪽.
+    const P = function (i, j, k) { return [ox + (i - j) * u, oy + (i + j) * v - k * ht]; };
+    const face = function (pts, style) {
+      s += '<polygon points="' + pts.map(function (q) { return round1(q[0]) + "," + round1(q[1]); }).join(" ") +
+        '" ' + (bare ? 'fill="#fff" stroke="#333" stroke-width="1.2"' : style) + "/>";
+    };
+    const TOP = 'fill="#F7DFC8" stroke="#333" stroke-width="1.2"';
+    const FRONT = 'fill="#EBC69E" stroke="#333" stroke-width="1.2"';
+    const SIDE = 'fill="#D6A877" stroke="#333" stroke-width="1.2"';
+
+    // 큐브 목록 (열 c, 행 r, 층 z)
+    const cubes = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const h = (layers[r] && layers[r][c]) || 0;
+        for (let z = 0; z < h; z++) cubes.push([c, r, z]);
+      }
+    }
+    // 화가 알고리즘: 뒤(행 작음)→앞(행 큼), 왼(열 작음)→오, 아래→위
+    cubes.sort(function (a, b) { return a[1] - b[1] || a[0] - b[0] || a[2] - b[2]; });
+
+    cubes.forEach(function (cu) {
+      const c = cu[0], r = cu[1], z = cu[2];
+      // 윗면(k=z+1)
+      face([P(c, r, z + 1), P(c + 1, r, z + 1), P(c + 1, r + 1, z + 1), P(c, r + 1, z + 1)], TOP);
+      // 앞면 (j=r+1, 뷰어 쪽)
+      face([P(c, r + 1, z), P(c + 1, r + 1, z), P(c + 1, r + 1, z + 1), P(c, r + 1, z + 1)], FRONT);
+      // 오른쪽 면 (i=c+1)
+      face([P(c + 1, r, z), P(c + 1, r + 1, z), P(c + 1, r + 1, z + 1), P(c + 1, r, z + 1)], SIDE);
+    });
+    s += "</svg>";
+    return s;
   }
 
   if ((p.mode === "net") && (solid === "cuboid" || solid === "cube" || solid === "cylinder")) {
@@ -1193,6 +1372,8 @@ function renderFigure(block, stage) {
     case "coord_graph": return renderCoordGraph(block, stage);
     case "basic_shape": return renderBasicShape(block, stage);
     case "number_line": return renderNumberLine(block, stage);
+    case "circle_fig": return renderCircleFig(block, stage);
+    case "angle_fig": return renderAngleFig(block, stage);
     case "fraction_fig": return renderFractionFig(block, stage);
     case "solid_fig": return renderSolidFig(block, stage);
     case "stat_chart": return renderStatChart(block, stage);
@@ -1409,6 +1590,62 @@ if (!localStorage.getItem("mw_seed_figures_v1")) {
   localStorage.setItem("mw_seed_figures_v1", "1");
 }
 
+// 그림 2차(원·각도·쌓기나무) 예제 1회 넣기
+const FIGURE_EXAMPLES2 = [
+  {
+    id: "example-fig-03", school: "초등학교", grade: "3학년",
+    unit_big: "원", unit_mid: "원의 중심과 반지름 (그림 예제)",
+    keywords: ["원", "중심", "반지름", "지름"],
+    blocks: [
+      { type: "figure", figure_type: "circle_fig",
+        heading: { "1": "1. 원의 각 부분", "3": "1. 원에 중심·반지름·지름을 직접 표시하시오." },
+        params: { showRadius: true, showDiameter: true, showCircumference: false, width: 60 },
+        labels: [
+          { key: "jungsim", text: "중심", blank: false },
+          { key: "banjireum", text: "반지름", blank: true },
+          { key: "jireum", text: "지름", blank: true },
+          { key: "wonju", text: "", blank: false }
+        ],
+        labelAdjust: {}, stage3: "frame" }
+    ]
+  },
+  {
+    id: "example-fig-04", school: "초등학교", grade: "4학년",
+    unit_big: "각도", unit_mid: "예각과 둔각, 직각 (그림 예제)",
+    keywords: ["각", "직각", "예각", "둔각"],
+    blocks: [
+      { type: "figure", figure_type: "angle_fig",
+        heading: { "1": "1. 직각", "3": "1. 직각을 직접 그리시오." },
+        params: { degrees: 90, width: 55 },
+        labels: [{ key: "angle", text: "직각", blank: false }], labelAdjust: {}, stage3: "frame" },
+      { type: "figure", figure_type: "angle_fig",
+        heading: { "1": "2. 예각 (직각보다 작은 각)" },
+        params: { degrees: 45, width: 55 },
+        labels: [{ key: "angle", text: "", blank: true }], labelAdjust: {}, stage3: "frame" }
+    ]
+  },
+  {
+    id: "example-fig-05", school: "초등학교", grade: "6학년",
+    unit_big: "공간과 입체", unit_mid: "쌓기나무 (그림 예제)",
+    keywords: ["쌓기나무", "위", "앞", "옆"],
+    blocks: [
+      { type: "figure", figure_type: "solid_fig",
+        heading: { "1": "1. 쌓기나무 모양", "3": "1. 아래 모양을 보고 쌓기나무의 개수를 세어 보시오." },
+        params: { solid: "stack", layers: [[2, 1], [1, 2]], width: 60 },
+        labels: [], labelAdjust: {}, stage3: "frame" }
+    ]
+  }
+];
+if (!localStorage.getItem("mw_seed_figures2_v1")) {
+  FIGURE_EXAMPLES2.forEach(function (ex) {
+    if (!concepts.some(function (c) { return c.id === ex.id; })) {
+      concepts.push(JSON.parse(JSON.stringify(ex)));
+    }
+  });
+  saveConcepts(concepts);
+  localStorage.setItem("mw_seed_figures2_v1", "1");
+}
+
 // 수식 예제 1회 넣기 (검수용, 삭제해도 다시 생기지 않음)
 if (!localStorage.getItem("mw_seed_formula_v1")) {
   if (!concepts.some(function (c) { return c.id === FORMULA_EXAMPLE.id; })) {
@@ -1439,49 +1676,117 @@ function conceptTitle(c) {
   return c.unit_mid || c.unit_big || "(제목 없음)";
 }
 
+let searchText = "";
+const selectedIds = {};   // 묶음 인쇄용 선택
+
+function ensureIds() {
+  let changed = false;
+  concepts.forEach(function (c) { if (!c.id) { c.id = "c" + Math.random().toString(36).slice(2); changed = true; } });
+  if (changed) saveConcepts(concepts);
+}
+
+function conceptMatches(c, q) {
+  if (!q) return true;
+  const hay = [c.school, c.grade, c.unit_big, c.unit_mid, (c.keywords || []).join(" ")].join(" ").toLowerCase();
+  return hay.indexOf(q) >= 0;
+}
+
+function updateBundleButton() {
+  const n = Object.keys(selectedIds).filter(function (k) { return selectedIds[k]; }).length;
+  const btn = document.getElementById("btn-bundle-print");
+  btn.textContent = "선택 묶음 인쇄 (" + n + ")";
+  btn.disabled = n === 0;
+}
+
 function renderList() {
+  ensureIds();
   const wrap = document.getElementById("concept-cards");
+  const q = searchText.trim().toLowerCase();
+  const list = concepts.filter(function (c) { return conceptMatches(c, q); });
   if (!concepts.length) {
     wrap.innerHTML = '<div class="empty-note">저장된 개념이 없습니다. [새 개념 만들기]를 눌러 시작하세요.</div>';
-    return;
+  } else if (!list.length) {
+    wrap.innerHTML = '<div class="empty-note">"' + esc(searchText) + '" 에 맞는 개념이 없습니다.</div>';
+  } else {
+    wrap.innerHTML = list.map(function (c) {
+      const checked = selectedIds[c.id] ? " checked" : "";
+      return '<div class="card">' +
+        '<input type="checkbox" class="c-chk" data-id="' + c.id + '"' + checked + ">" +
+        '<span class="c-badge">' + esc(c.school + " " + c.grade) + "</span>" +
+        '<div class="c-info">' +
+          '<div class="c-title">' + esc(conceptTitle(c)) + "</div>" +
+          '<div class="c-sub">대단원: ' + esc(c.unit_big || "-") + "</div>" +
+        "</div>" +
+        '<div class="c-btns">' +
+          '<button class="btn small" data-act="edit" data-id="' + c.id + '">편집</button>' +
+          '<button class="btn small line" data-act="print" data-id="' + c.id + '">인쇄</button>' +
+          '<button class="btn small line" data-act="copy" data-id="' + c.id + '">복제</button>' +
+          '<button class="btn small line" data-act="del" data-id="' + c.id + '">삭제</button>' +
+        "</div></div>";
+    }).join("");
   }
-  wrap.innerHTML = concepts.map(function (c, i) {
-    return '<div class="card">' +
-      '<span class="c-badge">' + esc(c.school + " " + c.grade) + "</span>" +
-      '<div class="c-info">' +
-        '<div class="c-title">' + esc(conceptTitle(c)) + "</div>" +
-        '<div class="c-sub">대단원: ' + esc(c.unit_big || "-") + "</div>" +
-      "</div>" +
-      '<div class="c-btns">' +
-        '<button class="btn small" data-act="edit" data-i="' + i + '">편집</button>' +
-        '<button class="btn small line" data-act="print" data-i="' + i + '">인쇄</button>' +
-        '<button class="btn small line" data-act="copy" data-i="' + i + '">복제</button>' +
-        '<button class="btn small line" data-act="del" data-i="' + i + '">삭제</button>' +
-      "</div></div>";
-  }).join("");
+  updateBundleButton();
+  const all = list.length && list.every(function (c) { return selectedIds[c.id]; });
+  const chkAll = document.getElementById("chk-all");
+  if (chkAll) chkAll.checked = !!all;
 }
+
+function conceptById(id) {
+  return concepts.find(function (c) { return c.id === id; });
+}
+function conceptIndexById(id) {
+  return concepts.findIndex(function (c) { return c.id === id; });
+}
+
+document.getElementById("concept-cards").addEventListener("change", function (e) {
+  const chk = e.target.closest("input.c-chk");
+  if (!chk) return;
+  selectedIds[chk.dataset.id] = chk.checked;
+  renderList();
+});
 
 document.getElementById("concept-cards").addEventListener("click", function (e) {
   const btn = e.target.closest("button[data-act]");
   if (!btn) return;
-  const i = Number(btn.dataset.i);
+  const id = btn.dataset.id;
   const act = btn.dataset.act;
+  const i = conceptIndexById(id);
+  if (i < 0) return;
   if (act === "edit") openEditor(concepts[i]);
   else if (act === "print") openPrint(concepts[i], "view-list");
   else if (act === "copy") {
     const dup = JSON.parse(JSON.stringify(concepts[i]));
-    dup.id = "c" + Date.now();
+    dup.id = "c" + Math.random().toString(36).slice(2);
     dup.unit_mid = (dup.unit_mid || "") + " (복사본)";
     concepts.splice(i + 1, 0, dup);
     saveConcepts(concepts);
     renderList();
   } else if (act === "del") {
     if (confirm('"' + conceptTitle(concepts[i]) + '" 개념을 삭제할까요? 되돌릴 수 없습니다.')) {
+      delete selectedIds[id];
       concepts.splice(i, 1);
       saveConcepts(concepts);
       renderList();
     }
   }
+});
+
+document.getElementById("search-box").addEventListener("input", function () {
+  searchText = this.value;
+  renderList();
+});
+
+document.getElementById("chk-all").addEventListener("change", function () {
+  const q = searchText.trim().toLowerCase();
+  const list = concepts.filter(function (c) { return conceptMatches(c, q); });
+  list.forEach(function (c) { selectedIds[c.id] = this.checked; }, this);
+  renderList();
+});
+
+document.getElementById("btn-bundle-print").addEventListener("click", function () {
+  const chosen = concepts.filter(function (c) { return selectedIds[c.id]; });
+  if (!chosen.length) return;
+  openPrintMany(chosen, "view-list");
 });
 
 document.getElementById("btn-new").addEventListener("click", function () {
@@ -1801,8 +2106,8 @@ function buildFormulaForm(body, block) {
 /* ----- 그림 블록 폼 ----- */
 
 const FIGURE_TYPE_NAME = {
-  basic_shape: "도형", number_line: "수직선", fraction_fig: "분수 모델",
-  solid_fig: "입체도형", stat_chart: "그래프", coord_graph: "좌표평면 그래프"
+  basic_shape: "도형", number_line: "수직선", circle_fig: "원", angle_fig: "각도",
+  fraction_fig: "분수 모델", solid_fig: "입체도형", stat_chart: "그래프", coord_graph: "좌표평면 그래프"
 };
 
 const SOLID_LABEL_DEFAULTS = {
@@ -1812,7 +2117,8 @@ const SOLID_LABEL_DEFAULTS = {
   pyramid:  [["nopi", "높이"], ["mitmyeon", "밑면"], ["yeopmyeon", "옆면"]],
   cylinder: [["banjireum", "반지름"], ["nopi", "높이"], ["mitmyeon", "밑면"]],
   cone:     [["nopi", "높이"], ["banjireum", "반지름"], ["mitmyeon", "밑면"]],
-  sphere:   [["banjireum", "반지름"], ["jungsim", "중심"]]
+  sphere:   [["banjireum", "반지름"], ["jungsim", "중심"]],
+  stack:    []
 };
 
 function defaultFigureBlock(figType) {
@@ -1823,6 +2129,17 @@ function defaultFigureBlock(figType) {
   } else if (figType === "number_line") {
     b.params.width = 100;
     b.params.rows = [{ label: "", min: 0, max: 10, step: 1, range: null, points: [] }];
+  } else if (figType === "circle_fig") {
+    b.params.showRadius = true; b.params.showDiameter = false; b.params.showCircumference = false;
+    b.labels = [
+      { key: "jungsim", text: "중심", blank: false },
+      { key: "banjireum", text: "반지름", blank: false },
+      { key: "jireum", text: "지름", blank: false },
+      { key: "wonju", text: "원주", blank: false }
+    ];
+  } else if (figType === "angle_fig") {
+    b.params.degrees = 50;
+    b.labels = [{ key: "angle", text: "", blank: false }];
   } else if (figType === "fraction_fig") {
     b.params.model = "bar"; b.params.den = 4; b.params.num = 3; b.params.showCaption = true;
     b.labels = [{ key: "caption", text: "분수", blank: false }];
@@ -1938,7 +2255,7 @@ function buildFigureForm(body, block) {
   const tl = document.createElement("label");
   tl.textContent = "그림 종류";
   const typeSel = mkSelect(
-    [["basic_shape", "도형"], ["number_line", "수직선"], ["fraction_fig", "분수 모델"], ["solid_fig", "입체도형"], ["stat_chart", "그래프"], ["coord_graph", "좌표평면(중등)"]],
+    [["basic_shape", "도형"], ["number_line", "수직선"], ["circle_fig", "원"], ["angle_fig", "각도"], ["fraction_fig", "분수 모델"], ["solid_fig", "입체도형"], ["stat_chart", "그래프"], ["coord_graph", "좌표평면(중등)"]],
     block.figure_type,
     function (v) {
       const fresh = defaultFigureBlock(v);
@@ -2079,6 +2396,36 @@ function buildFigureForm(body, block) {
     body.appendChild(mkWidthRow(block));
     body.appendChild(mkStage3Row(block, [["frame", "수직선만 남김(표시 없음)"], ["none", "그림 없음"]]));
 
+  } else if (block.figure_type === "circle_fig") {
+    const opts = document.createElement("div");
+    opts.style.margin = "4px 0 8px";
+    opts.appendChild(mkCheck("반지름", p.showRadius !== false, function (v) { p.showRadius = v; markDirty(); }));
+    opts.appendChild(mkCheck("지름", p.showDiameter, function (v) { p.showDiameter = v; markDirty(); }));
+    opts.appendChild(mkCheck("원주", p.showCircumference, function (v) { p.showCircumference = v; markDirty(); }));
+    body.appendChild(opts);
+    body.appendChild(mkLabelRow(block, "jungsim", "중심 이름표"));
+    body.appendChild(mkLabelRow(block, "banjireum", "반지름 이름표"));
+    body.appendChild(mkLabelRow(block, "jireum", "지름 이름표"));
+    body.appendChild(mkLabelRow(block, "wonju", "원주 이름표"));
+    body.appendChild(mkWidthRow(block));
+    body.appendChild(mkStage3Row(block, [["frame", "원만 남김"], ["none", "그림 없음"]]));
+
+  } else if (block.figure_type === "angle_fig") {
+    const row = document.createElement("div");
+    row.className = "brow";
+    const l = document.createElement("label");
+    l.textContent = "각도(°)";
+    row.appendChild(l);
+    row.appendChild(mkNum(p.degrees == null ? 50 : p.degrees, 1, 359, function (v) { p.degrees = Math.max(1, Math.min(359, v)); markDirty(); }));
+    body.appendChild(row);
+    const hint = document.createElement("div");
+    hint.style.cssText = "font-size:12px; color:#888; margin-bottom:8px;";
+    hint.textContent = "90°이면 직각 표시(ㄱ), 그 외에는 호로 그려집니다. 이름표를 비우면 각도 값(예: 50°)이 자동으로 들어갑니다.";
+    body.appendChild(hint);
+    body.appendChild(mkLabelRow(block, "angle", "각도 이름표"));
+    body.appendChild(mkWidthRow(block));
+    body.appendChild(mkStage3Row(block, [["frame", "두 변만 남김"], ["none", "그림 없음"]]));
+
   } else if (block.figure_type === "fraction_fig") {
     const row = document.createElement("div");
     row.className = "brow";
@@ -2116,11 +2463,12 @@ function buildFigureForm(body, block) {
     row.appendChild(l);
     row.appendChild(mkSelect(
       [["cuboid", "직육면체"], ["cube", "정육면체"], ["prism", "각기둥"], ["pyramid", "각뿔"],
-       ["cylinder", "원기둥"], ["cone", "원뿔"], ["sphere", "구"]],
+       ["cylinder", "원기둥"], ["cone", "원뿔"], ["sphere", "구"], ["stack", "쌓기나무"]],
       p.solid || "cuboid",
       function (v) {
         p.solid = v;
         if (p.mode === "net" && !(v === "cuboid" || v === "cube" || v === "cylinder")) p.mode = "oblique";
+        if (v === "stack" && !p.layers) p.layers = [[2, 1], [1, 1]];
         block.labels = (SOLID_LABEL_DEFAULTS[v] || []).map(function (d) { return { key: d[0], text: d[1], blank: false }; });
         block.labelAdjust = {};
         renderBlockForms(); markDirty();
@@ -2133,24 +2481,71 @@ function buildFigureForm(body, block) {
     }
     body.appendChild(row);
 
-    const opts = document.createElement("div");
-    opts.style.margin = "4px 0 8px";
-    if (p.solid === "cuboid" || p.solid === "cube" || p.solid === "cylinder" || !p.solid) {
-      const mrow = document.createElement("span");
-      mrow.style.marginRight = "12px";
-      const msel = mkSelect([["oblique", "겨냥도"], ["net", "전개도"]], p.mode || "oblique", function (v) { p.mode = v; markDirty(); });
-      msel.style.marginRight = "12px";
-      opts.appendChild(msel);
-      opts.appendChild(mrow);
-    }
-    opts.appendChild(mkCheck("보이지 않는 모서리(점선)", p.showHidden !== false, function (v) { p.showHidden = v; markDirty(); }));
-    body.appendChild(opts);
+    if (p.solid === "stack") {
+      // 쌓기나무: 칸마다 쌓은 개수 입력
+      if (!p.layers || !p.layers.length) p.layers = [[2, 1], [1, 1]];
+      const grid = document.createElement("div");
+      grid.style.cssText = "margin:6px 0 8px;";
+      function renderStackGrid() {
+        grid.innerHTML = "";
+        const info = document.createElement("div");
+        info.style.cssText = "font-size:12px; color:#888; margin-bottom:6px;";
+        info.textContent = "바닥을 위에서 본 칸입니다. 각 칸에 쌓은 나무 개수(0~5)를 넣으세요. 뒷줄이 위, 앞줄이 아래입니다.";
+        grid.appendChild(info);
+        p.layers.forEach(function (rowArr, ri) {
+          const line = document.createElement("div");
+          line.style.cssText = "display:flex; gap:4px; margin-bottom:4px; align-items:center;";
+          rowArr.forEach(function (val, ci) {
+            const inp = mkNum(val, 0, 5, function (v) { rowArr[ci] = Math.max(0, Math.min(5, v)); markDirty(); });
+            inp.style.width = "44px";
+            line.appendChild(inp);
+          });
+          const addCol = mkBtn("칸+", "btn small line");
+          addCol.addEventListener("click", function () { rowArr.push(1); renderStackGrid(); markDirty(); });
+          line.appendChild(addCol);
+          const delCol = mkBtn("칸−", "btn small line");
+          delCol.disabled = rowArr.length <= 1;
+          delCol.addEventListener("click", function () { rowArr.pop(); renderStackGrid(); markDirty(); });
+          line.appendChild(delCol);
+          if (p.layers.length > 1) {
+            const delRow = mkBtn("줄 삭제", "btn small line");
+            delRow.addEventListener("click", function () { p.layers.splice(ri, 1); renderStackGrid(); markDirty(); });
+            line.appendChild(delRow);
+          }
+          grid.appendChild(line);
+        });
+        const addRow = mkBtn("+ 줄 추가", "btn small line");
+        addRow.addEventListener("click", function () {
+          const cols = p.layers[0] ? p.layers[0].length : 2;
+          p.layers.push(new Array(cols).fill(1));
+          renderStackGrid(); markDirty();
+        });
+        grid.appendChild(addRow);
+      }
+      renderStackGrid();
+      body.appendChild(grid);
+      body.appendChild(mkWidthRow(block));
+      body.appendChild(mkStage3Row(block, [["frame", "칸 윤곽만(색 없음)"], ["none", "그림 없음"]]));
+    } else {
+      const opts = document.createElement("div");
+      opts.style.margin = "4px 0 8px";
+      if (p.solid === "cuboid" || p.solid === "cube" || p.solid === "cylinder" || !p.solid) {
+        const mrow = document.createElement("span");
+        mrow.style.marginRight = "12px";
+        const msel = mkSelect([["oblique", "겨냥도"], ["net", "전개도"]], p.mode || "oblique", function (v) { p.mode = v; markDirty(); });
+        msel.style.marginRight = "12px";
+        opts.appendChild(msel);
+        opts.appendChild(mrow);
+      }
+      opts.appendChild(mkCheck("보이지 않는 모서리(점선)", p.showHidden !== false, function (v) { p.showHidden = v; markDirty(); }));
+      body.appendChild(opts);
 
-    (SOLID_LABEL_DEFAULTS[p.solid || "cuboid"] || []).forEach(function (d) {
-      body.appendChild(mkLabelRow(block, d[0], d[1] + " 이름표"));
-    });
-    body.appendChild(mkWidthRow(block));
-    body.appendChild(mkStage3Row(block, [["frame", "그림만(이름표 없음)"], ["none", "그림 없음"]]));
+      (SOLID_LABEL_DEFAULTS[p.solid || "cuboid"] || []).forEach(function (d) {
+        body.appendChild(mkLabelRow(block, d[0], d[1] + " 이름표"));
+      });
+      body.appendChild(mkWidthRow(block));
+      body.appendChild(mkStage3Row(block, [["frame", "그림만(이름표 없음)"], ["none", "그림 없음"]]));
+    }
 
   } else if (block.figure_type === "stat_chart") {
     const row = document.createElement("div");
@@ -2558,8 +2953,15 @@ let lastPrint = null;
 
 function openPrint(c, from) {
   prevView = from || "view-list";
-  lastPrint = c;
+  lastPrint = [c];
   document.getElementById("print-sheets").innerHTML = renderConcept(c);
+  showView("view-print");
+}
+
+function openPrintMany(list, from) {
+  prevView = from || "view-list";
+  lastPrint = list.slice();
+  document.getElementById("print-sheets").innerHTML = list.map(renderConcept).join("\n");
   showView("view-print");
 }
 
@@ -2567,8 +2969,8 @@ function openPrint(c, from) {
 
 function rerenderMath() {
   if (current) renderPreview();
-  if (lastPrint && !document.getElementById("view-print").hidden) {
-    document.getElementById("print-sheets").innerHTML = renderConcept(lastPrint);
+  if (lastPrint && lastPrint.length && !document.getElementById("view-print").hidden) {
+    document.getElementById("print-sheets").innerHTML = lastPrint.map(renderConcept).join("\n");
   }
 }
 
@@ -2612,6 +3014,61 @@ document.getElementById("btn-set-close").addEventListener("click", function () {
 });
 document.getElementById("set-apikey").addEventListener("input", function () {
   localStorage.setItem("mw_api_key", this.value.trim());
+});
+
+/* ----- 백업 (내보내기 / 가져오기) ----- */
+
+document.getElementById("btn-backup").addEventListener("click", function () {
+  document.getElementById("backup-status").textContent = "";
+  document.getElementById("modal-backup").hidden = false;
+});
+document.getElementById("btn-backup-close").addEventListener("click", function () {
+  document.getElementById("modal-backup").hidden = true;
+});
+
+document.getElementById("btn-export").addEventListener("click", function () {
+  const data = JSON.stringify({ type: "monster-workbook", version: 1, concepts: concepts }, null, 2);
+  const blob = new Blob([data], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "몬스터_개념백업_" + concepts.length + "개.json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  document.getElementById("backup-status").textContent = "개념 " + concepts.length + "개를 파일로 내보냈습니다.";
+});
+
+document.getElementById("btn-import").addEventListener("click", function () {
+  document.getElementById("import-file").click();
+});
+document.getElementById("import-file").addEventListener("change", function () {
+  const file = this.files && this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function () {
+    const statusEl = document.getElementById("backup-status");
+    let parsed;
+    try { parsed = JSON.parse(reader.result); }
+    catch (e) { statusEl.style.color = "#c0392b"; statusEl.textContent = "파일을 읽을 수 없습니다. 올바른 백업 파일인지 확인해 주세요."; return; }
+    const incoming = Array.isArray(parsed) ? parsed : (parsed && parsed.concepts);
+    if (!Array.isArray(incoming)) { statusEl.style.color = "#c0392b"; statusEl.textContent = "백업 파일 형식이 아닙니다."; return; }
+    let added = 0, updated = 0;
+    incoming.forEach(function (c) {
+      if (!c || typeof c !== "object" || !Array.isArray(c.blocks)) return;
+      if (!c.id) c.id = "c" + Math.random().toString(36).slice(2);
+      const idx = conceptIndexById(c.id);
+      if (idx >= 0) { concepts[idx] = c; updated++; }
+      else { concepts.push(c); added++; }
+    });
+    saveConcepts(concepts);
+    renderList();
+    statusEl.style.color = "#0a7a2f";
+    statusEl.textContent = "가져오기 완료: 새로 추가 " + added + "개, 덮어쓰기 " + updated + "개.";
+  };
+  reader.readAsText(file);
+  this.value = "";
 });
 document.getElementById("set-logo").addEventListener("change", function () {
   const file = this.files && this.files[0];
@@ -2685,8 +3142,11 @@ function buildDraftPrompt(school, grade, unitBig, conceptName) {
     '- 수직선: {"figure_type":"number_line","params":{"rows":[{"label":"40 이상인 수","min":38,"max":42,"step":1,"range":{"value":40,"kind":"이상"},"points":[41,42]},{"label":"40 이하인 수","min":38,"max":42,"step":1,"range":{"value":40,"kind":"이하"}}]}}\n' +
     "  (kind: 이상|이하|초과|미만. 수의 범위·수의 위치·크기 비교에는 반드시 number_line을 쓰고, 절대 stat_chart의 꺾은선그래프로 대신하지 않는다. 개념에 대비되는 예시가 있으면 rows를 2개 넣는다)\n" +
     '- 분수 모델: {"figure_type":"fraction_fig","params":{"model":"bar","den":4,"num":3,"width":70},"labels":[{"key":"caption","blank":true}]} (model은 bar 또는 circle)\n' +
+    '- 원: {"figure_type":"circle_fig","params":{"showRadius":true,"showDiameter":false,"showCircumference":false,"width":70},"labels":[{"key":"jungsim","text":"중심","blank":false},{"key":"banjireum","text":"반지름","blank":true},{"key":"jireum","text":"지름","blank":false},{"key":"wonju","text":"원주","blank":false}]}\n' +
+    '- 각도: {"figure_type":"angle_fig","params":{"degrees":50,"width":70},"labels":[{"key":"angle","text":"","blank":false}]} (직각·예각·둔각 개념에 사용. text 비우면 각도 값 자동)\n' +
     '- 입체도형: {"figure_type":"solid_fig","params":{"solid":"cuboid|cube|prism|pyramid|cylinder|cone|sphere","mode":"oblique","n":5,"width":70},"labels":[{"key":"(아래 참고)","text":"가로 6cm","blank":false}]}\n' +
     "  라벨 키: cuboid/cube는 garo,sero,nopi / prism,pyramid는 nopi,mitmyeon,yeopmyeon / cylinder는 banjireum,nopi,mitmyeon / cone은 nopi,banjireum,mitmyeon / sphere는 banjireum,jungsim. 전개도는 mode:\"net\" (cuboid/cube/cylinder만)\n" +
+    '- 쌓기나무: {"figure_type":"solid_fig","params":{"solid":"stack","layers":[[2,1],[1,1]],"width":70}} (layers는 바닥을 위에서 본 칸별 쌓은 개수, 뒷줄이 먼저)\n' +
     '- 그래프: {"figure_type":"stat_chart","params":{"chart":"bar|line|band|pie|picto","unit":"명","cats":[{"name":"항목","value":8}],"width":100}}\n' +
     '- 좌표평면(중등 이상): {"figure_type":"coord_graph","params":{"slope":1,"yIntercept":-1}}';
 }

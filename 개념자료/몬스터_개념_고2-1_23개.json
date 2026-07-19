@@ -1,0 +1,1896 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-11-1-1-01",
+      "outlineNo": "11-1-1-01",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "거듭제곱근",
+      "keywords": [
+        "거듭제곱근",
+        "세제곱근",
+        "실수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 거듭제곱근"
+          },
+          "body": "* n제곱하여 a가 되는 수를 a의 n제곱근이라 한다.\n* 실수인 n제곱근은 n이 홀수면 1개, n이 짝수면 a>0일 때 2개(±ⁿ√a)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 세제곱 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x³",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              8,
+              27,
+              64
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "거듭제곱근",
+              "meaning": "n제곱하여 a가 되는 수"
+            },
+            {
+              "term": "ⁿ√a",
+              "meaning": "a의 n제곱근 중 양의 실수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* ∛8 = {{2}}\n* ∛(−27) = {{−3}}\n* 16의 네제곱근 중 실수인 것은 ±{{2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-02",
+      "outlineNo": "11-1-1-02",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "지수의 확장 (0·음수·유리수 지수)",
+      "keywords": [
+        "지수의 확장",
+        "유리수 지수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 지수의 확장"
+          },
+          "body": "* a⁰ = 1, a⁻ⁿ = $\\dfrac{1}{aⁿ}$, $a^{\\frac{m}{n}}$ = ⁿ√aᵐ (a>0)으로 지수를 넓힌다.\n* 밑이 양수일 때 실수 지수까지 확장된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 2의 거듭제곱",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "2ⁿ",
+            "inputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "outputs": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "영지수",
+              "meaning": "a⁰ = 1 (a≠0)"
+            },
+            {
+              "term": "음수 지수",
+              "meaning": "a⁻ⁿ은 aⁿ의 역수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2⁻² = {{$\\dfrac{1}{4}$}}\n* $8^{\\frac{1}{3}}$ = {{2}}\n* $4^{\\frac{3}{2}}$ = {{8}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-03",
+      "outlineNo": "11-1-1-03",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "지수법칙 (실수 지수)",
+      "keywords": [
+        "지수법칙",
+        "실수 지수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 지수법칙"
+          },
+          "body": "* aˣaʸ = aˣ⁺ʸ, (aˣ)ʸ = aˣʸ, (ab)ˣ = aˣbˣ (a>0, b>0).\n* 지수가 실수일 때도 같은 법칙이 성립한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 3의 거듭제곱",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3ˣ",
+            "inputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "outputs": [
+              1,
+              3,
+              9,
+              27
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "aˣaʸ",
+              "meaning": "지수의 합 aˣ⁺ʸ"
+            },
+            {
+              "term": "(aˣ)ʸ",
+              "meaning": "지수의 곱 aˣʸ"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2³ × 2⁻¹ = {{4}}\n* (3²)³ = 3 ^ {{6}}\n* 5⁰ = {{1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-04",
+      "outlineNo": "11-1-1-04",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "지수함수와 그래프",
+      "keywords": [
+        "지수함수",
+        "점근선",
+        "증가"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 지수함수"
+          },
+          "body": "* y = aˣ (a>0, a≠1)을 지수함수라 한다.\n* a>1이면 증가, 0<a<1이면 감소하며, 점근선은 y=0이고 항상 (0, 1)을 지난다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = 2ˣ",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "exp",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100,
+            "base": 2
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "지수함수",
+              "meaning": "y = aˣ (a>0, a≠1)"
+            },
+            {
+              "term": "점근선",
+              "meaning": "그래프가 한없이 가까워지는 직선 y=0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=2ˣ은 항상 (0, {{1}})을 지난다\n* y=2ˣ의 점근선은 y = {{0}}\n* a>1이면 x가 커질 때 y는 {{증가}}한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-05",
+      "outlineNo": "11-1-1-05",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "지수방정식과 지수부등식",
+      "keywords": [
+        "지수방정식",
+        "지수부등식",
+        "밑"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 지수방정식·부등식"
+          },
+          "body": "* 밑을 같게 만들어 지수를 비교한다: aˣ = aʸ ↔ x = y.\n* 부등식은 a>1이면 부등호 그대로, 0<a<1이면 부등호가 뒤집힌다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "부등식의 해",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "초과",
+                  "value": 3
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "지수방정식",
+              "meaning": "지수에 미지수가 있는 방정식"
+            },
+            {
+              "term": "밑 통일",
+              "meaning": "같은 밑으로 고쳐 비교"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2ˣ = 8 → x = {{3}}\n* 3ˣ = $\\dfrac{1}{9}$ → x = {{−2}}\n* $\\left(\\dfrac{1}{2}\\right)^{x}$ < $\\dfrac{1}{8}$ → x > {{3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-06",
+      "outlineNo": "11-1-1-06",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "로그의 뜻",
+      "keywords": [
+        "로그",
+        "밑",
+        "진수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 로그의 뜻"
+          },
+          "body": "* aˣ = N ↔ x = log_a N (a>0, a≠1, N>0).\n* a를 밑, N을 진수라 하며, 진수는 항상 양수여야 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 밑이 2인 로그",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "N",
+            "botLabel": "log₂N",
+            "inputs": [
+              1,
+              2,
+              4,
+              8
+            ],
+            "outputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "로그",
+              "meaning": "aˣ=N일 때의 지수 x"
+            },
+            {
+              "term": "진수 조건",
+              "meaning": "진수 N > 0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* log₂8 = {{3}}\n* log₁₀100 = {{2}}\n* log₃1 = {{0}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-07",
+      "outlineNo": "11-1-1-07",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "로그의 성질",
+      "keywords": [
+        "로그의 성질",
+        "밑변환"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 로그의 성질"
+          },
+          "body": "* log MN = log M + log N, log $\\dfrac{M}{N}$ = log M − log N, log Mᵏ = k log M.\n* 밑변환 공식: log_a b = $\\dfrac{\\log_{c} b}{\\log_{c} a}$.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 로그 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "N",
+            "botLabel": "log₂N",
+            "inputs": [
+              2,
+              8,
+              16,
+              32
+            ],
+            "outputs": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "곱의 로그",
+              "meaning": "로그의 합으로 분해"
+            },
+            {
+              "term": "거듭제곱의 로그",
+              "meaning": "지수를 앞으로 내림"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* log₂4 + log₂8 = 2+3 = {{5}}\n* log₂32 − log₂2 = {{4}}\n* log₂8³ = 3·log₂8 = {{9}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-08",
+      "outlineNo": "11-1-1-08",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "상용로그",
+      "keywords": [
+        "상용로그",
+        "밑 10"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 상용로그"
+          },
+          "body": "* 밑이 10인 로그를 상용로그라 하고 log N으로 쓴다.\n* 10의 거듭제곱을 이용해 큰 수·작은 수를 다룬다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 상용로그의 값",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "N",
+            "botLabel": "log N",
+            "inputs": [
+              1,
+              10,
+              100,
+              1000
+            ],
+            "outputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "상용로그",
+              "meaning": "밑이 10인 로그 log N"
+            },
+            {
+              "term": "자릿수",
+              "meaning": "정수 부분으로 어림"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* log 1000 = {{3}}\n* log 0.01 = {{−2}}\n* log 2 ≈ 0.3010이면 log 20 ≈ {{1.3010}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-09",
+      "outlineNo": "11-1-1-09",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "로그함수와 그래프",
+      "keywords": [
+        "로그함수",
+        "역함수",
+        "점근선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 로그함수"
+          },
+          "body": "* y = log_a x (a>0, a≠1)를 로그함수라 한다.\n* 지수함수 y=aˣ의 역함수로, 그래프는 y=x에 대칭이며 점근선은 x=0이고 (1, 0)을 지난다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = log₂x",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "log",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100,
+            "base": 2
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "로그함수",
+              "meaning": "y = log_a x"
+            },
+            {
+              "term": "역함수 관계",
+              "meaning": "y=aˣ과 y=x에 대칭"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=log₂x는 항상 ({{1}}, 0)을 지난다\n* y=log₂x의 점근선은 x = {{0}}\n* y=2ˣ과 y=log₂x는 직선 y = {{x}}에 대칭",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-1-10",
+      "outlineNo": "11-1-1-10",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "1. 지수함수와 로그함수",
+      "unit_mid": "로그방정식과 로그부등식",
+      "keywords": [
+        "로그방정식",
+        "진수 조건"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 로그방정식·부등식"
+          },
+          "body": "* 로그의 정의로 지수 꼴로 바꾸어 푼다.\n* 반드시 진수 조건(진수>0)을 먼저 확인하고, 0<a<1이면 부등호가 뒤집힌다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "부등식의 해",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "range": {
+                  "kind": "미만",
+                  "value": 8
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "로그방정식",
+              "meaning": "로그가 들어 있는 방정식"
+            },
+            {
+              "term": "진수 조건",
+              "meaning": "풀기 전 진수>0 확인"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* log₂x = 3 → x = {{8}}\n* log₃(x−1) = 2 → x = {{10}}\n* log₂x < 3 → 0 < x < {{8}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-2-01",
+      "outlineNo": "11-1-2-01",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "2. 삼각함수",
+      "unit_mid": "일반각과 호도법",
+      "keywords": [
+        "호도법",
+        "라디안",
+        "부채꼴"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 일반각과 호도법"
+          },
+          "body": "* 180° = π(라디안)으로 각을 실수로 나타내는 방법이 호도법이다.\n* 반지름 r, 중심각 θ(라디안)인 부채꼴의 호의 길이 l = rθ, 넓이 S = $\\dfrac{1}{2}$r²θ.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 중심각 (60° = π/3)",
+            "3": "2. 각을 표시해 보시오."
+          },
+          "params": {
+            "degrees": 60,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "라디안",
+              "meaning": "호의 길이가 반지름과 같은 각"
+            },
+            {
+              "term": "호도법",
+              "meaning": "180° = π로 나타냄"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 90° = {{$\\dfrac{\\pi}{2}$}}\n* $\\dfrac{\\pi}{3}$ = {{60}}°\n* r=2, θ=π이면 호의 길이 l = {{2π}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-2-02",
+      "outlineNo": "11-1-2-02",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "2. 삼각함수",
+      "unit_mid": "삼각함수의 뜻",
+      "keywords": [
+        "삼각함수",
+        "단위원"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각함수의 뜻"
+          },
+          "body": "* 단위원 위의 점 P(x, y)에 대해 sin θ = y, cos θ = x, tan θ = $\\dfrac{y}{x}$로 정의한다.\n* sin²θ + cos²θ = 1이 항상 성립한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 단위원 (반지름 1)",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "삼각함수",
+              "meaning": "단위원 위 점의 좌표로 정의"
+            },
+            {
+              "term": "기본 항등식",
+              "meaning": "sin²θ + cos²θ = 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* sin²θ + cos²θ = {{1}}\n* sin 90° = {{1}}\n* tan θ = sin θ ÷ {{cos θ}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-2-03",
+      "outlineNo": "11-1-2-03",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "2. 삼각함수",
+      "unit_mid": "삼각함수의 그래프",
+      "keywords": [
+        "주기",
+        "최댓값",
+        "사인 곡선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각함수의 그래프"
+          },
+          "body": "* y = sin x, y = cos x는 주기 2π, 최댓값 1, 최솟값 −1인 곡선이다.\n* y = tan x는 주기 π이고 점근선을 가진다.\n* y = a sin bx의 최댓값은 |a|, 주기는 $\\dfrac{2\\pi}{|b|}$이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = sin x",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "sin",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "주기",
+              "meaning": "그래프가 되풀이되는 간격"
+            },
+            {
+              "term": "진폭",
+              "meaning": "최댓값과 최솟값 폭의 절반 |a|"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=sin x의 주기는 {{2π}}\n* y=sin x의 최댓값은 {{1}}\n* y=a sin bx의 주기는 2π ÷ {{|b|}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-2-04",
+      "outlineNo": "11-1-2-04",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "2. 삼각함수",
+      "unit_mid": "사인법칙",
+      "keywords": [
+        "사인법칙",
+        "외접원"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 사인법칙"
+          },
+          "body": "* △ABC에서 $\\dfrac{a}{\\sin A}$ = $\\dfrac{b}{\\sin B}$ = $\\dfrac{c}{\\sin C}$ = 2R (R는 외접원의 반지름).\n* 두 각과 한 변, 또는 두 변과 끼지 않은 각이 주어질 때 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. △ABC",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "사인법칙",
+              "meaning": "변과 마주 보는 각의 사인의 비"
+            },
+            {
+              "term": "2R",
+              "meaning": "외접원 지름과 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{a}{\\sin A}$ = {{2R}}\n* A=30°, a=5이면 2R = 5 ÷ sin 30° = {{10}}\n* 이때 외접원의 반지름 R = {{5}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-2-05",
+      "outlineNo": "11-1-2-05",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "2. 삼각함수",
+      "unit_mid": "코사인법칙",
+      "keywords": [
+        "코사인법칙",
+        "끼인각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 코사인법칙"
+          },
+          "body": "* a² = b² + c² − 2bc cos A — 두 변과 끼인각으로 나머지 변을 구한다.\n* 변형하면 cos A = $\\dfrac{b^{2}+c^{2}-a^{2}}{2bc}$로 각도 구할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. △ABC",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "코사인법칙",
+              "meaning": "두 변과 끼인각 → 대변"
+            },
+            {
+              "term": "변형",
+              "meaning": "세 변 → 코사인 값"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* b=3, c=4, A=60°이면 a² = 9+16−2·3·4·$\\dfrac{1}{2}$ = {{13}}\n* 따라서 a = {{$\\sqrt{13}$}}\n* cos A의 분모는 {{2bc}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-2-06",
+      "outlineNo": "11-1-2-06",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "2. 삼각함수",
+      "unit_mid": "삼각형의 넓이",
+      "keywords": [
+        "삼각형의 넓이",
+        "사인"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각형의 넓이"
+          },
+          "body": "* 두 변과 끼인각을 알면 S = $\\dfrac{1}{2}$bc sin A로 넓이를 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 두 변과 끼인각",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "넓이 공식",
+              "meaning": "S = ½bc sin A"
+            },
+            {
+              "term": "끼인각",
+              "meaning": "두 변 사이의 각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* b=4, c=5, A=30°이면 S = $\\dfrac{1}{2}$·4·5·$\\dfrac{1}{2}$ = {{5}}\n* S = $\\dfrac{1}{2}$ab sin {{C}}\n* 끼인각이 90°면 S = $\\dfrac{1}{2}$bc — 직각삼각형의 {{넓이}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-3-01",
+      "outlineNo": "11-1-3-01",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "3. 수열",
+      "unit_mid": "등차수열",
+      "keywords": [
+        "등차수열",
+        "공차",
+        "일반항"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 등차수열"
+          },
+          "body": "* 이웃한 항의 차가 일정한 수열로, 그 차 d를 공차라 한다.\n* 일반항 aₙ = a + (n−1)d (a는 첫째항).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 공차 3인 등차수열",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "aₙ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "outputs": [
+              2,
+              5,
+              8,
+              11,
+              14
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "공차",
+              "meaning": "이웃한 두 항의 차 d"
+            },
+            {
+              "term": "일반항",
+              "meaning": "aₙ = a + (n−1)d"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2, 5, 8, 11, …의 공차는 {{3}}\n* 이 수열의 제10항은 2 + 9×3 = {{29}}\n* aₙ = a + (n−1){{d}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-3-02",
+      "outlineNo": "11-1-3-02",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "3. 수열",
+      "unit_mid": "등차수열의 합",
+      "keywords": [
+        "등차수열의 합",
+        "Sₙ"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 등차수열의 합"
+          },
+          "body": "* 첫째항 a, 제n항 l일 때 Sₙ = $\\dfrac{n(a+l)}{2}$.\n* 공차 d로 쓰면 Sₙ = $\\dfrac{n\\{2a+(n-1)d\\}}{2}$.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 1+2+…+n의 합",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "Sₙ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              3,
+              6,
+              10
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "Sₙ",
+              "meaning": "첫째항부터 제n항까지의 합"
+            },
+            {
+              "term": "공식",
+              "meaning": "n(첫째항+끝항)÷2"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1+2+…+10 = {{55}}\n* 첫째항 2, 공차 3인 수열의 S₁₀ = $\\dfrac{10(2 \\cdot 2+9 \\cdot 3)}{2}$ = {{155}}\n* Sₙ = n(a + aₙ) ÷ {{2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-3-03",
+      "outlineNo": "11-1-3-03",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "3. 수열",
+      "unit_mid": "등비수열",
+      "keywords": [
+        "등비수열",
+        "공비",
+        "일반항"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 등비수열"
+          },
+          "body": "* 이웃한 항의 비가 일정한 수열로, 그 비 r를 공비라 한다.\n* 일반항 aₙ = arⁿ⁻¹ (a는 첫째항).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 공비 2인 등비수열",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "aₙ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              12,
+              24
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "공비",
+              "meaning": "이웃한 두 항의 비 r"
+            },
+            {
+              "term": "일반항",
+              "meaning": "aₙ = arⁿ⁻¹"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 3, 6, 12, 24, …의 공비는 {{2}}\n* 이 수열의 제5항은 3×2⁴ = {{48}}\n* aₙ = a × r ^ {{n−1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-3-04",
+      "outlineNo": "11-1-3-04",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "3. 수열",
+      "unit_mid": "등비수열의 합",
+      "keywords": [
+        "등비수열의 합",
+        "공비"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 등비수열의 합"
+          },
+          "body": "* r≠1이면 Sₙ = $\\dfrac{a(r^{n}-1)}{r-1}$, r=1이면 Sₙ = na이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 1+2+4+…의 합",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "Sₙ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "outputs": [
+              1,
+              3,
+              7,
+              15,
+              31
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "등비수열의 합",
+              "meaning": "a(rⁿ−1)÷(r−1)"
+            },
+            {
+              "term": "r=1일 때",
+              "meaning": "모든 항이 같아 na"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1+2+4+8+16 = {{31}}\n* 첫째항 1, 공비 3의 S₄ = $\\dfrac{3^{4}-1}{2}$ = {{40}}\n* r=1이면 Sₙ = {{na}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-3-05",
+      "outlineNo": "11-1-3-05",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "3. 수열",
+      "unit_mid": "합의 기호 Σ",
+      "keywords": [
+        "시그마",
+        "합의 기호"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 합의 기호 Σ"
+          },
+          "body": "* $\\sum_{k=1}^{n} a_{k}$ 는 a₁부터 aₙ까지의 합이다.\n* Σ(aₖ+bₖ) = Σaₖ + Σbₖ, Σcaₖ = cΣaₖ, Σc = cn.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. k²의 값",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "k",
+            "botLabel": "k²",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              4,
+              9,
+              16
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "Σ",
+              "meaning": "정해진 범위의 항을 모두 더함"
+            },
+            {
+              "term": "상수의 합",
+              "meaning": "Σc = cn"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sum_{k=1}^{10} k$ = {{55}}\n* Σ2aₖ = 2 × {{Σaₖ}}\n* $\\sum_{k=1}^{5} 3$ = {{15}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-3-06",
+      "outlineNo": "11-1-3-06",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "3. 수열",
+      "unit_mid": "여러 가지 수열의 합",
+      "keywords": [
+        "자연수 거듭제곱의 합",
+        "부분분수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 여러 가지 수열의 합"
+          },
+          "body": "* $\\sum_{k=1}^{n} k$ = $\\dfrac{n(n+1)}{2}$, $\\sum_{k=1}^{n} k^{2}$ = $\\dfrac{n(n+1)(2n+1)}{6}$.\n* $\\dfrac{1}{k(k+1)}$ = $\\dfrac{1}{k}$ − $\\dfrac{1}{k+1}$ (부분분수)로 사이가 사라지게 더한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 자연수의 합",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "1+2+…+n",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              3,
+              6,
+              10
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "거듭제곱의 합",
+              "meaning": "k, k²의 합 공식"
+            },
+            {
+              "term": "부분분수",
+              "meaning": "두 분수의 차로 갈라 씀"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sum_{k=1}^{3} k^{2}$ = 1+4+9 = {{14}}\n* $\\dfrac{1}{k(k+1)}$ = $\\dfrac{1}{k}$ − {{$\\dfrac{1}{k+1}$}}\n* $\\sum_{k=1}^{n} k$ = n(n+1) ÷ {{2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-11-1-3-07",
+      "outlineNo": "11-1-3-07",
+      "school": "고등학교",
+      "grade": "고2",
+      "unit_big": "3. 수열",
+      "unit_mid": "수학적 귀납법과 귀납적 정의",
+      "keywords": [
+        "수학적 귀납법",
+        "점화식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 귀납법·귀납적 정의"
+          },
+          "body": "* 수열을 a₁과 이웃 항의 관계식(점화식)으로 정하는 것이 귀납적 정의이다.\n* 수학적 귀납법: ① n=1일 때 성립 확인 ② n=k 가정 → n=k+1 성립 증명.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. a₁=1, aₙ₊₁=aₙ+2",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "aₙ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              3,
+              5,
+              7
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "점화식",
+              "meaning": "이웃 항 사이의 관계식"
+            },
+            {
+              "term": "귀납법",
+              "meaning": "1에서 시작해 다음으로 전달"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* a₁=1, aₙ₊₁=aₙ+2이면 a₃ = {{5}}\n* a₁=3, aₙ₊₁=2aₙ이면 a₃ = {{12}}\n* 귀납법은 n=k 성립을 가정해 n = {{k+1}}을 증명한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

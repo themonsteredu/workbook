@@ -3020,31 +3020,24 @@
         },
         {
           "type": "figure",
-          "figure_type": "corr_table",
+          "figure_type": "coord_graph",
           "heading": {
-            "1": "2. 반비례 (x × y = 6)",
-            "3": "2. 표를 완성해 보시오."
+            "1": "2. 반비례 그래프 (y = 6/x)",
+            "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "topLabel": "x",
-            "botLabel": "y",
-            "inputs": [
-              1,
-              2,
-              3,
-              6
-            ],
-            "outputs": [
-              6,
-              3,
-              2,
-              1
-            ],
+            "curve": "hyperbola",
+            "a": 6,
+            "p": 0,
+            "q": 0,
+            "unit": 20,
+            "slope": 1,
+            "yIntercept": 0,
             "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "frame"
+          "stage3": "axes_only"
         },
         {
           "type": "table",
@@ -3104,31 +3097,24 @@
         },
         {
           "type": "figure",
-          "figure_type": "corr_table",
+          "figure_type": "coord_graph",
           "heading": {
-            "1": "2. 반비례표 (x × y = 6)",
-            "3": "2. 표를 완성해 보시오."
+            "1": "2. 반비례 그래프 (y = 6/x)",
+            "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "topLabel": "x",
-            "botLabel": "y",
-            "inputs": [
-              1,
-              2,
-              3,
-              6
-            ],
-            "outputs": [
-              6,
-              3,
-              2,
-              1
-            ],
+            "curve": "hyperbola",
+            "a": 6,
+            "p": 0,
+            "q": 0,
+            "unit": 20,
+            "slope": 1,
+            "yIntercept": 0,
             "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "frame"
+          "stage3": "axes_only"
         },
         {
           "type": "table",

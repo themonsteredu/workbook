@@ -603,33 +603,24 @@
         },
         {
           "type": "figure",
-          "figure_type": "corr_table",
+          "figure_type": "coord_graph",
           "heading": {
-            "1": "2. x² − 4 값의 표",
-            "3": "2. 표를 완성해 보시오."
+            "1": "2. 포물선 (y = x² − 4)",
+            "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "topLabel": "x",
-            "botLabel": "x²−4",
-            "inputs": [
-              -2,
-              -1,
-              0,
-              1,
-              2
-            ],
-            "outputs": [
-              0,
-              -3,
-              -4,
-              -3,
-              0
-            ],
+            "curve": "parabola",
+            "a": 1,
+            "p": 0,
+            "q": -4,
+            "unit": 30,
+            "slope": 1,
+            "yIntercept": 0,
             "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "frame"
+          "stage3": "axes_only"
         },
         {
           "type": "table",
@@ -689,33 +680,24 @@
         },
         {
           "type": "figure",
-          "figure_type": "corr_table",
+          "figure_type": "coord_graph",
           "heading": {
-            "1": "2. (x−1)²+2 값의 표",
-            "3": "2. 표를 완성해 보시오."
+            "1": "2. 포물선 (y = (x−1)² + 2)",
+            "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "topLabel": "x",
-            "botLabel": "(x−1)²+2",
-            "inputs": [
-              -1,
-              0,
-              1,
-              2,
-              3
-            ],
-            "outputs": [
-              6,
-              3,
-              2,
-              3,
-              6
-            ],
+            "curve": "parabola",
+            "a": 1,
+            "p": 1,
+            "q": 2,
+            "unit": 30,
+            "slope": 1,
+            "yIntercept": 0,
             "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "frame"
+          "stage3": "axes_only"
         },
         {
           "type": "table",

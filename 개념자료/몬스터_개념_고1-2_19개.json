@@ -1163,31 +1163,24 @@
         },
         {
           "type": "figure",
-          "figure_type": "corr_table",
+          "figure_type": "coord_graph",
           "heading": {
-            "1": "2. y = 6/x 값의 표",
-            "3": "2. 표를 완성해 보시오."
+            "1": "2. 유리함수 (y = 2/x)",
+            "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "topLabel": "x",
-            "botLabel": "6/x",
-            "inputs": [
-              1,
-              2,
-              3,
-              6
-            ],
-            "outputs": [
-              6,
-              3,
-              2,
-              1
-            ],
+            "curve": "hyperbola",
+            "a": 2,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
             "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "frame"
+          "stage3": "axes_only"
         },
         {
           "type": "table",
@@ -1246,31 +1239,24 @@
         },
         {
           "type": "figure",
-          "figure_type": "corr_table",
+          "figure_type": "coord_graph",
           "heading": {
-            "1": "2. y = √x 값의 표",
-            "3": "2. 표를 완성해 보시오."
+            "1": "2. 무리함수 (y = √x)",
+            "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "topLabel": "x",
-            "botLabel": "√x",
-            "inputs": [
-              0,
-              1,
-              4,
-              9
-            ],
-            "outputs": [
-              0,
-              1,
-              2,
-              3
-            ],
+            "curve": "sqrt",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
             "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "frame"
+          "stage3": "axes_only"
         },
         {
           "type": "table",

@@ -1,0 +1,2467 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-7-1-1-01",
+      "outlineNo": "7-1-1-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 소인수분해",
+      "unit_mid": "소수와 합성수 구분",
+      "keywords": [
+        "소수",
+        "합성수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소수와 합성수"
+          },
+          "body": "* 1보다 큰 자연수 중 1과 자기 자신만을 약수로 갖는 수를 {{소수}}, 약수가 3개 이상인 수를 {{합성수}}라 한다.\n* 1은 소수도 합성수도 아니다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "소수",
+              "meaning": "약수가 1과 자기 자신뿐"
+            },
+            {
+              "term": "합성수",
+              "meaning": "약수가 3개 이상"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 7의 약수는 1, 7뿐이므로 {{소수}}\n* 9의 약수는 1, 3, 9이므로 {{합성수}}\n* 1은 소수도 합성수도 {{아니다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-1-02",
+      "outlineNo": "7-1-1-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 소인수분해",
+      "unit_mid": "거듭제곱으로 나타내기",
+      "keywords": [
+        "거듭제곱",
+        "지수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 거듭제곱"
+          },
+          "body": "* 같은 수를 여러 번 곱한 것을 거듭제곱으로 나타낸다.\n* 2×2×2 = 2³ 에서 2는 {{밑}}, 3은 {{지수}}이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "밑",
+              "meaning": "거듭제곱에서 곱하는 수"
+            },
+            {
+              "term": "지수",
+              "meaning": "곱한 횟수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 2 × 2 × 2 = {{$2^{3}$}}\n* $3^{2}$ = {{9}}\n* 5 × 5 = $5^{2}$ = {{25}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-1-03",
+      "outlineNo": "7-1-1-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 소인수분해",
+      "unit_mid": "소인수분해 하기",
+      "keywords": [
+        "소인수분해"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 소인수분해"
+          },
+          "body": "* 자연수를 소수들의 곱으로 나타내는 것을 {{소인수분해}}라 한다.\n* 예: 12 = 2² × 3.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "소인수",
+              "meaning": "소수인 인수"
+            },
+            {
+              "term": "소인수분해",
+              "meaning": "소수들의 곱으로 표현"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 12 = {{$2^{2}\\times 3$}}\n* 18 = 2 × {{$3^{2}$}}\n* 24 = $2^{3}$ × {{3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-1-04",
+      "outlineNo": "7-1-1-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 소인수분해",
+      "unit_mid": "소인수분해로 약수 구하기",
+      "keywords": [
+        "약수의 개수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 약수의 개수"
+          },
+          "body": "* $a^{m}\\times b^{n}$ 꼴의 약수의 개수는 (m+1)(n+1)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "약수의 개수",
+              "meaning": "(지수+1)의 곱"
+            },
+            {
+              "term": "약수",
+              "meaning": "소인수들의 조합"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 12 = 2²×3의 약수의 개수는 (2+1)(1+1) = {{6}}\n* $2^{3}$의 약수의 개수는 {{4}}\n* 소인수분해로 약수를 모두 {{구할}} 수 있다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-1-05",
+      "outlineNo": "7-1-1-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 소인수분해",
+      "unit_mid": "최대공약수 구하기(소인수분해)",
+      "keywords": [
+        "최대공약수",
+        "공통 소인수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 최대공약수"
+          },
+          "body": "* 공통인 소인수를 지수가 작은 쪽으로 골라 곱한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "최대공약수",
+              "meaning": "공통 소인수의 곱(작은 지수)"
+            },
+            {
+              "term": "공통 소인수",
+              "meaning": "두 수에 공통인 소수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 12=2²×3, 18=2×3² → 최대공약수 = 2×3 = {{6}}\n* 공통 소인수는 {{2와 3}}\n* 지수는 {{작은}} 쪽을 택한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-1-06",
+      "outlineNo": "7-1-1-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 소인수분해",
+      "unit_mid": "최소공배수 구하기(소인수분해)",
+      "keywords": [
+        "최소공배수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 최소공배수"
+          },
+          "body": "* 모든 소인수를 지수가 큰 쪽으로 골라 곱한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "최소공배수",
+              "meaning": "모든 소인수의 곱(큰 지수)"
+            },
+            {
+              "term": "지수",
+              "meaning": "큰 쪽을 택함"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 12=2²×3, 18=2×3² → 최소공배수 = 2²×3² = {{36}}\n* 모든 소인수는 {{2와 3}}\n* 지수는 {{큰}} 쪽을 택한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-1-07",
+      "outlineNo": "7-1-1-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 소인수분해",
+      "unit_mid": "최대공약수·최소공배수 활용",
+      "keywords": [
+        "활용",
+        "문장제"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 최대공약수·최소공배수 활용"
+          },
+          "body": "* 똑같이 나누어 주기 → 최대공약수, 동시에 되풀이 → 최소공배수를 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "최대공약수 활용",
+              "meaning": "똑같이 나누기"
+            },
+            {
+              "term": "최소공배수 활용",
+              "meaning": "동시에 되풀이"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 사과 12개, 배 18개를 똑같이 나누는 최대 인원은 {{6}}명\n* 6분·8분마다 오는 버스가 동시에 오는 때는 {{24}}분마다\n* 나누기 → 최대공약수, 되풀이 → {{최소공배수}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-01",
+      "outlineNo": "7-1-2-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "양수와 음수, 정수",
+      "keywords": [
+        "양수",
+        "음수",
+        "정수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 양수·음수·정수"
+          },
+          "body": "* 0보다 큰 수를 {{양수}}(+), 0보다 작은 수를 {{음수}}(−)라 한다.\n* 양의 정수, 0, 음의 정수를 통틀어 정수라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "정수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "양수",
+              "meaning": "0보다 큰 수 +"
+            },
+            {
+              "term": "음수",
+              "meaning": "0보다 작은 수 −"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* +3은 {{양수}}\n* −5는 {{음수}}\n* 0은 양수도 음수도 {{아니다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-02",
+      "outlineNo": "7-1-2-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "유리수의 개념과 분류",
+      "keywords": [
+        "유리수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 유리수"
+          },
+          "body": "* 분수 꼴 (정수)/(0이 아닌 정수)로 나타낼 수 있는 수를 {{유리수}}라 한다.\n* 정수는 모두 유리수이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "유리수",
+              "meaning": "분수 꼴로 나타낼 수 있는 수"
+            },
+            {
+              "term": "정수",
+              "meaning": "유리수에 포함"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* $\\dfrac{1}{2}$은 {{유리수}}\n* −3은 유리수에 {{포함}}된다\n* 유리수는 양의 유리수, 0, 음의 유리수로 {{분류}}된다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-03",
+      "outlineNo": "7-1-2-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "수직선과 절댓값",
+      "keywords": [
+        "절댓값"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 절댓값"
+          },
+          "body": "* 수직선에서 어떤 수와 0 사이의 거리를 그 수의 {{절댓값}}이라 하고 | | 로 나타낸다.\n* |−3| = 3, |+3| = 3.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "절댓값 (0으로부터의 거리)",
+                "min": -5,
+                "max": 5,
+                "step": 1,
+                "range": null,
+                "points": [
+                  -3,
+                  3
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "절댓값",
+              "meaning": "0으로부터의 거리"
+            },
+            {
+              "term": "기호",
+              "meaning": "| |"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* |−3| = {{3}}\n* |+5| = {{5}}\n* 절댓값이 4인 수는 +4와 {{−4}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-04",
+      "outlineNo": "7-1-2-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "수의 대소 관계",
+      "keywords": [
+        "대소",
+        "부등호"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 수의 대소 관계"
+          },
+          "body": "* 수직선에서 오른쪽에 있는 수가 더 크다.\n* (음수) < 0 < (양수), 음수는 절댓값이 클수록 작다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "대소 관계",
+                "min": -5,
+                "max": 5,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대소 비교",
+              "meaning": "수직선 오른쪽이 큼"
+            },
+            {
+              "term": "음수끼리",
+              "meaning": "절댓값 클수록 작다"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* −2 {{<}} 3\n* −5 {{<}} −1\n* 0 {{>}} −4",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-05",
+      "outlineNo": "7-1-2-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "정수와 유리수의 덧셈",
+      "keywords": [
+        "덧셈",
+        "부호"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 덧셈"
+          },
+          "body": "* 부호가 같으면 절댓값의 합에 공통 부호를 붙인다.\n* 부호가 다르면 절댓값의 차에 큰 쪽 부호를 붙인다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "같은 부호",
+              "meaning": "절댓값의 합, 공통 부호"
+            },
+            {
+              "term": "다른 부호",
+              "meaning": "절댓값의 차, 큰 쪽 부호"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* (+3) + (+4) = {{+7}}\n* (−3) + (−4) = {{−7}}\n* (+5) + (−2) = {{+3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-06",
+      "outlineNo": "7-1-2-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "정수와 유리수의 뺄셈",
+      "keywords": [
+        "뺄셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 뺄셈"
+          },
+          "body": "* 빼는 수의 부호를 바꾸어 더한다.\n* a − b = a + (−b).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "뺄셈",
+              "meaning": "부호 바꿔 더하기"
+            },
+            {
+              "term": "−(−b)",
+              "meaning": "+b"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* (+5) − (+2) = {{+3}}\n* (+3) − (−4) = {{+7}}\n* (−2) − (−5) = {{+3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-07",
+      "outlineNo": "7-1-2-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "덧셈과 뺄셈의 혼합 계산",
+      "keywords": [
+        "혼합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 덧셈·뺄셈 혼합"
+          },
+          "body": "* 뺄셈을 덧셈으로 고치고, 부호가 같은 것끼리 모아 계산한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "혼합 계산",
+              "meaning": "뺄셈을 덧셈으로"
+            },
+            {
+              "term": "교환·결합",
+              "meaning": "편하게 모아 계산"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 3 − 5 + 2 = {{0}}\n* −4 + 6 − 3 = {{−1}}\n* 7 − 2 − 5 = {{0}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-08",
+      "outlineNo": "7-1-2-08",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "정수와 유리수의 곱셈",
+      "keywords": [
+        "곱셈",
+        "부호"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈"
+          },
+          "body": "* 절댓값의 곱에 부호를 붙인다.\n* 같은 부호 → +, 다른 부호 → −.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "같은 부호 곱",
+              "meaning": "+"
+            },
+            {
+              "term": "다른 부호 곱",
+              "meaning": "−"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* (+3) × (+4) = {{+12}}\n* (−3) × (+4) = {{−12}}\n* (−3) × (−4) = {{+12}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-09",
+      "outlineNo": "7-1-2-09",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "거듭제곱과 부호",
+      "keywords": [
+        "거듭제곱",
+        "부호"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 거듭제곱과 부호"
+          },
+          "body": "* 음수의 거듭제곱은 지수가 짝수면 +, 홀수면 −.\n* (−2)² = 4, (−2)³ = −8.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "짝수 지수",
+              "meaning": "+"
+            },
+            {
+              "term": "홀수 지수",
+              "meaning": "−"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* $(-2)^{2}$ = {{4}}\n* $(-2)^{3}$ = {{−8}}\n* $-2^{2}$ = {{−4}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-10",
+      "outlineNo": "7-1-2-10",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "정수와 유리수의 나눗셈",
+      "keywords": [
+        "나눗셈",
+        "역수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 나눗셈"
+          },
+          "body": "* 나눗셈은 역수를 곱하는 것과 같다.\n* 부호 규칙은 곱셈과 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "역수",
+              "meaning": "곱해서 1이 되는 수"
+            },
+            {
+              "term": "나눗셈 부호",
+              "meaning": "곱셈과 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* (+12) ÷ (+3) = {{+4}}\n* (−12) ÷ (+3) = {{−4}}\n* (−12) ÷ (−4) = {{+3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-2-11",
+      "outlineNo": "7-1-2-11",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 정수와 유리수",
+      "unit_mid": "사칙연산의 혼합 계산",
+      "keywords": [
+        "계산 순서"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 사칙 혼합 계산"
+          },
+          "body": "* 거듭제곱 → ( ) → ×, ÷ → +, − 순서로 계산한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "계산 순서",
+              "meaning": "거듭제곱→( )→×÷→+−"
+            },
+            {
+              "term": "( )",
+              "meaning": "가장 먼저"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 2 + 3 × (−2) = {{−4}}\n* $(-2)^{2}$ − 5 = {{−1}}\n* 10 ÷ (−2) + 3 = {{−2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-3-01",
+      "outlineNo": "7-1-3-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 문자와 식",
+      "unit_mid": "곱셈 기호 생략 규칙",
+      "keywords": [
+        "곱셈 생략"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈 기호 생략"
+          },
+          "body": "* 수와 문자의 곱에서 × 를 생략하고 수를 문자 앞에 쓴다.\n* 3×a = 3a, a×b = ab.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "생략 규칙",
+              "meaning": "× 생략, 수를 앞에"
+            },
+            {
+              "term": "1의 생략",
+              "meaning": "1×a = a"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 3 × a = {{3a}}\n* a × b × 2 = {{2ab}}\n* 1 × x = {{x}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-3-02",
+      "outlineNo": "7-1-3-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 문자와 식",
+      "unit_mid": "나눗셈 기호 생략(분수꼴)",
+      "keywords": [
+        "나눗셈 생략"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 나눗셈 기호 생략"
+          },
+          "body": "* 나눗셈은 분수 꼴로 나타낸다.\n* a ÷ b = a/b (b≠0).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "나눗셈 생략",
+              "meaning": "분수 꼴로"
+            },
+            {
+              "term": "역수 곱",
+              "meaning": "÷b = ×1/b"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* a ÷ 3 = {{$\\dfrac{a}{3}$}}\n* x ÷ y = {{$\\dfrac{x}{y}$}}\n* 6 ÷ a = {{$\\dfrac{6}{a}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-3-03",
+      "outlineNo": "7-1-3-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 문자와 식",
+      "unit_mid": "대입과 식의 값",
+      "keywords": [
+        "대입",
+        "식의 값"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대입과 식의 값"
+          },
+          "body": "* 문자에 수를 넣는 것을 대입, 그 결과를 식의 값이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대입",
+              "meaning": "문자에 수를 넣음"
+            },
+            {
+              "term": "식의 값",
+              "meaning": "대입한 결과"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* x=2일 때 3x = {{6}}\n* x=2일 때 x²+1 = {{5}}\n* a=−1일 때 2a = {{−2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-3-04",
+      "outlineNo": "7-1-3-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 문자와 식",
+      "unit_mid": "일차식과 항·계수 용어",
+      "keywords": [
+        "항",
+        "계수",
+        "차수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 항·계수·차수"
+          },
+          "body": "* +로 구분되는 각 부분을 {{항}}, 문자에 곱한 수를 {{계수}}, 문자를 곱한 개수를 차수라 한다.\n* 차수가 1인 다항식을 일차식이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "항",
+              "meaning": "+로 구분되는 각 부분"
+            },
+            {
+              "term": "계수",
+              "meaning": "문자에 곱한 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 2x+3에서 x의 계수는 {{2}}\n* 2x+3에서 상수항은 {{3}}\n* 2x+3의 차수는 {{1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-3-05",
+      "outlineNo": "7-1-3-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 문자와 식",
+      "unit_mid": "일차식과 수의 곱셈·나눗셈",
+      "keywords": [
+        "분배법칙"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 일차식 × 수"
+          },
+          "body": "* 분배법칙으로 각 항에 수를 곱한다.\n* a(b+c) = ab + ac.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "분배법칙",
+              "meaning": "a(b+c)=ab+ac"
+            },
+            {
+              "term": "나눗셈",
+              "meaning": "역수를 곱함"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 2(x+3) = {{2x+6}}\n* 3(2x−1) = {{6x−3}}\n* (6x+9) ÷ 3 = {{2x+3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-3-06",
+      "outlineNo": "7-1-3-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 문자와 식",
+      "unit_mid": "동류항의 계산",
+      "keywords": [
+        "동류항"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 동류항"
+          },
+          "body": "* 문자와 차수가 같은 항을 {{동류항}}이라 하고, 계수끼리 더하거나 뺀다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "동류항",
+              "meaning": "문자·차수가 같은 항"
+            },
+            {
+              "term": "계산",
+              "meaning": "계수끼리 더하고 뺌"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 2x + 3x = {{5x}}\n* 5a − 2a = {{3a}}\n* 4x + 2 − x = {{3x+2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-3-07",
+      "outlineNo": "7-1-3-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 문자와 식",
+      "unit_mid": "일차식의 덧셈과 뺄셈",
+      "keywords": [
+        "일차식",
+        "괄호"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 일차식의 덧셈·뺄셈"
+          },
+          "body": "* 괄호를 풀고 동류항끼리 모아 계산한다.\n* − 괄호 앞이면 부호를 모두 바꾼다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "괄호 풀기",
+              "meaning": "분배법칙 적용"
+            },
+            {
+              "term": "− 괄호",
+              "meaning": "부호 모두 바꿈"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* (2x+1) + (x+3) = {{3x+4}}\n* (3x+2) − (x−1) = {{2x+3}}\n* 2(x+1) + 3x = {{5x+2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-01",
+      "outlineNo": "7-1-4-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "방정식과 항등식 구분",
+      "keywords": [
+        "방정식",
+        "항등식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 방정식·항등식"
+          },
+          "body": "* 미지수의 값에 따라 참·거짓이 갈리는 등식을 {{방정식}}, 항상 참인 등식을 {{항등식}}이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "방정식",
+              "meaning": "특정 값에서만 참"
+            },
+            {
+              "term": "항등식",
+              "meaning": "항상 참"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* x+1=3은 x=2일 때만 참 → {{방정식}}\n* 2x = x+x는 항상 참 → {{항등식}}\n* 방정식을 참이 되게 하는 값을 {{해}}(근)라 한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-02",
+      "outlineNo": "7-1-4-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "등식의 성질",
+      "keywords": [
+        "등식",
+        "성질"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 등식의 성질"
+          },
+          "body": "* 등식의 양변에 같은 수를 더하거나 빼거나 곱하거나 (0이 아닌 수로) 나누어도 등식은 성립한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "등식의 성질",
+              "meaning": "양변에 같은 연산"
+            },
+            {
+              "term": "0으로 나누기",
+              "meaning": "할 수 없음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* x−3=5 → 양변에 3을 더하면 x = {{8}}\n* 2x=10 → 양변을 2로 나누면 x = {{5}}\n* x+4=9 → x = {{5}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-03",
+      "outlineNo": "7-1-4-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "이항",
+      "keywords": [
+        "이항"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이항"
+          },
+          "body": "* 한 변의 항을 부호를 바꾸어 다른 변으로 옮기는 것을 {{이항}}이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이항",
+              "meaning": "부호 바꿔 옮기기"
+            },
+            {
+              "term": "근거",
+              "meaning": "등식의 성질"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* x+3=7 → x = 7 − {{3}}\n* 2x−5=1 → 2x = 1 + {{5}}\n* x−4=2 → x = {{6}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-04",
+      "outlineNo": "7-1-4-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "일차방정식의 풀이",
+      "keywords": [
+        "일차방정식",
+        "풀이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 일차방정식의 풀이"
+          },
+          "body": "* 이항하여 ax = b 꼴로 만든 뒤 양변을 a로 나눈다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "일차방정식",
+              "meaning": "정리하면 ax+b=0"
+            },
+            {
+              "term": "풀이",
+              "meaning": "ax=b → x=b/a"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 2x+1=7 → x = {{3}}\n* 3x−2=x+6 → x = {{4}}\n* 5x=2x+9 → x = {{3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-05",
+      "outlineNo": "7-1-4-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "계수가 분수·소수인 방정식",
+      "keywords": [
+        "분수",
+        "소수",
+        "계수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분수·소수 계수"
+          },
+          "body": "* 분수는 분모의 최소공배수를, 소수는 10·100 등을 양변에 곱해 정수로 만든 뒤 푼다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "분수 계수",
+              "meaning": "최소공배수 곱하기"
+            },
+            {
+              "term": "소수 계수",
+              "meaning": "10·100 곱하기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 0.2x = 1 → x = {{5}}\n* $\\dfrac{x}{2}$ + 1 = 3 → x = {{4}}\n* 0.5x − 1 = 1 → x = {{4}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-06",
+      "outlineNo": "7-1-4-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "일차방정식의 활용(수·나이)",
+      "keywords": [
+        "활용",
+        "식 세우기"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 활용 (수·나이)"
+          },
+          "body": "* 구하려는 것을 x로 놓고 문장을 등식으로 옮긴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "미지수 정하기",
+              "meaning": "구할 것을 x로"
+            },
+            {
+              "term": "식 세우기",
+              "meaning": "문장 → 등식"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 어떤 수에 3을 더하면 8 → x+3=8, x = {{5}}\n* 연속한 두 자연수의 합이 11 → 작은 수는 {{5}}\n* 현재 10살, x년 후 15살 → x = {{5}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-07",
+      "outlineNo": "7-1-4-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "일차방정식의 활용(거리·속력·시간)",
+      "keywords": [
+        "거리",
+        "속력",
+        "시간"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 활용 (거·속·시)"
+          },
+          "body": "* (거리)=(속력)×(시간), (시간)=(거리)÷(속력)을 이용해 식을 세운다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "거리",
+              "meaning": "속력 × 시간"
+            },
+            {
+              "term": "시간",
+              "meaning": "거리 ÷ 속력"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 시속 4km로 3시간 가면 거리는 {{12}}km\n* 12km를 시속 4km로 가면 {{3}}시간\n* 거리 = 속력 × {{시간}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-4-08",
+      "outlineNo": "7-1-4-08",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 일차방정식",
+      "unit_mid": "일차방정식의 활용(농도·비율)",
+      "keywords": [
+        "농도",
+        "소금물"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 활용 (농도)"
+          },
+          "body": "* (소금의 양) = (농도)÷100 × (소금물의 양)으로 식을 세운다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "농도",
+              "meaning": "소금의 양 ÷ 소금물 × 100"
+            },
+            {
+              "term": "소금의 양",
+              "meaning": "농도/100 × 소금물"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 10% 소금물 200g의 소금은 {{20}}g\n* 소금 30g, 소금물 300g의 농도는 {{10}}%\n* 소금의 양 = 농도/100 × {{소금물}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-01",
+      "outlineNo": "7-1-5-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "순서쌍과 좌표",
+      "keywords": [
+        "순서쌍",
+        "좌표"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 순서쌍과 좌표"
+          },
+          "body": "* 두 수를 순서대로 짝지은 것을 순서쌍, 좌표평면 위의 점을 (x좌표, y좌표)로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "순서쌍",
+              "meaning": "(x, y)"
+            },
+            {
+              "term": "좌표",
+              "meaning": "점의 위치를 나타내는 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 점 (2, 3)의 x좌표는 {{2}}\n* 점 (2, 3)의 y좌표는 {{3}}\n* 원점의 좌표는 {{(0, 0)}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-02",
+      "outlineNo": "7-1-5-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "사분면",
+      "keywords": [
+        "사분면"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 사분면"
+          },
+          "body": "* 좌표평면은 x축·y축으로 네 부분(사분면)으로 나뉜다.\n* (+,+)=1사분면, (−,+)=2, (−,−)=3, (+,−)=4사분면.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "사분면",
+              "meaning": "좌표평면의 네 부분"
+            },
+            {
+              "term": "판단",
+              "meaning": "x·y 부호로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* (3, 2)는 제 {{1}}사분면\n* (−1, −4)는 제 {{3}}사분면\n* (2, −5)는 제 {{4}}사분면",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-03",
+      "outlineNo": "7-1-5-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "그래프의 해석",
+      "keywords": [
+        "그래프",
+        "해석"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 그래프의 해석"
+          },
+          "body": "* 그래프의 모양으로 두 양의 변화(증가·감소·일정)를 읽는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "증가",
+              "meaning": "오른쪽 위로"
+            },
+            {
+              "term": "감소",
+              "meaning": "오른쪽 아래로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 그래프가 오른쪽 위로 가면 값이 {{증가}}\n* 수평이면 값이 {{일정}}\n* 오른쪽 아래로 가면 {{감소}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-04",
+      "outlineNo": "7-1-5-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "정비례 관계와 식",
+      "keywords": [
+        "정비례"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정비례 관계"
+          },
+          "body": "* y가 x에 정비례하면 y = ax (a≠0) 꼴이다.\n* x가 2배, 3배가 되면 y도 2배, 3배가 된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 정비례 y = 2x",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "y",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              2,
+              4,
+              6,
+              8
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "정비례",
+              "meaning": "y = ax"
+            },
+            {
+              "term": "비례상수",
+              "meaning": "a"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=2x에서 x=3이면 y = {{6}}\n* x=1일 때 y=4인 정비례식은 y = {{4x}}\n* 정비례 그래프는 {{원점}}을 지난다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-05",
+      "outlineNo": "7-1-5-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "정비례 그래프",
+      "keywords": [
+        "정비례",
+        "그래프"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정비례 그래프"
+          },
+          "body": "* y=ax의 그래프는 원점을 지나는 직선이다.\n* a>0이면 오른쪽 위로, a<0이면 오른쪽 아래로 향한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 정비례 y = 2x",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 2,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "정비례 그래프",
+              "meaning": "원점 지나는 직선"
+            },
+            {
+              "term": "방향",
+              "meaning": "a의 부호로 결정"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=2x의 그래프는 (1, {{2}})를 지난다\n* y=ax는 항상 {{원점}}을 지난다\n* a>0이면 오른쪽 {{위}}로 향한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-06",
+      "outlineNo": "7-1-5-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "반비례 관계와 식",
+      "keywords": [
+        "반비례"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 반비례 관계"
+          },
+          "body": "* y가 x에 반비례하면 y = a/x (a≠0) 꼴이다.\n* x가 2배가 되면 y는 1/2배가 된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 반비례 (x × y = 6)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "y",
+            "inputs": [
+              1,
+              2,
+              3,
+              6
+            ],
+            "outputs": [
+              6,
+              3,
+              2,
+              1
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "반비례",
+              "meaning": "y = a/x"
+            },
+            {
+              "term": "곱 일정",
+              "meaning": "x × y = a"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=6/x에서 x=2이면 y = {{3}}\n* 반비례에서 x×y는 {{일정}}하다\n* xy=12이면 x=3일 때 y = {{4}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-07",
+      "outlineNo": "7-1-5-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "반비례 그래프",
+      "keywords": [
+        "반비례",
+        "쌍곡선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 반비례 그래프"
+          },
+          "body": "* y=a/x의 그래프는 원점을 지나지 않는 한 쌍의 곡선(쌍곡선)이다.\n* 좌표축에 점점 가까워지지만 만나지 않는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 반비례표 (x × y = 6)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "y",
+            "inputs": [
+              1,
+              2,
+              3,
+              6
+            ],
+            "outputs": [
+              6,
+              3,
+              2,
+              1
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "쌍곡선",
+              "meaning": "반비례 그래프 모양"
+            },
+            {
+              "term": "특징",
+              "meaning": "축에 닿지 않음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=6/x의 그래프는 (2, {{3}})를 지난다\n* 반비례 그래프는 축과 {{만나지 않는다}}\n* 그래프는 매끄러운 {{곡선}}이다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-1-5-08",
+      "outlineNo": "7-1-5-08",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 좌표평면과 그래프",
+      "unit_mid": "정비례·반비례 활용",
+      "keywords": [
+        "정비례",
+        "반비례",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정비례·반비례 활용"
+          },
+          "body": "* 상황에서 두 양이 정비례인지 반비례인지 판단해 식을 세운다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "정비례 상황",
+              "meaning": "한쪽 늘면 같이 늚"
+            },
+            {
+              "term": "반비례 상황",
+              "meaning": "한쪽 늘면 다른쪽 줆"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 1개 500원인 물건 x개의 값 y=500x는 {{정비례}}\n* 12를 x명이 나누면 한 명 몫 y=12/x는 {{반비례}}\n* 정비례는 y=ax, 반비례는 y = {{a/x}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

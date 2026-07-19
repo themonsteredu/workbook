@@ -37,7 +37,21 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": true,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "ticks": [
+                [
+                  1,
+                  2
+                ]
+              ],
+              "arcs": [
+                [
+                  0,
+                  1
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -73,6 +87,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "iso_bisector",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -125,7 +152,21 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": true,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "ticks": [
+                [
+                  1,
+                  2
+                ]
+              ],
+              "arcs": [
+                [
+                  0,
+                  1
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -161,6 +202,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "iso_bisector",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -251,6 +305,19 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "two_right",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "text",
           "proofPage": true,
           "heading": {
@@ -334,6 +401,19 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "tri_center",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "center": "circumcenter",
+            "width": 74
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "text",
           "proofPage": true,
           "heading": {
@@ -415,6 +495,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_center",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "center": "incenter",
+            "width": 74
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -538,7 +631,29 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": true
+            "showDiagonals": true,
+            "features": {
+              "pars": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "ticks": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -574,6 +689,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "para_diag",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -626,7 +754,29 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "pars": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "ticks": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -701,7 +851,19 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": true
+            "showDiagonals": false,
+            "features": {
+              "ticks": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              "diagPerp": true,
+              "diagBisect": true
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -776,7 +938,23 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": true
+            "showDiagonals": true,
+            "features": {
+              "rights": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "ticks": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -851,7 +1029,23 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "rights": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "ticks": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -973,6 +1167,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "equal_area",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -1361,6 +1568,19 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "midseg",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "text",
           "proofPage": true,
           "heading": {
@@ -1442,6 +1662,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "centroid_ef",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -1599,6 +1832,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "pyth_fig",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "mode": "rearrange",
+            "width": 70
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -1832,6 +2078,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "pyth_fig",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "mode": "squares",
+            "width": 70
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",

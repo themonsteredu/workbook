@@ -370,6 +370,19 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "vert_angles",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "text",
           "proofPage": true,
           "heading": {
@@ -1343,6 +1356,19 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "tri_angle_sum",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "text",
           "proofPage": true,
           "heading": {
@@ -1428,6 +1454,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "penta_split",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",

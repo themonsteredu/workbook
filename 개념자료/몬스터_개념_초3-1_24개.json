@@ -566,7 +566,23 @@
           },
           "params": {
             "shape": "rectangle",
-            "width": 80
+            "width": 80,
+            "features": {
+              "rights": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "ticks": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},

@@ -996,6 +996,19 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "circle_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "chord_perp",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "text",
           "proofPage": true,
           "heading": {
@@ -1091,6 +1104,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "two_tangents",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -1271,6 +1297,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "inscribed",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",
@@ -1537,6 +1576,19 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "tangent_chord",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
         },
         {
           "type": "text",

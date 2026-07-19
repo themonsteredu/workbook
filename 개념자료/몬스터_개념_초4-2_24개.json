@@ -360,7 +360,21 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": true,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "ticks": [
+                [
+                  1,
+                  2
+                ]
+              ],
+              "arcs": [
+                [
+                  0,
+                  1
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -435,7 +449,23 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": true,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "ticks": [
+                [
+                  0,
+                  1,
+                  2
+                ]
+              ],
+              "arcs": [
+                [
+                  0,
+                  1,
+                  2
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -1275,7 +1305,15 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "pars": [
+                [
+                  0,
+                  2
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -1350,7 +1388,29 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "pars": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "ticks": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -1425,7 +1485,19 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "ticks": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              "diagPerp": true,
+              "diagBisect": true
+            }
           },
           "labels": [],
           "labelAdjust": {},
@@ -1500,7 +1572,23 @@
             "width": 74,
             "showBaseHeight": false,
             "showVertexLabels": false,
-            "showDiagonals": false
+            "showDiagonals": false,
+            "features": {
+              "rights": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "ticks": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
           },
           "labels": [],
           "labelAdjust": {},

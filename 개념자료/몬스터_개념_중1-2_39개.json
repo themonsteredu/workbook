@@ -1,0 +1,3122 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-7-2-1-01",
+      "outlineNo": "7-2-1-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "점·선·면과 교점·교선",
+      "keywords": [
+        "점",
+        "선",
+        "면"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 점·선·면"
+          },
+          "body": "* 도형은 점·선·면으로 이루어진다.\n* 선이 만나는 점을 {{교점}}, 면이 만나는 선을 {{교선}}이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "line_fig",
+          "heading": {
+            "1": "2. 점·선·면",
+            "3": "2. 선을 그려 보시오."
+          },
+          "params": {
+            "kind": "all",
+            "width": 85,
+            "latin": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "교점",
+              "meaning": "선이 만나 생기는 점"
+            },
+            {
+              "term": "교선",
+              "meaning": "면이 만나 생기는 선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 선과 선이 만나면 {{교점}}이 생긴다\n* 면과 면이 만나면 {{교선}}이 생긴다\n* 직육면체에서 교선은 {{모서리}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-02",
+      "outlineNo": "7-2-1-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "직선·반직선·선분",
+      "keywords": [
+        "직선",
+        "반직선",
+        "선분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직선·반직선·선분"
+          },
+          "body": "* 양쪽으로 끝없이 뻗은 곧은 선이 {{직선}}, 한 방향으로 뻗은 것이 {{반직선}}, 두 점 사이가 {{선분}}이다.\n* 기호: 직선 AB는 $\\overleftrightarrow{AB}$, 반직선 AB는 $\\overrightarrow{AB}$, 선분 AB는 $\\overline{AB}$로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "line_fig",
+          "heading": {
+            "1": "2. 직선·반직선·선분",
+            "3": "2. 선을 그려 보시오."
+          },
+          "params": {
+            "kind": "all",
+            "width": 85,
+            "latin": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "반직선",
+              "meaning": "한 방향으로 뻗음"
+            },
+            {
+              "term": "선분",
+              "meaning": "두 점 사이 부분"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 양쪽으로 끝없는 선은 {{직선}}\n* 한쪽으로만 뻗으면 {{반직선}}\n* 두 점 사이만이면 {{선분}}\n* $\\overrightarrow{AB}$와 $\\overrightarrow{BA}$는 서로 {{다르다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-03",
+      "outlineNo": "7-2-1-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "두 점 사이의 거리·중점",
+      "keywords": [
+        "거리",
+        "중점"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 두 점 사이의 거리·중점"
+          },
+          "body": "* 두 점을 잇는 선분의 길이를 두 점 사이의 거리라 한다.\n* 선분을 이등분하는 점을 {{중점}}이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "line_fig",
+          "heading": {
+            "1": "2. 선분과 중점",
+            "3": "2. 선을 그려 보시오."
+          },
+          "params": {
+            "kind": "segment",
+            "width": 85,
+            "latin": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "두 점 사이 거리",
+              "meaning": "선분의 길이"
+            },
+            {
+              "term": "중점",
+              "meaning": "선분을 이등분하는 점"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 선분 $\\overline{AB}$=10cm, 중점 M이면 $\\overline{AM}$ = {{5}}cm\n* 중점은 선분을 {{이등분}}한다\n* $\\overline{AM}$=$\\overline{MB}$이면 M은 {{중점}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-04",
+      "outlineNo": "7-2-1-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "각의 뜻과 종류",
+      "keywords": [
+        "각",
+        "예각",
+        "둔각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 각의 뜻과 종류"
+          },
+          "body": "* 한 점에서 그은 두 반직선이 이루는 도형을 각이라 한다.\n* 예각(0~90°), 직각(90°), 둔각(90~180°), 평각(180°).\n* 각은 기호로 ∠AOB, ∠BOA 또는 간단히 ∠O로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 각",
+            "3": "2. 각을 표시해 보시오."
+          },
+          "params": {
+            "degrees": 60,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "예각",
+              "meaning": "0°보다 크고 90°보다 작음"
+            },
+            {
+              "term": "둔각",
+              "meaning": "90°보다 크고 180°보다 작음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 60°는 {{예각}}\n* 120°는 {{둔각}}\n* 90°는 {{직각}}\n* 꼭짓점이 O인 각의 기호는 {{∠O}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-05",
+      "outlineNo": "7-2-1-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "맞꼭지각",
+      "keywords": [
+        "맞꼭지각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 맞꼭지각"
+          },
+          "body": "* 두 직선이 만날 때 서로 마주 보는 각을 {{맞꼭지각}}이라 한다.\n* 맞꼭지각의 크기는 서로 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 맞꼭지각",
+            "3": "2. 각을 표시해 보시오."
+          },
+          "params": {
+            "degrees": 50,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "맞꼭지각",
+              "meaning": "마주 보는 두 각"
+            },
+            {
+              "term": "크기",
+              "meaning": "서로 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 맞꼭지각의 크기는 서로 {{같다}}\n* 한 각이 50°이면 맞꼭지각도 {{50}}°\n* 이웃한 각과의 합은 {{180}}°",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "vert_angles",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. 맞꼭지각의 크기는 같다",
+            "3": "1. 맞꼭지각의 크기는 같다 — 증명을 써 보시오."
+          },
+          "body": "[가정] 두 직선이 한 점에서 만난다\n* ∠a + ∠c = 180° — 한 직선이 이루는 각은 {{평각}}\n* ∠b + ∠c = 180° — 평각\n* 두 식에서 ∠a + ∠c = ∠b + ∠c\n* 양변에서 ∠c를 빼면 ∠a = {{∠b}}\n따라서 맞꼭지각의 크기는 서로 같다.\n[결론] 맞꼭지각 ∠a = ∠b",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-06",
+      "outlineNo": "7-2-1-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "수직과 수선의 발",
+      "keywords": [
+        "수직",
+        "수선의 발"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 수직과 수선의 발"
+          },
+          "body": "* 두 직선이 직각으로 만나면 서로 수직이다.\n* 한 점에서 직선에 내린 수선이 만나는 점을 {{수선의 발}}이라 한다.\n* 두 직선 l, m이 수직이면 기호로 l⊥m으로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 수직(직각)",
+            "3": "2. 각을 표시해 보시오."
+          },
+          "params": {
+            "degrees": 90,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "수직",
+              "meaning": "직각으로 만남"
+            },
+            {
+              "term": "수선의 발",
+              "meaning": "수선이 직선과 만나는 점"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 두 직선이 이루는 각이 {{직각}}이면 수직\n* 수직인 두 직선이 이루는 각은 {{90}}°\n* 점에서 직선에 내린 수선의 끝점이 {{수선의 발}}\n* 수직의 기호는 {{⊥}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-07",
+      "outlineNo": "7-2-1-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "점과 직선·평면의 위치 관계",
+      "keywords": [
+        "위치 관계"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 점과 직선·평면의 위치 관계"
+          },
+          "body": "* 점이 직선(또는 평면) 위에 있는지, 밖에 있는지로 위치 관계를 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "line_fig",
+          "heading": {
+            "1": "2. 점과 직선",
+            "3": "2. 선을 그려 보시오."
+          },
+          "params": {
+            "kind": "all",
+            "width": 85,
+            "latin": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "점이 직선 위",
+              "meaning": "직선이 점을 지남"
+            },
+            {
+              "term": "점이 직선 밖",
+              "meaning": "지나지 않음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 직선이 점을 지나면 점은 직선 {{위}}에 있다\n* 지나지 않으면 직선 {{밖}}에 있다\n* 한 점을 지나는 직선은 무수히 {{많다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-08",
+      "outlineNo": "7-2-1-08",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "두 직선의 위치 관계(꼬인 위치)",
+      "keywords": [
+        "꼬인 위치"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 꼬인 위치"
+          },
+          "body": "* 공간에서 두 직선이 만나지도 평행하지도 않은 위치를 {{꼬인 위치}}라 한다.\n* 두 직선 l, m이 평행하면 기호로 l∥m으로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 꼬인 위치(직육면체)",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cuboid",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "꼬인 위치",
+              "meaning": "만나지도 평행하지도 않음"
+            },
+            {
+              "term": "평행",
+              "meaning": "한 평면에서 만나지 않음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 만나지 않고 평행도 아니면 {{꼬인 위치}}\n* 한 평면 위 두 직선은 꼬인 위치가 {{될 수 없다}}\n* 직육면체 모서리에서 꼬인 위치를 찾을 수 {{있다}}\n* 평행의 기호는 {{∥}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-09",
+      "outlineNo": "7-2-1-09",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "평행선과 동위각·엇각",
+      "keywords": [
+        "동위각",
+        "엇각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 동위각·엇각"
+          },
+          "body": "* 두 직선이 다른 직선과 만날 때 같은 위치의 각을 {{동위각}}, 엇갈린 위치의 각을 {{엇각}}이라 한다.\n* 두 직선이 평행하면 동위각·엇각의 크기가 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "trans_fig",
+          "heading": {
+            "1": "2. 평행선과 동위각",
+            "3": "2. 평행선과 각을 표시해 보시오."
+          },
+          "params": {
+            "mark": "corresponding",
+            "width": 80
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "동위각",
+              "meaning": "같은 위치의 각"
+            },
+            {
+              "term": "엇각",
+              "meaning": "엇갈린 위치의 각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 평행선에서 동위각은 서로 {{같다}}\n* 평행선에서 엇각도 서로 {{같다}}\n* 동위각이 70°이면 엇각도 {{70}}°",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-1-10",
+      "outlineNo": "7-2-1-10",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "1. 기본 도형",
+      "unit_mid": "평행선의 성질 활용",
+      "keywords": [
+        "평행선",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 평행선의 성질 활용"
+          },
+          "body": "* 평행선의 동위각·엇각이 같음을 이용해 각의 크기를 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "trans_fig",
+          "heading": {
+            "1": "2. 평행선과 엇각",
+            "3": "2. 평행선과 각을 표시해 보시오."
+          },
+          "params": {
+            "mark": "alternate",
+            "width": 80
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "평행선 활용",
+              "meaning": "동위각·엇각 이용"
+            },
+            {
+              "term": "보조선",
+              "meaning": "평행선을 그어 해결"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 평행선에서 엇각 x가 65°이면 x = {{65}}°\n* 동위각·엇각을 이용해 각을 {{구한다}}\n* 보조선으로 평행선을 그으면 {{쉬워진다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-2-01",
+      "outlineNo": "7-2-2-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 작도와 합동",
+      "unit_mid": "길이·각의 작도",
+      "keywords": [
+        "작도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 작도"
+          },
+          "body": "* 눈금 없는 자와 컴퍼스만으로 도형을 그리는 것을 작도라 한다.\n* 컴퍼스로 길이를 옮기고, 크기가 같은 각을 작도할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 각의 작도",
+            "3": "2. 각을 표시해 보시오."
+          },
+          "params": {
+            "degrees": 60,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "작도",
+              "meaning": "자와 컴퍼스로만 그림"
+            },
+            {
+              "term": "컴퍼스",
+              "meaning": "길이·원을 옮김"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 작도에는 눈금 없는 {{자}}와 컴퍼스를 쓴다\n* 컴퍼스로 {{길이}}를 옮긴다\n* 크기가 같은 각을 {{작도}}할 수 있다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-2-02",
+      "outlineNo": "7-2-2-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 작도와 합동",
+      "unit_mid": "삼각형의 작도",
+      "keywords": [
+        "삼각형",
+        "작도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각형의 작도"
+          },
+          "body": "* 세 변, 두 변과 낀 각, 한 변과 양 끝 각이 주어지면 삼각형을 작도할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 삼각형의 작도",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "삼각형 작도",
+              "meaning": "조건이 주어질 때 그림"
+            },
+            {
+              "term": "낀 각",
+              "meaning": "두 변 사이의 각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 세 변이 주어지면 삼각형을 {{작도}}할 수 있다\n* 두 변과 낀 각이 주어지면 {{작도}} 가능\n* 한 변과 양 끝 각이 주어지면 {{작도}} 가능",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-2-03",
+      "outlineNo": "7-2-2-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 작도와 합동",
+      "unit_mid": "삼각형의 결정 조건",
+      "keywords": [
+        "결정 조건"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각형의 결정 조건"
+          },
+          "body": "* 삼각형이 하나로 정해지는 조건: 세 변 / 두 변과 낀 각 / 한 변과 양 끝 각.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 삼각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "결정 조건",
+              "meaning": "삼각형이 하나로 정해짐"
+            },
+            {
+              "term": "주의",
+              "meaning": "세 각만으로는 안 됨"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 세 변이 주어지면 삼각형이 {{하나}}로 정해진다\n* 두 변과 낀 각이면 {{하나}}로 정해진다\n* 세 각만 주어지면 크기가 {{정해지지 않는다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-2-04",
+      "outlineNo": "7-2-2-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 작도와 합동",
+      "unit_mid": "도형의 합동과 대응",
+      "keywords": [
+        "합동",
+        "대응"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 합동과 대응"
+          },
+          "body": "* 완전히 포개어지는 두 도형을 합동이라 한다.\n* 겹치는 꼭짓점·변·각을 대응점·대응변·대응각이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 합동인 삼각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "합동",
+              "meaning": "완전히 포개어짐"
+            },
+            {
+              "term": "대응",
+              "meaning": "겹치는 점·변·각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 합동인 도형의 대응변의 길이는 {{같다}}\n* 대응각의 크기도 {{같다}}\n* 합동은 기호 {{≡}}로 나타낸다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-2-05",
+      "outlineNo": "7-2-2-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 작도와 합동",
+      "unit_mid": "삼각형의 합동 조건",
+      "keywords": [
+        "합동 조건",
+        "SSS",
+        "SAS"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각형의 합동 조건"
+          },
+          "body": "* SSS(세 변), SAS(두 변과 낀 각), ASA(한 변과 양 끝 각)가 같으면 두 삼각형은 합동이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 합동 조건",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "SSS",
+              "meaning": "세 변이 각각 같음"
+            },
+            {
+              "term": "SAS",
+              "meaning": "두 변과 낀 각이 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 세 변이 각각 같으면 {{SSS}} 합동\n* 두 변과 낀 각이 같으면 {{SAS}} 합동\n* 한 변과 양 끝 각이 같으면 {{ASA}} 합동",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-2-06",
+      "outlineNo": "7-2-2-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "2. 작도와 합동",
+      "unit_mid": "합동 조건의 활용",
+      "keywords": [
+        "합동",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 합동 조건의 활용"
+          },
+          "body": "* 합동 조건으로 두 도형이 합동임을 보여 변의 길이나 각을 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 합동 활용",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "합동 증명",
+              "meaning": "합동 조건을 확인"
+            },
+            {
+              "term": "활용",
+              "meaning": "대응변·대응각이 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 합동이면 대응변의 길이가 {{같다}}\n* 합동이면 대응각의 크기가 {{같다}}\n* 합동 조건을 찾아 길이를 {{구한다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-01",
+      "outlineNo": "7-2-3-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "다각형의 대각선 개수",
+      "keywords": [
+        "대각선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대각선의 개수"
+          },
+          "body": "* n각형의 대각선 개수는 $\\dfrac{n(n-3)}{2}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 대각선",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "polygon",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대각선",
+              "meaning": "이웃하지 않는 꼭짓점을 이음"
+            },
+            {
+              "term": "개수",
+              "meaning": "$\\dfrac{n(n-3)}{2}$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 오각형의 대각선은 {{5}}개\n* 육각형의 대각선은 {{9}}개\n* 사각형의 대각선은 {{2}}개",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-02",
+      "outlineNo": "7-2-3-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "삼각형의 내각과 외각",
+      "keywords": [
+        "내각",
+        "외각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각형의 내각·외각"
+          },
+          "body": "* 삼각형의 세 내각의 합은 180°이다.\n* 한 외각은 이웃하지 않는 두 내각의 합과 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 삼각형의 각",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "내각의 합",
+              "meaning": "180°"
+            },
+            {
+              "term": "외각",
+              "meaning": "이웃하지 않는 두 내각의 합"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 삼각형 세 내각의 합은 {{180}}°\n* 두 내각이 50°, 60°면 나머지는 {{70}}°\n* 외각은 이웃하지 않는 두 내각의 {{합}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "tri_angle_sum",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. 삼각형의 내각의 합은 180°",
+            "3": "1. 삼각형의 내각의 합은 180° — 증명을 써 보시오."
+          },
+          "body": "[가정] 삼각형 ABC\n* 꼭짓점 A를 지나고 변 $\\overline{BC}$에 {{평행}}한 직선 $\\overline{DE}$를 긋는다\n* $\\overline{DE}$∥$\\overline{BC}$이므로 ∠DAB = ∠B, ∠EAC = ∠C — 평행선의 {{엇각}}\n* ∠DAB + ∠BAC + ∠EAC = 180° — 한 직선 위의 각({{평각}})\n* 앞의 식을 대입하면 ∠B + ∠A + ∠C = 180°\n따라서 삼각형의 세 내각의 합은 180°이다.\n[결론] ∠A + ∠B + ∠C = 180°",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-03",
+      "outlineNo": "7-2-3-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "다각형의 내각의 합",
+      "keywords": [
+        "내각의 합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 다각형의 내각의 합"
+          },
+          "body": "* n각형의 내각의 합은 180° × (n−2)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 다각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "polygon",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "내각의 합",
+              "meaning": "180°×(n−2)"
+            },
+            {
+              "term": "삼각형 분할",
+              "meaning": "n−2개로 나눔"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 사각형 내각의 합은 {{360}}°\n* 오각형 내각의 합은 {{540}}°\n* 육각형 내각의 합은 {{720}}°",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "tri_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "penta_split",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. n각형의 내각의 합은 180°×(n−2)",
+            "3": "1. n각형의 내각의 합은 180°×(n−2) — 증명을 써 보시오."
+          },
+          "body": "[가정] n각형\n* 한 꼭짓점에서 그을 수 있는 대각선은 (n−3)개이다\n* 이 대각선들이 n각형을 {{n−2}}개의 삼각형으로 나눈다\n* 삼각형 한 개의 내각의 합은 {{180}}°\n* 나뉜 삼각형들의 내각을 모두 모으면 n각형의 내각 전체가 된다\n따라서 n각형의 내각의 합은 180° × (n−2)이다.\n[결론] 내각의 합 = 180° × (n−2)",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-04",
+      "outlineNo": "7-2-3-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "다각형의 외각의 합",
+      "keywords": [
+        "외각의 합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 다각형의 외각의 합"
+          },
+          "body": "* 다각형의 외각의 합은 항상 360°이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 다각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "polygon",
+            "n": 6,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "외각의 합",
+              "meaning": "항상 360°"
+            },
+            {
+              "term": "정다각형",
+              "meaning": "360°÷n = 한 외각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 모든 다각형의 외각의 합은 {{360}}°\n* 정오각형의 한 외각은 {{72}}°\n* 정육각형의 한 외각은 {{60}}°",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "shape": "polygon",
+            "n": 5,
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. 다각형의 외각의 합은 360°",
+            "3": "1. 다각형의 외각의 합은 360° — 증명을 써 보시오."
+          },
+          "body": "[가정] n각형\n* 각 꼭짓점에서 (내각) + (외각) = {{180}}° — 평각\n* 꼭짓점이 n개이므로 (내각의 합) + (외각의 합) = 180° × n\n* 내각의 합은 180° × (n−2)\n* 외각의 합 = 180°×n − 180°×(n−2) = {{360}}°\n따라서 다각형의 외각의 합은 꼭짓점 수와 관계없이 항상 360°이다.\n[결론] 외각의 합 = 360°",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-05",
+      "outlineNo": "7-2-3-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "정다각형의 한 내각·외각",
+      "keywords": [
+        "정다각형",
+        "내각",
+        "외각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정다각형의 한 내각·외각"
+          },
+          "body": "* 정n각형의 한 외각 = 360°/n, 한 내각 = 180° − 한 외각.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 정육각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "polygon",
+            "n": 6,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "한 외각",
+              "meaning": "360°÷n"
+            },
+            {
+              "term": "한 내각",
+              "meaning": "180° − 한 외각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 정육각형의 한 외각은 {{60}}°\n* 정육각형의 한 내각은 {{120}}°\n* 정삼각형의 한 내각은 {{60}}°",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-06",
+      "outlineNo": "7-2-3-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "원과 부채꼴·중심각",
+      "keywords": [
+        "부채꼴",
+        "중심각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원과 부채꼴·중심각"
+          },
+          "body": "* 두 반지름과 호로 둘러싸인 부분을 {{부채꼴}}, 두 반지름이 이루는 각을 {{중심각}}이라 한다.\n* 호의 길이·부채꼴 넓이는 중심각에 정비례한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 부채꼴과 중심각",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "부채꼴",
+              "meaning": "두 반지름과 호로 둘러싸임"
+            },
+            {
+              "term": "중심각",
+              "meaning": "두 반지름이 이루는 각"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 부채꼴은 두 반지름과 {{호}}로 둘러싸인다\n* 중심각이 2배면 호의 길이도 {{2}}배\n* 중심각 180°인 부채꼴은 {{반원}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-07",
+      "outlineNo": "7-2-3-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "부채꼴의 호의 길이",
+      "keywords": [
+        "호의 길이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 부채꼴의 호의 길이"
+          },
+          "body": "* 반지름 r, 중심각 x°인 부채꼴의 호의 길이 = $2\\pi r \\times \\dfrac{x}{360}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 부채꼴의 호",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": true,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "호의 길이",
+              "meaning": "$2\\pi r \\times \\dfrac{x}{360}$"
+            },
+            {
+              "term": "π",
+              "meaning": "원주율"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 반지름 6, 중심각 60°인 호의 길이는 {{$2\\pi$}}\n* 중심각 90°는 원의 {{$\\dfrac{1}{4}$}}\n* 중심각 180°인 호는 원주의 {{반}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-08",
+      "outlineNo": "7-2-3-08",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "부채꼴의 넓이",
+      "keywords": [
+        "부채꼴",
+        "넓이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 부채꼴의 넓이"
+          },
+          "body": "* 반지름 r, 중심각 x°인 부채꼴의 넓이 = $\\pi r^{2} \\times \\dfrac{x}{360}$ 이다.\n* 호의 길이 l을 알면 넓이 = $\\dfrac{1}{2}rl$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 부채꼴의 넓이",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "부채꼴 넓이",
+              "meaning": "$\\pi r^{2} \\times \\dfrac{x}{360}$"
+            },
+            {
+              "term": "다른 식",
+              "meaning": "$\\dfrac{1}{2}$ × 반지름 × 호"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 반지름 6, 중심각 90°인 부채꼴 넓이는 {{$9\\pi$}}\n* 중심각 180°면 {{반원}} 넓이\n* 넓이 = ½ × 반지름 × {{호의 길이}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-3-09",
+      "outlineNo": "7-2-3-09",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "3. 평면도형의 성질",
+      "unit_mid": "원의 둘레와 넓이 활용",
+      "keywords": [
+        "원",
+        "둘레",
+        "넓이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원의 둘레·넓이 활용"
+          },
+          "body": "* 원의 둘레 = 2πr, 넓이 = πr².\n* 색칠한 부분은 전체에서 부분을 빼거나 부채꼴을 합쳐 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원의 둘레·넓이",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": true,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            },
+            {
+              "key": "wonju",
+              "text": "원주",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원의 둘레",
+              "meaning": "2πr"
+            },
+            {
+              "term": "원의 넓이",
+              "meaning": "πr²"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 반지름 5인 원의 둘레는 {{$10\\pi$}}\n* 반지름 5인 원의 넓이는 {{$25\\pi$}}\n* 색칠 부분은 전체 − 부분으로 {{구한다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-01",
+      "outlineNo": "7-2-4-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "다면체",
+      "keywords": [
+        "다면체"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 다면체"
+          },
+          "body": "* 다각형인 면으로만 둘러싸인 입체도형을 {{다면체}}라 한다.\n* 면의 개수에 따라 사면체·오면체 … 라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 다면체(오각기둥)",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "prism",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "다면체",
+              "meaning": "다각형 면으로 둘러싸인 입체"
+            },
+            {
+              "term": "면",
+              "meaning": "다각형"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 각기둥·각뿔은 모두 {{다면체}}\n* 면이 4개면 {{사면체}}\n* 원기둥은 곡면이 있어 다면체가 {{아니다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-02",
+      "outlineNo": "7-2-4-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "정다면체",
+      "keywords": [
+        "정다면체"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정다면체"
+          },
+          "body": "* 모든 면이 합동인 정다각형이고 각 꼭짓점에 모인 면의 개수가 같은 다면체를 {{정다면체}}라 한다.\n* 정사면체·정육면체·정팔면체·정십이면체·정이십면체 5가지뿐이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 정육면체",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cube",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "정다면체",
+              "meaning": "면이 모두 합동인 정다각형"
+            },
+            {
+              "term": "종류",
+              "meaning": "5가지뿐"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 정다면체는 모두 {{5}}가지\n* 정육면체의 면은 {{정사각형}}\n* 정사면체의 면은 {{정삼각형}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-03",
+      "outlineNo": "7-2-4-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "회전체와 단면",
+      "keywords": [
+        "회전체",
+        "단면"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 회전체"
+          },
+          "body": "* 평면도형을 한 직선을 축으로 돌려 만든 입체도형을 {{회전체}}라 한다.\n* 축에 수직인 단면은 항상 원이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 회전체(원기둥)",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cylinder",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "회전체",
+              "meaning": "돌려서 만든 입체"
+            },
+            {
+              "term": "단면",
+              "meaning": "축에 수직이면 원"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 직사각형을 돌리면 {{원기둥}}\n* 직각삼각형을 돌리면 {{원뿔}}\n* 반원을 돌리면 {{구}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-04",
+      "outlineNo": "7-2-4-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "기둥의 겉넓이",
+      "keywords": [
+        "기둥",
+        "겉넓이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 기둥의 겉넓이"
+          },
+          "body": "* 기둥의 겉넓이 = (밑넓이 × 2) + 옆넓이.\n* 옆넓이 = 밑면의 둘레 × 높이.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 기둥",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "prism",
+            "width": 78,
+            "n": 4
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "겉넓이",
+              "meaning": "밑넓이×2 + 옆넓이"
+            },
+            {
+              "term": "옆넓이",
+              "meaning": "밑면 둘레 × 높이"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 밑넓이 6, 옆넓이 40인 기둥의 겉넓이는 {{52}}cm²\n* 옆넓이 = 밑면의 둘레 × {{높이}}\n* 밑면이 2개이므로 밑넓이를 {{2}}번 더한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-05",
+      "outlineNo": "7-2-4-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "기둥의 부피",
+      "keywords": [
+        "기둥",
+        "부피"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 기둥의 부피"
+          },
+          "body": "* 기둥의 부피 = 밑넓이 × 높이.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 기둥의 부피",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "prism",
+            "width": 78,
+            "n": 4
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "기둥의 부피",
+              "meaning": "밑넓이 × 높이"
+            },
+            {
+              "term": "원기둥",
+              "meaning": "πr² × 높이"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 밑넓이 12, 높이 5인 기둥의 부피는 {{60}}cm³\n* 밑넓이 10, 높이 3이면 {{30}}cm³\n* 부피 = 밑넓이 × {{높이}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-06",
+      "outlineNo": "7-2-4-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "뿔의 겉넓이",
+      "keywords": [
+        "뿔",
+        "겉넓이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 뿔의 겉넓이"
+          },
+          "body": "* 뿔의 겉넓이 = 밑넓이 + 옆넓이.\n* 원뿔의 옆넓이 = π × 반지름 × 모선.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 원뿔",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cone",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "뿔의 겉넓이",
+              "meaning": "밑넓이 + 옆넓이"
+            },
+            {
+              "term": "원뿔 옆넓이",
+              "meaning": "π × 반지름 × 모선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 밑넓이 9, 옆넓이 15인 뿔의 겉넓이는 {{24}}cm²\n* 원뿔의 옆넓이 = π × 반지름 × {{모선}}\n* 뿔의 밑면은 {{1}}개",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-07",
+      "outlineNo": "7-2-4-07",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "뿔의 부피",
+      "keywords": [
+        "뿔",
+        "부피"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 뿔의 부피"
+          },
+          "body": "* 뿔의 부피 = $\\dfrac{1}{3}$ × 밑넓이 × 높이.\n* 같은 밑넓이·높이인 기둥의 $\\dfrac{1}{3}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 뿔의 부피",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "pyramid",
+            "width": 78,
+            "n": 4
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "뿔의 부피",
+              "meaning": "$\\dfrac{1}{3}$ × 밑넓이 × 높이"
+            },
+            {
+              "term": "기둥과 비교",
+              "meaning": "기둥의 $\\dfrac{1}{3}$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 밑넓이 12, 높이 5인 뿔의 부피는 {{20}}cm³\n* 뿔은 같은 기둥의 {{$\\dfrac{1}{3}$}}\n* 밑넓이 9, 높이 4면 부피는 {{12}}cm³",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-4-08",
+      "outlineNo": "7-2-4-08",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "4. 입체도형의 성질",
+      "unit_mid": "구의 겉넓이와 부피",
+      "keywords": [
+        "구",
+        "겉넓이",
+        "부피"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 구의 겉넓이·부피"
+          },
+          "body": "* 반지름 r인 구의 겉넓이 = 4πr², 부피 = $\\dfrac{4}{3}\\pi r^{3}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 구",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "sphere",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "구의 겉넓이",
+              "meaning": "4πr²"
+            },
+            {
+              "term": "구의 부피",
+              "meaning": "$\\dfrac{4}{3}\\pi r^{3}$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 반지름 3인 구의 겉넓이는 {{$36\\pi$}}\n* 반지름 3인 구의 부피는 {{$36\\pi$}}\n* 반지름 1인 구의 겉넓이는 {{$4\\pi$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-5-01",
+      "outlineNo": "7-2-5-01",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 통계",
+      "unit_mid": "줄기와 잎 그림",
+      "keywords": [
+        "줄기와 잎"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 줄기와 잎 그림"
+          },
+          "body": "* 자료를 줄기와 잎으로 나누어 정리한 그림을 {{줄기와 잎 그림}}이라 한다.\n* 큰 자리를 줄기, 작은 자리를 잎으로 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 자료의 분포",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "A",
+                "value": 3
+              },
+              {
+                "name": "B",
+                "value": 6
+              },
+              {
+                "name": "C",
+                "value": 4
+              },
+              {
+                "name": "D",
+                "value": 2
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "줄기",
+              "meaning": "큰 자리 수"
+            },
+            {
+              "term": "잎",
+              "meaning": "작은 자리 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 23에서 줄기는 {{2}}, 잎은 3\n* 잎의 개수는 자료의 {{개수}}\n* 원래 자료 값을 {{알 수 있다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-5-02",
+      "outlineNo": "7-2-5-02",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 통계",
+      "unit_mid": "도수분포표",
+      "keywords": [
+        "도수분포표",
+        "계급",
+        "도수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 도수분포표"
+          },
+          "body": "* 자료를 몇 개의 계급으로 나누고 각 계급의 도수를 나타낸 표를 {{도수분포표}}라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 자료의 분포",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "A",
+                "value": 3
+              },
+              {
+                "name": "B",
+                "value": 6
+              },
+              {
+                "name": "C",
+                "value": 4
+              },
+              {
+                "name": "D",
+                "value": 2
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "계급",
+              "meaning": "자료를 나눈 구간"
+            },
+            {
+              "term": "도수",
+              "meaning": "각 계급에 속한 자료 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 자료를 나눈 구간을 {{계급}}이라 한다\n* 각 계급에 속한 자료 수는 {{도수}}\n* 계급의 폭 = 구간의 {{크기}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-5-03",
+      "outlineNo": "7-2-5-03",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 통계",
+      "unit_mid": "히스토그램",
+      "keywords": [
+        "히스토그램"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 히스토그램"
+          },
+          "body": "* 도수분포표를 직사각형으로 나타낸 그래프를 {{히스토그램}}이라 한다.\n* 가로는 계급, 세로는 도수이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 히스토그램",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "명",
+            "width": 100,
+            "cats": [
+              {
+                "name": "10",
+                "value": 3
+              },
+              {
+                "name": "20",
+                "value": 6
+              },
+              {
+                "name": "30",
+                "value": 8
+              },
+              {
+                "name": "40",
+                "value": 4
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "히스토그램",
+              "meaning": "도수를 직사각형으로"
+            },
+            {
+              "term": "특징",
+              "meaning": "막대가 서로 붙음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 히스토그램의 세로축은 {{도수}}\n* 각 직사각형의 넓이는 도수에 {{비례}}한다\n* 막대는 서로 {{붙어}} 있다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-5-04",
+      "outlineNo": "7-2-5-04",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 통계",
+      "unit_mid": "도수분포다각형",
+      "keywords": [
+        "도수분포다각형"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 도수분포다각형"
+          },
+          "body": "* 히스토그램의 각 직사각형 윗변의 중점을 선분으로 이은 그래프를 {{도수분포다각형}}이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 도수분포다각형",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "line",
+            "unit": "명",
+            "width": 100,
+            "cats": [
+              {
+                "name": "10",
+                "value": 3
+              },
+              {
+                "name": "20",
+                "value": 6
+              },
+              {
+                "name": "30",
+                "value": 8
+              },
+              {
+                "name": "40",
+                "value": 4
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "도수분포다각형",
+              "meaning": "중점을 이은 그래프"
+            },
+            {
+              "term": "특징",
+              "meaning": "분포 모양을 봄"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 히스토그램의 윗변 {{중점}}을 잇는다\n* 자료의 분포 {{모양}}을 알기 쉽다\n* 넓이는 히스토그램과 {{같다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-5-05",
+      "outlineNo": "7-2-5-05",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 통계",
+      "unit_mid": "상대도수",
+      "keywords": [
+        "상대도수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 상대도수"
+          },
+          "body": "* 각 계급의 도수를 전체 도수로 나눈 값을 {{상대도수}}라 한다.\n* 상대도수의 합은 1이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 도수 분포",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "명",
+            "width": 100,
+            "cats": [
+              {
+                "name": "10",
+                "value": 2
+              },
+              {
+                "name": "20",
+                "value": 5
+              },
+              {
+                "name": "30",
+                "value": 8
+              },
+              {
+                "name": "40",
+                "value": 5
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "상대도수",
+              "meaning": "도수 ÷ 전체 도수"
+            },
+            {
+              "term": "합",
+              "meaning": "항상 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 전체 20, 도수 5인 계급의 상대도수는 {{0.25}}\n* 상대도수의 합은 {{1}}\n* 상대도수 × 100 = {{백분율}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-7-2-5-06",
+      "outlineNo": "7-2-5-06",
+      "school": "중학교",
+      "grade": "중1",
+      "unit_big": "5. 통계",
+      "unit_mid": "상대도수의 분포와 활용",
+      "keywords": [
+        "상대도수",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 상대도수의 분포·활용"
+          },
+          "body": "* 상대도수는 도수의 총합이 다른 두 자료를 비교할 때 편리하다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 상대도수 분포",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "line",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "10",
+                "value": 0.1
+              },
+              {
+                "name": "20",
+                "value": 0.25
+              },
+              {
+                "name": "30",
+                "value": 0.4
+              },
+              {
+                "name": "40",
+                "value": 0.25
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "상대도수 분포",
+              "meaning": "상대도수로 나타낸 분포"
+            },
+            {
+              "term": "활용",
+              "meaning": "총합 다른 자료 비교"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 총 도수가 다르면 {{상대도수}}로 비교한다\n* 상대도수 그래프의 넓이 합은 {{1}}\n* 비율 비교에 상대도수가 {{편리}}하다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1867 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-9-1-1-01",
+      "outlineNo": "9-1-1-01",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "1. 제곱근과 실수",
+      "unit_mid": "제곱근의 뜻",
+      "keywords": [
+        "제곱근"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 제곱근의 뜻"
+          },
+          "body": "* 제곱하여 a가 되는 수를 a의 {{제곱근}}이라 한다.\n* 양수 a의 제곱근은 $+\\sqrt{a}$, $-\\sqrt{a}$ 두 개이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "실수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "제곱근",
+              "meaning": "제곱하여 a가 되는 수"
+            },
+            {
+              "term": "$\\sqrt{a}$",
+              "meaning": "a의 양의 제곱근"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 9의 제곱근은 3과 {{−3}}\n* 4의 양의 제곱근은 {{2}}\n* 0의 제곱근은 {{0}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-1-02",
+      "outlineNo": "9-1-1-02",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "1. 제곱근과 실수",
+      "unit_mid": "제곱근의 표현과 성질",
+      "keywords": [
+        "제곱근",
+        "성질"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 제곱근의 표현·성질"
+          },
+          "body": "* 근호 √ 를 써서 나타낸다.\n* $(\\sqrt{a})^{2} = a$, $\\sqrt{a^{2}} = |a|$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "실수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "근호",
+              "meaning": "√ 기호"
+            },
+            {
+              "term": "성질",
+              "meaning": "$(\\sqrt{a})^{2}=a$, $\\sqrt{a^{2}}=|a|$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sqrt{25}$ = {{5}}\n* $(\\sqrt{3})^{2}$ = {{3}}\n* $\\sqrt{(-3)^{2}}$ = {{3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-1-03",
+      "outlineNo": "9-1-1-03",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "1. 제곱근과 실수",
+      "unit_mid": "무리수와 실수",
+      "keywords": [
+        "무리수",
+        "실수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 무리수와 실수"
+          },
+          "body": "* 순환하지 않는 무한소수를 {{무리수}}라 한다.\n* 유리수와 무리수를 통틀어 실수라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "실수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "무리수",
+              "meaning": "순환하지 않는 무한소수"
+            },
+            {
+              "term": "실수",
+              "meaning": "유리수 + 무리수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sqrt{2}$ 는 {{무리수}}\n* π는 {{무리수}}\n* 유리수와 무리수를 합쳐 {{실수}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-1-04",
+      "outlineNo": "9-1-1-04",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "1. 제곱근과 실수",
+      "unit_mid": "실수와 수직선",
+      "keywords": [
+        "실수",
+        "수직선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 실수와 수직선"
+          },
+          "body": "* 모든 실수는 수직선 위의 한 점에 대응한다.\n* 실수는 수직선을 빈틈없이 채운다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "실수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "실수와 수직선",
+              "meaning": "실수 ↔ 수직선의 점"
+            },
+            {
+              "term": "특징",
+              "meaning": "수직선을 다 채움"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sqrt{2}$ 는 수직선 위 약 1.4에 {{위치}}한다\n* 실수는 수직선을 빈틈없이 {{채운다}}\n* 유리수만으로는 수직선을 다 {{채울 수 없다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-1-05",
+      "outlineNo": "9-1-1-05",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "1. 제곱근과 실수",
+      "unit_mid": "제곱근의 대소 관계",
+      "keywords": [
+        "제곱근",
+        "대소"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 제곱근의 대소"
+          },
+          "body": "* a<b (a,b>0)이면 $\\sqrt{a}<\\sqrt{b}$ 이다.\n* 근호가 없는 수는 근호 안에 넣어 비교한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "제곱근의 대소",
+                "min": 0,
+                "max": 4,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대소 비교",
+              "meaning": "a<b이면 $\\sqrt{a}<\\sqrt{b}$"
+            },
+            {
+              "term": "정수 비교",
+              "meaning": "근호 안에 넣어서"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sqrt{2}$ {{<}} $\\sqrt{3}$\n* 2 {{>}} $\\sqrt{3}$\n* $\\sqrt{5}$ {{>}} 2",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-2-01",
+      "outlineNo": "9-1-2-01",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "2. 근호를 포함한 식의 계산",
+      "unit_mid": "제곱근의 곱셈과 나눗셈",
+      "keywords": [
+        "제곱근",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 제곱근의 곱셈·나눗셈"
+          },
+          "body": "* $\\sqrt{a}\\times\\sqrt{b}=\\sqrt{ab}$, $\\sqrt{a}\\div\\sqrt{b}=\\sqrt{\\dfrac{a}{b}}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "곱셈",
+              "meaning": "$\\sqrt{a}\\sqrt{b}=\\sqrt{ab}$"
+            },
+            {
+              "term": "근호 밖으로",
+              "meaning": "$\\sqrt{a^{2}b}=a\\sqrt{b}$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sqrt{2}$ × $\\sqrt{3}$ = {{$\\sqrt{6}$}}\n* $\\sqrt{8}$ ÷ $\\sqrt{2}$ = {{2}}\n* $\\sqrt{12}$ = {{$2\\sqrt{3}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-2-02",
+      "outlineNo": "9-1-2-02",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "2. 근호를 포함한 식의 계산",
+      "unit_mid": "분모의 유리화",
+      "keywords": [
+        "유리화"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분모의 유리화"
+          },
+          "body": "* 분모에 근호가 있을 때 분모·분자에 같은 근호를 곱해 분모를 유리수로 만든다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "유리화",
+              "meaning": "분모의 근호를 없앰"
+            },
+            {
+              "term": "방법",
+              "meaning": "분모·분자에 같은 근호를 곱함"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{1}{\\sqrt{2}}$ = {{$\\dfrac{\\sqrt{2}}{2}$}}\n* 유리화는 분모의 근호를 {{없앤다}}\n* $\\dfrac{3}{\\sqrt{3}}$ = {{$\\sqrt{3}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-2-03",
+      "outlineNo": "9-1-2-03",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "2. 근호를 포함한 식의 계산",
+      "unit_mid": "제곱근의 덧셈과 뺄셈",
+      "keywords": [
+        "제곱근",
+        "덧셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 제곱근의 덧셈·뺄셈"
+          },
+          "body": "* 근호 안의 수가 같은 것끼리 계수를 더하거나 뺀다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "덧셈·뺄셈",
+              "meaning": "같은 근호끼리 계수 계산"
+            },
+            {
+              "term": "주의",
+              "meaning": "근호 안이 다르면 못 합침"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $2\\sqrt{2}$ + $3\\sqrt{2}$ = {{$5\\sqrt{2}$}}\n* $5\\sqrt{3}$ − $2\\sqrt{3}$ = {{$3\\sqrt{3}$}}\n* $\\sqrt{2}$ 와 $\\sqrt{3}$ 은 더할 수 {{없다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-2-04",
+      "outlineNo": "9-1-2-04",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "2. 근호를 포함한 식의 계산",
+      "unit_mid": "근호를 포함한 식의 혼합 계산",
+      "keywords": [
+        "근호",
+        "혼합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 근호를 포함한 혼합 계산"
+          },
+          "body": "* 분배법칙과 곱셈공식을 이용해 전개한 뒤 정리한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "혼합 계산",
+              "meaning": "분배법칙·곱셈공식"
+            },
+            {
+              "term": "정리",
+              "meaning": "유리수·무리수 부분 구분"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sqrt{2}(\\sqrt{2}+1)$ = {{$2+\\sqrt{2}$}}\n* $(\\sqrt{3})^{2} + \\sqrt{3}$ = {{$3+\\sqrt{3}$}}\n* 분배법칙과 곱셈공식을 {{이용}}한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-2-05",
+      "outlineNo": "9-1-2-05",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "2. 근호를 포함한 식의 계산",
+      "unit_mid": "제곱근의 값과 활용",
+      "keywords": [
+        "제곱근",
+        "값"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 제곱근의 값·활용"
+          },
+          "body": "* $\\sqrt{2}$ ≈ 1.414, $\\sqrt{3}$ ≈ 1.732 등 근삿값을 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "근삿값",
+              "meaning": "$\\sqrt{2}$ ≈ 1.414"
+            },
+            {
+              "term": "활용",
+              "meaning": "실생활 길이 계산"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\sqrt{2}$ ≈ {{1.414}}\n* $\\sqrt{a}$ × $\\sqrt{a}$ = {{a}}\n* $\\sqrt{100}$ = {{10}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-3-01",
+      "outlineNo": "9-1-3-01",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "3. 다항식의 곱셈과 인수분해",
+      "unit_mid": "곱셈 공식(전개)",
+      "keywords": [
+        "곱셈 공식",
+        "전개"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈 공식"
+          },
+          "body": "* (a+b)² = a²+2ab+b², (a+b)(a−b) = a²−b² 등을 이용해 전개한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "완전제곱",
+              "meaning": "(a±b)² = a²±2ab+b²"
+            },
+            {
+              "term": "합차",
+              "meaning": "(a+b)(a−b)=a²−b²"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (x+2)² = {{$x^{2}+4x+4$}}\n* (x+3)(x−3) = {{$x^{2}-9$}}\n* (x+1)(x+2) = {{$x^{2}+3x+2$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-3-02",
+      "outlineNo": "9-1-3-02",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "3. 다항식의 곱셈과 인수분해",
+      "unit_mid": "곱셈 공식의 활용",
+      "keywords": [
+        "곱셈 공식",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈 공식의 활용"
+          },
+          "body": "* 곱셈 공식으로 수의 계산을 간단히 하거나 식의 값을 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "수 계산",
+              "meaning": "101²=(100+1)²"
+            },
+            {
+              "term": "식의 값",
+              "meaning": "공식으로 간단히"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 101² = (100+1)² = {{10201}}\n* 곱셈공식으로 수 계산을 {{간단히}} 한다\n* (x+5)(x−5) = {{$x^{2}-25$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-3-03",
+      "outlineNo": "9-1-3-03",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "3. 다항식의 곱셈과 인수분해",
+      "unit_mid": "인수분해의 뜻과 공통인수",
+      "keywords": [
+        "인수분해",
+        "공통인수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 인수분해와 공통인수"
+          },
+          "body": "* 다항식을 두 개 이상의 인수의 곱으로 나타내는 것을 {{인수분해}}라 한다.\n* 각 항의 공통인수를 묶어낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "인수분해",
+              "meaning": "곱으로 나타냄"
+            },
+            {
+              "term": "공통인수",
+              "meaning": "각 항에 공통인 인수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* ax+ay = {{a(x+y)}}\n* 2x²+4x = {{2x(x+2)}}\n* 인수분해는 전개의 {{반대}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-3-04",
+      "outlineNo": "9-1-3-04",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "3. 다항식의 곱셈과 인수분해",
+      "unit_mid": "인수분해 공식",
+      "keywords": [
+        "인수분해 공식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 인수분해 공식"
+          },
+          "body": "* a²−b²=(a+b)(a−b), x²+(a+b)x+ab=(x+a)(x+b) 등을 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "합차 꼴",
+              "meaning": "a²−b²=(a+b)(a−b)"
+            },
+            {
+              "term": "이차식",
+              "meaning": "합·곱으로 두 수 찾기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²−9 = {{(x+3)(x−3)}}\n* x²+5x+6 = {{(x+2)(x+3)}}\n* x²+2x+1 = {{$(x+1)^{2}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-3-05",
+      "outlineNo": "9-1-3-05",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "3. 다항식의 곱셈과 인수분해",
+      "unit_mid": "복잡한 식의 인수분해(치환·묶음)",
+      "keywords": [
+        "인수분해",
+        "치환"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 복잡한 식의 인수분해"
+          },
+          "body": "* 공통부분을 한 문자로 치환하거나 항을 적절히 묶어 인수분해한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "치환",
+              "meaning": "공통부분을 A로"
+            },
+            {
+              "term": "묶음",
+              "meaning": "항을 나누어 묶기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 치환을 이용해 {{복잡한}} 식도 인수분해한다\n* 공통부분을 A로 {{치환}}한다\n* 항을 적절히 {{묶어}} 분해한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-3-06",
+      "outlineNo": "9-1-3-06",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "3. 다항식의 곱셈과 인수분해",
+      "unit_mid": "인수분해의 활용",
+      "keywords": [
+        "인수분해",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 인수분해의 활용"
+          },
+          "body": "* 인수분해로 수의 계산을 간단히 하거나 이차방정식을 푼다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "수 계산",
+              "meaning": "97×103=(100−3)(100+3)"
+            },
+            {
+              "term": "방정식",
+              "meaning": "인수분해로 해 구하기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 인수분해로 이차방정식을 {{푼다}}\n* 97×103 = (100−3)(100+3) = {{9991}}\n* 수 계산에 인수분해를 {{이용}}한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-4-01",
+      "outlineNo": "9-1-4-01",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "4. 이차방정식",
+      "unit_mid": "이차방정식과 그 해",
+      "keywords": [
+        "이차방정식",
+        "해"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이차방정식과 그 해"
+          },
+          "body": "* ax²+bx+c=0 (a≠0) 꼴의 방정식을 이차방정식이라 한다.\n* 만족하는 x의 값을 해(근)라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이차방정식",
+              "meaning": "최고차항이 2차"
+            },
+            {
+              "term": "해",
+              "meaning": "만족하는 x, 최대 2개"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²−4=0의 해는 x=2와 {{−2}}\n* 이차방정식은 최고차항이 {{2}}차\n* 해는 최대 {{2}}개",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-4-02",
+      "outlineNo": "9-1-4-02",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "4. 이차방정식",
+      "unit_mid": "인수분해를 이용한 풀이",
+      "keywords": [
+        "이차방정식",
+        "인수분해"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 인수분해를 이용한 풀이"
+          },
+          "body": "* AB=0이면 A=0 또는 B=0임을 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "AB=0",
+              "meaning": "A=0 또는 B=0"
+            },
+            {
+              "term": "풀이",
+              "meaning": "인수분해 후 각 인수=0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (x−2)(x−3)=0 → x=2 또는 {{3}}\n* x²−5x+6=0 → x=2, {{3}}\n* x²−x=0 → x=0, {{1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-4-03",
+      "outlineNo": "9-1-4-03",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "4. 이차방정식",
+      "unit_mid": "제곱근을 이용한 풀이",
+      "keywords": [
+        "이차방정식",
+        "제곱근"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 제곱근을 이용한 풀이"
+          },
+          "body": "* x²=k (k≥0)이면 x=$\\pm\\sqrt{k}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "제곱근 풀이",
+              "meaning": "x²=k → x=$\\pm\\sqrt{k}$"
+            },
+            {
+              "term": "(x−p)²=k",
+              "meaning": "x−p=$\\pm\\sqrt{k}$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²=9 → x=±{{3}}\n* (x−1)²=4 → x=3 또는 {{−1}}\n* x²=5 → x=±{{$\\sqrt{5}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-4-04",
+      "outlineNo": "9-1-4-04",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "4. 이차방정식",
+      "unit_mid": "완전제곱식을 이용한 풀이",
+      "keywords": [
+        "완전제곱식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 완전제곱식을 이용한 풀이"
+          },
+          "body": "* 상수항을 옮기고 양변에 적당한 수를 더해 (x+p)²=k 꼴로 만든다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "완전제곱식",
+              "meaning": "(x+p)² 꼴로"
+            },
+            {
+              "term": "방법",
+              "meaning": "일차항 계수의 절반의 제곱"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²+2x=3 → (x+1)² = {{4}}\n* 그때 x=1 또는 {{−3}}\n* 상수항을 옮겨 완전제곱식으로 {{만든다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-4-05",
+      "outlineNo": "9-1-4-05",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "4. 이차방정식",
+      "unit_mid": "근의 공식",
+      "keywords": [
+        "근의 공식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 근의 공식"
+          },
+          "body": "* ax²+bx+c=0의 해는 $x=\\dfrac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "근의 공식",
+              "meaning": "$x=\\dfrac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}$"
+            },
+            {
+              "term": "분모",
+              "meaning": "2a"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²+3x+2=0 → x=−1, {{−2}}\n* 근의 공식의 분모는 {{2a}}\n* b²−4ac를 {{판별식}}이라 한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-4-06",
+      "outlineNo": "9-1-4-06",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "4. 이차방정식",
+      "unit_mid": "이차방정식의 근의 개수(판별식)",
+      "keywords": [
+        "판별식",
+        "근의 개수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 판별식과 근의 개수"
+          },
+          "body": "* D=b²−4ac 가 D>0이면 서로 다른 두 실근, D=0이면 중근, D<0이면 실근이 없다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "판별식",
+              "meaning": "D = b²−4ac"
+            },
+            {
+              "term": "근의 개수",
+              "meaning": "부호로 판단"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 판별식>0이면 서로 다른 {{두}} 실근\n* 판별식=0이면 {{중근}}\n* 판별식<0이면 실근이 {{없다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-9-1-4-07",
+      "outlineNo": "9-1-4-07",
+      "school": "중학교",
+      "grade": "중3",
+      "unit_big": "4. 이차방정식",
+      "unit_mid": "이차방정식의 활용",
+      "keywords": [
+        "이차방정식",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이차방정식의 활용"
+          },
+          "body": "* 미지수를 정하고 조건에서 이차방정식을 세워 푼다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "식 세우기",
+              "meaning": "조건 → 이차방정식"
+            },
+            {
+              "term": "답 확인",
+              "meaning": "문제 조건에 맞게"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 연속한 두 자연수의 곱이 12 → 3과 {{4}}\n* 넓이·수 문제를 이차방정식으로 {{세운다}}\n* 답은 문제 조건에 맞게 {{확인}}한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

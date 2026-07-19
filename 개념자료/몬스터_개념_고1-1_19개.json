@@ -1,0 +1,1534 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-10-1-1-01",
+      "outlineNo": "10-1-1-01",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 다항식",
+      "unit_mid": "다항식의 덧셈과 뺄셈",
+      "keywords": [
+        "다항식",
+        "동류항"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 다항식의 덧셈·뺄셈"
+          },
+          "body": "* 동류항끼리 계수를 더하거나 뺀다.\n* 차수가 높은 항부터 내림차순으로 정리한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²+2x",
+            "inputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "outputs": [
+              0,
+              3,
+              8,
+              15
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "동류항",
+              "meaning": "문자와 차수가 같은 항"
+            },
+            {
+              "term": "내림차순",
+              "meaning": "차수가 높은 항부터"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (x²+2x) + (3x²−x) = {{4x²+x}}\n* (2x²+3) − (x²+1) = {{x²+2}}\n* 다항식은 보통 {{내림차순}}으로 정리한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-1-02",
+      "outlineNo": "10-1-1-02",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 다항식",
+      "unit_mid": "다항식의 곱셈과 곱셈공식",
+      "keywords": [
+        "곱셈공식",
+        "전개"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈과 곱셈공식"
+          },
+          "body": "* 분배법칙으로 전개하고 곱셈공식을 이용한다.\n* (a+b)²=a²+2ab+b², (a+b)(a−b)=a²−b², (a+b)³=a³+3a²b+3ab²+b³.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 전개 ↔ 인수분해",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "곱셈공식",
+              "meaning": "전개를 빠르게 하는 공식"
+            },
+            {
+              "term": "완전세제곱",
+              "meaning": "(a±b)³"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (x+2)² = {{x²+4x+4}}\n* (x+1)(x−1) = {{x²−1}}\n* (x+y)² = {{x²+2xy+y²}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-1-03",
+      "outlineNo": "10-1-1-03",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 다항식",
+      "unit_mid": "곱셈공식의 변형",
+      "keywords": [
+        "변형 공식",
+        "대칭식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈공식의 변형"
+          },
+          "body": "* a²+b²=(a+b)²−2ab, a³+b³=(a+b)³−3ab(a+b) 등 변형을 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 변형 공식 값",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "a+b, ab",
+            "botLabel": "a²+b²",
+            "inputs": [
+              "3, 2",
+              "4, 3",
+              "5, 4"
+            ],
+            "outputs": [
+              5,
+              10,
+              17
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "변형 공식",
+              "meaning": "합·곱으로 값 구하기"
+            },
+            {
+              "term": "대칭식",
+              "meaning": "a, b를 바꿔도 같은 식"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* a+b=3, ab=2일 때 a²+b² = {{5}}\n* a²+b² = (a+b)² − {{2ab}}\n* (a+b)² = a²+b² + {{2ab}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-1-04",
+      "outlineNo": "10-1-1-04",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 다항식",
+      "unit_mid": "다항식의 나눗셈과 조립제법",
+      "keywords": [
+        "나눗셈",
+        "조립제법"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 다항식의 나눗셈"
+          },
+          "body": "* A = BQ + R (R의 차수 < B의 차수)로 나타낸다.\n* 일차식으로 나눌 때는 조립제법을 쓴다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. A = B × Q (나머지 0)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 15,
+            "part1": 5,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "몫과 나머지",
+              "meaning": "A = BQ + R"
+            },
+            {
+              "term": "조립제법",
+              "meaning": "일차식 나눗셈의 간편법"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²+3x+2를 x+1로 나눈 몫은 {{x+2}}, 나머지는 {{0}}\n* A = B × Q + {{R}}\n* 나머지의 차수는 나누는 식보다 {{작다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-1-05",
+      "outlineNo": "10-1-1-05",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 다항식",
+      "unit_mid": "나머지정리와 인수정리",
+      "keywords": [
+        "나머지정리",
+        "인수정리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 나머지정리·인수정리"
+          },
+          "body": "* f(x)를 x−a로 나눈 나머지는 f(a)이다 (나머지정리).\n* f(a)=0이면 x−a는 f(x)의 인수이다 (인수정리).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. f(a) 값",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "f(x)=x²+1",
+            "inputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "outputs": [
+              1,
+              2,
+              5,
+              10
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "나머지정리",
+              "meaning": "x−a로 나눈 나머지 = f(a)"
+            },
+            {
+              "term": "인수정리",
+              "meaning": "f(a)=0 ↔ x−a가 인수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* f(x)=x²+1일 때 x−2로 나눈 나머지는 f(2) = {{5}}\n* f(1)=0이면 (x−1)은 f(x)의 {{인수}}\n* 나머지정리의 나머지는 {{f(a)}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-1-06",
+      "outlineNo": "10-1-1-06",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 다항식",
+      "unit_mid": "인수분해",
+      "keywords": [
+        "인수분해"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 인수분해"
+          },
+          "body": "* 곱셈공식을 거꾸로 이용하거나 공통인수로 묶는다.\n* a³±b³=(a±b)(a²∓ab+b²) 등 고차식 공식을 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "인수분해",
+              "meaning": "곱의 꼴로 나타냄"
+            },
+            {
+              "term": "고차 공식",
+              "meaning": "a³±b³ 등"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²−4 = {{(x+2)(x−2)}}\n* x³−1 = (x−1)({{x²+x+1}})\n* x²+5x+6 = {{(x+2)(x+3)}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-01",
+      "outlineNo": "10-1-2-01",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "복소수의 뜻과 사칙연산",
+      "keywords": [
+        "복소수",
+        "허수단위"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 복소수와 사칙연산"
+          },
+          "body": "* 제곱하여 −1이 되는 수를 허수단위 i라 하고, a+bi (a, b는 실수)를 복소수라 한다.\n* 실수부는 a, 허수부는 b이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 실수부 찾기",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "복소수",
+            "botLabel": "실수부",
+            "inputs": [
+              "2+3i",
+              "1−i",
+              "4i",
+              "5"
+            ],
+            "outputs": [
+              2,
+              1,
+              0,
+              5
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "허수단위",
+              "meaning": "i² = −1"
+            },
+            {
+              "term": "복소수",
+              "meaning": "a + bi"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* i² = {{−1}}\n* (2+3i) + (1−i) = {{3+2i}}\n* (1+i)(1−i) = {{2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-02",
+      "outlineNo": "10-1-2-02",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "켤레복소수와 i의 거듭제곱",
+      "keywords": [
+        "켤레복소수",
+        "i의 거듭제곱"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 켤레복소수·i의 거듭제곱"
+          },
+          "body": "* a+bi의 켤레복소수는 a−bi이다.\n* i의 거듭제곱은 i, −1, −i, 1이 반복된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. i의 거듭제곱 (주기 4)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "iⁿ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              "i",
+              "−1",
+              "−i",
+              "1"
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "켤레복소수",
+              "meaning": "허수부의 부호만 바꿈"
+            },
+            {
+              "term": "i의 거듭제곱",
+              "meaning": "주기 4로 반복"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2+3i의 켤레복소수는 {{2−3i}}\n* i⁴ = {{1}}\n* i² = {{−1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-03",
+      "outlineNo": "10-1-2-03",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "이차방정식의 풀이와 판별식",
+      "keywords": [
+        "이차방정식",
+        "판별식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이차방정식·판별식"
+          },
+          "body": "* ax²+bx+c=0의 해는 근의 공식으로 구한다.\n* 판별식 D=b²−4ac로 근을 판단한다 (D>0 두 실근, D=0 중근, D<0 두 허근).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 포물선과 x축 (D>0)",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": 1,
+            "p": 0,
+            "q": -1,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "판별식",
+              "meaning": "D = b²−4ac"
+            },
+            {
+              "term": "허근",
+              "meaning": "D < 0일 때"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²−5x+6=0 → x=2, {{3}}\n* 판별식 D = b² − {{4ac}}\n* D<0이면 서로 다른 두 {{허근}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-04",
+      "outlineNo": "10-1-2-04",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "근과 계수의 관계",
+      "keywords": [
+        "근과 계수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 근과 계수의 관계"
+          },
+          "body": "* ax²+bx+c=0의 두 근을 α, β라 하면 α+β = $-\\dfrac{b}{a}$, αβ = $\\dfrac{c}{a}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 두 근의 곱 (2 × 3 = 6)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 6,
+            "part1": 2,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "두 근의 합",
+              "meaning": "$-\\dfrac{b}{a}$"
+            },
+            {
+              "term": "두 근의 곱",
+              "meaning": "$\\dfrac{c}{a}$"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x²−5x+6=0의 두 근의 합은 {{5}}\n* 두 근의 곱은 {{6}}\n* 합과 곱을 알면 방정식을 {{세울}} 수 있다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-05",
+      "outlineNo": "10-1-2-05",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "이차방정식과 이차함수의 관계",
+      "keywords": [
+        "이차함수",
+        "교점"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이차방정식과 이차함수"
+          },
+          "body": "* y=ax²+bx+c와 x축의 교점의 x좌표가 ax²+bx+c=0의 실근이다.\n* 판별식으로 교점의 개수를 안다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 포물선 (y = x² − 4)",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": 1,
+            "p": 0,
+            "q": -4,
+            "unit": 30,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "x축과의 교점",
+              "meaning": "이차방정식의 실근"
+            },
+            {
+              "term": "교점 개수",
+              "meaning": "판별식으로 판단"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=x²−4가 x축과 만나는 점은 x=2, {{−2}}\n* D>0이면 x축과 {{두}} 점에서 만난다\n* D<0이면 x축과 {{만나지 않는다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-06",
+      "outlineNo": "10-1-2-06",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "이차함수의 최대·최소",
+      "keywords": [
+        "최댓값",
+        "최솟값"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이차함수의 최대·최소"
+          },
+          "body": "* y=a(x−p)²+q에서 a>0이면 x=p에서 최솟값 q, a<0이면 최댓값 q.\n* 제한된 범위에서는 꼭짓점과 양 끝을 함께 살핀다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 포물선 (y = (x−1)² + 2)",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": 1,
+            "p": 1,
+            "q": 2,
+            "unit": 30,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "최솟값",
+              "meaning": "a>0, 꼭짓점의 y"
+            },
+            {
+              "term": "최댓값",
+              "meaning": "a<0, 꼭짓점의 y"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=(x−1)²+2의 최솟값은 {{2}}\n* y=−(x−1)²+3의 최댓값은 {{3}}\n* 최대·최소는 {{꼭짓점}}에서 나온다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-07",
+      "outlineNo": "10-1-2-07",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "삼차·사차방정식",
+      "keywords": [
+        "고차방정식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼차·사차방정식"
+          },
+          "body": "* 인수정리와 조립제법으로 인수분해하여 푼다.\n* 공통부분을 치환하기도 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 삼차식 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x³−1",
+            "inputs": [
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              -2,
+              -1,
+              0,
+              7
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "고차방정식",
+              "meaning": "인수분해로 풀이"
+            },
+            {
+              "term": "치환",
+              "meaning": "공통부분을 t로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x³−1=0 → x=1 또는 x²+x+1=0\n* x⁴−1 = (x²−1)(x²+{{1}})\n* f(1)=0이면 (x−1)로 {{인수분해}}된다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-08",
+      "outlineNo": "10-1-2-08",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "연립이차방정식",
+      "keywords": [
+        "연립이차방정식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 연립이차방정식"
+          },
+          "body": "* 한 식을 다른 식에 대입하거나 인수분해하여 푼다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 포물선과 직선의 교점",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": 1,
+            "p": 0,
+            "q": -2,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "연립이차방정식",
+              "meaning": "이차식을 포함한 연립"
+            },
+            {
+              "term": "풀이",
+              "meaning": "대입·인수분해"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 한 식을 정리해 다른 식에 {{대입}}한다\n* 해는 순서쌍 {{(x, y)}}로 나온다\n* 인수분해로 일차식으로 {{나눈다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-09",
+      "outlineNo": "10-1-2-09",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "연립일차부등식",
+      "keywords": [
+        "연립부등식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 연립일차부등식"
+          },
+          "body": "* 각 부등식의 해를 구해 공통부분을 답으로 한다.\n* 수직선에 나타내어 겹치는 범위를 찾는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "부등식의 해",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "초과",
+                  "value": 1
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "연립부등식",
+              "meaning": "여러 부등식을 함께"
+            },
+            {
+              "term": "해",
+              "meaning": "공통 범위"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* x>1이고 x<4이면 해는 {{1<x<4}}\n* 두 부등식의 해의 {{공통부분}}이 답\n* 수직선에서 겹치는 {{범위}}를 찾는다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-2-10",
+      "outlineNo": "10-1-2-10",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 방정식과 부등식",
+      "unit_mid": "이차부등식과 연립이차부등식",
+      "keywords": [
+        "이차부등식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이차부등식"
+          },
+          "body": "* ax²+bx+c>0 등은 이차함수의 그래프가 x축 위/아래인 범위이다.\n* 인수분해하여 두 근 사이/밖을 판단한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "이차부등식의 해",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이차부등식",
+              "meaning": "이차식의 부등식"
+            },
+            {
+              "term": "풀이",
+              "meaning": "그래프의 부호로 판단"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (x−1)(x−3)<0 → {{1<x<3}}\n* (x−1)(x−3)>0 → x<1 또는 x>{{3}}\n* 두 근 {{사이}}에서 아래로 볼록은 음수",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-3-01",
+      "outlineNo": "10-1-3-01",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 경우의 수",
+      "unit_mid": "합의 법칙과 곱의 법칙",
+      "keywords": [
+        "경우의 수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 합의 법칙·곱의 법칙"
+          },
+          "body": "* 동시에 일어나지 않으면 더하고(합의 법칙), 잇달아 일어나면 곱한다(곱의 법칙).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 경우의 수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 1
+              },
+              {
+                "name": "2",
+                "value": 1
+              },
+              {
+                "name": "3",
+                "value": 1
+              },
+              {
+                "name": "4",
+                "value": 1
+              },
+              {
+                "name": "5",
+                "value": 1
+              },
+              {
+                "name": "6",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "합의 법칙",
+              "meaning": "경우의 수를 더함"
+            },
+            {
+              "term": "곱의 법칙",
+              "meaning": "경우의 수를 곱함"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 주사위에서 2 또는 5는 {{2}}가지\n* 동전과 주사위는 2×6 = {{12}}가지\n* ‘또는’은 합, ‘그리고’는 {{곱}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-3-02",
+      "outlineNo": "10-1-3-02",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 경우의 수",
+      "unit_mid": "순열",
+      "keywords": [
+        "순열"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 순열"
+          },
+          "body": "* 서로 다른 n개에서 r개를 순서 있게 나열하는 경우의 수 $_{n}\\mathrm{P}_{r} = \\dfrac{n!}{(n-r)!}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. n! (한 줄 세우기)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "n!",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              2,
+              6,
+              24
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "순열",
+              "meaning": "순서가 있는 나열"
+            },
+            {
+              "term": "nPr",
+              "meaning": "n×(n−1)×…×(n−r+1)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 3P2 = {{6}}\n* 4P2 = {{12}}\n* n!은 1부터 n까지의 {{곱}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-1-3-03",
+      "outlineNo": "10-1-3-03",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 경우의 수",
+      "unit_mid": "조합",
+      "keywords": [
+        "조합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 조합"
+          },
+          "body": "* 서로 다른 n개에서 순서 없이 r개를 뽑는 경우의 수 $_{n}\\mathrm{C}_{r} = \\dfrac{_{n}\\mathrm{P}_{r}}{r!}$ 이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 조합의 수",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "r",
+            "botLabel": "₄Cᵣ",
+            "inputs": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              4,
+              6,
+              4,
+              1
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "조합",
+              "meaning": "순서 없는 선택"
+            },
+            {
+              "term": "nCr",
+              "meaning": "nPr ÷ r!"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 4C2 = {{6}}\n* 5C2 = {{10}}\n* nCr = nC(n−r)이므로 5C3 = {{10}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

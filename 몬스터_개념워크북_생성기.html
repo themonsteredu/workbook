@@ -1474,6 +1474,40 @@ const CUBOID_NETS = {
 };
 const CUBOID_NET_NAMES = { cross: "십자형", offset: "엇갈린형", stair: "계단형",
   crossTall: "세로 십자형", step: "어긋난형", diag: "대각선형" };
+
+// 정육면체 전개도 11종 (정사각형 6개 → 11가지 모두 접힘). 셀은 [행,열] (단위 정사각형)
+const CUBE_NETS = {
+  cross:   [[0, 1], [1, 0], [1, 1], [1, 2], [1, 3], [2, 1]],       // 1-4-1
+  offset1: [[0, 1], [1, 0], [1, 1], [1, 2], [1, 3], [2, 2]],
+  offset2: [[0, 1], [1, 0], [1, 1], [1, 2], [1, 3], [2, 3]],
+  ell1:    [[0, 0], [1, 0], [1, 1], [1, 2], [1, 3], [2, 2]],
+  ell2:    [[0, 0], [1, 0], [1, 1], [1, 2], [1, 3], [2, 3]],
+  zcap:    [[0, 2], [1, 0], [1, 1], [1, 2], [1, 3], [2, 0]],
+  tri1:    [[0, 0], [0, 1], [1, 1], [1, 2], [1, 3], [2, 3]],       // 2-3-1
+  tri2:    [[0, 0], [0, 1], [1, 1], [1, 2], [1, 3], [2, 2]],
+  tri3:    [[0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0]],
+  stair6:  [[0, 0], [0, 1], [1, 1], [1, 2], [2, 2], [2, 3]],       // 2-2-2 계단
+  threeThree: [[0, 1], [0, 2], [0, 3], [1, 0], [1, 1], [1, 2]]     // 3-3
+};
+const CUBE_NET_NAMES = {
+  cross: "십자형", offset1: "엇갈린형①", offset2: "엇갈린형②",
+  ell1: "ㄴ자형①", ell2: "ㄴ자형②", zcap: "지그재그형",
+  tri1: "2-3-1형①", tri2: "2-3-1형②", tri3: "2-3-1형③",
+  stair6: "계단형(2-2-2)", threeThree: "3-3형"
+};
+function cubeNetSVG(cells) {
+  const maxR = Math.max.apply(null, cells.map(function (c) { return c[0]; })) + 1;
+  const maxC = Math.max.apply(null, cells.map(function (c) { return c[1]; })) + 1;
+  const u = Math.min(340 / maxC, 200 / maxR, 62);
+  const ox = (420 - maxC * u) / 2, oy = (240 - maxR * u) / 2;
+  let out = "";
+  cells.forEach(function (rc) {
+    out += '<rect x="' + round1(ox + rc[1] * u) + '" y="' + round1(oy + rc[0] * u) +
+      '" width="' + round1(u) + '" height="' + round1(u) +
+      '" fill="none" stroke="#333" stroke-width="1.8"/>';
+  });
+  return out;
+}
 function cuboidNetSVG(type, g, sdim, h) {
   const K = { g: g, s: sdim, h: h };
   const net = CUBOID_NETS[type] || CUBOID_NETS.cross;
@@ -1570,10 +1604,10 @@ function renderSolidFig(block, stage) {
       anchors.banjireum = [285, ry - r - 12, 210 + r / 2, ry - r];
       anchors.nopi = [rx + rw + 42, ry + rh / 2, rx + rw, ry + rh / 2];
       anchors.mitmyeon = [110, ry + rh + r, 210 - r / 2, ry + rh + r];
+    } else if (solid === "cube") {
+      s += cubeNetSVG(CUBE_NETS[p.netType] || CUBE_NETS.cross);
     } else {
-      let gw = p.garo || 4, sd = p.sero || 3, hh = p.nopi || 2;
-      if (solid === "cube") { gw = 3; sd = 3; hh = 3; }
-      s += cuboidNetSVG(p.netType || "cross", gw, sd, hh);
+      s += cuboidNetSVG(p.netType || "cross", p.garo || 4, p.sero || 3, p.nopi || 2);
     }
   } else if (solid === "cuboid" || solid === "cube") {
     const cube = solid === "cube";
@@ -3201,11 +3235,11 @@ function buildFigureForm(body, block) {
         const msel = mkSelect([["oblique", "겨냥도"], ["net", "전개도"]], p.mode || "oblique", function (v) { p.mode = v; renderBlockForms(); markDirty(); });
         msel.style.marginRight = "12px";
         opts.appendChild(msel);
-        // 전개도일 때: 전개도 종류(십자·엇갈림·계단) 선택
+        // 전개도일 때: 전개도 종류 선택 (정육면체는 11종, 직육면체는 6종)
         if (p.mode === "net" && (p.solid === "cuboid" || p.solid === "cube")) {
-          const nsel = mkSelect([["cross", "십자형"], ["offset", "엇갈린형"], ["stair", "계단형"],
-            ["crossTall", "세로 십자형"], ["step", "어긋난형"], ["diag", "대각선형"]],
-            p.netType || "cross", function (v) { p.netType = v; markDirty(); });
+          const names = p.solid === "cube" ? CUBE_NET_NAMES : CUBOID_NET_NAMES;
+          const optlist = Object.keys(names).map(function (k) { return [k, names[k]]; });
+          const nsel = mkSelect(optlist, p.netType || "cross", function (v) { p.netType = v; markDirty(); });
           nsel.style.marginRight = "12px";
           opts.appendChild(nsel);
         }

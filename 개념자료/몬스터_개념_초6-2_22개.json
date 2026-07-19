@@ -1,0 +1,1807 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-6-2-01",
+      "outlineNo": "6-2-01",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "분수의 나눗셈",
+      "unit_mid": "분모가 같은 (분수)÷(분수)",
+      "keywords": [
+        "분수",
+        "나눗셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분모가 같은 (분수)÷(분수)"
+          },
+          "body": "* 분모가 같으면 분자끼리 나눈다.\n* 예: 3/4 ÷ 1/4 = 3 ÷ 1 = 3.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 3/4 ÷ 1/4 = 3",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 3,
+            "width": 78,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "분모가 같을 때",
+              "meaning": "분자끼리 나눈다"
+            },
+            {
+              "term": "몫",
+              "meaning": "분자 ÷ 분자"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{3}{4}$ ÷ $\\dfrac{1}{4}$ = {{3}}\n* $\\dfrac{6}{7}$ ÷ $\\dfrac{2}{7}$ = {{3}}\n* $\\dfrac{4}{5}$ ÷ $\\dfrac{2}{5}$ = {{2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-02",
+      "outlineNo": "6-2-02",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "분수의 나눗셈",
+      "unit_mid": "분모가 다른 (분수)÷(분수)",
+      "keywords": [
+        "분수",
+        "나눗셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 분모가 다른 (분수)÷(분수)"
+          },
+          "body": "* 통분하여 분자끼리 나누거나, 나눗셈을 곱셈으로 바꾼다.\n* 나누는 분수의 분모와 분자를 바꿔 곱한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 분수의 나눗셈",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 6,
+            "num": 5,
+            "width": 78,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "나눗셈 → 곱셈",
+              "meaning": "÷ 분수 = × 뒤집은 분수"
+            },
+            {
+              "term": "역수",
+              "meaning": "분모와 분자를 바꾼 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{1}{2}$ ÷ $\\dfrac{1}{3}$ = {{$1\\dfrac{1}{2}$}}\n* $\\dfrac{3}{4}$ ÷ $\\dfrac{1}{2}$ = {{$1\\dfrac{1}{2}$}}\n* $\\dfrac{2}{3}$ ÷ $\\dfrac{1}{6}$ = {{4}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-03",
+      "outlineNo": "6-2-03",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "분수의 나눗셈",
+      "unit_mid": "(자연수)÷(분수), 나눗셈을 곱셈으로 바꾸기",
+      "keywords": [
+        "자연수",
+        "분수",
+        "역수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (자연수)÷(분수)"
+          },
+          "body": "* 나눗셈을 곱셈으로 바꾼다: ÷ 분수 = × (분모와 분자를 바꾼 분수).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 역수로 바꾸기",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 3,
+            "num": 2,
+            "width": 78,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "역수",
+              "meaning": "분모·분자를 바꾼 수"
+            },
+            {
+              "term": "바꾸기",
+              "meaning": "÷ → ×, 분수는 뒤집기"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2 ÷ $\\dfrac{1}{3}$ = {{6}}\n* 4 ÷ $\\dfrac{2}{3}$ = {{6}}\n* 3 ÷ $\\dfrac{3}{4}$ = {{4}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-04",
+      "outlineNo": "6-2-04",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "소수의 나눗셈",
+      "unit_mid": "(소수)÷(소수)",
+      "keywords": [
+        "소수",
+        "나눗셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (소수)÷(소수)"
+          },
+          "body": "* 나누는 수가 자연수가 되도록 두 수의 소수점을 똑같이 옮긴다.\n* 그 다음 (소수)÷(자연수) 또는 (자연수)÷(자연수)로 계산한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 0.8 ÷ 0.4 = 2",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 0.8,
+            "part1": 0.4,
+            "part2": 0.4,
+            "op": "+",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(소수)÷(소수)",
+              "meaning": "소수점을 똑같이 옮겨 계산"
+            },
+            {
+              "term": "소수점 옮기기",
+              "meaning": "두 수에 같은 배 곱함"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1.2 ÷ 0.4 = {{3}}\n* 2.4 ÷ 0.6 = {{4}}\n* 0.9 ÷ 0.3 = {{3}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-05",
+      "outlineNo": "6-2-05",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "소수의 나눗셈",
+      "unit_mid": "(자연수)÷(소수), 몫을 반올림하여 나타내기",
+      "keywords": [
+        "소수",
+        "반올림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (자연수)÷(소수)·반올림"
+          },
+          "body": "* 나누는 소수를 자연수로 만든 뒤 나눈다.\n* 나누어떨어지지 않으면 몫을 반올림하여 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "9 ÷ 0.6 = 15",
+                "min": 0,
+                "max": 20,
+                "step": 5,
+                "range": null,
+                "points": [
+                  15
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(자연수)÷(소수)",
+              "meaning": "소수점 옮겨 계산"
+            },
+            {
+              "term": "반올림",
+              "meaning": "필요한 자리까지 어림"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 6 ÷ 0.5 = {{12}}\n* 9 ÷ 0.6 = {{15}}\n* 7 ÷ 0.4 = {{17.5}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-06",
+      "outlineNo": "6-2-06",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "공간과 입체",
+      "unit_mid": "쌓기나무의 개수 (위·앞·옆에서 본 모양)",
+      "keywords": [
+        "쌓기나무",
+        "개수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 쌓기나무의 개수"
+          },
+          "body": "* 위·앞·옆 세 방향에서 본 모양으로 쌓기나무의 개수를 알 수 있다.\n* 보이지 않는 자리의 개수도 생각한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 쌓기나무",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "stack",
+            "width": 78,
+            "layers": [
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "쌓기나무",
+              "meaning": "정육면체 모양의 나무토막"
+            },
+            {
+              "term": "세 방향",
+              "meaning": "위·앞·옆에서 본 모양"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1층에 4개, 2층에 1개면 모두 {{5}}개\n* 위에서 본 모양은 바닥의 {{모양}}\n* 앞·옆에서는 각 줄의 가장 {{높은}} 층이 보인다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-07",
+      "outlineNo": "6-2-07",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "공간과 입체",
+      "unit_mid": "층별로 나타낸 모양",
+      "keywords": [
+        "쌓기나무",
+        "층별"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 층별로 나타낸 모양"
+          },
+          "body": "* 각 층에 놓인 쌓기나무의 자리를 층별로 나타낼 수 있다.\n* 층별 모양을 합치면 전체 모양과 개수를 알 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 층별 모양",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "stack",
+            "width": 78,
+            "layers": [
+              [
+                1,
+                2,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "층별 모양",
+              "meaning": "각 층의 쌓기나무 자리"
+            },
+            {
+              "term": "1층",
+              "meaning": "바닥 전체 자리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1층 모양은 바닥 전체 자리이다\n* 2층은 1층보다 개수가 {{적거나 같다}}\n* 층별 모양을 합치면 전체 {{개수}}를 안다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-08",
+      "outlineNo": "6-2-08",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "비례식과 비례배분",
+      "unit_mid": "비의 성질",
+      "keywords": [
+        "비",
+        "전항",
+        "후항"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 비의 성질"
+          },
+          "body": "* 비의 전항과 후항에 0이 아닌 같은 수를 곱하거나 나누어도 비율은 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 비의 성질 (2 : 3)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "전항",
+            "botLabel": "후항",
+            "inputs": [
+              2,
+              4,
+              6
+            ],
+            "outputs": [
+              3,
+              6,
+              9
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "전항",
+              "meaning": "비 ●:▲ 에서 앞의 수 ●"
+            },
+            {
+              "term": "후항",
+              "meaning": "비 뒤의 수 ▲"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2:3의 전항·후항에 2를 곱하면 {{4:6}}\n* 6:9를 3으로 나누면 {{2:3}}\n* 비의 성질로 비율은 {{변하지 않는다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-09",
+      "outlineNo": "6-2-09",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "비례식과 비례배분",
+      "unit_mid": "간단한 자연수의 비로 나타내기",
+      "keywords": [
+        "비",
+        "간단히"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 간단한 자연수의 비"
+          },
+          "body": "* 전항과 후항을 최대공약수로 나누어 간단한 자연수의 비로 나타낸다.\n* 소수·분수의 비는 먼저 자연수의 비로 고친다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 6 : 9 = 2 : 3",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "전항",
+            "botLabel": "후항",
+            "inputs": [
+              6,
+              12
+            ],
+            "outputs": [
+              9,
+              18
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "간단히 하기",
+              "meaning": "최대공약수로 나눔"
+            },
+            {
+              "term": "소수·분수 비",
+              "meaning": "먼저 자연수 비로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 6:9를 간단히 하면 {{2:3}}\n* 0.5:0.3 = {{5:3}}\n* $\\dfrac{1}{2}$ : $\\dfrac{1}{3}$ = {{3:2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-10",
+      "outlineNo": "6-2-10",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "비례식과 비례배분",
+      "unit_mid": "비례식, 외항과 내항",
+      "keywords": [
+        "비례식",
+        "외항",
+        "내항"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 비례식·외항·내항"
+          },
+          "body": "* 비율이 같은 두 비를 =로 나타낸 식을 {{비례식}}이라고 한다.\n* a:b = c:d에서 바깥쪽 a, d를 {{외항}}, 안쪽 b, c를 {{내항}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 비례식 2:3 = 4:6",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "비교하는 양",
+            "botLabel": "기준량",
+            "inputs": [
+              2,
+              4
+            ],
+            "outputs": [
+              3,
+              6
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "외항",
+              "meaning": "비례식의 바깥쪽 두 수"
+            },
+            {
+              "term": "내항",
+              "meaning": "비례식의 안쪽 두 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2:3 = 4:6에서 외항은 2와 {{6}}\n* 내항은 3과 {{4}}\n* 비례식은 두 비가 {{같음}}을 나타낸다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-11",
+      "outlineNo": "6-2-11",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "비례식과 비례배분",
+      "unit_mid": "비례식의 성질 (외항의 곱 = 내항의 곱)",
+      "keywords": [
+        "비례식",
+        "성질"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 비례식의 성질"
+          },
+          "body": "* 비례식에서 외항의 곱과 내항의 곱은 서로 같다.\n* 이 성질로 모르는 값을 구할 수 있다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 외항의 곱 2 × 6 = 12",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 2,
+            "part2": 6,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "외항의 곱",
+              "meaning": "바깥쪽 두 수의 곱"
+            },
+            {
+              "term": "내항의 곱",
+              "meaning": "안쪽 두 수의 곱"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2:3 = 4:6에서 2 × 6 = {{12}}\n* 3 × 4 = {{12}}\n* 외항의 곱과 내항의 곱은 {{같다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-12",
+      "outlineNo": "6-2-12",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "비례식과 비례배분",
+      "unit_mid": "비례배분",
+      "keywords": [
+        "비례배분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 비례배분"
+          },
+          "body": "* 전체를 주어진 비로 나누는 것을 {{비례배분}}이라고 한다.\n* 각 몫 = 전체 × (그 항) ÷ (항의 합).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 3 : 2로 나누기",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "band",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "가",
+                "value": 3
+              },
+              {
+                "name": "나",
+                "value": 2
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "비례배분",
+              "meaning": "전체를 비로 나눔"
+            },
+            {
+              "term": "각 몫",
+              "meaning": "전체 × 항 ÷ 항의 합"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 10을 3:2로 나누면 6과 {{4}}\n* 15를 2:1로 나누면 10과 {{5}}\n* 전체 × 3/(3+2)로 한 사람 {{몫}}을 구한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-13",
+      "outlineNo": "6-2-13",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원의 넓이",
+      "unit_mid": "원주, 원주율",
+      "keywords": [
+        "원주",
+        "원주율"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원주와 원주율"
+          },
+          "body": "* 원의 둘레를 {{원주}}라고 한다.\n* 원주를 지름으로 나눈 값을 {{원주율}}이라 하고, 약 3.14이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원주와 지름",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": true,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jireum",
+              "text": "지름",
+              "blank": false
+            },
+            {
+              "key": "wonju",
+              "text": "원주",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원주",
+              "meaning": "원의 둘레"
+            },
+            {
+              "term": "원주율",
+              "meaning": "원주 ÷ 지름 ≈ 3.14"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 원주 ÷ 지름 = {{원주율}}\n* 원주율은 약 {{3.14}}\n* 지름이 커지면 원주도 {{커진다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-14",
+      "outlineNo": "6-2-14",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원의 넓이",
+      "unit_mid": "원주와 지름 구하기",
+      "keywords": [
+        "원주",
+        "지름"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원주와 지름 구하기"
+          },
+          "body": "* 원주 = 지름 × 원주율.\n* 지름 = 원주 ÷ 원주율.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 반지름과 지름",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": true,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원주 구하기",
+              "meaning": "지름 × 원주율"
+            },
+            {
+              "term": "지름 구하기",
+              "meaning": "원주 ÷ 원주율"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 지름 10cm, 원주율 3.14면 원주는 {{31.4}}cm\n* 반지름 5cm면 원주는 {{31.4}}cm\n* 원주 31.4cm면 지름은 {{10}}cm",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-15",
+      "outlineNo": "6-2-15",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원의 넓이",
+      "unit_mid": "원의 넓이 어림, 원의 넓이 공식",
+      "keywords": [
+        "원",
+        "넓이"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원의 넓이"
+          },
+          "body": "* 원의 넓이 = 반지름 × 반지름 × 원주율.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원의 넓이",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원의 넓이",
+              "meaning": "반지름 × 반지름 × 원주율"
+            },
+            {
+              "term": "반지름",
+              "meaning": "지름의 반"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 반지름 10cm 원의 넓이는 {{314}}cm²\n* 반지름 5cm면 {{78.5}}cm²\n* 반지름 2cm면 {{12.56}}cm²",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-16",
+      "outlineNo": "6-2-16",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원의 넓이",
+      "unit_mid": "여러 가지 원의 넓이 활용",
+      "keywords": [
+        "원",
+        "넓이",
+        "활용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원의 넓이 활용"
+          },
+          "body": "* 지름이 주어지면 반지름으로 바꾸어 넓이를 구한다.\n* 원의 넓이는 반지름의 곱(제곱)에 비례한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원의 넓이 활용",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "지름 → 반지름",
+              "meaning": "지름 ÷ 2"
+            },
+            {
+              "term": "넓이 비교",
+              "meaning": "반지름의 제곱에 비례"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 지름 20cm 원의 넓이는 (반지름 10) {{314}}cm²\n* 반지름 3cm 원의 넓이는 {{28.26}}cm²\n* 반지름이 2배면 넓이는 {{4}}배",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-17",
+      "outlineNo": "6-2-17",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원기둥, 원뿔, 구",
+      "unit_mid": "원기둥과 그 구성 요소",
+      "keywords": [
+        "원기둥"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원기둥"
+          },
+          "body": "* 위와 아래에 합동인 두 원이 있는 둥근기둥 모양의 입체도형을 {{원기둥}}이라고 한다.\n* 두 원을 밑면, 굽은 면을 옆면이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 원기둥",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cylinder",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            },
+            {
+              "key": "nopi",
+              "text": "높이",
+              "blank": false
+            },
+            {
+              "key": "mitmyeon",
+              "text": "밑면",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원기둥",
+              "meaning": "두 밑면이 합동인 원인 기둥"
+            },
+            {
+              "term": "옆면",
+              "meaning": "굽은 면(곡면)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 원기둥의 두 밑면은 {{원}}이다\n* 두 밑면은 서로 {{합동}}이다\n* 원기둥의 옆면은 {{굽은}} 면이다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-18",
+      "outlineNo": "6-2-18",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원기둥, 원뿔, 구",
+      "unit_mid": "원기둥의 전개도",
+      "keywords": [
+        "원기둥",
+        "전개도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원기둥의 전개도"
+          },
+          "body": "* 원기둥을 펼치면 옆면은 직사각형, 밑면은 원 2개가 된다.\n* 옆면 직사각형의 가로는 밑면의 원주와 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 원기둥의 전개도",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cylinder",
+            "width": 78,
+            "n": 5,
+            "mode": "net"
+          },
+          "labels": [
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            },
+            {
+              "key": "nopi",
+              "text": "높이",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "전개도",
+              "meaning": "펼쳐 놓은 그림"
+            },
+            {
+              "term": "옆면 가로",
+              "meaning": "밑면의 원주와 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 원기둥 전개도의 옆면은 {{직사각형}}\n* 밑면은 {{원}} 2개\n* 옆면 직사각형의 가로 = 밑면의 {{원주}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-19",
+      "outlineNo": "6-2-19",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원기둥, 원뿔, 구",
+      "unit_mid": "원뿔과 그 구성 요소",
+      "keywords": [
+        "원뿔"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원뿔"
+          },
+          "body": "* 밑면이 원이고 옆면이 굽은 면이며 뾰족한 꼭짓점이 있는 입체도형을 {{원뿔}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 원뿔",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cone",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [
+            {
+              "key": "nopi",
+              "text": "높이",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            },
+            {
+              "key": "mitmyeon",
+              "text": "밑면",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원뿔",
+              "meaning": "밑면이 원인 뿔 모양 입체"
+            },
+            {
+              "term": "원뿔의 꼭짓점",
+              "meaning": "뾰족한 점"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 원뿔의 밑면은 {{원}}이다\n* 뾰족한 점을 원뿔의 {{꼭짓점}}이라 한다\n* 원뿔의 옆면은 {{굽은}} 면이다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-20",
+      "outlineNo": "6-2-20",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원기둥, 원뿔, 구",
+      "unit_mid": "구와 그 구성 요소",
+      "keywords": [
+        "구"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 구"
+          },
+          "body": "* 공 모양의 입체도형을 {{구}}라고 한다.\n* 구의 중심에서 표면까지의 거리를 반지름이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 구",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "sphere",
+            "width": 78,
+            "n": 5
+          },
+          "labels": [
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            },
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "구",
+              "meaning": "공 모양의 입체도형"
+            },
+            {
+              "term": "구의 반지름",
+              "meaning": "중심에서 표면까지 거리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 구를 반으로 자른 단면은 {{원}}\n* 구의 중심에서 표면까지 거리는 {{반지름}}\n* 어느 방향에서 봐도 구는 {{원}}으로 보인다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-21",
+      "outlineNo": "6-2-21",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "비례식과 비례배분",
+      "unit_mid": "비례식 활용 문장제 구조",
+      "keywords": [
+        "비례식",
+        "문장제"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 비례식 활용"
+          },
+          "body": "* 모르는 값을 □로 놓고 비례식을 세운다.\n* 외항의 곱 = 내항의 곱으로 □를 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 2:5 = □:15",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "비교하는 양",
+            "botLabel": "기준량",
+            "inputs": [
+              2,
+              6
+            ],
+            "outputs": [
+              5,
+              15
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "□ 놓기",
+              "meaning": "모르는 값을 기호로"
+            },
+            {
+              "term": "풀이",
+              "meaning": "외항의 곱 = 내항의 곱"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2:5 = □:15에서 □는 {{6}}\n* 2 × 15 = 5 × □ → □ = {{6}}\n* 비례식으로 모르는 값을 {{구한다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-6-2-22",
+      "outlineNo": "6-2-22",
+      "school": "초등학교",
+      "grade": "6학년",
+      "unit_big": "원의 넓이",
+      "unit_mid": "원주율 활용 문장제 구조",
+      "keywords": [
+        "원주율",
+        "문장제"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원주율 활용"
+          },
+          "body": "* 지름·반지름·원주·넓이 중 무엇을 구하는지 확인한다.\n* 원주 = 지름 × 3.14, 넓이 = 반지름 × 반지름 × 3.14.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원주율 활용",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": true,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            },
+            {
+              "key": "wonju",
+              "text": "원주",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "구분하기",
+              "meaning": "지름·반지름·원주·넓이"
+            },
+            {
+              "term": "원주율",
+              "meaning": "약 3.14"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 지름 7cm 원의 원주는 {{21.98}}cm\n* 반지름 10cm 원의 넓이는 {{314}}cm²\n* 원 문제는 지름과 반지름을 {{구분}}한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

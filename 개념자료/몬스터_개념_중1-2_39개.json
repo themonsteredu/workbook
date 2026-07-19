@@ -1554,6 +1554,33 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "shape": "polygon",
+            "n": 5,
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. 다각형의 외각의 합은 360°",
+            "3": "1. 다각형의 외각의 합은 360° — 증명을 써 보시오."
+          },
+          "body": "[가정] n각형\n[결론] 외각의 합 = 360°\n* ① 각 꼭짓점에서 (내각) + (외각) = {{180}}° — 평각\n* ② 꼭짓점이 n개이므로 (내각의 합) + (외각의 합) = 180° × n\n* ③ 내각의 합은 180° × (n−2)\n* ④ 외각의 합 = 180°×n − 180°×(n−2) = {{360}}°\n따라서 다각형의 외각의 합은 꼭짓점 수와 관계없이 항상 360°이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
+          }
         }
       ]
     },

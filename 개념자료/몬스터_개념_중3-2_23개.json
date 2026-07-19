@@ -1213,6 +1213,32 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "two_tangents",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. 원에 외접하는 사각형",
+            "3": "1. 원에 외접하는 사각형 — 증명을 써 보시오."
+          },
+          "body": "[가정] 사각형 ABCD가 원에 외접 (변 위의 접점 P, Q, R, S)\n[결론] AB + CD = AD + BC\n* ① 한 점에서 원에 그은 두 접선의 길이는 {{같다}}\n* ② AP = AS, BP = BQ, CQ = CR, DR = DS\n* ③ AB + CD = (AP+BP) + (CR+DR) = AS + BQ + CQ + DS\n* ④ 묶어서 정리하면 (AS+DS) + (BQ+CQ) = AD + {{BC}}\n따라서 두 쌍의 대변의 길이의 합은 서로 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
+          }
         }
       ]
     },
@@ -1407,6 +1433,32 @@
             "mode": "lines",
             "lines": 3
           }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "inscribed",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. 원주각의 성질",
+            "3": "1. 원주각의 성질 — 증명을 써 보시오."
+          },
+          "body": "[같은 호] 호 AB에 대한 두 원주각 ∠APB, ∠AQB\n* ① 두 원주각 모두 같은 중심각 ∠AOB의 {{절반}}이다\n* ② 따라서 ∠APB = ∠AQB — 같은 호에 대한 원주각은 모두 같다\n[반원] 지름 AB에 대한 원주각\n* ③ 지름에 대한 중심각은 {{180}}°\n* ④ 원주각은 그 절반인 {{90}}°\n따라서 반원에 대한 원주각은 직각이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
+          }
         }
       ]
     },
@@ -1490,6 +1542,32 @@
           "stage3": {
             "mode": "lines",
             "lines": 3
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_proof",
+          "proofPage": true,
+          "heading": {},
+          "params": {
+            "kind": "inscribed",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "text",
+          "proofPage": true,
+          "heading": {
+            "1": "1. 네 점이 한 원 위에 있을 조건",
+            "3": "1. 네 점이 한 원 위에 있을 조건 — 증명을 써 보시오."
+          },
+          "body": "[가정] 선분 AB에 대해 같은 쪽의 두 점 C, D에서 ∠ACB = ∠ADB\n[결론] A, B, C, D는 한 원 위에 있다\n* ① 세 점 A, B, C를 지나는 원은 항상 {{하나}}로 정해진다\n* ② D가 이 원의 밖에 있으면 ∠ADB는 원주각보다 {{작아지고}}, 안에 있으면 커진다\n* ③ ∠ADB = ∠ACB(원주각)가 되려면 D는 원 {{위}}에 있어야 한다\n* ④ 따라서 네 점은 한 원 위에 있다 — 원주각 성질의 역",
+          "stage3": {
+            "mode": "lines",
+            "lines": 10
           }
         }
       ]

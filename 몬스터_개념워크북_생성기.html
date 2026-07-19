@@ -125,6 +125,9 @@
   table.toc td.chk { width:52px; text-align:center; }
   .toc-box { display:inline-block; width:16px; height:16px; border:1.8px solid #333;
     border-radius:3px; vertical-align:middle; }
+  /* 양면 인쇄 정렬용 빈 면 (안내 문구는 화면에만 보이고 인쇄에는 안 나옴) */
+  .blank-note { flex:1; display:flex; align-items:center; justify-content:center;
+    color:#c9c9c9; font-size:15px; font-weight:700; }
   .box-blank { display:inline-block; width:46px; height:32px; border:1.6px solid #111;
     border-radius:3px; margin:0 2px; vertical-align:middle; }
 
@@ -308,7 +311,7 @@
 
   @media print {
     body { background:#fff; padding:0; }
-    .toolbar, .appbar, #view-list, #view-edit, .offline-note { display:none !important; }
+    .toolbar, .appbar, #view-list, #view-edit, .offline-note, .blank-note { display:none !important; }
     .sheet { box-shadow:none; margin:0; width:auto; min-height:252mm; page-break-after:always; }
     @page { size:A4; margin:12mm; }
   }
@@ -470,6 +473,9 @@
     </label>
     <label style="margin-left:12px; font-size:13.5px; font-weight:700;">
       <input type="checkbox" id="print-cover" style="vertical-align:middle;"> 표지·목차 포함
+    </label>
+    <label style="margin-left:12px; font-size:13.5px; font-weight:700;" title="개념의 장수가 홀수면 빈 면을 끼워 다음 개념이 항상 새 낱장 앞면에서 시작됩니다.">
+      <input type="checkbox" id="print-duplex" style="vertical-align:middle;"> 양면 인쇄 맞춤
     </label>
     <p>인쇄 미리보기에서 A4로 나뉘는 것을 확인한 뒤 인쇄하세요.</p>
   </div>
@@ -4960,12 +4966,21 @@ function renderCoverSheets(list) {
 function refreshPrintSheets() {
   if (!lastPrint) return;
   const withCover = document.getElementById("print-cover").checked;
-  let html = withCover && lastPrint.length ? renderCoverSheets(lastPrint) : "";
-  html += lastPrint.map(function (c) { return renderConcept(c, printStages); }).join("\n");
+  const duplex = document.getElementById("print-duplex").checked;
+  // 양면 인쇄 맞춤: 장수가 홀수인 묶음 뒤에 빈 면을 끼워 다음 개념이 새 낱장에서 시작
+  const BLANK = '<div class="sheet"><div class="blank-note">(빈 면 — 양면 인쇄 정렬용)</div></div>';
+  const pad = function (html) {
+    if (!duplex) return html;
+    const n = (html.match(/<div class="sheet"/g) || []).length;
+    return n % 2 ? html + BLANK : html;
+  };
+  let html = withCover && lastPrint.length ? pad(renderCoverSheets(lastPrint)) : "";
+  html += lastPrint.map(function (c) { return pad(renderConcept(c, printStages)); }).join("\n");
   document.getElementById("print-sheets").innerHTML = html;
 }
 
 document.getElementById("print-cover").addEventListener("change", refreshPrintSheets);
+document.getElementById("print-duplex").addEventListener("change", refreshPrintSheets);
 
 function openPrint(c, from) {
   prevView = from || "view-list";

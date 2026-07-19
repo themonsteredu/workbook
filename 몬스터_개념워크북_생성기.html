@@ -1462,6 +1462,36 @@ function renderAngleFig(block, stage) {
 
 /* ---------- 그림 3 : solid_fig (입체도형) ---------- */
 
+// 직육면체/정육면체 전개도: 격자 기반으로 여러 종류(십자·엇갈림·계단)를 그림
+// 모든 프리셋은 실제로 접히는(마주 보는 면이 반대 끝을 덮는) 유효한 전개도
+const CUBOID_NETS = {
+  cross:  { cols: ["s", "g", "s", "g"], rows: ["s", "h", "s"], cells: [[0, 1], [1, 0], [1, 1], [1, 2], [1, 3], [2, 1]] },
+  offset: { cols: ["s", "g", "s", "g"], rows: ["s", "h", "s"], cells: [[0, 1], [1, 0], [1, 1], [1, 2], [1, 3], [2, 3]] },
+  stair:  { cols: ["g", "s", "g", "s"], rows: ["g", "h", "g"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 1], [2, 3]] }
+};
+const CUBOID_NET_NAMES = { cross: "십자형", offset: "엇갈린형", stair: "계단형" };
+function cuboidNetSVG(type, g, sdim, h) {
+  const K = { g: g, s: sdim, h: h };
+  const net = CUBOID_NETS[type] || CUBOID_NETS.cross;
+  const colW = net.cols.map(function (k) { return K[k]; });
+  const rowH = net.rows.map(function (k) { return K[k]; });
+  const Wu = colW.reduce(function (a, b) { return a + b; }, 0);
+  const Hu = rowH.reduce(function (a, b) { return a + b; }, 0);
+  const sc = Math.min(360 / Wu, 210 / Hu);
+  const cx = [(420 - Wu * sc) / 2];
+  colW.forEach(function (w, i) { cx.push(cx[i] + w * sc); });
+  const cy = [(240 - Hu * sc) / 2];
+  rowH.forEach(function (hh, i) { cy.push(cy[i] + hh * sc); });
+  let out = "";
+  net.cells.forEach(function (rc) {
+    const r = rc[0], c = rc[1];
+    out += '<rect x="' + round1(cx[c]) + '" y="' + round1(cy[r]) +
+      '" width="' + round1(colW[c] * sc) + '" height="' + round1(rowH[r] * sc) +
+      '" fill="none" stroke="#333" stroke-width="1.8"/>';
+  });
+  return out;
+}
+
 function renderSolidFig(block, stage) {
   const p = block.params || {};
   const st3 = block.stage3 || "frame";
@@ -1539,21 +1569,7 @@ function renderSolidFig(block, stage) {
     } else {
       let gw = p.garo || 4, sd = p.sero || 3, hh = p.nopi || 2;
       if (solid === "cube") { gw = 3; sd = 3; hh = 3; }
-      const W = 2 * gw + 2 * sd, H = hh + 2 * sd;
-      const sc = Math.min(370 / W, 214 / H);
-      const g2 = gw * sc, s2 = sd * sc, h2 = hh * sc;
-      const x0 = (420 - (2 * g2 + 2 * s2)) / 2, ymid = (240 - h2) / 2 + (s2 - s2) / 2;
-      const yTop = (240 - (h2 + 2 * s2)) / 2 + s2;
-      // 가운데 줄: 옆면(세로) 앞면(가로) 옆면 뒷면
-      const xs = [x0, x0 + s2, x0 + s2 + g2, x0 + 2 * s2 + g2, x0 + 2 * s2 + 2 * g2];
-      const ws = [s2, g2, s2, g2];
-      for (let i = 0; i < 4; i++) s += '<rect x="' + round1(xs[i]) + '" y="' + round1(yTop) + '" width="' + round1(ws[i]) + '" height="' + round1(h2) + '" ' + SOL + "/>";
-      // 앞면 위·아래: 윗면/밑면 (가로×세로)
-      s += '<rect x="' + round1(xs[1]) + '" y="' + round1(yTop - s2) + '" width="' + round1(g2) + '" height="' + round1(s2) + '" ' + SOL + "/>";
-      s += '<rect x="' + round1(xs[1]) + '" y="' + round1(yTop + h2) + '" width="' + round1(g2) + '" height="' + round1(s2) + '" ' + SOL + "/>";
-      anchors.garo = [xs[1] + g2 / 2, Math.min(228, yTop + h2 + s2 + 14), xs[1] + g2 / 2, yTop + h2 + s2];
-      anchors.sero = [xs[1] + g2 + 46, yTop - s2 / 2, xs[1] + g2, yTop - s2 / 2];
-      anchors.nopi = [Math.max(36, xs[0] - 34), yTop + h2 / 2, xs[0], yTop + h2 / 2];
+      s += cuboidNetSVG(p.netType || "cross", gw, sd, hh);
     }
   } else if (solid === "cuboid" || solid === "cube") {
     const cube = solid === "cube";
@@ -3178,9 +3194,16 @@ function buildFigureForm(body, block) {
       if (p.solid === "cuboid" || p.solid === "cube" || p.solid === "cylinder" || !p.solid) {
         const mrow = document.createElement("span");
         mrow.style.marginRight = "12px";
-        const msel = mkSelect([["oblique", "겨냥도"], ["net", "전개도"]], p.mode || "oblique", function (v) { p.mode = v; markDirty(); });
+        const msel = mkSelect([["oblique", "겨냥도"], ["net", "전개도"]], p.mode || "oblique", function (v) { p.mode = v; renderBlockForms(); markDirty(); });
         msel.style.marginRight = "12px";
         opts.appendChild(msel);
+        // 전개도일 때: 전개도 종류(십자·엇갈림·계단) 선택
+        if (p.mode === "net" && (p.solid === "cuboid" || p.solid === "cube")) {
+          const nsel = mkSelect([["cross", "십자형"], ["offset", "엇갈린형"], ["stair", "계단형"]],
+            p.netType || "cross", function (v) { p.netType = v; markDirty(); });
+          nsel.style.marginRight = "12px";
+          opts.appendChild(nsel);
+        }
         opts.appendChild(mrow);
       }
       opts.appendChild(mkCheck("보이지 않는 모서리(점선)", p.showHidden !== false, function (v) { p.showHidden = v; markDirty(); }));
@@ -3886,7 +3909,7 @@ function buildDraftPrompt(school, grade, unitBig, conceptName) {
     '- 원: {"figure_type":"circle_fig","params":{"showRadius":true,"showDiameter":false,"showCircumference":false,"width":70},"labels":[{"key":"jungsim","text":"중심","blank":false},{"key":"banjireum","text":"반지름","blank":true},{"key":"jireum","text":"지름","blank":false},{"key":"wonju","text":"원주","blank":false}]}\n' +
     '- 각도: {"figure_type":"angle_fig","params":{"degrees":50,"width":70},"labels":[{"key":"angle","text":"","blank":false}]} (직각·예각·둔각 개념에 사용. text 비우면 각도 값 자동)\n' +
     '- 입체도형: {"figure_type":"solid_fig","params":{"solid":"cuboid|cube|prism|pyramid|cylinder|cone|sphere","mode":"oblique","n":5,"width":70},"labels":[{"key":"(아래 참고)","text":"가로 6cm","blank":false}]}\n' +
-    "  라벨 키: cuboid/cube는 garo,sero,nopi / prism,pyramid는 nopi,mitmyeon,yeopmyeon / cylinder는 banjireum,nopi,mitmyeon / cone은 nopi,banjireum,mitmyeon / sphere는 banjireum,jungsim. 전개도는 mode:\"net\" (cuboid/cube/cylinder만)\n" +
+    "  라벨 키: cuboid/cube는 garo,sero,nopi / prism,pyramid는 nopi,mitmyeon,yeopmyeon / cylinder는 banjireum,nopi,mitmyeon / cone은 nopi,banjireum,mitmyeon / sphere는 banjireum,jungsim. 전개도는 mode:\"net\" (cuboid/cube/cylinder만), 전개도 종류 netType:\"cross|offset|stair\" (십자·엇갈림·계단)\n" +
     '- 쌓기나무: {"figure_type":"solid_fig","params":{"solid":"stack","layers":[[2,1],[1,1]],"width":70}} (layers는 바닥을 위에서 본 칸별 쌓은 개수, 뒷줄이 먼저)\n' +
     '- 그래프: {"figure_type":"stat_chart","params":{"chart":"bar|line|band|pie|picto","unit":"명","cats":[{"name":"항목","value":8}],"width":100}}\n' +
     '- 좌표평면(중등 이상): {"figure_type":"coord_graph","params":{"slope":1,"yIntercept":-1}}';

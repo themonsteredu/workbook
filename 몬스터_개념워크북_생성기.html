@@ -105,6 +105,26 @@
   .blank { display:inline-block; min-width:88px; border-bottom:2px solid #111;
     height:26px; margin:0 3px; vertical-align:bottom; }
   .blank.sm { min-width:60px; }
+  .blank.ans { height:auto; min-height:26px; text-align:center; color:#E8500A;
+    font-weight:800; padding:0 8px; }
+
+  /* ===== 표지·목차 ===== */
+  .cover-wrap { flex:1; border:2.5px solid #222; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; padding:40px; }
+  .cv-logo { transform:scale(1.5); margin-bottom:44px; }
+  .cv-title { font-size:42px; font-weight:900; letter-spacing:4px; color:#2e2712; margin-bottom:14px; }
+  .cv-sub { font-size:16px; color:#555; font-weight:700; margin-bottom:4px; }
+  .cv-fields { margin-top:90px; font-size:19px; font-weight:800; }
+  .cv-fields div { margin-bottom:26px; }
+  .cv-fields .ln { display:inline-block; width:230px; border-bottom:2.2px solid #111;
+    height:26px; margin-left:14px; vertical-align:bottom; }
+  table.toc { width:100%; border-collapse:collapse; margin-top:4px; }
+  table.toc th, table.toc td { border:1.6px solid #333; padding:7px 9px; font-size:13.5px; text-align:left; }
+  table.toc th { background:#F7EAC5; font-weight:800; text-align:center; white-space:nowrap; }
+  table.toc td.no { width:38px; text-align:center; color:#666; }
+  table.toc td.chk { width:52px; text-align:center; }
+  .toc-box { display:inline-block; width:16px; height:16px; border:1.8px solid #333;
+    border-radius:3px; vertical-align:middle; }
   .box-blank { display:inline-block; width:46px; height:32px; border:1.6px solid #111;
     border-radius:3px; margin:0 2px; vertical-align:middle; }
 
@@ -314,6 +334,8 @@
   </div>
   <div class="list-wrap">
     <div class="list-toolbar">
+      <select id="sem-filter" style="padding:8px 9px; border:1.5px solid #ccc; border-radius:8px; font-size:13.5px;"></select>
+      <select id="unit-filter" style="padding:8px 9px; border:1.5px solid #ccc; border-radius:8px; font-size:13.5px; max-width:220px;"></select>
       <input type="text" id="search-box" placeholder="개념 검색 (단원·개념명·키워드)">
       <span class="grow"></span>
       <label class="sel-all"><input type="checkbox" id="chk-all"> 전체 선택</label>
@@ -442,8 +464,12 @@
         <option value="all">전체 (1·2·3단계)</option>
         <option value="1">1단계만 — 개념 정리</option>
         <option value="2">2단계만 — 빈칸 채우기</option>
+        <option value="2a">2단계 정답지 — 교사용</option>
         <option value="3">3단계만 — 백지 TEST</option>
       </select>
+    </label>
+    <label style="margin-left:12px; font-size:13.5px; font-weight:700;">
+      <input type="checkbox" id="print-cover" style="vertical-align:middle;"> 표지·목차 포함
     </label>
     <p>인쇄 미리보기에서 A4로 나뉘는 것을 확인한 뒤 인쇄하세요.</p>
   </div>
@@ -606,6 +632,7 @@ function esc(s) {
 function round1(n) { return Math.round(n * 10) / 10; }
 
 const STAGE_TITLE = { 1: "개념 정리", 2: "빈칸 채우기", 3: "백지 TEST" };
+let printAnswers = false; // 2단계 정답지(교사용) 출력 모드
 const STAGE3_GUIDE = "키워드만 보고 아는 내용을 모두 적으시오.";
 
 /* ----- 수식 렌더링 (KaTeX, 없으면 단순 표시) ----- */
@@ -704,6 +731,9 @@ function renderBlankable(inner, stage, ctx) {
     return ctx === "text" ? "<b>" + body + "</b>" : body;
   }
   const sm = ctx === "term" || plain.length <= 2;
+  if (printAnswers && stage === 2) {
+    return '<span class="blank ans' + (sm ? " sm" : "") + '">' + renderMathText(inner, 1) + "</span>";
+  }
   return '<span class="blank' + (sm ? " sm" : "") + '"></span>';
 }
 
@@ -2854,7 +2884,7 @@ function renderSheet(c, stage) {
 
   out += '<div class="head">' +
     '<div class="head-grade"><div class="g1">' + esc(c.school) + '</div><div class="g2">' + esc(c.grade) + "</div></div>" +
-    '<div class="head-title"><h1>' + STAGE_TITLE[stage] + "</h1></div>" +
+    '<div class="head-title"><h1>' + STAGE_TITLE[stage] + (printAnswers && stage === 2 ? " (정답)" : "") + "</h1></div>" +
     '<div class="head-logo">' + logoHTML() + "</div>" +
     "</div>";
 
@@ -2878,7 +2908,7 @@ function renderSheet(c, stage) {
     out += '<div class="sheet">';
     out += '<div class="head">' +
       '<div class="head-grade"><div class="g1">' + esc(c.school) + '</div><div class="g2">' + esc(c.grade) + "</div></div>" +
-      '<div class="head-title"><h1>' + (stage === 3 ? "증명 TEST" : "증명") + "</h1></div>" +
+      '<div class="head-title"><h1>' + (stage === 3 ? "증명 TEST" : "증명") + (printAnswers && stage === 2 ? " (정답)" : "") + "</h1></div>" +
       '<div class="head-logo">' + logoHTML() + "</div>" +
       "</div>";
     out += '<table class="main">';
@@ -3254,6 +3284,65 @@ function conceptMatches(c, q) {
   return hay.indexOf(q) >= 0;
 }
 
+/* ---- 학기·단원 필터 ---- */
+let semFilter = "", unitFilter = "";
+
+function semLabelOf(c) {
+  const m = /^seed-(\d+)-(\d)-/.exec(c.id || "");
+  if (!m) return "직접 만든 개념";
+  const g = +m[1], s = m[2];
+  if (g <= 6) return "초" + g + "-" + s;
+  if (g <= 9) return "중" + (g - 6) + "-" + s;
+  return "고" + (g - 9) + "-" + s;
+}
+
+function filteredConcepts() {
+  const q = searchText.trim().toLowerCase();
+  return concepts.filter(function (c) {
+    if (!conceptMatches(c, q)) return false;
+    if (semFilter && semLabelOf(c) !== semFilter) return false;
+    if (unitFilter && (c.unit_big || "") !== unitFilter) return false;
+    return true;
+  });
+}
+
+function rebuildFilterOptions() {
+  const semSel = document.getElementById("sem-filter");
+  const unitSel = document.getElementById("unit-filter");
+  // 학기: 개념 배열 순서(커리큘럼 순)대로 수집, '직접 만든 개념'은 맨 뒤
+  const sems = [];
+  concepts.forEach(function (c) {
+    const l = semLabelOf(c);
+    if (sems.indexOf(l) < 0) sems.push(l);
+  });
+  const own = sems.indexOf("직접 만든 개념");
+  if (own >= 0) { sems.splice(own, 1); sems.push("직접 만든 개념"); }
+  semSel.innerHTML = '<option value="">전체 학기</option>' +
+    sems.map(function (l) { return '<option value="' + esc(l) + '">' + esc(l) + "</option>"; }).join("");
+  if (sems.indexOf(semFilter) < 0) semFilter = "";
+  semSel.value = semFilter;
+  // 단원: 선택한 학기 안의 대단원
+  const units = [];
+  concepts.forEach(function (c) {
+    if (semFilter && semLabelOf(c) !== semFilter) return;
+    const u = c.unit_big || "";
+    if (u && units.indexOf(u) < 0) units.push(u);
+  });
+  unitSel.innerHTML = '<option value="">전체 단원</option>' +
+    units.map(function (u) { return '<option value="' + esc(u) + '">' + esc(u) + "</option>"; }).join("");
+  if (units.indexOf(unitFilter) < 0) unitFilter = "";
+  unitSel.value = unitFilter;
+}
+
+document.getElementById("sem-filter").addEventListener("change", function () {
+  semFilter = this.value; unitFilter = "";
+  renderList();
+});
+document.getElementById("unit-filter").addEventListener("change", function () {
+  unitFilter = this.value;
+  renderList();
+});
+
 function updateBundleButton() {
   const n = Object.keys(selectedIds).filter(function (k) { return selectedIds[k]; }).length;
   const btn = document.getElementById("btn-bundle-print");
@@ -3263,13 +3352,13 @@ function updateBundleButton() {
 
 function renderList() {
   ensureIds();
+  rebuildFilterOptions();
   const wrap = document.getElementById("concept-cards");
-  const q = searchText.trim().toLowerCase();
-  const list = concepts.filter(function (c) { return conceptMatches(c, q); });
+  const list = filteredConcepts();
   if (!concepts.length) {
     wrap.innerHTML = '<div class="empty-note">저장된 개념이 없습니다. [새 개념 만들기]를 눌러 시작하세요.</div>';
   } else if (!list.length) {
-    wrap.innerHTML = '<div class="empty-note">"' + esc(searchText) + '" 에 맞는 개념이 없습니다.</div>';
+    wrap.innerHTML = '<div class="empty-note">조건에 맞는 개념이 없습니다. 필터나 검색어를 확인하세요.</div>';
   } else {
     wrap.innerHTML = list.map(function (c) {
       const checked = selectedIds[c.id] ? " checked" : "";
@@ -3340,8 +3429,7 @@ document.getElementById("search-box").addEventListener("input", function () {
 });
 
 document.getElementById("chk-all").addEventListener("change", function () {
-  const q = searchText.trim().toLowerCase();
-  const list = concepts.filter(function (c) { return conceptMatches(c, q); });
+  const list = filteredConcepts();
   list.forEach(function (c) { selectedIds[c.id] = this.checked; }, this);
   renderList();
 });
@@ -4822,11 +4910,62 @@ window.addEventListener("beforeunload", function (e) {
 let lastPrint = null;
 let printStages = [1, 2, 3]; // 출력할 단계 (전체 또는 한 단계만)
 
+// 표지 1장 + 목차 (개념이 많으면 목차 여러 장)
+function renderCoverSheets(list) {
+  const sems = [];
+  list.forEach(function (c) {
+    const l = semLabelOf(c);
+    if (sems.indexOf(l) < 0) sems.push(l);
+  });
+  const semTxt = sems.length === 1 && sems[0] !== "직접 만든 개념" ? sems[0] : "";
+  const stageTxt = printAnswers ? "2단계 정답지 (교사용)"
+    : printStages.length === 3 ? "1단계 개념 정리 · 2단계 빈칸 채우기 · 3단계 백지 TEST"
+    : printStages[0] + "단계 — " + STAGE_TITLE[printStages[0]];
+  let out = '<div class="sheet">' +
+    '<div class="cover-wrap">' +
+      '<div class="cv-logo">' + logoHTML() + "</div>" +
+      '<div class="cv-title">' + (semTxt ? esc(semTxt) + " " : "") + "개념 워크북</div>" +
+      '<div class="cv-sub">수록 개념 ' + list.length + "개</div>" +
+      '<div class="cv-sub">' + esc(stageTxt) + "</div>" +
+      '<div class="cv-fields">' +
+        "<div>이 름<span class=\"ln\"></span></div>" +
+        "<div>날 짜<span class=\"ln\"></span></div>" +
+      "</div>" +
+    "</div></div>";
+  // 목차: 한 장에 22개씩
+  const PER = 22;
+  const stageCols = printAnswers ? [2] : printStages;
+  for (let p = 0; p < list.length; p += PER) {
+    const rows = list.slice(p, p + PER);
+    out += '<div class="sheet">' +
+      '<div class="head">' +
+        '<div class="head-grade"><div class="g1">더몬스터</div><div class="g2">' + esc(semTxt || "전체") + "</div></div>" +
+        '<div class="head-title"><h1>목 차</h1></div>' +
+        '<div class="head-logo">' + logoHTML() + "</div>" +
+      "</div>";
+    out += '<table class="toc"><tr><th>번호</th><th>대단원</th><th>개념</th>' +
+      stageCols.map(function (s) { return "<th>" + s + "단계</th>"; }).join("") + "</tr>";
+    rows.forEach(function (c, i) {
+      out += '<tr><td class="no">' + (p + i + 1) + "</td>" +
+        "<td>" + esc(c.unit_big || "-") + "</td>" +
+        "<td>" + esc(conceptTitle(c)) + "</td>" +
+        stageCols.map(function () { return '<td class="chk"><span class="toc-box"></span></td>'; }).join("") +
+        "</tr>";
+    });
+    out += "</table></div>";
+  }
+  return out;
+}
+
 function refreshPrintSheets() {
   if (!lastPrint) return;
-  document.getElementById("print-sheets").innerHTML =
-    lastPrint.map(function (c) { return renderConcept(c, printStages); }).join("\n");
+  const withCover = document.getElementById("print-cover").checked;
+  let html = withCover && lastPrint.length ? renderCoverSheets(lastPrint) : "";
+  html += lastPrint.map(function (c) { return renderConcept(c, printStages); }).join("\n");
+  document.getElementById("print-sheets").innerHTML = html;
 }
+
+document.getElementById("print-cover").addEventListener("change", refreshPrintSheets);
 
 function openPrint(c, from) {
   prevView = from || "view-list";
@@ -4843,7 +4982,8 @@ function openPrintMany(list, from) {
 }
 
 document.getElementById("print-stage-sel").addEventListener("change", function () {
-  printStages = this.value === "all" ? [1, 2, 3] : [Number(this.value)];
+  printAnswers = this.value === "2a";
+  printStages = this.value === "all" ? [1, 2, 3] : [Number(this.value === "2a" ? 2 : this.value)];
   refreshPrintSheets();
 });
 

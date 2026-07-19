@@ -613,9 +613,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -635,7 +659,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 평행선에서 동위각은 서로 {{같다}}\n* 평행선에서 엇각도 서로 {{같다}}\n* 동위각이 70°이면 엇각도 {{70}}°",
           "stage3": {
@@ -669,9 +693,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -691,7 +739,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 평행선에서 엇각 x가 65°이면 x = {{65}}°\n* 동위각·엇각을 이용해 각을 {{구한다}}\n* 보조선으로 평행선을 그으면 {{쉬워진다}}",
           "stage3": {
@@ -2465,9 +2513,43 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 자료의 분포",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "A",
+                "value": 3
+              },
+              {
+                "name": "B",
+                "value": 6
+              },
+              {
+                "name": "C",
+                "value": 4
+              },
+              {
+                "name": "D",
+                "value": 2
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -2487,7 +2569,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 23에서 줄기는 {{2}}, 잎은 3\n* 잎의 개수는 자료의 {{개수}}\n* 원래 자료 값을 {{알 수 있다}}",
           "stage3": {
@@ -2522,9 +2604,43 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 자료의 분포",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "A",
+                "value": 3
+              },
+              {
+                "name": "B",
+                "value": 6
+              },
+              {
+                "name": "C",
+                "value": 4
+              },
+              {
+                "name": "D",
+                "value": 2
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -2544,7 +2660,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 자료를 나눈 구간을 {{계급}}이라 한다\n* 각 계급에 속한 자료 수는 {{도수}}\n* 계급의 폭 = 구간의 {{크기}}",
           "stage3": {

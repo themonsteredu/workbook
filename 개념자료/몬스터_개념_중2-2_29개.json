@@ -1755,9 +1755,51 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 경우의 수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 1
+              },
+              {
+                "name": "2",
+                "value": 1
+              },
+              {
+                "name": "3",
+                "value": 1
+              },
+              {
+                "name": "4",
+                "value": 1
+              },
+              {
+                "name": "5",
+                "value": 1
+              },
+              {
+                "name": "6",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1777,7 +1819,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 주사위에서 2 또는 5가 나오는 경우는 {{2}}가지\n* 동시에 안 일어나면 경우의 수를 {{더한다}}\n* ‘또는’이면 {{합}}의 법칙",
           "stage3": {
@@ -1811,9 +1853,51 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 경우의 수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 1
+              },
+              {
+                "name": "2",
+                "value": 1
+              },
+              {
+                "name": "3",
+                "value": 1
+              },
+              {
+                "name": "4",
+                "value": 1
+              },
+              {
+                "name": "5",
+                "value": 1
+              },
+              {
+                "name": "6",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1833,7 +1917,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 동전 2개를 던지는 경우는 {{4}}가지\n* 잇달아 일어나면 경우의 수를 {{곱한다}}\n* ‘그리고’이면 {{곱}}의 법칙",
           "stage3": {
@@ -1867,9 +1951,51 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 경우의 수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 1
+              },
+              {
+                "name": "2",
+                "value": 1
+              },
+              {
+                "name": "3",
+                "value": 1
+              },
+              {
+                "name": "4",
+                "value": 1
+              },
+              {
+                "name": "5",
+                "value": 1
+              },
+              {
+                "name": "6",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1889,7 +2015,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 3명을 한 줄로 세우는 경우는 {{6}}가지\n* 3명 중 2명 대표(순서 없음)를 뽑는 경우는 {{3}}가지\n* 줄 세우기는 3×2×1 = {{6}}",
           "stage3": {
@@ -1922,9 +2048,51 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 경우의 수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 1
+              },
+              {
+                "name": "2",
+                "value": 1
+              },
+              {
+                "name": "3",
+                "value": 1
+              },
+              {
+                "name": "4",
+                "value": 1
+              },
+              {
+                "name": "5",
+                "value": 1
+              },
+              {
+                "name": "6",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1944,7 +2112,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 주사위에서 3이 나올 확률은 {{$\\dfrac{1}{6}$}}\n* 확률은 0 이상 {{1}} 이하\n* 반드시 일어나는 사건의 확률은 {{1}}",
           "stage3": {
@@ -1978,9 +2146,51 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 경우의 수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 1
+              },
+              {
+                "name": "2",
+                "value": 1
+              },
+              {
+                "name": "3",
+                "value": 1
+              },
+              {
+                "name": "4",
+                "value": 1
+              },
+              {
+                "name": "5",
+                "value": 1
+              },
+              {
+                "name": "6",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -2000,7 +2210,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* P(A)=1/4이면 P(A 아님) = {{$\\dfrac{3}{4}$}}\n* ‘적어도 하나’는 (1 − 하나도 없을 확률)로 {{구한다}}\n* 여사건의 확률은 1 − {{P(A)}}",
           "stage3": {
@@ -2034,9 +2244,51 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 경우의 수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 1
+              },
+              {
+                "name": "2",
+                "value": 1
+              },
+              {
+                "name": "3",
+                "value": 1
+              },
+              {
+                "name": "4",
+                "value": 1
+              },
+              {
+                "name": "5",
+                "value": 1
+              },
+              {
+                "name": "6",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -2056,7 +2308,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 동전과 주사위에서 앞면·3이 나올 확률은 {{$\\dfrac{1}{12}$}}\n* 잇달아 일어나면 확률을 {{곱한다}}\n* 1/2 × 1/6 = {{$\\dfrac{1}{12}$}}",
           "stage3": {

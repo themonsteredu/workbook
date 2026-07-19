@@ -25,9 +25,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "실수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -47,7 +71,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 9의 제곱근은 3과 {{−3}}\n* 4의 양의 제곱근은 {{2}}\n* 0의 제곱근은 {{0}}",
           "stage3": {
@@ -81,9 +105,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "실수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -103,7 +151,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* √25 = {{5}}\n* (√3)² = {{3}}\n* √(−3)² = {{3}}",
           "stage3": {
@@ -137,9 +185,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "실수와 수직선",
+                "min": -3,
+                "max": 3,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -159,7 +231,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* √2는 {{무리수}}\n* π는 {{무리수}}\n* 유리수와 무리수를 합쳐 {{실수}}",
           "stage3": {
@@ -353,9 +425,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -375,7 +475,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* √2 × √3 = {{√6}}\n* √8 ÷ √2 = {{2}}\n* √12 = {{$2\\sqrt{3}$}}",
           "stage3": {
@@ -408,9 +508,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -430,7 +558,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 1/√2 = {{$\\dfrac{\\sqrt{2}}{2}$}}\n* 유리화는 분모의 근호를 {{없앤다}}\n* 3/√3 = {{√3}}",
           "stage3": {
@@ -464,9 +592,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -486,7 +642,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 2√2 + 3√2 = {{$5\\sqrt{2}$}}\n* 5√3 − 2√3 = {{$3\\sqrt{3}$}}\n* √2와 √3은 더할 수 {{없다}}",
           "stage3": {
@@ -520,9 +676,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -542,7 +726,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* √2(√2+1) = {{$2+\\sqrt{2}$}}\n* (√3)² + √3 = {{$3+\\sqrt{3}$}}\n* 분배법칙과 곱셈공식을 {{이용}}한다",
           "stage3": {
@@ -576,9 +760,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -598,7 +810,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* √2 ≈ {{1.414}}\n* √a × √a = {{a}}\n* √100 = {{10}}",
           "stage3": {
@@ -632,9 +844,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -654,7 +884,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* (x+2)² = {{$x^{2}+4x+4$}}\n* (x+3)(x−3) = {{$x^{2}-9$}}\n* (x+1)(x+2) = {{$x^{2}+3x+2$}}",
           "stage3": {
@@ -688,9 +918,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -710,7 +958,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 101² = (100+1)² = {{10201}}\n* 곱셈공식으로 수 계산을 {{간단히}} 한다\n* (x+5)(x−5) = {{$x^{2}-25$}}",
           "stage3": {
@@ -744,9 +992,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -766,7 +1032,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* ax+ay = {{a(x+y)}}\n* 2x²+4x = {{2x(x+2)}}\n* 인수분해는 전개의 {{반대}}",
           "stage3": {
@@ -799,9 +1065,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -821,7 +1105,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x²−9 = {{(x+3)(x−3)}}\n* x²+5x+6 = {{(x+2)(x+3)}}\n* x²+2x+1 = {{$(x+1)^{2}$}}",
           "stage3": {
@@ -855,9 +1139,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -877,7 +1179,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 치환을 이용해 {{복잡한}} 식도 인수분해한다\n* 공통부분을 A로 {{치환}}한다\n* 항을 적절히 {{묶어}} 분해한다",
           "stage3": {
@@ -911,9 +1213,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 인수분해 (곱으로 나타내기)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 12,
+            "part1": 4,
+            "part2": 3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -933,7 +1253,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 인수분해로 이차방정식을 {{푼다}}\n* 97×103 = (100−3)(100+3) = {{9991}}\n* 수 계산에 인수분해를 {{이용}}한다",
           "stage3": {
@@ -967,9 +1287,39 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -989,7 +1339,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x²−4=0의 해는 x=2와 {{−2}}\n* 이차방정식은 최고차항이 {{2}}차\n* 해는 최대 {{2}}개",
           "stage3": {
@@ -1023,9 +1373,39 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1045,7 +1425,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* (x−2)(x−3)=0 → x=2 또는 {{3}}\n* x²−5x+6=0 → x=2, {{3}}\n* x²−x=0 → x=0, {{1}}",
           "stage3": {
@@ -1079,9 +1459,39 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1101,7 +1511,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x²=9 → x=±{{3}}\n* (x−1)²=4 → x=3 또는 {{−1}}\n* x²=5 → x=±{{√5}}",
           "stage3": {
@@ -1134,9 +1544,39 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1156,7 +1596,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x²+2x=3 → (x+1)² = {{4}}\n* 그때 x=1 또는 {{−3}}\n* 상수항을 옮겨 완전제곱식으로 {{만든다}}",
           "stage3": {
@@ -1189,9 +1629,39 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1211,7 +1681,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x²+3x+2=0 → x=−1, {{−2}}\n* 근의 공식의 분모는 {{2a}}\n* b²−4ac를 {{판별식}}이라 한다",
           "stage3": {
@@ -1245,9 +1715,39 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1267,7 +1767,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 판별식>0이면 서로 다른 {{두}} 실근\n* 판별식=0이면 {{중근}}\n* 판별식<0이면 실근이 {{없다}}",
           "stage3": {
@@ -1301,9 +1801,39 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. x² − 4 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "x²−4",
+            "inputs": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "outputs": [
+              0,
+              -3,
+              -4,
+              -3,
+              0
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1323,7 +1853,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 연속한 두 자연수의 곱이 12 → 3과 {{4}}\n* 넓이·수 문제를 이차방정식으로 {{세운다}}\n* 답은 문제 조건에 맞게 {{확인}}한다",
           "stage3": {

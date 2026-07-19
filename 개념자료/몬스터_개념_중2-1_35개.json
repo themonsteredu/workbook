@@ -26,9 +26,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "유리수와 수직선",
+                "min": -2,
+                "max": 2,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -48,7 +72,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 0.25는 {{유한소수}}\n* 0.333…은 {{무한소수}}\n* 분수를 소수로 고치면 유한 또는 {{무한}}소수",
           "stage3": {
@@ -82,9 +106,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "유리수와 수직선",
+                "min": -2,
+                "max": 2,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -104,7 +152,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 0.333…의 순환마디는 {{3}}\n* 0.121212…의 순환마디는 {{12}}\n* 순환마디 위에 {{점}}을 찍는다",
           "stage3": {
@@ -138,9 +186,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "유리수와 수직선",
+                "min": -2,
+                "max": 2,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -160,7 +232,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 분모가 2·5뿐이면 {{유한소수}}\n* 3/20 = 3/(2²×5)는 {{유한소수}}\n* 1/3은 분모에 3이 있어 {{무한소수}}",
           "stage3": {
@@ -194,9 +266,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "유리수와 수직선",
+                "min": -2,
+                "max": 2,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -216,7 +312,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 0.333… = {{$\\dfrac{1}{3}$}}\n* 0.666… = {{$\\dfrac{2}{3}$}}\n* 순환소수도 {{유리수}}이다",
           "stage3": {
@@ -250,9 +346,33 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "유리수와 수직선",
+                "min": -2,
+                "max": 2,
+                "step": 1,
+                "range": null,
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -272,7 +392,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 유한소수는 모두 {{유리수}}\n* 순환소수도 {{유리수}}\n* 순환하지 않는 무한소수는 유리수가 {{아니다}}",
           "stage3": {
@@ -306,9 +426,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -328,7 +476,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* $2^{2}\\times 2^{3}$ = {{$2^{5}$}}\n* $a^{3}\\times a^{4}$ = {{$a^{7}$}}\n* $x\\times x^{2}$ = {{$x^{3}$}}",
           "stage3": {
@@ -361,9 +509,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -383,7 +559,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* $(2^{2})^{3}$ = {{$2^{6}$}}\n* $a^{5}\\div a^{2}$ = {{$a^{3}$}}\n* $(x^{3})^{2}$ = {{$x^{6}$}}",
           "stage3": {
@@ -416,9 +592,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -438,7 +642,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 2a × 3a = {{$6a^{2}$}}\n* $6a^{2}$ ÷ 2a = {{3a}}\n* 3x × 2y = {{6xy}}",
           "stage3": {
@@ -471,9 +675,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -493,7 +725,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* (2x+3)+(x−1) = {{3x+2}}\n* (3a+2)−(a+5) = {{2a−3}}\n* 2x+3y+x = {{3x+3y}}",
           "stage3": {
@@ -527,9 +759,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -549,7 +809,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 2x(x+3) = {{$2x^{2}+6x$}}\n* 3a(2a−1) = {{$6a^{2}-3a$}}\n* −2(x−4) = {{−2x+8}}",
           "stage3": {
@@ -582,9 +842,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -604,7 +892,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* $(6x^{2}+4x)$ ÷ 2x = {{3x+2}}\n* $(9a^{2}-3a)$ ÷ 3a = {{3a−1}}\n* (4x+8) ÷ 4 = {{x+2}}",
           "stage3": {
@@ -637,9 +925,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 식의 값 (x → 3x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "3x",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -659,7 +975,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x=2일 때 3x+1 = {{7}}\n* a=−1일 때 a²+2a = {{−1}}\n* x=3일 때 2(x−1) = {{4}}",
           "stage3": {
@@ -776,9 +1092,36 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "부등식의 해",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "초과",
+                  "value": 2
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -798,7 +1141,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 양변에 3을 더해도 부등호는 {{그대로}}\n* 양변에 −2를 곱하면 부등호가 {{바뀐다}}\n* 양변을 2로 나눠도 방향은 {{그대로}}",
           "stage3": {
@@ -915,9 +1258,36 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "부등식의 해",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "초과",
+                  "value": 2
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -937,7 +1307,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 2(x−1) < 4 → x < {{3}}\n* 0.5x > 2 → x > {{4}}\n* x/2 ≥ 3 → x ≥ {{6}}",
           "stage3": {
@@ -971,9 +1341,36 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "부등식의 해",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "초과",
+                  "value": 2
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -993,7 +1390,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 한 개 500원, 3000원 이하로 살 수 있는 최대 개수는 {{6}}개\n* 합이 20 이상인 조건은 부등식으로 {{세운다}}\n* 답은 문제 조건에 맞게 {{확인}}한다",
           "stage3": {
@@ -1026,9 +1423,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 두 직선의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1048,7 +1462,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x+y=5의 해 중 하나는 (2, {{3}})\n* x+y=5에서 x=1이면 y = {{4}}\n* 해는 {{무수히}} 많다",
           "stage3": {
@@ -1082,9 +1496,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 두 직선의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1104,7 +1535,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 두 식을 모두 만족하는 {{순서쌍}}이 해\n* x+y=5, x−y=1의 해는 (3, {{2}})\n* 해는 보통 {{하나}}이다",
           "stage3": {
@@ -1137,9 +1568,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 두 직선의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1159,7 +1607,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* y=x+1, x+y=5 → x = {{2}}\n* 그때 y = {{3}}\n* 한 문자를 없애 {{일차방정식}}으로 만든다",
           "stage3": {
@@ -1192,9 +1640,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 두 직선의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1214,7 +1679,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* x+y=5, x−y=1 → 더하면 2x=6, x = {{3}}\n* 그때 y = {{2}}\n* 계수가 같으면 빼서 {{소거}}한다",
           "stage3": {
@@ -1247,9 +1712,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 두 직선의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1269,7 +1751,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 괄호를 먼저 {{푼다}}\n* 분수·소수는 양변에 곱해 {{정수}}로 만든다\n* 정리 후 대입법이나 {{가감법}} 사용",
           "stage3": {
@@ -1302,9 +1784,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 두 직선의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1324,7 +1823,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* A=B=C → A=B와 B=C로 {{나눈다}}\n* 두 식을 세워 {{연립}}방정식으로 푼다\n* 해는 세 식을 모두 {{만족}}한다",
           "stage3": {
@@ -1358,9 +1857,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 두 직선의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1380,7 +1896,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 합이 10, 차가 2인 두 수는 6과 {{4}}\n* 두 조건으로 식을 {{2}}개 세운다\n* 연립해서 두 값을 {{구한다}}",
           "stage3": {
@@ -2151,9 +2667,26 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 일차함수 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 2,
+            "yIntercept": 1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -2173,7 +2706,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 처음 물 5L, 매분 2L씩 늘면 x분 후 y = {{2x+5}}\n* 기울기는 매분 늘어나는 {{양}}\n* y절편은 {{처음}} 값",
           "stage3": {

@@ -812,9 +812,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 0.5 × 10 = 5",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 5,
+            "part1": 10,
+            "part2": 0.5,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -834,7 +852,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 0.5의 10배는 {{5}}\n* 3의 1/10은 {{0.3}}\n* 0.07의 10배는 {{0.7}}",
           "stage3": {

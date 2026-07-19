@@ -833,8 +833,18 @@ function renderCoordGraph(block, stage) {
   }
   s += "</g>";
 
+  // 화살촉: (x1,y1)→(x2,y2) 방향으로 끝점에
+  const ahead = function (x1, y1, x2, y2, color, wd) {
+    const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1;
+    const ux = dx / L, uy = dy / L, px = -uy, py = ux, k = 8, w = 0.5;
+    return '<polyline points="' + round1(x2 - k * ux + k * w * px) + "," + round1(y2 - k * uy + k * w * py) +
+      " " + round1(x2) + "," + round1(y2) +
+      " " + round1(x2 - k * ux - k * w * px) + "," + round1(y2 - k * uy - k * w * py) +
+      '" fill="none" stroke="' + color + '" stroke-width="' + wd + '" stroke-linejoin="round" stroke-linecap="round"/>';
+  };
   s += '<line x1="20" y1="120" x2="405" y2="120" stroke="#333" stroke-width="1.5"/>';
   s += '<line x1="220" y1="18" x2="220" y2="225" stroke="#333" stroke-width="1.5"/>';
+  s += ahead(20, 120, 405, 120, "#333", 1.5) + ahead(220, 225, 220, 18, "#333", 1.5);
   s += '<text x="410" y="124" class="g-txt">x</text><text x="224" y="20" class="g-txt">y</text>';
   s += '<text x="224" y="134" class="g-txt" font-size="10">O</text>';
 
@@ -929,11 +939,14 @@ function renderCoordGraph(block, stage) {
       s += arrowHead(seg, false) + arrowHead(seg, true);
     });
   } else if (!bare) {
-    const seg = clipLineToRect(slope, yIntercept, unit, ox, oy, { x1: 20, y1: 18, x2: 405, y2: 240 });
+    const seg = clipLineToRect(slope, yIntercept, unit, ox, oy, { x1: 24, y1: 22, x2: 396, y2: 228 });
     if (seg) {
       s += '<line x1="' + round1(seg[0]) + '" y1="' + round1(seg[1]) +
            '" x2="' + round1(seg[2]) + '" y2="' + round1(seg[3]) +
            '" stroke="#E8500A" stroke-width="2.5"/>';
+      // 직선도 양쪽으로 뻗어 나가는 화살표
+      s += ahead(seg[2], seg[3], seg[0], seg[1], "#E8500A", 2.5);
+      s += ahead(seg[0], seg[1], seg[2], seg[3], "#E8500A", 2.5);
     }
   }
 

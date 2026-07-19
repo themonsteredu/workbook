@@ -1234,7 +1234,7 @@
             "1": "1. 원에 외접하는 사각형",
             "3": "1. 원에 외접하는 사각형 — 증명을 써 보시오."
           },
-          "body": "[가정] 사각형 ABCD가 원에 외접 (변 위의 접점 P, Q, R, S)\n* 한 점에서 원에 그은 두 접선의 길이는 {{같다}}\n* $\\overline{AP}$ = $\\overline{AS}$, $\\overline{BP}$ = $\\overline{BQ}$, $\\overline{CQ}$ = $\\overline{CR}$, $\\overline{DR}$ = $\\overline{DS}$\n* $\\overline{AB}$ + $\\overline{CD}$ = ($\\overline{AP}$+$\\overline{BP}$) + ($\\overline{CR}$+$\\overline{DR}$) = $\\overline{AS}$ + $\\overline{BQ}$ + $\\overline{CQ}$ + $\\overline{DS}$\n* 묶어서 정리하면 ($\\overline{AS}$+$\\overline{DS}$) + ($\\overline{BQ}$+$\\overline{CQ}$) = $\\overline{AD}$ + {{$\\overline{BC}$}}\n따라서 두 쌍의 대변의 길이의 합은 서로 같다.\n[결론] $\\overline{AB}$ + $\\overline{CD}$ = $\\overline{AD}$ + $\\overline{BC}$",
+          "body": "[가정] □ABCD가 원에 외접 (변 위의 접점 P, Q, R, S)\n* 한 점에서 원에 그은 두 접선의 길이는 {{같다}}\n* $\\overline{AP}$ = $\\overline{AS}$, $\\overline{BP}$ = $\\overline{BQ}$, $\\overline{CQ}$ = $\\overline{CR}$, $\\overline{DR}$ = $\\overline{DS}$\n* $\\overline{AB}$ + $\\overline{CD}$ = ($\\overline{AP}$+$\\overline{BP}$) + ($\\overline{CR}$+$\\overline{DR}$) = $\\overline{AS}$ + $\\overline{BQ}$ + $\\overline{CQ}$ + $\\overline{DS}$\n* 묶어서 정리하면 ($\\overline{AS}$+$\\overline{DS}$) + ($\\overline{BQ}$+$\\overline{CQ}$) = $\\overline{AD}$ + {{$\\overline{BC}$}}\n따라서 두 쌍의 대변의 길이의 합은 서로 같다.\n[결론] $\\overline{AB}$ + $\\overline{CD}$ = $\\overline{AD}$ + $\\overline{BC}$",
           "stage3": {
             "mode": "lines",
             "lines": 10
@@ -1344,7 +1344,7 @@
             "1": "1. 원주각은 중심각의 절반",
             "3": "1. 원주각은 중심각의 절반 — 증명을 써 보시오."
           },
-          "body": "[가정] 호 $\\overline{AB}$에 대한 중심각 ∠AOB와 원주각 ∠APB\n* 점 P에서 중심 O를 지나는 지름 $\\overline{PQ}$를 긋는다\n* △OPA에서 $\\overline{OA}$ = $\\overline{OP}$ (반지름) → {{이등변}}삼각형 → ∠OPA = ∠OAP\n* 외각의 성질로 ∠AOQ = ∠OPA + ∠OAP = 2∠OPA — 외각은 이웃하지 않는 두 내각의 {{합}}\n* 같은 방법으로 ∠BOQ = 2∠OPB\n* 두 식을 더하면 ∠AOB = 2∠APB → 원주각은 중심각의 {{절반}}\n[결론] ∠APB = $\\dfrac{1}{2}$∠AOB",
+          "body": "[가정] 호 $\\overset{\\frown}{AB}$에 대한 중심각 ∠AOB와 원주각 ∠APB\n* 점 P에서 중심 O를 지나는 지름 $\\overline{PQ}$를 긋는다\n* △OPA에서 $\\overline{OA}$ = $\\overline{OP}$ (반지름) → {{이등변}}삼각형 → ∠OPA = ∠OAP\n* 외각의 성질로 ∠AOQ = ∠OPA + ∠OAP = 2∠OPA — 외각은 이웃하지 않는 두 내각의 {{합}}\n* 같은 방법으로 ∠BOQ = 2∠OPB\n* 두 식을 더하면 ∠AOB = 2∠APB → 원주각은 중심각의 {{절반}}\n[결론] ∠APB = $\\dfrac{1}{2}$∠AOB",
           "stage3": {
             "mode": "lines",
             "lines": 10
@@ -1454,7 +1454,7 @@
             "1": "1. 원주각의 성질",
             "3": "1. 원주각의 성질 — 증명을 써 보시오."
           },
-          "body": "[같은 호] 호 $\\overline{AB}$에 대한 두 원주각 ∠APB, ∠AQB\n* 두 원주각 모두 같은 중심각 ∠AOB의 {{절반}}이다\n* 따라서 ∠APB = ∠AQB — 같은 호에 대한 원주각은 모두 같다\n[반원] 지름 $\\overline{AB}$에 대한 원주각\n* 지름에 대한 중심각은 {{180}}°\n* 원주각은 그 절반인 {{90}}°\n따라서 반원에 대한 원주각은 직각이다.",
+          "body": "[같은 호] 호 $\\overset{\\frown}{AB}$에 대한 두 원주각 ∠APB, ∠AQB\n* 두 원주각 모두 같은 중심각 ∠AOB의 {{절반}}이다\n* 따라서 ∠APB = ∠AQB — 같은 호에 대한 원주각은 모두 같다\n[반원] 지름 $\\overline{AB}$에 대한 원주각\n* 지름에 대한 중심각은 {{180}}°\n* 원주각은 그 절반인 {{90}}°\n따라서 반원에 대한 원주각은 직각이다.",
           "stage3": {
             "mode": "lines",
             "lines": 10
@@ -1675,7 +1675,7 @@
             "1": "1. 접선과 현이 이루는 각 (접현각)",
             "3": "1. 접선과 현이 이루는 각 (접현각) — 증명을 써 보시오."
           },
-          "body": "[가정] 접점 A의 접선 $\\overline{AT}$와 현 $\\overline{AB}$\n* 접점 A를 지나는 지름 $\\overline{AD}$를 긋는다 → 접선⊥지름이므로 ∠DAT = {{90}}°\n* 반원(지름 $\\overline{AD}$)에 대한 원주각 ∠ABD = {{90}}°\n* △ABD에서 ∠ADB + ∠DAB = 90°\n* ∠BAT = 90° − ∠DAB = ∠ADB\n* ∠ADB는 호 $\\overline{AB}$에 대한 {{원주각}}이므로 ∠BAT는 그 원주각과 같다.\n[결론] ∠BAT = 호 $\\overline{AB}$에 대한 원주각",
+          "body": "[가정] 접점 A의 접선 $\\overline{AT}$와 현 $\\overline{AB}$\n* 접점 A를 지나는 지름 $\\overline{AD}$를 긋는다 → 접선⊥지름이므로 ∠DAT = {{90}}°\n* 반원(지름 $\\overline{AD}$)에 대한 원주각 ∠ABD = {{90}}°\n* △ABD에서 ∠ADB + ∠DAB = 90°\n* ∠BAT = 90° − ∠DAB = ∠ADB\n* ∠ADB는 호 $\\overset{\\frown}{AB}$에 대한 {{원주각}}이므로 ∠BAT는 그 원주각과 같다.\n[결론] ∠BAT = 호 $\\overset{\\frown}{AB}$에 대한 원주각",
           "stage3": {
             "mode": "lines",
             "lines": 10

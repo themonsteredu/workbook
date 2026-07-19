@@ -833,7 +833,7 @@
             "1": "1. 두 쌍의 대변이 같으면 평행사변형",
             "3": "1. 두 쌍의 대변이 같으면 평행사변형 — 증명을 써 보시오."
           },
-          "body": "[가정] $\\overline{AB}$ = $\\overline{DC}$, $\\overline{AD}$ = $\\overline{BC}$인 사각형 ABCD\n* 대각선 $\\overline{AC}$를 긋는다\n* △ABC와 △CDA에서 $\\overline{AB}$ = $\\overline{CD}$, $\\overline{BC}$ = $\\overline{DA}$ ({{가정}}) / $\\overline{AC}$는 {{공통}}\n* 따라서 △ABC ≡ △CDA — {{SSS}} 합동\n* ∠BAC = ∠DCA → 엇각이 같으므로 $\\overline{AB}$∥{{$\\overline{DC}$}}\n* ∠BCA = ∠DAC → 엇각이 같으므로 $\\overline{AD}$∥$\\overline{BC}$\n두 쌍의 대변이 각각 평행하므로 ABCD는 평행사변형이다.\n[결론] ABCD는 평행사변형",
+          "body": "[가정] $\\overline{AB}$ = $\\overline{DC}$, $\\overline{AD}$ = $\\overline{BC}$인 □ABCD\n* 대각선 $\\overline{AC}$를 긋는다\n* △ABC와 △CDA에서 $\\overline{AB}$ = $\\overline{CD}$, $\\overline{BC}$ = $\\overline{DA}$ ({{가정}}) / $\\overline{AC}$는 {{공통}}\n* 따라서 △ABC ≡ △CDA — {{SSS}} 합동\n* ∠BAC = ∠DCA → 엇각이 같으므로 $\\overline{AB}$∥{{$\\overline{DC}$}}\n* ∠BCA = ∠DAC → 엇각이 같으므로 $\\overline{AD}$∥$\\overline{BC}$\n두 쌍의 대변이 각각 평행하므로 □ABCD는 평행사변형이다.\n[결론] □ABCD는 평행사변형",
           "stage3": {
             "mode": "lines",
             "lines": 10
@@ -1092,7 +1092,7 @@
             "1": "1. 정사각형의 대각선·등변사다리꼴의 밑각",
             "3": "1. 정사각형의 대각선·등변사다리꼴의 밑각 — 증명을 써 보시오."
           },
-          "body": "[정사각형] 대각선은 길이가 같고 서로 수직이등분한다\n* 정사각형은 {{직사각형}}이므로 대각선의 길이가 같다\n* 정사각형은 {{마름모}}이므로 대각선이 서로 수직이등분한다\n* 따라서 두 성질을 모두 가진다\n[등변사다리꼴] $\\overline{AD}$∥$\\overline{BC}$, $\\overline{AB}$ = $\\overline{DC}$이면 ∠B = ∠C\n* D를 지나 $\\overline{AB}$에 {{평행}}한 직선을 그어 $\\overline{BC}$와 만나는 점을 E라 한다\n* ABED는 평행사변형 → $\\overline{DE}$ = $\\overline{AB}$ = $\\overline{DC}$ → △DEC는 {{이등변}}삼각형\n* ∠DEC = ∠C이고 ∠B = ∠DEC (동위각) → ∠B = {{∠C}}",
+          "body": "[정사각형] 대각선은 길이가 같고 서로 수직이등분한다\n* 정사각형은 {{직사각형}}이므로 대각선의 길이가 같다\n* 정사각형은 {{마름모}}이므로 대각선이 서로 수직이등분한다\n* 따라서 두 성질을 모두 가진다\n[등변사다리꼴] $\\overline{AD}$∥$\\overline{BC}$, $\\overline{AB}$ = $\\overline{DC}$이면 ∠B = ∠C\n* D를 지나 $\\overline{AB}$에 {{평행}}한 직선을 그어 $\\overline{BC}$와 만나는 점을 E라 한다\n* □ABED는 평행사변형 → $\\overline{DE}$ = $\\overline{AB}$ = $\\overline{DC}$ → △DEC는 {{이등변}}삼각형\n* ∠DEC = ∠C이고 ∠B = ∠DEC (동위각) → ∠B = {{∠C}}",
           "stage3": {
             "mode": "lines",
             "lines": 10

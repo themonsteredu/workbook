@@ -418,7 +418,7 @@
           "heading": {
             "1": "1. 제곱근의 곱셈·나눗셈"
           },
-          "body": "* √a × √b = √(ab), √a ÷ √b = √(a/b) 이다.",
+          "body": "* $\\sqrt{a}\\times\\sqrt{b}=\\sqrt{ab}$, $\\sqrt{a}\\div\\sqrt{b}=\\sqrt{\\dfrac{a}{b}}$ 이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -560,7 +560,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* 1/√2 = {{$\\dfrac{\\sqrt{2}}{2}$}}\n* 유리화는 분모의 근호를 {{없앤다}}\n* 3/√3 = {{√3}}",
+          "body": "* $\\dfrac{1}{\\sqrt{2}}$ = {{$\\dfrac{\\sqrt{2}}{2}$}}\n* 유리화는 분모의 근호를 {{없앤다}}\n* $\\dfrac{3}{\\sqrt{3}}$ = {{$\\sqrt{3}$}}",
           "stage3": {
             "mode": "lines",
             "lines": 3
@@ -1622,7 +1622,7 @@
           "heading": {
             "1": "1. 근의 공식"
           },
-          "body": "* ax²+bx+c=0의 해는 x = (−b ± √(b²−4ac)) / 2a 이다.",
+          "body": "* ax²+bx+c=0의 해는 $x=\\dfrac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}$ 이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -1670,7 +1670,7 @@
           "rows": [
             {
               "term": "근의 공식",
-              "meaning": "x=(−b±√(b²−4ac))/2a"
+              "meaning": "$x=\\dfrac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}$"
             },
             {
               "term": "분모",

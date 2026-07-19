@@ -539,7 +539,7 @@
           "heading": {
             "1": "1. 근과 계수의 관계"
           },
-          "body": "* ax²+bx+c=0의 두 근을 α, β라 하면 α+β = −b/a, αβ = c/a이다.",
+          "body": "* ax²+bx+c=0의 두 근을 α, β라 하면 α+β = $-\\dfrac{b}{a}$, αβ = $\\dfrac{c}{a}$ 이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -557,11 +557,11 @@
           "rows": [
             {
               "term": "두 근의 합",
-              "meaning": "−b/a"
+              "meaning": "$-\\dfrac{b}{a}$"
             },
             {
               "term": "두 근의 곱",
-              "meaning": "c/a"
+              "meaning": "$\\dfrac{c}{a}$"
             }
           ]
         },
@@ -1074,7 +1074,7 @@
           "heading": {
             "1": "1. 순열"
           },
-          "body": "* 서로 다른 n개에서 r개를 순서 있게 나열하는 경우의 수 nPr = n!/(n−r)!.",
+          "body": "* 서로 다른 n개에서 r개를 순서 있게 나열하는 경우의 수 $_{n}\\mathrm{P}_{r} = \\dfrac{n!}{(n-r)!}$ 이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -1129,7 +1129,7 @@
           "heading": {
             "1": "1. 조합"
           },
-          "body": "* 서로 다른 n개에서 순서 없이 r개를 뽑는 경우의 수 nCr = nPr / r!.",
+          "body": "* 서로 다른 n개에서 순서 없이 r개를 뽑는 경우의 수 $_{n}\\mathrm{C}_{r} = \\dfrac{_{n}\\mathrm{P}_{r}}{r!}$ 이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1

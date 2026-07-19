@@ -754,7 +754,7 @@
           "type": "figure",
           "figure_type": "fraction_fig",
           "heading": {
-            "1": "2. 진분수 3/4",
+            "1": "2. 진분수 $\\dfrac{3}{4}$",
             "3": "2. 그림으로 나타내어 보시오."
           },
           "params": {
@@ -835,7 +835,7 @@
           "type": "figure",
           "figure_type": "fraction_fig",
           "heading": {
-            "1": "2. 대분수를 그림으로 (1과 3/4)",
+            "1": "2. 대분수를 그림으로 $1\\dfrac{3}{4}$",
             "3": "2. 그림으로 나타내어 보시오."
           },
           "params": {
@@ -1724,7 +1724,7 @@
           "type": "figure",
           "figure_type": "fraction_fig",
           "heading": {
-            "1": "2. 전체의 3/4",
+            "1": "2. 전체의 $\\dfrac{3}{4}$",
             "3": "2. 그림으로 나타내어 보시오."
           },
           "params": {

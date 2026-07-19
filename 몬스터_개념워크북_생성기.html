@@ -605,11 +605,30 @@ const STAGE3_GUIDE = "키워드만 보고 아는 내용을 모두 적으시오."
 function katexAvailable() { return typeof katex !== "undefined"; }
 
 // 수식 한 조각을 그리기
+// \sqrt{...} 내용 끝에 여백을 넣어 근호의 가로선이 내용보다 길게 뻗도록 함
+function padSqrtTail(tex) {
+  let out = "", i = 0;
+  while (i < tex.length) {
+    const k = tex.indexOf("\\sqrt{", i);
+    if (k < 0) { out += tex.slice(i); break; }
+    out += tex.slice(i, k) + "\\sqrt{";
+    let j = k + 6, depth = 1;
+    while (j < tex.length && depth > 0) {
+      if (tex[j] === "{") depth++;
+      else if (tex[j] === "}") { depth--; if (depth === 0) break; }
+      j++;
+    }
+    out += tex.slice(k + 6, j) + "\\;";
+    i = j;
+  }
+  return out;
+}
+
 function renderMathSeg(tex) {
   if (!tex) return "";
   if (katexAvailable()) {
     try {
-      return katex.renderToString(tex, { throwOnError: false });
+      return katex.renderToString(padSqrtTail(tex), { throwOnError: false });
     } catch (e) {}
   }
   return '<span class="math">' + esc(tex) + "</span>";

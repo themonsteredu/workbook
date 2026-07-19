@@ -250,18 +250,14 @@
         },
         {
           "type": "figure",
-          "figure_type": "basic_shape",
+          "figure_type": "tri_center",
           "heading": {
             "1": "2. 삼각형의 외심",
-            "3": "2. 도형을 그려 보시오."
+            "3": "2. 삼각형에 표시해 보시오."
           },
           "params": {
-            "shape": "triangle",
-            "n": 5,
-            "width": 74,
-            "showBaseHeight": false,
-            "showVertexLabels": false,
-            "showDiagonals": false
+            "center": "circumcenter",
+            "width": 74
           },
           "labels": [],
           "labelAdjust": {},
@@ -324,18 +320,14 @@
         },
         {
           "type": "figure",
-          "figure_type": "basic_shape",
+          "figure_type": "tri_center",
           "heading": {
             "1": "2. 삼각형의 내심",
-            "3": "2. 도형을 그려 보시오."
+            "3": "2. 삼각형에 표시해 보시오."
           },
           "params": {
-            "shape": "triangle",
-            "n": 5,
-            "width": 74,
-            "showBaseHeight": false,
-            "showVertexLabels": false,
-            "showDiagonals": false
+            "center": "incenter",
+            "width": 74
           },
           "labels": [],
           "labelAdjust": {},
@@ -400,18 +392,14 @@
         },
         {
           "type": "figure",
-          "figure_type": "basic_shape",
+          "figure_type": "tri_center",
           "heading": {
-            "1": "2. 외심·내심",
-            "3": "2. 도형을 그려 보시오."
+            "1": "2. 외심과 외접원",
+            "3": "2. 삼각형에 표시해 보시오."
           },
           "params": {
-            "shape": "triangle",
-            "n": 5,
-            "width": 74,
-            "showBaseHeight": false,
-            "showVertexLabels": false,
-            "showDiagonals": false
+            "center": "circumcenter",
+            "width": 74
           },
           "labels": [],
           "labelAdjust": {},
@@ -1307,18 +1295,14 @@
         },
         {
           "type": "figure",
-          "figure_type": "basic_shape",
+          "figure_type": "tri_center",
           "heading": {
-            "1": "2. 무게중심",
-            "3": "2. 도형을 그려 보시오."
+            "1": "2. 무게중심과 중선",
+            "3": "2. 삼각형에 표시해 보시오."
           },
           "params": {
-            "shape": "triangle",
-            "n": 5,
-            "width": 74,
-            "showBaseHeight": false,
-            "showVertexLabels": false,
-            "showDiagonals": false
+            "center": "centroid",
+            "width": 74
           },
           "labels": [],
           "labelAdjust": {},
@@ -1456,18 +1440,13 @@
         },
         {
           "type": "figure",
-          "figure_type": "basic_shape",
+          "figure_type": "pyth_fig",
           "heading": {
-            "1": "2. 직각삼각형",
-            "3": "2. 도형을 그려 보시오."
+            "1": "2. 피타고라스 정리",
+            "3": "2. 그림을 그려 보시오."
           },
           "params": {
-            "shape": "right_triangle",
-            "n": 5,
-            "width": 74,
-            "showBaseHeight": false,
-            "showVertexLabels": false,
-            "showDiagonals": false
+            "width": 74
           },
           "labels": [],
           "labelAdjust": {},
@@ -1606,18 +1585,13 @@
         },
         {
           "type": "figure",
-          "figure_type": "basic_shape",
+          "figure_type": "pyth_fig",
           "heading": {
-            "1": "2. 세 변의 정사각형",
-            "3": "2. 도형을 그려 보시오."
+            "1": "2. 세 변 위의 정사각형",
+            "3": "2. 그림을 그려 보시오."
           },
           "params": {
-            "shape": "right_triangle",
-            "n": 5,
-            "width": 74,
-            "showBaseHeight": false,
-            "showVertexLabels": false,
-            "showDiagonals": false
+            "width": 74
           },
           "labels": [],
           "labelAdjust": {},

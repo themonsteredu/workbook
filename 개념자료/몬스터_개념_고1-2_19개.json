@@ -627,9 +627,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. 집합 A와 B",
+            "3": "2. 벤다이어그램을 그려 보시오."
+          },
+          "params": {
+            "mode": "overlap",
+            "shade": "none",
+            "nameA": "A",
+            "nameB": "B",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -649,7 +667,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* 6의 약수의 집합은 { 1, 2, 3, {{6}} }\n* a∈A는 a가 A의 {{원소}}\n* 원소의 개수가 유한이면 {{유한}}집합",
           "stage3": {
@@ -683,9 +701,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. 교집합 A∩B (색칠)",
+            "3": "2. 벤다이어그램을 그려 보시오."
+          },
+          "params": {
+            "mode": "overlap",
+            "shade": "inter",
+            "nameA": "A",
+            "nameB": "B",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -705,7 +741,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* A={1,2,3}, B={2,3,4}이면 A∩B = { {{2, 3}} }\n* A∪B = { {{1, 2, 3, 4}} }\n* A−B = { {{1}} }",
           "stage3": {
@@ -739,9 +775,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. 진리집합 P와 Q",
+            "3": "2. 벤다이어그램을 그려 보시오."
+          },
+          "params": {
+            "mode": "overlap",
+            "shade": "none",
+            "nameA": "P",
+            "nameB": "Q",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -761,7 +815,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* ‘2는 짝수이다’는 {{참}}인 명제\n* 조건 p의 진리집합을 {{P}}라 한다\n* ‘x>1’은 참·거짓이 갈리는 {{조건}}",
           "stage3": {
@@ -795,9 +849,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. P ⊂ Q 이면 p→q 참",
+            "3": "2. 벤다이어그램을 그려 보시오."
+          },
+          "params": {
+            "mode": "subset",
+            "shade": "none",
+            "nameA": "P",
+            "nameB": "Q",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -817,7 +889,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* p→q의 대우는 {{~q→~p}}\n* 명제와 대우의 참·거짓은 {{일치}}한다\n* p→q의 역은 {{q→p}}",
           "stage3": {
@@ -851,9 +923,27 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. P ⊂ Q (p는 충분조건)",
+            "3": "2. 벤다이어그램을 그려 보시오."
+          },
+          "params": {
+            "mode": "subset",
+            "shade": "none",
+            "nameA": "P",
+            "nameB": "Q",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -873,7 +963,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* p→q가 참이면 p는 q이기 위한 {{충분조건}}\n* 이때 q는 p이기 위한 {{필요조건}}\n* p↔q가 참이면 {{필요충분}}조건",
           "stage3": {
@@ -906,9 +996,35 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 산술평균은 항상 5 이상",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "a와 b",
+            "botLabel": "산술평균",
+            "inputs": [
+              "1과 9",
+              "2와 8",
+              "5와 5"
+            ],
+            "outputs": [
+              5,
+              5,
+              5
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -928,7 +1044,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* a>0, b>0일 때 $\\dfrac{a+b}{2}$ ≥ {{$\\sqrt{ab}$}}\n* 등호는 a = {{b}}일 때 성립\n* a²+b² ≥ {{2ab}}",
           "stage3": {
@@ -1034,9 +1150,37 @@
           }
         },
         {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 합성 (f(x)=x+1, g(x)=2x)",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "(g∘f)(x)",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              4,
+              6,
+              8,
+              10
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
           "type": "table",
           "heading": {
-            "1": "2. 용어 정리"
+            "1": "3. 용어 정리"
           },
           "columns": [
             "용어",
@@ -1056,7 +1200,7 @@
         {
           "type": "text",
           "heading": {
-            "1": "3. 예시"
+            "1": "4. 예시"
           },
           "body": "* f(x)=x+1, g(x)=2x일 때 (g∘f)(1) = {{4}}\n* (g∘f)(x) = g({{f(x)}})\n* 합성은 순서를 바꾸면 대체로 {{달라진다}}",
           "stage3": {

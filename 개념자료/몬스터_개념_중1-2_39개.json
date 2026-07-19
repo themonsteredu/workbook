@@ -614,23 +614,14 @@
         },
         {
           "type": "figure",
-          "figure_type": "number_line",
+          "figure_type": "trans_fig",
           "heading": {
-            "1": "2. 수직선으로 알아보기",
-            "3": "2. 수직선에 나타내어 보시오."
+            "1": "2. 평행선과 동위각",
+            "3": "2. 평행선과 각을 표시해 보시오."
           },
           "params": {
-            "rows": [
-              {
-                "label": "수직선",
-                "min": -3,
-                "max": 3,
-                "step": 1,
-                "range": null,
-                "points": []
-              }
-            ],
-            "width": 90
+            "mark": "corresponding",
+            "width": 80
           },
           "labels": [],
           "labelAdjust": {},
@@ -694,23 +685,14 @@
         },
         {
           "type": "figure",
-          "figure_type": "number_line",
+          "figure_type": "trans_fig",
           "heading": {
-            "1": "2. 수직선으로 알아보기",
-            "3": "2. 수직선에 나타내어 보시오."
+            "1": "2. 평행선과 엇각",
+            "3": "2. 평행선과 각을 표시해 보시오."
           },
           "params": {
-            "rows": [
-              {
-                "label": "수직선",
-                "min": -3,
-                "max": 3,
-                "step": 1,
-                "range": null,
-                "points": []
-              }
-            ],
-            "width": 90
+            "mark": "alternate",
+            "width": 80
           },
           "labels": [],
           "labelAdjust": {},

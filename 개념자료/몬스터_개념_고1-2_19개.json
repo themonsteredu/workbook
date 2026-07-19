@@ -1,0 +1,1309 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-10-2-1-01",
+      "outlineNo": "10-2-1-01",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "두 점 사이의 거리",
+      "keywords": [
+        "거리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 두 점 사이의 거리"
+          },
+          "body": "* 두 점 (x₁,y₁), (x₂,y₂) 사이의 거리는 √((x₂−x₁)²+(y₂−y₁)²)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 좌표평면",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "두 점 거리",
+              "meaning": "√(Δx²+Δy²)"
+            },
+            {
+              "term": "근거",
+              "meaning": "피타고라스 정리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (0,0)과 (3,4) 사이 거리는 {{5}}\n* (1,2)와 (4,6) 사이 거리는 {{5}}\n* 거리² = (x₂−x₁)² + {{(y₂−y₁)²}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-1-02",
+      "outlineNo": "10-2-1-02",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "선분의 내분점과 외분점",
+      "keywords": [
+        "내분점",
+        "외분점"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 내분점·외분점"
+          },
+          "body": "* 선분 AB를 m:n으로 내분하는 점은 ((nx₁+mx₂)/(m+n), (ny₁+my₂)/(m+n))이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 좌표평면",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "내분점",
+              "meaning": "선분을 안에서 나눔"
+            },
+            {
+              "term": "중점",
+              "meaning": "1:1 내분점"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (0,0)과 (6,0)의 중점은 {{(3, 0)}}\n* (0,0)과 (4,0)을 1:1로 내분하면 {{(2, 0)}}\n* 중점은 m:n = {{1:1}} 내분점",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-1-03",
+      "outlineNo": "10-2-1-03",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "직선의 방정식",
+      "keywords": [
+        "직선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직선의 방정식"
+          },
+          "body": "* 기울기 m, y절편 n이면 y=mx+n.\n* 한 점 (x₁,y₁)과 기울기 m이면 y−y₁=m(x−x₁).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = 2x + 1",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 2,
+            "yIntercept": 1,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "직선의 방정식",
+              "meaning": "y = mx + n"
+            },
+            {
+              "term": "점·기울기",
+              "meaning": "y−y₁=m(x−x₁)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 기울기 2, y절편 1인 직선은 y = {{2x+1}}\n* (0,3) 지나고 기울기 −1이면 y = {{−x+3}}\n* 기울기는 x 증가에 대한 y의 {{증가량}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-1-04",
+      "outlineNo": "10-2-1-04",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "두 직선의 평행과 수직",
+      "keywords": [
+        "평행",
+        "수직"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 두 직선의 평행·수직"
+          },
+          "body": "* 두 직선이 평행하면 기울기가 같고, 수직이면 기울기의 곱이 −1이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 직선의 기울기",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 2,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "평행",
+              "meaning": "기울기가 같음"
+            },
+            {
+              "term": "수직",
+              "meaning": "기울기의 곱 = −1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 기울기 2인 직선과 평행한 직선의 기울기는 {{2}}\n* 기울기 2에 수직인 직선의 기울기는 {{−1/2}}\n* 수직이면 기울기의 곱이 {{−1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-1-05",
+      "outlineNo": "10-2-1-05",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "점과 직선 사이의 거리",
+      "keywords": [
+        "점과 직선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 점과 직선 사이의 거리"
+          },
+          "body": "* 점 (x₁,y₁)과 직선 ax+by+c=0 사이의 거리는 |ax₁+by₁+c| / √(a²+b²)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 점과 직선",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": -2,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "점과 직선 거리",
+              "meaning": "|ax₁+by₁+c|/√(a²+b²)"
+            },
+            {
+              "term": "최단 거리",
+              "meaning": "수선의 길이"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 원점과 직선 3x+4y−10=0 사이 거리는 {{2}}\n* 분모는 √(a² + {{b²}})\n* 거리는 점에서 직선에 내린 {{수선}}의 길이",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-1-06",
+      "outlineNo": "10-2-1-06",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "원의 방정식",
+      "keywords": [
+        "원의 방정식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원의 방정식"
+          },
+          "body": "* 중심 (a,b), 반지름 r인 원은 (x−a)²+(y−b)²=r²이다.\n* x²+y²+Ax+By+C=0 꼴로도 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원의 방정식",
+              "meaning": "(x−a)²+(y−b)²=r²"
+            },
+            {
+              "term": "중심·반지름",
+              "meaning": "(a, b), r"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 중심 (0,0), 반지름 3인 원은 x²+y² = {{9}}\n* (x−1)²+(y−2)²=4의 반지름은 {{2}}\n* 중심 (1,2), 반지름 √5인 원은 (x−1)²+(y−2)² = {{5}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-1-07",
+      "outlineNo": "10-2-1-07",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "원과 직선의 위치 관계",
+      "keywords": [
+        "원과 직선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원과 직선의 위치 관계"
+          },
+          "body": "* 원의 중심과 직선 사이의 거리 d와 반지름 r을 비교한다 (d<r 두 점, d=r 접함, d>r 안 만남).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원과 직선",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "접선",
+              "meaning": "d = r일 때"
+            },
+            {
+              "term": "두 점에서 만남",
+              "meaning": "d < r"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* d<r이면 서로 다른 {{두}} 점에서 만난다\n* d=r이면 원에 {{접한다}}\n* d>r이면 {{만나지 않는다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-1-08",
+      "outlineNo": "10-2-1-08",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "1. 도형의 방정식",
+      "unit_mid": "평행이동과 대칭이동",
+      "keywords": [
+        "평행이동",
+        "대칭이동"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 평행이동·대칭이동"
+          },
+          "body": "* (x,y) → (x+a, y+b)는 평행이동.\n* x축 (x,−y), y축 (−x,y), 원점 (−x,−y), y=x (y,x) 대칭.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 좌표평면",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "평행이동",
+              "meaning": "(x+a, y+b)"
+            },
+            {
+              "term": "대칭이동",
+              "meaning": "축·점 기준으로 뒤집음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (2,3)을 x축 대칭하면 {{(2, −3)}}\n* (2,3)을 y축 대칭하면 {{(−2, 3)}}\n* (2,3)을 원점 대칭하면 {{(−2, −3)}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-2-01",
+      "outlineNo": "10-2-2-01",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 집합과 명제",
+      "unit_mid": "집합의 뜻과 표현",
+      "keywords": [
+        "집합",
+        "원소"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 집합의 뜻과 표현"
+          },
+          "body": "* 조건이 분명한 대상의 모임을 집합이라 한다.\n* 원소나열법, 조건제시법으로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "집합",
+              "meaning": "분명한 대상의 모임"
+            },
+            {
+              "term": "원소",
+              "meaning": "집합에 속한 대상"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* 6의 약수의 집합은 { 1, 2, 3, {{6}} }\n* a∈A는 a가 A의 {{원소}}\n* 원소의 개수가 유한이면 {{유한}}집합",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-2-02",
+      "outlineNo": "10-2-2-02",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 집합과 명제",
+      "unit_mid": "집합의 연산",
+      "keywords": [
+        "교집합",
+        "합집합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 집합의 연산"
+          },
+          "body": "* 교집합 A∩B, 합집합 A∪B, 차집합 A−B, 여집합 Aᶜ.\n* 드모르간 법칙 등 성질을 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "교집합",
+              "meaning": "A∩B, 공통 원소"
+            },
+            {
+              "term": "합집합",
+              "meaning": "A∪B, 전체 원소"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* A={1,2,3}, B={2,3,4}이면 A∩B = { {{2, 3}} }\n* A∪B = { {{1, 2, 3, 4}} }\n* A−B = { {{1}} }",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-2-03",
+      "outlineNo": "10-2-2-03",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 집합과 명제",
+      "unit_mid": "명제와 조건, 진리집합",
+      "keywords": [
+        "명제",
+        "진리집합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 명제와 조건"
+          },
+          "body": "* 참·거짓을 분명히 판별할 수 있는 문장을 명제라 한다.\n* 조건을 만족하는 원소의 모임을 진리집합이라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "명제",
+              "meaning": "참·거짓이 분명한 문장"
+            },
+            {
+              "term": "진리집합",
+              "meaning": "조건을 만족하는 집합"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* ‘2는 짝수이다’는 {{참}}인 명제\n* 조건 p의 진리집합을 {{P}}라 한다\n* ‘x>1’은 참·거짓이 갈리는 {{조건}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-2-04",
+      "outlineNo": "10-2-2-04",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 집합과 명제",
+      "unit_mid": "명제의 역과 대우",
+      "keywords": [
+        "역",
+        "대우"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 명제의 역·대우"
+          },
+          "body": "* p→q에서 역은 q→p, 대우는 ~q→~p.\n* 명제와 그 대우의 참·거짓은 항상 일치한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "역",
+              "meaning": "가정과 결론을 바꿈"
+            },
+            {
+              "term": "대우",
+              "meaning": "부정하고 바꿈, 참·거짓 일치"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* p→q의 대우는 {{~q→~p}}\n* 명제와 대우의 참·거짓은 {{일치}}한다\n* p→q의 역은 {{q→p}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-2-05",
+      "outlineNo": "10-2-2-05",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 집합과 명제",
+      "unit_mid": "충분조건과 필요조건",
+      "keywords": [
+        "충분조건",
+        "필요조건"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 충분조건·필요조건"
+          },
+          "body": "* p→q가 참이면 p는 q이기 위한 충분조건, q는 p이기 위한 필요조건이다.\n* p↔q가 참이면 필요충분조건.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "충분조건",
+              "meaning": "p→q가 참일 때 p"
+            },
+            {
+              "term": "필요충분조건",
+              "meaning": "p↔q가 참"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* p→q가 참이면 p는 q이기 위한 {{충분조건}}\n* 이때 q는 p이기 위한 {{필요조건}}\n* p↔q가 참이면 {{필요충분}}조건",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-2-06",
+      "outlineNo": "10-2-2-06",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "2. 집합과 명제",
+      "unit_mid": "절대부등식",
+      "keywords": [
+        "절대부등식"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 절대부등식"
+          },
+          "body": "* 모든 실수에서 항상 성립하는 부등식을 절대부등식이라 한다.\n* 산술평균 ≥ 기하평균 등을 이용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "절대부등식",
+              "meaning": "항상 성립하는 부등식"
+            },
+            {
+              "term": "산술·기하평균",
+              "meaning": "(a+b)/2 ≥ √(ab)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* a>0, b>0일 때 (a+b)/2 ≥ {{√(ab)}}\n* 등호는 a = {{b}}일 때 성립\n* a²+b² ≥ {{2ab}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-3-01",
+      "outlineNo": "10-2-3-01",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 함수와 그래프",
+      "unit_mid": "함수의 뜻과 그래프",
+      "keywords": [
+        "함수",
+        "정의역"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 함수의 뜻과 그래프"
+          },
+          "body": "* 집합 X의 각 원소에 Y의 원소가 하나씩 대응하는 관계를 함수라 한다.\n* 정의역, 공역, 치역으로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 함수의 그래프",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 2,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "함수",
+              "meaning": "x 하나에 y 하나"
+            },
+            {
+              "term": "정의역",
+              "meaning": "x값의 집합"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* f(x)=2x에서 f(3) = {{6}}\n* x값의 집합을 {{정의역}}이라 한다\n* 함숫값 전체의 집합을 {{치역}}이라 한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-3-02",
+      "outlineNo": "10-2-3-02",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 함수와 그래프",
+      "unit_mid": "합성함수",
+      "keywords": [
+        "합성함수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 합성함수"
+          },
+          "body": "* (g∘f)(x)=g(f(x))로, f를 먼저 적용하고 g를 적용한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "2. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "합성함수",
+              "meaning": "g(f(x))"
+            },
+            {
+              "term": "순서",
+              "meaning": "f 먼저, g 나중"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "3. 예시"
+          },
+          "body": "* f(x)=x+1, g(x)=2x일 때 (g∘f)(1) = {{4}}\n* (g∘f)(x) = g({{f(x)}})\n* 합성은 순서를 바꾸면 대체로 {{달라진다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-3-03",
+      "outlineNo": "10-2-3-03",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 함수와 그래프",
+      "unit_mid": "역함수",
+      "keywords": [
+        "역함수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 역함수"
+          },
+          "body": "* 일대일대응인 f의 역함수 f⁻¹는 y=f(x)를 x에 대해 푼 것이다.\n* y=f(x)와 y=f⁻¹(x)의 그래프는 y=x에 대칭이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = x 대칭",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 1,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "역함수",
+              "meaning": "x·y를 바꿔 정리"
+            },
+            {
+              "term": "대칭",
+              "meaning": "y=x에 대칭"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* f(x)=2x의 역함수는 f⁻¹(x) = {{x/2}}\n* f와 f⁻¹의 그래프는 y = {{x}}에 대칭\n* 역함수가 있으려면 {{일대일대응}}이어야 한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-3-04",
+      "outlineNo": "10-2-3-04",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 함수와 그래프",
+      "unit_mid": "유리함수",
+      "keywords": [
+        "유리함수",
+        "점근선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 유리함수"
+          },
+          "body": "* y=k/x 꼴 등 분모에 x가 있는 함수를 유리함수라 한다.\n* y=k/(x−p)+q는 점근선이 x=p, y=q인 쌍곡선이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. y = 6/x 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "6/x",
+            "inputs": [
+              1,
+              2,
+              3,
+              6
+            ],
+            "outputs": [
+              6,
+              3,
+              2,
+              1
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "유리함수",
+              "meaning": "분모에 x가 있는 함수"
+            },
+            {
+              "term": "점근선",
+              "meaning": "그래프가 한없이 가까워지는 직선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=6/x에서 x=2이면 y = {{3}}\n* y=1/(x−1)+2의 점근선은 x=1, y = {{2}}\n* 유리함수의 그래프는 {{쌍곡선}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-10-2-3-05",
+      "outlineNo": "10-2-3-05",
+      "school": "고등학교",
+      "grade": "고1",
+      "unit_big": "3. 함수와 그래프",
+      "unit_mid": "무리함수",
+      "keywords": [
+        "무리함수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 무리함수"
+          },
+          "body": "* y=√(ax+b)+c 꼴로 근호 안에 x가 있는 함수를 무리함수라 한다.\n* 정의역은 근호 안이 0 이상인 x의 범위이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. y = √x 값의 표",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "x",
+            "botLabel": "√x",
+            "inputs": [
+              0,
+              1,
+              4,
+              9
+            ],
+            "outputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "무리함수",
+              "meaning": "근호 안에 x"
+            },
+            {
+              "term": "정의역",
+              "meaning": "근호 안 ≥ 0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* y=√x에서 x=4이면 y = {{2}}\n* y=√(x−1)의 정의역은 x ≥ {{1}}\n* y=√x의 치역은 y ≥ {{0}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

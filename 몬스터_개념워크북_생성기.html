@@ -437,7 +437,15 @@
   <div class="toolbar">
     <button onclick="window.print()">인쇄 / PDF 저장</button>
     <button class="btn line" id="btn-print-back" style="margin-left:8px;">돌아가기</button>
-    <p>인쇄 미리보기에서 A4 3장으로 나뉘는 것을 확인한 뒤 인쇄하세요.</p>
+    <label style="margin-left:14px; font-size:13.5px; font-weight:700;">출력 단계
+      <select id="print-stage-sel" style="margin-left:6px; padding:5px 8px; font-size:13.5px; border:1.5px solid #ccc; border-radius:7px;">
+        <option value="all">전체 (1·2·3단계)</option>
+        <option value="1">1단계만 — 개념 정리</option>
+        <option value="2">2단계만 — 빈칸 채우기</option>
+        <option value="3">3단계만 — 백지 TEST</option>
+      </select>
+    </label>
+    <p>인쇄 미리보기에서 A4로 나뉘는 것을 확인한 뒤 인쇄하세요.</p>
   </div>
   <div id="print-sheets"></div>
 </div>
@@ -2887,8 +2895,8 @@ function renderSheet(c, stage) {
   return out;
 }
 
-function renderConcept(c) {
-  return [1, 2, 3].map(function (stage) { return renderSheet(c, stage); }).join("\n");
+function renderConcept(c, stages) {
+  return (stages || [1, 2, 3]).map(function (stage) { return renderSheet(c, stage); }).join("\n");
 }
 
 /* ============================================================
@@ -4812,27 +4820,39 @@ window.addEventListener("beforeunload", function (e) {
    ============================================================ */
 
 let lastPrint = null;
+let printStages = [1, 2, 3]; // 출력할 단계 (전체 또는 한 단계만)
+
+function refreshPrintSheets() {
+  if (!lastPrint) return;
+  document.getElementById("print-sheets").innerHTML =
+    lastPrint.map(function (c) { return renderConcept(c, printStages); }).join("\n");
+}
 
 function openPrint(c, from) {
   prevView = from || "view-list";
   lastPrint = [c];
-  document.getElementById("print-sheets").innerHTML = renderConcept(c);
+  refreshPrintSheets();
   showView("view-print");
 }
 
 function openPrintMany(list, from) {
   prevView = from || "view-list";
   lastPrint = list.slice();
-  document.getElementById("print-sheets").innerHTML = list.map(renderConcept).join("\n");
+  refreshPrintSheets();
   showView("view-print");
 }
+
+document.getElementById("print-stage-sel").addEventListener("change", function () {
+  printStages = this.value === "all" ? [1, 2, 3] : [Number(this.value)];
+  refreshPrintSheets();
+});
 
 /* ----- 수식 도구(KaTeX) 로딩 처리 ----- */
 
 function rerenderMath() {
   if (current) renderPreview();
   if (lastPrint && lastPrint.length && !document.getElementById("view-print").hidden) {
-    document.getElementById("print-sheets").innerHTML = lastPrint.map(renderConcept).join("\n");
+    refreshPrintSheets();
   }
 }
 

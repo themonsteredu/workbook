@@ -769,22 +769,60 @@ function renderCoordGraph(block, stage) {
       if (curve === "hyperbola") return Math.abs(x - Px) < 0.04 ? null : A / (x - Px) + Qy;
       return null;
     };
-    const xmin = (R.x1 - ox) / unit, xmax = (R.x2 - ox) / unit;
-    let d = "", pen = false;
+    // 테두리에 붙어 잘려 보이지 않게 여백(R2) 안에서만 그리고, 열린 끝에는 진행 화살표를 단다
+    const R2 = { x1: 24, y1: 22, x2: 396, y2: 228 };
+    const xmin = (R2.x1 - ox) / unit, xmax = (R2.x2 - ox) / unit;
+    const clipToY = function (a, b) {
+      const yo = (a[1] < R2.y1 || b[1] < R2.y1) ? R2.y1 : ((a[1] > R2.y2 || b[1] > R2.y2) ? R2.y2 : null);
+      if (yo == null || a[1] === b[1]) return null;
+      const t = (yo - a[1]) / (b[1] - a[1]);
+      if (t < 0 || t > 1) return null;
+      return [a[0] + t * (b[0] - a[0]), yo];
+    };
+    const segsArr = [];
+    let ptsArr = [], prevRaw = null, prevIn = false;
     const N = 280;
     for (let i = 0; i <= N; i++) {
       const x = xmin + (xmax - xmin) * i / N;
       const y = fval(x);
-      let ok = y != null;
-      let X = 0, Y = 0;
-      if (ok) {
-        X = ox + unit * x; Y = oy - unit * y;
-        if (Y < R.y1 - 60 || Y > R.y2 + 60) ok = false;
+      if (y == null) {
+        if (ptsArr.length > 1) segsArr.push(ptsArr);
+        ptsArr = []; prevRaw = null; prevIn = false; continue;
       }
-      if (ok) { d += (pen ? "L" : "M") + round1(X) + " " + round1(Y); pen = true; }
-      else pen = false;
+      const X = ox + unit * x, Y = oy - unit * y;
+      const inside = Y >= R2.y1 && Y <= R2.y2;
+      if (inside) {
+        if (!prevIn && prevRaw) { const bp = clipToY(prevRaw, [X, Y]); if (bp) ptsArr.push(bp); }
+        ptsArr.push([X, Y]);
+      } else if (prevIn && ptsArr.length) {
+        const bp = clipToY(prevRaw, [X, Y]); if (bp) ptsArr.push(bp);
+        segsArr.push(ptsArr); ptsArr = [];
+      }
+      prevRaw = [X, Y]; prevIn = inside;
     }
-    if (d) s += '<path d="' + d + '" fill="none" stroke="#E8500A" stroke-width="2.5"/>';
+    if (ptsArr.length > 1) segsArr.push(ptsArr);
+    // 루트의 시작점 (p, q)는 닫힌 끝 → 화살표 없음
+    const closedPt = curve === "sqrt" ? [ox + unit * Px, oy - unit * Qy] : null;
+    const arrowHead = function (seg, atEnd) {
+      const tip = atEnd ? seg[seg.length - 1] : seg[0];
+      if (closedPt && Math.hypot(tip[0] - closedPt[0], tip[1] - closedPt[1]) < 6) return "";
+      let k = atEnd ? seg.length - 2 : 1;
+      while (k > 0 && k < seg.length - 1 && Math.hypot(tip[0] - seg[k][0], tip[1] - seg[k][1]) < 6)
+        k += atEnd ? -1 : 1;
+      const prev = seg[k];
+      const dx = tip[0] - prev[0], dy = tip[1] - prev[1], L = Math.hypot(dx, dy) || 1;
+      const ux = dx / L, uy = dy / L, px = -uy, py = ux, kk = 8, w = 0.5;
+      const b1 = [tip[0] - kk * ux + kk * w * px, tip[1] - kk * uy + kk * w * py];
+      const b2 = [tip[0] - kk * ux - kk * w * px, tip[1] - kk * uy - kk * w * py];
+      return '<polyline points="' + round1(b1[0]) + "," + round1(b1[1]) + " " + round1(tip[0]) + "," + round1(tip[1]) + " " + round1(b2[0]) + "," + round1(b2[1]) +
+        '" fill="none" stroke="#E8500A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
+    };
+    segsArr.forEach(function (seg) {
+      let d = "";
+      seg.forEach(function (q, qi) { d += (qi ? "L" : "M") + round1(q[0]) + " " + round1(q[1]); });
+      s += '<path d="' + d + '" fill="none" stroke="#E8500A" stroke-width="2.5"/>';
+      s += arrowHead(seg, false) + arrowHead(seg, true);
+    });
   } else if (!bare) {
     const seg = clipLineToRect(slope, yIntercept, unit, ox, oy, { x1: 20, y1: 18, x2: 405, y2: 240 });
     if (seg) {

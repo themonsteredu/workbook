@@ -1,0 +1,1893 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-5-2-01",
+      "outlineNo": "5-2-01",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "수의 범위와 어림하기",
+      "unit_mid": "이상과 이하",
+      "keywords": [
+        "이상",
+        "이하"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이상과 이하"
+          },
+          "body": "* {{○ 이상}}인 수는 ○와 같거나 큰 수 (○ 포함).\n* {{○ 이하}}인 수는 ○와 같거나 작은 수 (○ 포함).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "3 이상인 수",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "이상",
+                  "value": 3
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이상",
+              "meaning": "그 수와 같거나 큰 수 (포함)"
+            },
+            {
+              "term": "이하",
+              "meaning": "그 수와 같거나 작은 수 (포함)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 3 이상인 수에 3이 {{포함}}된다\n* 5 이하인 수 중 가장 큰 수는 {{5}}\n* 수직선에서 이상·이하는 점을 {{채워}} 표시한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-02",
+      "outlineNo": "5-2-02",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "수의 범위와 어림하기",
+      "unit_mid": "초과와 미만",
+      "keywords": [
+        "초과",
+        "미만"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 초과와 미만"
+          },
+          "body": "* {{○ 초과}}인 수는 ○보다 큰 수 (○ 포함 안 함).\n* {{○ 미만}}인 수는 ○보다 작은 수 (○ 포함 안 함).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "3 초과인 수",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "초과",
+                  "value": 3
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "초과",
+              "meaning": "그 수보다 큰 수 (포함 안 함)"
+            },
+            {
+              "term": "미만",
+              "meaning": "그 수보다 작은 수 (포함 안 함)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 3 초과인 수에 3은 {{포함 안 됨}}\n* 5 미만인 수 중 가장 큰 자연수는 {{4}}\n* 수직선에서 초과·미만은 점을 {{비워}} 표시한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-03",
+      "outlineNo": "5-2-03",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "수의 범위와 어림하기",
+      "unit_mid": "수의 범위를 수직선에 나타내기",
+      "keywords": [
+        "범위",
+        "수직선"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 수의 범위를 수직선에 나타내기"
+          },
+          "body": "* 이상·이하는 ● (채운 점), 초과·미만은 ○ (빈 점)으로 나타낸다.\n* 화살표로 범위의 방향을 표시한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "2 초과인 수",
+                "min": 0,
+                "max": 6,
+                "step": 1,
+                "range": {
+                  "kind": "초과",
+                  "value": 2
+                },
+                "points": []
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "● 채운 점",
+              "meaning": "이상·이하 (포함)"
+            },
+            {
+              "term": "○ 빈 점",
+              "meaning": "초과·미만 (포함 안 함)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 이상·이하는 {{채운}} 점으로 표시\n* 초과·미만은 {{빈}} 점으로 표시\n* 화살표는 범위의 {{방향}}을 나타낸다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-04",
+      "outlineNo": "5-2-04",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "수의 범위와 어림하기",
+      "unit_mid": "올림",
+      "keywords": [
+        "올림",
+        "어림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 올림"
+          },
+          "body": "* 구하려는 자리 아래 수를 올려서 어림하는 방법을 {{올림}}이라고 한다.\n* 아래 수가 0이 아니면 윗자리에 1을 더한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "37을 십의 자리로 올림 → 40",
+                "min": 30,
+                "max": 40,
+                "step": 5,
+                "range": null,
+                "points": [
+                  37
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "올림",
+              "meaning": "아래 수를 올려서 어림"
+            },
+            {
+              "term": "특징",
+              "meaning": "실제보다 크거나 같아짐"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 37을 올림하여 십의 자리까지: {{40}}\n* 231을 올림하여 백의 자리까지: {{300}}\n* 올림한 값은 원래 수보다 {{크거나 같다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-05",
+      "outlineNo": "5-2-05",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "수의 범위와 어림하기",
+      "unit_mid": "버림",
+      "keywords": [
+        "버림",
+        "어림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 버림"
+          },
+          "body": "* 구하려는 자리 아래 수를 버려서 어림하는 방법을 {{버림}}이라고 한다.\n* 아래 수를 모두 0으로 만든다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "37을 십의 자리로 버림 → 30",
+                "min": 30,
+                "max": 40,
+                "step": 5,
+                "range": null,
+                "points": [
+                  37
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "버림",
+              "meaning": "아래 수를 버려서 어림"
+            },
+            {
+              "term": "특징",
+              "meaning": "실제보다 작거나 같아짐"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 37을 버림하여 십의 자리까지: {{30}}\n* 231을 버림하여 백의 자리까지: {{200}}\n* 버림한 값은 원래 수보다 {{작거나 같다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-06",
+      "outlineNo": "5-2-06",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "수의 범위와 어림하기",
+      "unit_mid": "반올림",
+      "keywords": [
+        "반올림",
+        "어림"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 반올림"
+          },
+          "body": "* 구하려는 자리 바로 아래 수가 0~4이면 버리고, 5~9이면 올리는 방법을 {{반올림}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "34→30, 37→40",
+                "min": 30,
+                "max": 40,
+                "step": 5,
+                "range": null,
+                "points": [
+                  34,
+                  37
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "반올림",
+              "meaning": "아래 수가 5 이상이면 올림, 4 이하면 버림"
+            },
+            {
+              "term": "기준",
+              "meaning": "바로 아래 자리 수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 34를 반올림하여 십의 자리까지: {{30}}\n* 37을 반올림하여 십의 자리까지: {{40}}\n* 65를 반올림하여 십의 자리까지: {{70}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-07",
+      "outlineNo": "5-2-07",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "분수의 곱셈",
+      "unit_mid": "(분수)×(자연수)",
+      "keywords": [
+        "분수",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (분수)×(자연수)"
+          },
+          "body": "* 분모는 그대로 두고 분자에 자연수를 곱한다.\n* 결과가 가분수이면 대분수로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 2/3 × 2 = 4/3 = 1⅓",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 3,
+            "num": 4,
+            "width": 78,
+            "showCaption": true,
+            "mixed": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(분수)×(자연수)",
+              "meaning": "분자에 자연수를 곱함"
+            },
+            {
+              "term": "가분수 → 대분수",
+              "meaning": "결과를 대분수로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{2}{3}$ × 2 = {{$1\\dfrac{1}{3}$}}\n* $\\dfrac{3}{4}$ × 2 = {{$1\\dfrac{1}{2}$}}\n* $\\dfrac{1}{5}$ × 3 = {{$\\dfrac{3}{5}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-08",
+      "outlineNo": "5-2-08",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "분수의 곱셈",
+      "unit_mid": "(자연수)×(분수)",
+      "keywords": [
+        "자연수",
+        "분수",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (자연수)×(분수)"
+          },
+          "body": "* 자연수와 분자를 곱하고 분모는 그대로 둔다.\n* 약분할 수 있으면 약분한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 4의 3/4 = 3",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 4,
+            "num": 3,
+            "width": 78,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(자연수)×(분수)",
+              "meaning": "자연수 × 분자, 분모는 그대로"
+            },
+            {
+              "term": "약분",
+              "meaning": "계산 중·후에 간단히"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 4 × $\\dfrac{3}{4}$ = {{3}}\n* 6 × $\\dfrac{2}{3}$ = {{4}}\n* 10 × $\\dfrac{1}{2}$ = {{5}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-09",
+      "outlineNo": "5-2-09",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "분수의 곱셈",
+      "unit_mid": "(진분수)×(진분수)",
+      "keywords": [
+        "진분수",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (진분수)×(진분수)"
+          },
+          "body": "* 분자는 분자끼리, 분모는 분모끼리 곱한다.\n* 약분할 수 있으면 약분하여 기약분수로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 1/2 × 1/3 = 1/6",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 6,
+            "num": 1,
+            "width": 78,
+            "showCaption": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(진분수)×(진분수)",
+              "meaning": "분자끼리, 분모끼리 곱함"
+            },
+            {
+              "term": "약분",
+              "meaning": "결과를 기약분수로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{1}{2}$ × $\\dfrac{1}{3}$ = {{$\\dfrac{1}{6}$}}\n* $\\dfrac{2}{3}$ × $\\dfrac{3}{4}$ = {{$\\dfrac{1}{2}$}}\n* $\\dfrac{3}{5}$ × $\\dfrac{1}{2}$ = {{$\\dfrac{3}{10}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-10",
+      "outlineNo": "5-2-10",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "분수의 곱셈",
+      "unit_mid": "(대분수)×(대분수), 세 분수의 곱셈",
+      "keywords": [
+        "대분수",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대분수의 곱셈"
+          },
+          "body": "* 대분수를 {{가분수}}로 고친 뒤 분자끼리, 분모끼리 곱한다.\n* 세 분수의 곱셈도 한꺼번에 분자끼리, 분모끼리 곱한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "fraction_fig",
+          "heading": {
+            "1": "2. 대분수 (1½)",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "model": "bar",
+            "den": 2,
+            "num": 3,
+            "width": 78,
+            "showCaption": true,
+            "mixed": true
+          },
+          "labels": [
+            {
+              "key": "caption",
+              "text": "분수",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대분수 곱셈",
+              "meaning": "가분수로 고쳐 곱함"
+            },
+            {
+              "term": "세 분수 곱셈",
+              "meaning": "분자끼리·분모끼리 한 번에"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $1\\dfrac{1}{2}$ × $1\\dfrac{1}{3}$ = {{2}}\n* $\\dfrac{1}{2}$ × $\\dfrac{2}{3}$ × $\\dfrac{3}{4}$ = {{$\\dfrac{1}{4}$}}\n* $2\\dfrac{1}{2}$ × 2 = {{5}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-11",
+      "outlineNo": "5-2-11",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "합동과 대칭",
+      "unit_mid": "도형의 합동",
+      "keywords": [
+        "합동",
+        "도형"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 도형의 합동"
+          },
+          "body": "* 모양과 크기가 완전히 같아 포개어지는 두 도형을 서로 {{합동}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 합동인 삼각형",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "합동",
+              "meaning": "포개어지는 두 도형"
+            },
+            {
+              "term": "포개기",
+              "meaning": "돌리거나 뒤집어 완전히 겹침"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 완전히 포개어지면 두 도형은 {{합동}}\n* 합동인 도형은 넓이가 {{같다}}\n* 모양이 같아도 크기가 다르면 합동이 {{아니다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-12",
+      "outlineNo": "5-2-12",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "합동과 대칭",
+      "unit_mid": "대응점, 대응변, 대응각",
+      "keywords": [
+        "대응점",
+        "대응변",
+        "대응각"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 대응점·대응변·대응각"
+          },
+          "body": "* 합동인 두 도형에서 겹치는 꼭짓점을 {{대응점}}, 겹치는 변을 {{대응변}}, 겹치는 각을 {{대응각}}이라고 한다.\n* 대응변의 길이와 대응각의 크기는 서로 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 대응점·대응변·대응각",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "triangle",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": true,
+            "showDiagonals": false
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "대응점",
+              "meaning": "겹치는 꼭짓점"
+            },
+            {
+              "term": "대응변·대응각",
+              "meaning": "길이·크기가 서로 같음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 합동에서 겹치는 꼭짓점은 {{대응점}}\n* 대응변의 길이는 서로 {{같다}}\n* 대응각의 크기도 서로 {{같다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-13",
+      "outlineNo": "5-2-13",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "합동과 대칭",
+      "unit_mid": "선대칭도형과 그 성질",
+      "keywords": [
+        "선대칭",
+        "대칭축"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 선대칭도형"
+          },
+          "body": "* 한 직선을 따라 접었을 때 완전히 겹치는 도형을 {{선대칭도형}}이라고 한다.\n* 그 직선을 {{대칭축}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 선대칭도형 (대칭축)",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "rhombus",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "선대칭도형",
+              "meaning": "접어서 완전히 겹치는 도형"
+            },
+            {
+              "term": "대칭축",
+              "meaning": "접는 기준이 되는 직선"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 접어서 겹치면 {{선대칭}}도형\n* 접는 기준선은 {{대칭축}}\n* 대응점에서 대칭축까지 거리는 서로 {{같다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-14",
+      "outlineNo": "5-2-14",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "합동과 대칭",
+      "unit_mid": "점대칭도형과 그 성질",
+      "keywords": [
+        "점대칭",
+        "대칭의 중심"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 점대칭도형"
+          },
+          "body": "* 한 점을 중심으로 180° 돌렸을 때 처음과 완전히 겹치는 도형을 {{점대칭도형}}이라고 한다.\n* 그 점을 {{대칭의 중심}}이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "basic_shape",
+          "heading": {
+            "1": "2. 점대칭도형 (대칭의 중심)",
+            "3": "2. 도형을 그려 보시오."
+          },
+          "params": {
+            "shape": "parallelogram",
+            "n": 5,
+            "width": 74,
+            "showBaseHeight": false,
+            "showVertexLabels": false,
+            "showDiagonals": true
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "점대칭도형",
+              "meaning": "180° 돌려 겹치는 도형"
+            },
+            {
+              "term": "대칭의 중심",
+              "meaning": "돌리는 기준이 되는 점"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 180° 돌려 겹치면 {{점대칭}}도형\n* 돌리는 기준점은 {{대칭의 중심}}\n* 대칭의 중심은 대응점을 이은 선분을 {{이등분}}한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-15",
+      "outlineNo": "5-2-15",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "소수의 곱셈",
+      "unit_mid": "(소수)×(자연수)",
+      "keywords": [
+        "소수",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (소수)×(자연수)"
+          },
+          "body": "* 소수를 자연수처럼 곱한 뒤, 소수점을 원래 자리에 맞춰 찍는다.\n* (소수)×(자연수)는 소수를 자연수 번 더한 것과 같다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 0.3 × 2 = 0.3 + 0.3",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 0.6,
+            "part1": 0.3,
+            "part2": 0.3,
+            "op": "+",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(소수)×(자연수)",
+              "meaning": "같은 소수를 여러 번 더함"
+            },
+            {
+              "term": "소수점",
+              "meaning": "곱의 자리에 맞춰 찍음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 0.3 × 2 = {{0.6}}\n* 1.2 × 3 = {{3.6}}\n* 0.25 × 4 = {{1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-16",
+      "outlineNo": "5-2-16",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "소수의 곱셈",
+      "unit_mid": "(자연수)×(소수)",
+      "keywords": [
+        "자연수",
+        "소수",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (자연수)×(소수)"
+          },
+          "body": "* 자연수와 소수를 곱한 뒤 소수점을 소수의 자리 수에 맞춰 찍는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 2 × 0.4 = 0.4 + 0.4",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 0.8,
+            "part1": 0.4,
+            "part2": 0.4,
+            "op": "+",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(자연수)×(소수)",
+              "meaning": "곱한 뒤 소수점 위치 맞춤"
+            },
+            {
+              "term": "소수점",
+              "meaning": "소수 자리 수만큼"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2 × 0.4 = {{0.8}}\n* 3 × 1.5 = {{4.5}}\n* 5 × 0.2 = {{1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-17",
+      "outlineNo": "5-2-17",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "소수의 곱셈",
+      "unit_mid": "(소수)×(소수)",
+      "keywords": [
+        "소수",
+        "곱셈"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. (소수)×(소수)"
+          },
+          "body": "* 소수를 자연수처럼 곱한 뒤, 두 소수의 소수점 아래 자리 수를 더한 만큼 곱에 소수점을 찍는다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 0.5 × 0.3 = 0.15",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 0.15,
+            "part1": 0.5,
+            "part2": 0.3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(소수)×(소수)",
+              "meaning": "곱한 뒤 소수점 위치 맞춤"
+            },
+            {
+              "term": "소수점 자리",
+              "meaning": "두 수의 자리 수를 더함"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 0.5 × 0.3 = {{0.15}}\n* 0.2 × 0.4 = {{0.08}}\n* 1.2 × 0.5 = {{0.6}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-18",
+      "outlineNo": "5-2-18",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "소수의 곱셈",
+      "unit_mid": "곱의 소수점 위치 규칙",
+      "keywords": [
+        "소수점",
+        "규칙"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱의 소수점 위치 규칙"
+          },
+          "body": "* 곱하는 두 수의 소수점 아래 자리 수를 더한 만큼 곱의 소수점 아래 자리 수가 된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "bond_fig",
+          "heading": {
+            "1": "2. 0.2 × 0.3 = 0.06 (소수 둘째)",
+            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+          },
+          "params": {
+            "whole": 0.06,
+            "part1": 0.2,
+            "part2": 0.3,
+            "op": "×",
+            "width": 62
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "blank"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "소수점 위치",
+              "meaning": "두 수의 소수 자리 수의 합"
+            },
+            {
+              "term": "0으로 채우기",
+              "meaning": "자리가 모자라면 0으로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 0.2 × 0.3은 소수 {{둘째}} 자리\n* 0.2 × 0.3 = {{0.06}}\n* 1.5 × 1.5 = {{2.25}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-19",
+      "outlineNo": "5-2-19",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "직육면체",
+      "unit_mid": "직육면체와 정육면체",
+      "keywords": [
+        "직육면체",
+        "정육면체"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직육면체와 정육면체"
+          },
+          "body": "* 직사각형 6개로 둘러싸인 도형을 {{직육면체}}라고 한다.\n* 정사각형 6개로 둘러싸인 도형을 {{정육면체}}라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 직육면체",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cuboid",
+            "width": 78
+          },
+          "labels": [
+            {
+              "key": "garo",
+              "text": "가로",
+              "blank": false
+            },
+            {
+              "key": "sero",
+              "text": "세로",
+              "blank": false
+            },
+            {
+              "key": "nopi",
+              "text": "높이",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "직육면체",
+              "meaning": "직사각형 6개로 둘러싸인 도형"
+            },
+            {
+              "term": "정육면체",
+              "meaning": "정사각형 6개로 둘러싸인 도형"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 직육면체의 면은 {{6}}개\n* 정육면체는 모든 모서리의 길이가 {{같다}}\n* 정육면체는 직육면체라고 {{할 수 있다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-20",
+      "outlineNo": "5-2-20",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "직육면체",
+      "unit_mid": "면, 모서리, 꼭짓점 / 밑면과 옆면",
+      "keywords": [
+        "면",
+        "모서리",
+        "꼭짓점"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 면·모서리·꼭짓점"
+          },
+          "body": "* 직육면체에서 면은 {{6}}개, 모서리는 {{12}}개, 꼭짓점은 {{8}}개이다.\n* 서로 마주 보는 면을 밑면, 밑면과 수직인 면을 옆면이라고 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 직육면체의 면·모서리·꼭짓점",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cuboid",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "면 / 모서리 / 꼭짓점",
+              "meaning": "6개 / 12개 / 8개"
+            },
+            {
+              "term": "밑면·옆면",
+              "meaning": "마주 보는 면 / 수직인 면"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 직육면체의 모서리는 {{12}}개\n* 직육면체의 꼭짓점은 {{8}}개\n* 마주 보는 면은 서로 {{평행}}하다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-21",
+      "outlineNo": "5-2-21",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "직육면체",
+      "unit_mid": "직육면체의 겨냥도",
+      "keywords": [
+        "겨냥도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직육면체의 겨냥도"
+          },
+          "body": "* 직육면체 모양을 잘 알 수 있도록 나타낸 그림을 {{겨냥도}}라고 한다.\n* 보이는 모서리는 실선, 보이지 않는 모서리는 점선으로 그린다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 겨냥도 (실선·점선)",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cuboid",
+            "width": 78
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "겨냥도",
+              "meaning": "모양을 잘 나타낸 그림"
+            },
+            {
+              "term": "실선·점선",
+              "meaning": "보이는 모서리 / 안 보이는 모서리"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 겨냥도에서 보이는 모서리는 {{실선}}\n* 보이지 않는 모서리는 {{점선}}\n* 보이지 않는 모서리는 {{3}}개",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-22",
+      "outlineNo": "5-2-22",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "직육면체",
+      "unit_mid": "직육면체의 전개도",
+      "keywords": [
+        "전개도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 직육면체의 전개도"
+          },
+          "body": "* 직육면체의 모서리를 잘라 평면에 펼친 그림을 {{전개도}}라고 한다.\n* 접었을 때 마주 보는 면은 서로 합동이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "solid_fig",
+          "heading": {
+            "1": "2. 직육면체의 전개도",
+            "3": "2. 입체도형을 그려 보시오."
+          },
+          "params": {
+            "solid": "cuboid",
+            "width": 78,
+            "mode": "net"
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "전개도",
+              "meaning": "펼쳐 놓은 그림"
+            },
+            {
+              "term": "마주 보는 면",
+              "meaning": "서로 합동"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 직육면체 전개도의 면은 {{6}}개\n* 접었을 때 마주 보는 면은 서로 {{합동}}\n* 전개도를 접으면 {{직육면체}}가 된다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-23",
+      "outlineNo": "5-2-23",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "평균과 가능성",
+      "unit_mid": "평균의 뜻과 구하기",
+      "keywords": [
+        "평균"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 평균"
+          },
+          "body": "* 자료의 값을 모두 더한 뒤 자료의 수로 나눈 값을 {{평균}}이라고 한다.\n* 평균 = 자료의 합 ÷ 자료의 수.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 막대그래프",
+            "3": "2. 막대그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "점",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1회",
+                "value": 8
+              },
+              {
+                "name": "2회",
+                "value": 6
+              },
+              {
+                "name": "3회",
+                "value": 10
+              },
+              {
+                "name": "4회",
+                "value": 8
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "평균",
+              "meaning": "자료의 합 ÷ 자료의 수"
+            },
+            {
+              "term": "자료의 수",
+              "meaning": "값의 개수"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 8, 6, 10, 8의 합은 {{32}}\n* 32 ÷ 4 = 평균 {{8}}\n* 평균은 자료의 합을 자료의 수로 {{나눈}} 값",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-5-2-24",
+      "outlineNo": "5-2-24",
+      "school": "초등학교",
+      "grade": "5학년",
+      "unit_big": "평균과 가능성",
+      "unit_mid": "일이 일어날 가능성",
+      "keywords": [
+        "가능성"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 일이 일어날 가능성"
+          },
+          "body": "* 어떤 일이 일어날 정도를 {{가능성}}이라고 한다.\n* 가능성은 불가능하다(0) ~ 확실하다(1) 사이로 나타낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "가능성 (0 불가능 ~ 1 확실)",
+                "min": 0,
+                "max": 1,
+                "step": 0.5,
+                "range": null,
+                "points": [
+                  0.5
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "가능성",
+              "meaning": "일이 일어날 것으로 기대되는 정도"
+            },
+            {
+              "term": "범위",
+              "meaning": "불가능(0) ~ 확실(1)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 해가 서쪽에서 뜰 가능성은 {{불가능하다}}\n* 동전 던져 그림이 나올 가능성은 {{반반이다}}\n* 반반인 가능성은 수로 {{0.5}} (또는 1/2)",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

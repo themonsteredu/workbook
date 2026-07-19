@@ -717,15 +717,27 @@
         },
         {
           "type": "figure",
-          "figure_type": "coord_graph",
+          "figure_type": "corr_table",
           "heading": {
-            "1": "2. 대응 그래프 (△ = □ × 2)",
-            "3": "2. 그래프로 나타내어 보시오."
+            "1": "2. 대응표",
+            "3": "2. 대응표를 완성해 보시오."
           },
           "params": {
-            "slope": 2,
-            "yIntercept": 0,
-            "unit": 40
+            "topLabel": "자전거 수",
+            "botLabel": "바퀴 수",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
           },
           "labels": [],
           "labelAdjust": {},
@@ -789,15 +801,27 @@
         },
         {
           "type": "figure",
-          "figure_type": "coord_graph",
+          "figure_type": "corr_table",
           "heading": {
-            "1": "2. 대응 그래프 (△ = □ × 3)",
-            "3": "2. 그래프로 나타내어 보시오."
+            "1": "2. 대응표",
+            "3": "2. 대응표를 완성해 보시오."
           },
           "params": {
-            "slope": 3,
-            "yIntercept": 0,
-            "unit": 40
+            "topLabel": "□",
+            "botLabel": "△",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              6,
+              9,
+              12
+            ],
+            "width": 100
           },
           "labels": [],
           "labelAdjust": {},

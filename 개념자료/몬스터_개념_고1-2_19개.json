@@ -91,7 +91,7 @@
           "heading": {
             "1": "1. 내분점·외분점"
           },
-          "body": "* 선분 AB를 m:n으로 내분하는 점은 $\\left(\\dfrac{nx_{1}+mx_{2}}{m+n},\\ \\dfrac{ny_{1}+my_{2}}{m+n}\\right)$ 이다.",
+          "body": "* 선분 $\\overline{AB}$를 m:n으로 내분하는 점은 $\\left(\\dfrac{nx_{1}+mx_{2}}{m+n},\\ \\dfrac{ny_{1}+my_{2}}{m+n}\\right)$ 이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1

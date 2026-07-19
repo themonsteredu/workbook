@@ -1,0 +1,1560 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-12-1-1-01",
+      "outlineNo": "12-1-1-01",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "1. 경우의 수",
+      "unit_mid": "원순열",
+      "keywords": [
+        "원순열",
+        "원탁"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 원순열"
+          },
+          "body": "* 서로 다른 n개를 원형으로 나열하는 경우의 수는 (n−1)!이다.\n* 회전하여 같아지는 배열을 하나로 세기 때문이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원탁에 둘러앉기",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": false,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "원순열",
+              "meaning": "원형으로 나열하는 순열"
+            },
+            {
+              "term": "(n−1)!",
+              "meaning": "한 명을 고정하고 나머지를 나열"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 4명이 원탁에 앉는 경우는 (4−1)! = {{6}}가지\n* 5명이면 4! = {{24}}가지\n* 원순열의 공식은 {{(n−1)!}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-1-02",
+      "outlineNo": "12-1-1-02",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "1. 경우의 수",
+      "unit_mid": "중복순열",
+      "keywords": [
+        "중복순열",
+        "중복 허용"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 중복순열"
+          },
+          "body": "* 서로 다른 n개에서 중복을 허용하여 r개를 나열하는 경우의 수는 nΠr = nʳ이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 2가지로 r자리 만들기",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "r",
+            "botLabel": "2ʳ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              2,
+              4,
+              8,
+              16
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "중복순열",
+              "meaning": "같은 것을 다시 뽑아 나열"
+            },
+            {
+              "term": "nΠr",
+              "meaning": "nʳ (자리마다 n가지)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2Π3 = 2³ = {{8}}\n* 3Π2 = 3² = {{9}}\n* 숫자 1, 2로 만든 세 자리 수는 {{8}}개",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-1-03",
+      "outlineNo": "12-1-1-03",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "1. 경우의 수",
+      "unit_mid": "같은 것이 있는 순열",
+      "keywords": [
+        "같은 것이 있는 순열"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 같은 것이 있는 순열"
+          },
+          "body": "* n개 중 같은 것이 p개, q개 …이면 나열하는 경우의 수는 $\\dfrac{n!}{p!\\,q!\\cdots}$이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 같은 문자가 있는 나열",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "문자열",
+            "botLabel": "경우의 수",
+            "inputs": [
+              "AB",
+              "AAB",
+              "AABB"
+            ],
+            "outputs": [
+              2,
+              3,
+              6
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "같은 것이 있는 순열",
+              "meaning": "같은 것끼리의 자리바꿈을 나눔"
+            },
+            {
+              "term": "공식",
+              "meaning": "n! ÷ (p!q!…)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* A, A, B, B의 나열은 $\\dfrac{4!}{2!\\,2!}$ = {{6}}가지\n* A, A, B의 나열은 $\\dfrac{3!}{2!}$ = {{3}}가지\n* 분모에는 같은 것의 개수의 {{계승}}(팩토리얼)을 곱한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-1-04",
+      "outlineNo": "12-1-1-04",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "1. 경우의 수",
+      "unit_mid": "중복조합",
+      "keywords": [
+        "중복조합"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 중복조합"
+          },
+          "body": "* 서로 다른 n개에서 중복을 허용하여 순서 없이 r개를 뽑는 경우의 수는 nHr = ₙ₊ᵣ₋₁Cᵣ이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 2가지에서 중복해 뽑기",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "r",
+            "botLabel": "2Hr",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "중복조합",
+              "meaning": "중복 허용, 순서 없음"
+            },
+            {
+              "term": "nHr",
+              "meaning": "(n+r−1)Cr로 계산"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 2H2 = 3C2 = {{3}}\n* 3H2 = 4C2 = {{6}}\n* nHr = ₙ₊ᵣ₋₁C{{r}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-1-05",
+      "outlineNo": "12-1-1-05",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "1. 경우의 수",
+      "unit_mid": "이항정리",
+      "keywords": [
+        "이항정리",
+        "이항계수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이항정리"
+          },
+          "body": "* (a+b)ⁿ의 전개식의 일반항은 ₙCᵣ aⁿ⁻ʳ bʳ이다.\n* 계수 ₙCᵣ를 이항계수라 하며 파스칼의 삼각형으로도 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. (a+b)⁴의 이항계수",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "r",
+            "botLabel": "4Cr",
+            "inputs": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              1,
+              4,
+              6,
+              4,
+              1
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이항정리",
+              "meaning": "(a+b)ⁿ의 전개 공식"
+            },
+            {
+              "term": "일반항",
+              "meaning": "ₙCᵣ aⁿ⁻ʳ bʳ"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (a+b)³에서 a²b의 계수는 3C1 = {{3}}\n* (x+1)⁴에서 x²의 계수는 4C2 = {{6}}\n* 이항계수의 합 ₙC₀+…+ₙCₙ = {{2ⁿ}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-2-01",
+      "outlineNo": "12-1-2-01",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 확률",
+      "unit_mid": "확률의 뜻",
+      "keywords": [
+        "수학적 확률",
+        "표본공간"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 확률의 뜻"
+          },
+          "body": "* 일어날 수 있는 모든 경우(표본공간)에서 사건 A가 일어나는 경우의 비율 P(A) = $\\dfrac{n(A)}{n(S)}$가 수학적 확률이다.\n* 시행을 많이 반복해 얻는 상대도수의 극한이 통계적 확률이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 주사위를 던진 결과",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "회",
+            "width": 100,
+            "cats": [
+              {
+                "name": "1",
+                "value": 10
+              },
+              {
+                "name": "2",
+                "value": 9
+              },
+              {
+                "name": "3",
+                "value": 11
+              },
+              {
+                "name": "4",
+                "value": 10
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "표본공간",
+              "meaning": "일어날 수 있는 모든 결과의 집합"
+            },
+            {
+              "term": "수학적 확률",
+              "meaning": "n(A) ÷ n(S)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 주사위에서 3의 배수가 나올 확률은 $\\dfrac{2}{6}$ = {{$\\dfrac{1}{3}$}}\n* 동전의 앞면이 나올 확률은 {{$\\dfrac{1}{2}$}}\n* 확률은 0 이상 {{1}} 이하",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-2-02",
+      "outlineNo": "12-1-2-02",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 확률",
+      "unit_mid": "확률의 덧셈정리",
+      "keywords": [
+        "덧셈정리",
+        "배반사건"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 확률의 덧셈정리"
+          },
+          "body": "* P(A∪B) = P(A) + P(B) − P(A∩B).\n* A와 B가 동시에 일어나지 않으면(배반사건) P(A∪B) = P(A) + P(B)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. 두 사건의 합",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "mode": "overlap",
+            "shade": "union",
+            "width": 70,
+            "nameA": "A",
+            "nameB": "B"
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "덧셈정리",
+              "meaning": "합사건의 확률 계산"
+            },
+            {
+              "term": "배반사건",
+              "meaning": "동시에 일어나지 않는 두 사건"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* P(A∪B) = P(A) + P(B) − {{P(A∩B)}}\n* 배반사건이면 P(A∪B) = P(A) + {{P(B)}}\n* P(A)=$\\dfrac{1}{3}$, P(B)=$\\dfrac{1}{2}$, 배반이면 P(A∪B) = {{$\\dfrac{5}{6}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-2-03",
+      "outlineNo": "12-1-2-03",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 확률",
+      "unit_mid": "여사건의 확률",
+      "keywords": [
+        "여사건",
+        "적어도"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 여사건의 확률"
+          },
+          "body": "* 사건 A가 일어나지 않는 사건 Aᶜ의 확률은 P(Aᶜ) = 1 − P(A)이다.\n* '적어도 하나'는 여사건(하나도 없음)으로 계산하면 빠르다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. 여사건",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "mode": "subset",
+            "shade": "none",
+            "width": 70,
+            "nameA": "A",
+            "nameB": "Aᶜ"
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "여사건",
+              "meaning": "A가 일어나지 않는 사건 Aᶜ"
+            },
+            {
+              "term": "적어도 하나",
+              "meaning": "1 − (하나도 아닐 확률)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* P(Aᶜ) = 1 − {{P(A)}}\n* 동전 2개에서 적어도 한 개 앞면일 확률 = 1 − $\\dfrac{1}{4}$ = {{$\\dfrac{3}{4}$}}\n* P(A) + P(Aᶜ) = {{1}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-2-04",
+      "outlineNo": "12-1-2-04",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 확률",
+      "unit_mid": "조건부확률",
+      "keywords": [
+        "조건부확률"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 조건부확률"
+          },
+          "body": "* 사건 A가 일어났을 때 사건 B가 일어날 확률은 P(B|A) = $\\dfrac{P(A \\cap B)}{P(A)}$ (P(A)>0)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "venn_fig",
+          "heading": {
+            "1": "2. A 안에서의 B",
+            "3": "2. 그림으로 나타내어 보시오."
+          },
+          "params": {
+            "mode": "overlap",
+            "shade": "inter",
+            "width": 70,
+            "nameA": "A",
+            "nameB": "B"
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "조건부확률",
+              "meaning": "A가 일어난 조건에서 B의 확률"
+            },
+            {
+              "term": "기호",
+              "meaning": "P(B|A)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* P(B|A) = P(A∩B) ÷ {{P(A)}}\n* P(A)=$\\dfrac{1}{2}$, P(A∩B)=$\\dfrac{1}{6}$이면 P(B|A) = {{$\\dfrac{1}{3}$}}\n* 조건이 되는 사건은 {{A}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-2-05",
+      "outlineNo": "12-1-2-05",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 확률",
+      "unit_mid": "확률의 곱셈정리와 독립",
+      "keywords": [
+        "곱셈정리",
+        "독립"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 곱셈정리와 독립"
+          },
+          "body": "* P(A∩B) = P(A)P(B|A) (곱셈정리).\n* 서로 영향을 주지 않으면(독립) P(A∩B) = P(A)P(B)이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 독립일 때의 곱셈",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "P(A), P(B)",
+            "botLabel": "P(A∩B)",
+            "inputs": [
+              "0.5 × 0.5",
+              "0.5 × 0.2",
+              "0.3 × 0.5"
+            ],
+            "outputs": [
+              "0.25",
+              "0.1",
+              "0.15"
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "곱셈정리",
+              "meaning": "교사건의 확률 계산"
+            },
+            {
+              "term": "독립",
+              "meaning": "P(A∩B) = P(A)P(B)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 독립이면 P(A∩B) = P(A) × {{P(B)}}\n* 동전과 주사위: 앞면이고 6일 확률 = $\\dfrac{1}{2}$×$\\dfrac{1}{6}$ = {{$\\dfrac{1}{12}$}}\n* 독립이면 P(B|A) = {{P(B)}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-2-06",
+      "outlineNo": "12-1-2-06",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 확률",
+      "unit_mid": "독립시행의 확률",
+      "keywords": [
+        "독립시행"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 독립시행의 확률"
+          },
+          "body": "* 성공 확률 p인 시행을 n번 반복해 r번 성공할 확률은 ₙCᵣ pʳ(1−p)ⁿ⁻ʳ이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 3회 시행의 경우의 수",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "r",
+            "botLabel": "3Cr",
+            "inputs": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "outputs": [
+              1,
+              3,
+              3,
+              1
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "독립시행",
+              "meaning": "같은 시행을 독립적으로 반복"
+            },
+            {
+              "term": "공식",
+              "meaning": "ₙCᵣ pʳ(1−p)ⁿ⁻ʳ"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 동전 3번 중 앞면 2번: 3C2 × $\\left(\\dfrac{1}{2}\\right)^{3}$ = {{$\\dfrac{3}{8}$}}\n* 성공 횟수의 자리에는 {{ₙCᵣ}}를 곱한다\n* 확률 p로 n번 모두 성공은 {{pⁿ}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-01",
+      "outlineNo": "12-1-3-01",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "확률변수와 확률분포",
+      "keywords": [
+        "확률변수",
+        "확률분포"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 확률변수와 확률분포"
+          },
+          "body": "* 시행의 결과에 따라 값이 정해지는 변수를 확률변수라 한다.\n* 각 값과 그 확률의 대응이 확률분포이며, 확률의 합은 항상 1이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 동전 2개의 앞면 수",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "X",
+            "botLabel": "P(X)",
+            "inputs": [
+              "0",
+              "1",
+              "2"
+            ],
+            "outputs": [
+              "0.25",
+              "0.5",
+              "0.25"
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "확률변수",
+              "meaning": "결과에 따라 정해지는 수 X"
+            },
+            {
+              "term": "확률분포",
+              "meaning": "값과 확률의 대응표"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 모든 확률의 합 ΣP(X) = {{1}}\n* 동전 2개에서 앞면 수 X의 값은 0, 1, {{2}}\n* P(X=1) = {{$\\dfrac{1}{2}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-02",
+      "outlineNo": "12-1-3-02",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "이산확률변수의 기댓값과 분산",
+      "keywords": [
+        "기댓값",
+        "분산",
+        "표준편차"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 기댓값과 분산"
+          },
+          "body": "* 기댓값(평균) E(X) = Σ xᵢpᵢ.\n* 분산 V(X) = E(X²) − {E(X)}², 표준편차 σ(X) = $\\sqrt{V(X)}$.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 확률이 같은 분포",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "X",
+            "botLabel": "P(X)",
+            "inputs": [
+              "1",
+              "2",
+              "3"
+            ],
+            "outputs": [
+              "⅓",
+              "⅓",
+              "⅓"
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "기댓값",
+              "meaning": "값×확률의 합 E(X)"
+            },
+            {
+              "term": "분산",
+              "meaning": "E(X²) − {E(X)}²"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* X가 1, 2, 3을 각각 $\\dfrac{1}{3}$로 가지면 E(X) = {{2}}\n* V(X) = E(X²) − {{{E(X)}²}}\n* σ(X)는 분산의 {{양의 제곱근}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-03",
+      "outlineNo": "12-1-3-03",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "E(aX+b)와 V(aX+b)",
+      "keywords": [
+        "기댓값의 성질",
+        "분산의 성질"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. aX+b의 평균·분산"
+          },
+          "body": "* E(aX+b) = aE(X) + b.\n* V(aX+b) = a²V(X) — 더한 상수 b는 분산에 영향이 없다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 변환된 확률변수",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "X",
+            "botLabel": "2X+1",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              3,
+              5,
+              7,
+              9
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "E(aX+b)",
+              "meaning": "aE(X) + b"
+            },
+            {
+              "term": "V(aX+b)",
+              "meaning": "a²V(X)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* E(X)=3이면 E(2X+1) = {{7}}\n* V(X)=2이면 V(2X+1) = {{8}}\n* 상수를 더해도 {{분산}}은 변하지 않는다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-04",
+      "outlineNo": "12-1-3-04",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "이항분포",
+      "keywords": [
+        "이항분포",
+        "np"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이항분포"
+          },
+          "body": "* 성공 확률 p인 독립시행을 n번 할 때 성공 횟수 X는 이항분포 B(n, p)를 따른다.\n* E(X) = np, V(X) = np(1−p).",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. B(3, ½)의 분포 모양",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "0",
+                "value": 1
+              },
+              {
+                "name": "1",
+                "value": 3
+              },
+              {
+                "name": "2",
+                "value": 3
+              },
+              {
+                "name": "3",
+                "value": 1
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이항분포",
+              "meaning": "독립시행의 성공 횟수의 분포"
+            },
+            {
+              "term": "평균·분산",
+              "meaning": "np, np(1−p)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* B(100, $\\dfrac{1}{2}$)에서 E(X) = {{50}}\n* V(X) = 100·$\\dfrac{1}{2}$·$\\dfrac{1}{2}$ = {{25}}\n* B(n, p)의 평균은 {{np}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-05",
+      "outlineNo": "12-1-3-05",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "연속확률변수와 확률밀도함수",
+      "keywords": [
+        "연속확률변수",
+        "확률밀도함수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 연속확률변수"
+          },
+          "body": "* 값이 연속적인 확률변수는 확률밀도함수 f(x)로 나타낸다.\n* 전체 넓이는 1이고, 확률은 그래프 아래의 넓이이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 확률밀도함수 곡선 (넓이 = 확률)",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": -1,
+            "p": 0,
+            "q": 3,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "확률밀도함수",
+              "meaning": "확률을 넓이로 주는 함수"
+            },
+            {
+              "term": "전체 넓이",
+              "meaning": "항상 1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 확률밀도함수 아래 전체 넓이는 {{1}}\n* P(a≤X≤b)는 a부터 b까지의 {{넓이}}\n* 연속확률변수에서 P(X=a) = {{0}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-06",
+      "outlineNo": "12-1-3-06",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "정규분포와 표준화",
+      "keywords": [
+        "정규분포",
+        "표준화"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정규분포"
+          },
+          "body": "* 종 모양의 확률분포 N(m, σ²)를 정규분포라 한다.\n* Z = $\\dfrac{X-m}{\\sigma}$로 표준화하면 표준정규분포 N(0, 1)이 된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 종 모양의 정규분포 곡선",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": -1,
+            "p": 0,
+            "q": 3,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "정규분포",
+              "meaning": "평균 중심의 종 모양 분포"
+            },
+            {
+              "term": "표준화",
+              "meaning": "Z = (X−m)÷σ"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* N(50, 10²)에서 X=60이면 Z = {{1}}\n* 표준정규분포의 평균은 0, 분산은 {{1}}\n* 정규분포 곡선은 x = {{m}}에 대칭",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-07",
+      "outlineNo": "12-1-3-07",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "표본평균의 분포",
+      "keywords": [
+        "표본평균",
+        "표본"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 표본평균의 분포"
+          },
+          "body": "* 모평균 m, 모표준편차 σ인 모집단에서 크기 n인 표본을 뽑으면\n* 표본평균 X̄는 E(X̄) = m, V(X̄) = $\\dfrac{\\sigma^{2}}{n}$인 분포를 따른다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 표본평균들의 흩어짐",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "표본1",
+                "value": 48
+              },
+              {
+                "name": "표본2",
+                "value": 51
+              },
+              {
+                "name": "표본3",
+                "value": 50
+              },
+              {
+                "name": "표본4",
+                "value": 49
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "표본평균",
+              "meaning": "표본의 평균 X̄"
+            },
+            {
+              "term": "분산",
+              "meaning": "σ² ÷ n — n이 클수록 좁아짐"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* E(X̄) = {{m}}\n* V(X̄) = σ² ÷ {{n}}\n* 표본이 클수록 표본평균은 모평균에 {{가까워진다}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-1-3-08",
+      "outlineNo": "12-1-3-08",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 통계",
+      "unit_mid": "모평균의 추정",
+      "keywords": [
+        "신뢰구간",
+        "추정"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 모평균의 추정"
+          },
+          "body": "* 표본평균으로 모평균이 있을 범위(신뢰구간)를 추정한다.\n* 신뢰도 95%: X̄ ± 1.96·$\\dfrac{\\sigma}{\\sqrt{n}}$, 신뢰도 99%: X̄ ± 2.58·$\\dfrac{\\sigma}{\\sqrt{n}}$.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "number_line",
+          "heading": {
+            "1": "2. 수직선으로 알아보기",
+            "3": "2. 수직선에 나타내어 보시오."
+          },
+          "params": {
+            "rows": [
+              {
+                "label": "신뢰구간",
+                "min": 40,
+                "max": 60,
+                "step": 5,
+                "range": null,
+                "points": [
+                  50
+                ]
+              }
+            ],
+            "width": 90
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "추정",
+              "meaning": "표본으로 모집단의 값을 짐작"
+            },
+            {
+              "term": "신뢰구간",
+              "meaning": "모평균이 들어 있을 범위"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 신뢰도 95%의 상수는 {{1.96}}\n* n이 커지면 신뢰구간의 길이는 {{짧아진다}}\n* 구간의 중심은 {{표본평균}} X̄",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

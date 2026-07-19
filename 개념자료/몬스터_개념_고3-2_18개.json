@@ -1,0 +1,1425 @@
+{
+  "type": "monster-workbook",
+  "version": 1,
+  "concepts": [
+    {
+      "id": "seed-12-2-1-01",
+      "outlineNo": "12-2-1-01",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "1. 수열의 극한과 급수",
+      "unit_mid": "수열의 극한",
+      "keywords": [
+        "수열의 극한",
+        "수렴",
+        "발산"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 수열의 극한"
+          },
+          "body": "* n이 한없이 커질 때 aₙ이 일정한 값 L에 가까워지면 수렴한다고 하고 $\\lim_{n \\to \\infty} a_{n}$ = L로 쓴다.\n* 수렴하지 않으면 발산한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 0으로 다가가는 수열",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "1/n의 값",
+            "inputs": [
+              "1",
+              "10",
+              "100",
+              "1000"
+            ],
+            "outputs": [
+              "1",
+              "0.1",
+              "0.01",
+              "0.001"
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "수렴",
+              "meaning": "일정한 값에 한없이 가까워짐"
+            },
+            {
+              "term": "발산",
+              "meaning": "수렴하지 않음 (∞ 포함)"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\lim_{n \\to \\infty}$ $\\dfrac{1}{n}$ = {{0}}\n* $\\lim_{n \\to \\infty}$ $\\dfrac{2n+1}{n}$ = {{2}}\n* aₙ = n은 한없이 커지므로 {{발산}}한다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-1-02",
+      "outlineNo": "12-2-1-02",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "1. 수열의 극한과 급수",
+      "unit_mid": "급수와 등비급수",
+      "keywords": [
+        "급수",
+        "등비급수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 급수와 등비급수"
+          },
+          "body": "* 수열의 항을 한없이 더한 것이 급수이다.\n* 등비급수 a + ar + ar² + …는 |r|<1일 때 $\\dfrac{a}{1-r}$로 수렴한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 2로 다가가는 부분합",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "n",
+            "botLabel": "부분합 Sₙ",
+            "inputs": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "outputs": [
+              "1",
+              "1.5",
+              "1.75",
+              "1.875"
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "급수",
+              "meaning": "무한히 더한 합"
+            },
+            {
+              "term": "등비급수의 합",
+              "meaning": "a÷(1−r), |r|<1일 때"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 1 + $\\dfrac{1}{2}$ + $\\dfrac{1}{4}$ + … = {{2}}\n* 수렴 조건은 |r| < {{1}}\n* 첫째항 3, 공비 $\\dfrac{1}{3}$인 등비급수의 합은 {{$\\dfrac{9}{2}$}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-01",
+      "outlineNo": "12-2-2-01",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "자연상수 e와 자연로그",
+      "keywords": [
+        "자연상수",
+        "자연로그"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. e와 자연로그"
+          },
+          "body": "* $\\lim_{n \\to \\infty} \\left(1+\\dfrac{1}{n}\\right)^{n}$ = e ≈ 2.718…을 자연상수라 한다.\n* 밑이 e인 로그 ln x를 자연로그라 한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = eˣ 꼴의 곡선",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "exp",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100,
+            "base": 3
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "자연상수 e",
+              "meaning": "(1+1/n)ⁿ의 극한, 약 2.718"
+            },
+            {
+              "term": "자연로그",
+              "meaning": "밑이 e인 로그 ln x"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* e ≈ {{2.718}}\n* ln e = {{1}}\n* ln 1 = {{0}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-02",
+      "outlineNo": "12-2-2-02",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "지수함수·로그함수의 미분",
+      "keywords": [
+        "지수함수의 미분",
+        "로그함수의 미분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 지수·로그의 미분"
+          },
+          "body": "* (eˣ)′ = eˣ, (aˣ)′ = aˣ ln a.\n* (ln x)′ = $\\dfrac{1}{x}$, (log_a x)′ = $\\dfrac{1}{x \\ln a}$.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = ln x 꼴의 곡선",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "log",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100,
+            "base": 3
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(eˣ)′",
+              "meaning": "eˣ — 미분해도 그대로"
+            },
+            {
+              "term": "(ln x)′",
+              "meaning": "1÷x"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (eˣ)′ = {{eˣ}}\n* (ln x)′ = {{$\\dfrac{1}{x}$}}\n* (2ˣ)′ = 2ˣ × {{ln 2}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-03",
+      "outlineNo": "12-2-2-03",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "삼각함수의 덧셈정리",
+      "keywords": [
+        "덧셈정리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각함수의 덧셈정리"
+          },
+          "body": "* sin(α±β) = sin α cos β ± cos α sin β.\n* cos(α±β) = cos α cos β ∓ sin α sin β.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "angle_fig",
+          "heading": {
+            "1": "2. 75° = 45° + 30°",
+            "3": "2. 각을 표시해 보시오."
+          },
+          "params": {
+            "degrees": 75,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "angle",
+              "text": "",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "덧셈정리",
+              "meaning": "두 각의 합·차의 삼각함수"
+            },
+            {
+              "term": "활용",
+              "meaning": "특수각의 합으로 계산"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* sin(α+β) = sin α cos β + cos α {{sin β}}\n* sin 75° = sin(45°+{{30°}})\n* cos(α+β)의 가운데 부호는 {{−}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-04",
+      "outlineNo": "12-2-2-04",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "삼각함수의 극한",
+      "keywords": [
+        "삼각함수의 극한"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각함수의 극한"
+          },
+          "body": "* $\\lim_{x \\to 0}$ $\\dfrac{\\sin x}{x}$ = 1 (x는 라디안).\n* 이 극한으로 삼각함수의 미분을 이끌어 낸다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 원점 근처에서 y=sin x ≈ y=x",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "sin",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "기본 극한",
+              "meaning": "sin x ÷ x → 1 (x→0)"
+            },
+            {
+              "term": "조건",
+              "meaning": "각은 라디안으로 잰다"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\lim_{x \\to 0}$ $\\dfrac{\\sin x}{x}$ = {{1}}\n* $\\lim_{x \\to 0}$ $\\dfrac{\\sin 2x}{x}$ = {{2}}\n* 원점 근처에서 sin x는 {{x}}와 거의 같다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-05",
+      "outlineNo": "12-2-2-05",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "삼각함수의 미분",
+      "keywords": [
+        "삼각함수의 미분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 삼각함수의 미분"
+          },
+          "body": "* (sin x)′ = cos x, (cos x)′ = −sin x.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = cos x — sin의 도함수",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "cos",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "(sin x)′",
+              "meaning": "cos x"
+            },
+            {
+              "term": "(cos x)′",
+              "meaning": "−sin x"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (sin x)′ = {{cos x}}\n* (cos x)′ = {{−sin x}}\n* (sin x)″ = {{−sin x}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-06",
+      "outlineNo": "12-2-2-06",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "몫의 미분법",
+      "keywords": [
+        "몫의 미분법"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 몫의 미분법"
+          },
+          "body": "* $\\left(\\dfrac{f}{g}\\right)'$ = $\\dfrac{f'g - fg'}{g^{2}}$ (g≠0).\n* 특히 $\\left(\\dfrac{1}{x}\\right)'$ = −$\\dfrac{1}{x^{2}}$.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = 1/x",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "hyperbola",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "몫의 미분법",
+              "meaning": "(f′g − fg′) ÷ g²"
+            },
+            {
+              "term": "부호 주의",
+              "meaning": "분자는 f′g에서 fg′를 뺌"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\left(\\dfrac{1}{x}\\right)'$ = {{−$\\dfrac{1}{x^{2}}$}}\n* 분모는 {{g²}}\n* (tan x)′ = {{sec²x}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-07",
+      "outlineNo": "12-2-2-07",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "합성함수의 미분법",
+      "keywords": [
+        "합성함수의 미분",
+        "연쇄법칙"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 합성함수의 미분"
+          },
+          "body": "* {f(g(x))}′ = f′(g(x))·g′(x) (연쇄법칙).\n* 겉을 미분하고 속의 미분을 곱한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. y = e²ˣ 꼴 — 빠르게 커지는 곡선",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "exp",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100,
+            "base": 4
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "연쇄법칙",
+              "meaning": "겉미분 × 속미분"
+            },
+            {
+              "term": "적용",
+              "meaning": "겹쳐진 함수의 미분"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (e²ˣ)′ = e²ˣ × {{2}}\n* {(x²+1)³}′ = 3(x²+1)² × {{2x}}\n* (sin 3x)′ = 3 {{cos 3x}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-08",
+      "outlineNo": "12-2-2-08",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "매개변수·음함수의 미분",
+      "keywords": [
+        "매개변수",
+        "음함수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 매개변수·음함수 미분"
+          },
+          "body": "* x=f(t), y=g(t)이면 $\\dfrac{dy}{dx}$ = $\\dfrac{\\;\\frac{dy}{dt}\\;}{\\;\\frac{dx}{dt}\\;}$ 이다.\n* x²+y²=1처럼 음함수 꼴은 양변을 x로 미분해 y′를 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "circle_fig",
+          "heading": {
+            "1": "2. 원 x²+y²=r² (음함수)",
+            "3": "2. 원을 그려 보시오."
+          },
+          "params": {
+            "showRadius": true,
+            "showDiameter": false,
+            "showCircumference": false,
+            "width": 70
+          },
+          "labels": [
+            {
+              "key": "jungsim",
+              "text": "중심",
+              "blank": false
+            },
+            {
+              "key": "banjireum",
+              "text": "반지름",
+              "blank": false
+            }
+          ],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "매개변수 미분",
+              "meaning": "t의 미분끼리의 비"
+            },
+            {
+              "term": "음함수 미분",
+              "meaning": "양변을 x로 미분"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* $\\dfrac{dy}{dx}$ 는 t에 대한 미분끼리의 {{비}}\n* x²+y²=1을 미분하면 2x + 2y·y′ = {{0}}\n* 따라서 y′ = −$\\dfrac{x}{y}$ — 분모는 {{y}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-09",
+      "outlineNo": "12-2-2-09",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "이계도함수와 변곡점",
+      "keywords": [
+        "이계도함수",
+        "변곡점"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 이계도함수"
+          },
+          "body": "* 도함수를 한 번 더 미분한 것이 이계도함수 f″(x)이다.\n* f″의 부호가 바뀌는 점이 변곡점이며, 그래프의 볼록 방향이 바뀐다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 아래로 볼록 (f″>0)",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "이계도함수",
+              "meaning": "f′를 다시 미분한 f″"
+            },
+            {
+              "term": "변곡점",
+              "meaning": "볼록 방향이 바뀌는 점"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* (x³)″ = {{6x}}\n* f″>0이면 그래프는 {{아래로 볼록}}\n* 변곡점에서는 f″(x) = {{0}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-2-10",
+      "outlineNo": "12-2-2-10",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "2. 미분법",
+      "unit_mid": "도함수의 활용 (그래프 개형)",
+      "keywords": [
+        "그래프 개형",
+        "극값"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 도함수의 활용"
+          },
+          "body": "* f′로 증가·감소와 극값을, f″로 볼록과 변곡점을 조사해 그래프의 개형을 그린다.\n* 점근선까지 살피면 개형이 완성된다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 극대를 가지는 곡선",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": -1,
+            "p": 0,
+            "q": 2,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "개형 조사",
+              "meaning": "f′·f″의 부호표를 만듦"
+            },
+            {
+              "term": "극값 판정",
+              "meaning": "f′=0, f″의 부호로 판단"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* f′(a)=0이고 f″(a)<0이면 x=a에서 {{극대}}\n* f′(a)=0이고 f″(a)>0이면 {{극소}}\n* 증감표에는 f′과 {{f″}}의 부호를 적는다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-3-01",
+      "outlineNo": "12-2-3-01",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 적분법",
+      "unit_mid": "여러 가지 함수의 부정적분",
+      "keywords": [
+        "부정적분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 여러 가지 부정적분"
+          },
+          "body": "* ∫eˣdx = eˣ + C, ∫$\\dfrac{1}{x}$dx = ln|x| + C.\n* ∫sin x dx = −cos x + C, ∫cos x dx = sin x + C.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "corr_table",
+          "heading": {
+            "1": "2. 기본 부정적분",
+            "3": "2. 표를 완성해 보시오."
+          },
+          "params": {
+            "topLabel": "f(x)",
+            "botLabel": "부정적분",
+            "inputs": [
+              "eˣ",
+              "cos x",
+              "sin x"
+            ],
+            "outputs": [
+              "eˣ+C",
+              "sin x+C",
+              "−cos x+C"
+            ],
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "∫eˣdx",
+              "meaning": "eˣ + C"
+            },
+            {
+              "term": "∫(1/x)dx",
+              "meaning": "ln|x| + C"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* ∫eˣdx = {{eˣ + C}}\n* ∫cos x dx = {{sin x + C}}\n* ∫$\\dfrac{1}{x}$dx = {{ln|x| + C}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-3-02",
+      "outlineNo": "12-2-3-02",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 적분법",
+      "unit_mid": "치환적분법",
+      "keywords": [
+        "치환적분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 치환적분법"
+          },
+          "body": "* 속을 t로 치환해 ∫f(g(x))g′(x)dx = ∫f(t)dt로 바꾼다.\n* 미분해서 곱해져 있는 부분을 찾는 것이 핵심이다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 치환으로 간단해지는 적분",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "치환적분",
+              "meaning": "속 함수를 t로 바꿈"
+            },
+            {
+              "term": "dt",
+              "meaning": "t′dx를 dt로 묶음"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* ∫2x(x²+1)³dx는 t = {{x²+1}}로 치환\n* 그러면 ∫t³dt = $\\dfrac{t^{4}}{4}$ + {{C}}\n* 치환 후에는 반드시 {{원래 문자}}로 되돌린다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-3-03",
+      "outlineNo": "12-2-3-03",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 적분법",
+      "unit_mid": "부분적분법",
+      "keywords": [
+        "부분적분"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 부분적분법"
+          },
+          "body": "* ∫f g′ dx = fg − ∫f′ g dx.\n* 미분하면 간단해지는 쪽을 f로 고른다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 1
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. x·eˣ 꼴의 적분",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "exp",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100,
+            "base": 2
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "부분적분",
+              "meaning": "곱의 미분법을 거꾸로 이용"
+            },
+            {
+              "term": "선택",
+              "meaning": "f는 미분해서 간단해지는 쪽"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* ∫x eˣ dx = x eˣ − ∫{{eˣ}} dx\n* 따라서 ∫x eˣ dx = (x − {{1}})eˣ + C\n* f로는 {{x}}(다항식)를 고른다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-3-04",
+      "outlineNo": "12-2-3-04",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 적분법",
+      "unit_mid": "정적분과 급수 (구분구적법)",
+      "keywords": [
+        "구분구적법",
+        "정적분과 급수"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 정적분과 급수"
+          },
+          "body": "* 구간을 잘게 나눠 직사각형 넓이의 합의 극한으로 넓이를 구하는 것이 구분구적법이다.\n* $\\lim_{n \\to \\infty} \\sum_{k=1}^{n} f\\!\\left(\\dfrac{k}{n}\\right)\\dfrac{1}{n}$ = $\\int_{0}^{1} f(x)dx$.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "stat_chart",
+          "heading": {
+            "1": "2. 직사각형의 합 → 곡선 아래 넓이",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "chart": "bar",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "",
+                "value": 1
+              },
+              {
+                "name": "",
+                "value": 2
+              },
+              {
+                "name": "",
+                "value": 3
+              },
+              {
+                "name": "",
+                "value": 4
+              }
+            ]
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "frame"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "구분구적법",
+              "meaning": "직사각형 합의 극한"
+            },
+            {
+              "term": "급수 ↔ 정적분",
+              "meaning": "합의 극한을 적분으로"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 직사각형을 한없이 잘게 나누면 넓이는 {{정적분}}이 된다\n* $\\dfrac{k}{n}$은 적분에서 {{x}}에 대응\n* $\\dfrac{1}{n}$은 적분에서 {{dx}}에 대응",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-3-05",
+      "outlineNo": "12-2-3-05",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 적분법",
+      "unit_mid": "넓이와 부피",
+      "keywords": [
+        "넓이",
+        "부피"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 넓이와 부피"
+          },
+          "body": "* 곡선 사이의 넓이는 ∫(위 − 아래)dx.\n* 입체의 부피는 단면의 넓이 S(x)를 적분해 V = $\\int_{a}^{b} S(x)dx$로 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. 곡선 아래 넓이",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "curve": "parabola",
+            "a": 1,
+            "p": 0,
+            "q": 0,
+            "unit": 40,
+            "slope": 1,
+            "yIntercept": 0,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "곡선 사이 넓이",
+              "meaning": "(위 − 아래)의 적분"
+            },
+            {
+              "term": "부피",
+              "meaning": "단면 넓이의 적분"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* 두 곡선 사이 넓이는 ∫({{위쪽}} − 아래쪽)dx\n* 부피는 {{단면의 넓이}}를 적분한다\n* y=x²와 x축, x=0~3의 넓이는 {{9}}",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "seed-12-2-3-06",
+      "outlineNo": "12-2-3-06",
+      "school": "고등학교",
+      "grade": "고3",
+      "unit_big": "3. 적분법",
+      "unit_mid": "속도와 거리 (미적분 활용)",
+      "keywords": [
+        "속도",
+        "움직인 거리"
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "heading": {
+            "1": "1. 속도와 거리"
+          },
+          "body": "* 위치의 변화량은 v(t)의 정적분, 움직인 거리는 |v(t)|의 정적분이다.\n* 평면 위 운동은 속도 벡터의 크기를 적분해 거리를 구한다.",
+          "stage3": {
+            "mode": "lines",
+            "lines": 2
+          }
+        },
+        {
+          "type": "figure",
+          "figure_type": "coord_graph",
+          "heading": {
+            "1": "2. v = 2t 그래프 아래 넓이",
+            "3": "2. 그래프로 나타내어 보시오."
+          },
+          "params": {
+            "slope": 2,
+            "yIntercept": 0,
+            "unit": 40,
+            "width": 100
+          },
+          "labels": [],
+          "labelAdjust": {},
+          "stage3": "axes_only"
+        },
+        {
+          "type": "table",
+          "heading": {
+            "1": "3. 용어 정리"
+          },
+          "columns": [
+            "용어",
+            "의미"
+          ],
+          "rows": [
+            {
+              "term": "위치 변화량",
+              "meaning": "∫v(t)dt"
+            },
+            {
+              "term": "움직인 거리",
+              "meaning": "∫|v(t)|dt"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": {
+            "1": "4. 예시"
+          },
+          "body": "* v=2t, 0~3초의 위치 변화량은 {{9}}\n* 방향이 바뀌면 거리는 |v|를 {{적분}}한다\n* v=6−2t는 t = {{3}}에서 방향이 바뀐다",
+          "stage3": {
+            "mode": "lines",
+            "lines": 3
+          }
+        }
+      ]
+    }
+  ]
+}

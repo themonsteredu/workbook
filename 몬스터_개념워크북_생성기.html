@@ -1465,11 +1465,15 @@ function renderAngleFig(block, stage) {
 // 직육면체/정육면체 전개도: 격자 기반으로 여러 종류(십자·엇갈림·계단)를 그림
 // 모든 프리셋은 실제로 접히는(마주 보는 면이 반대 끝을 덮는) 유효한 전개도
 const CUBOID_NETS = {
-  cross:  { cols: ["s", "g", "s", "g"], rows: ["s", "h", "s"], cells: [[0, 1], [1, 0], [1, 1], [1, 2], [1, 3], [2, 1]] },
-  offset: { cols: ["s", "g", "s", "g"], rows: ["s", "h", "s"], cells: [[0, 1], [1, 0], [1, 1], [1, 2], [1, 3], [2, 3]] },
-  stair:  { cols: ["g", "s", "g", "s"], rows: ["g", "h", "g"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 1], [2, 3]] }
+  cross:     { cols: ["s", "g", "s", "g"], rows: ["s", "h", "s"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 1], [2, 1]] },
+  offset:    { cols: ["s", "g", "s", "g"], rows: ["s", "h", "s"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 1], [2, 3]] },
+  stair:     { cols: ["g", "s", "g", "s"], rows: ["g", "h", "g"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 1], [2, 3]] },
+  crossTall: { cols: ["g", "s", "g", "s"], rows: ["g", "h", "g"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 1], [2, 1]] },
+  step:      { cols: ["s", "g", "s", "g"], rows: ["s", "h", "g"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 1], [2, 2]] },
+  diag:      { cols: ["s", "g", "s", "g"], rows: ["g", "h", "s"], cells: [[1, 0], [1, 1], [1, 2], [1, 3], [0, 0], [2, 3]] }
 };
-const CUBOID_NET_NAMES = { cross: "십자형", offset: "엇갈린형", stair: "계단형" };
+const CUBOID_NET_NAMES = { cross: "십자형", offset: "엇갈린형", stair: "계단형",
+  crossTall: "세로 십자형", step: "어긋난형", diag: "대각선형" };
 function cuboidNetSVG(type, g, sdim, h) {
   const K = { g: g, s: sdim, h: h };
   const net = CUBOID_NETS[type] || CUBOID_NETS.cross;
@@ -3199,7 +3203,8 @@ function buildFigureForm(body, block) {
         opts.appendChild(msel);
         // 전개도일 때: 전개도 종류(십자·엇갈림·계단) 선택
         if (p.mode === "net" && (p.solid === "cuboid" || p.solid === "cube")) {
-          const nsel = mkSelect([["cross", "십자형"], ["offset", "엇갈린형"], ["stair", "계단형"]],
+          const nsel = mkSelect([["cross", "십자형"], ["offset", "엇갈린형"], ["stair", "계단형"],
+            ["crossTall", "세로 십자형"], ["step", "어긋난형"], ["diag", "대각선형"]],
             p.netType || "cross", function (v) { p.netType = v; markDirty(); });
           nsel.style.marginRight = "12px";
           opts.appendChild(nsel);

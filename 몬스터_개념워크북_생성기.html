@@ -1388,6 +1388,8 @@ function renderColumnCalc(block, stage) {
   let ops = (Array.isArray(p.operands) ? p.operands : [p.a, p.b]).map(function (x) { return parseInt(x, 10); }).filter(function (x) { return !isNaN(x); });
   if (ops.length < 2) ops = [0, 0];
   const a = ops[0], b = ops[1];
+  // 여러 자리 곱셈은 부분곱(계산 과정)을 보여 줌
+  if (op === "×" && String(Math.abs(b)).length >= 2) return renderMultiplyColumn(a, b, p, blankAns);
   let answer;
   if (op === "+") answer = ops.reduce(function (s, n) { return s + n; }, 0);
   else if (op === "−") answer = a - b;
@@ -1462,6 +1464,64 @@ function renderColumnCalc(block, stage) {
       s += '<text x="' + colX(pl) + '" y="' + answerY + '" text-anchor="middle" font-size="' + digitFs + '" fill="#111" font-weight="600">' + dig(answer, pl) + "</text>";
     }
   }
+
+  const w = p.width && p.width < 100 ? p.width : 70;
+  return '<svg width="' + w + '%" viewBox="0 0 ' + W + " " + H + '" style="margin:8px auto 10px; display:block; max-width:' + W + 'px;">' + s + "</svg>";
+}
+
+// 세로셈 곱셈 (곱하는 수가 두 자리 이상): 부분곱을 단계로 보여 줌
+function renderMultiplyColumn(a, b, p, blankAns) {
+  a = Math.abs(a); b = Math.abs(b);
+  const answer = a * b;
+  function dig(n, i) { return Math.floor(n / Math.pow(10, i)) % 10; }
+  function len(n) { return String(n).length; }
+  const mb = len(b);
+  // 부분곱: 곱하는 수의 각 자리(일의 자리부터) × a, 자리만큼 왼쪽으로 밀어 씀
+  const pps = [];
+  for (let k = 0; k < mb; k++) pps.push({ val: a * dig(b, k), shift: k });
+  let cols = Math.max(len(answer), len(a), 1 + len(b));
+  pps.forEach(function (pp) { cols = Math.max(cols, pp.shift + len(pp.val)); });
+
+  const cellW = 30, digitFs = 22, padL = 34, padR = 12;
+  const rightX = padL + cols * cellW, W = rightX + padR;
+  function colX(pl) { return rightX - (pl + 0.5) * cellW; }
+  const rowH = 34, topPad = 12;
+  const aY = topPad + 24, bY = aY + rowH;
+  const line1Y = bY + 12;
+  const ppY = function (k) { return line1Y + 24 + k * rowH; };
+  const line2Y = ppY(mb - 1) + 12;
+  const answerY = line2Y + 26;
+  const H = answerY + 12;
+
+  function row(y, str, shift, weight) {
+    let t = "";
+    for (let pl = 0; pl < str.length; pl++) {
+      const d = str.charAt(str.length - 1 - pl);
+      t += '<text x="' + colX(pl + shift) + '" y="' + y + '" text-anchor="middle" font-size="' + digitFs + '" fill="#111"' + (weight ? ' font-weight="600"' : "") + ">" + d + "</text>";
+    }
+    return t;
+  }
+  function blankRow(y, wid, shift) {
+    let t = "";
+    for (let pl = 0; pl < wid; pl++)
+      t += '<line x1="' + (colX(pl + shift) - 10) + '" y1="' + (y + 3) + '" x2="' + (colX(pl + shift) + 10) + '" y2="' + (y + 3) + '" stroke="#999" stroke-width="1.3" stroke-dasharray="2,2"/>';
+    return t;
+  }
+
+  let s = "";
+  s += row(aY, String(a), 0);
+  s += row(bY, String(b), 0);
+  s += '<text x="' + (colX(len(b) - 1) - cellW * 0.72) + '" y="' + bY + '" text-anchor="middle" font-size="' + digitFs + '" fill="#111">×</text>';
+  s += '<line x1="' + (colX(cols - 1) - cellW) + '" y1="' + line1Y + '" x2="' + rightX + '" y2="' + line1Y + '" stroke="#111" stroke-width="2"/>';
+  // 부분곱
+  pps.forEach(function (pp, k) {
+    if (blankAns) s += blankRow(ppY(k), len(pp.val), pp.shift);
+    else s += row(ppY(k), String(pp.val), pp.shift);
+  });
+  // 부분곱을 더하는 선과 답
+  s += '<line x1="' + (colX(cols - 1) - cellW) + '" y1="' + line2Y + '" x2="' + rightX + '" y2="' + line2Y + '" stroke="#111" stroke-width="2"/>';
+  if (blankAns) s += blankRow(answerY, len(answer), 0);
+  else s += row(answerY, String(answer), 0, true);
 
   const w = p.width && p.width < 100 ? p.width : 70;
   return '<svg width="' + w + '%" viewBox="0 0 ' + W + " " + H + '" style="margin:8px auto 10px; display:block; max-width:' + W + 'px;">' + s + "</svg>";
@@ -2984,127 +3044,16 @@ function saveConcepts(list) {
 }
 
 let concepts = loadConcepts();
-if (!concepts) {
-  concepts = [JSON.parse(JSON.stringify(EXAMPLE_CONCEPT))];
-  saveConcepts(concepts);
-}
-// 그림 예제 2개 1회 넣기 (검수용, 삭제해도 다시 생기지 않음)
-const FIGURE_EXAMPLES = [
-  {
-    id: "example-fig-01", school: "초등학교", grade: "5학년",
-    unit_big: "다각형의 둘레와 넓이", unit_mid: "삼각형의 넓이 (그림 예제)",
-    keywords: ["삼각형", "밑변", "높이", "넓이", "분수"],
-    blocks: [
-      { type: "text", heading: { "1": "1. 삼각형의 넓이" },
-        body: "삼각형의 넓이는 밑변의 길이와 높이를 곱한 뒤 {{2}}로 나누어 구한다.",
-        stage3: { mode: "lines", lines: 2 } },
-      { type: "figure", figure_type: "basic_shape",
-        heading: { "1": "2. 밑변과 높이", "3": "2. 삼각형에 밑변과 높이를 직접 표시하시오." },
-        params: { shape: "triangle", width: 70, showBaseHeight: true },
-        labels: [{ key: "bottom", text: "밑변 6cm", blank: false }, { key: "height", text: "높이 4cm", blank: true }],
-        labelAdjust: {}, stage3: "frame" },
-      { type: "figure", figure_type: "fraction_fig",
-        heading: { "1": "3. 분수 모델 (색칠한 부분)", "3": "3. 4분의 3만큼 직접 색칠하고 분수로 쓰시오." },
-        params: { model: "bar", den: 4, num: 3, width: 70, showCaption: true },
-        labels: [{ key: "caption", text: "분수", blank: true }],
-        labelAdjust: {}, stage3: "frame" }
-    ]
-  },
-  {
-    id: "example-fig-02", school: "초등학교", grade: "5학년",
-    unit_big: "직육면체", unit_mid: "직육면체와 막대그래프 (그림 예제)",
-    keywords: ["직육면체", "가로", "세로", "높이", "막대그래프"],
-    blocks: [
-      { type: "figure", figure_type: "solid_fig",
-        heading: { "1": "1. 직육면체의 겨냥도", "3": "1. 직육면체의 겨냥도를 직접 그리시오." },
-        params: { solid: "cuboid", mode: "oblique", width: 70 },
-        labels: [
-          { key: "garo", text: "가로 6cm", blank: false },
-          { key: "sero", text: "세로 4cm", blank: false },
-          { key: "nopi", text: "높이 5cm", blank: true }
-        ],
-        labelAdjust: {}, stage3: "frame" },
-      { type: "figure", figure_type: "stat_chart",
-        heading: { "1": "2. 좋아하는 과일 조사 (막대그래프)", "3": "2. 조사한 내용을 막대그래프로 직접 그리시오." },
-        params: { chart: "bar", unit: "명", width: 100,
-          cats: [{ name: "사과", value: 8 }, { name: "바나나", value: 6 }, { name: "포도", value: 10 }, { name: "딸기", value: 4 }] },
-        labels: [], labelAdjust: {}, stage3: "frame" }
-    ]
-  }
-];
-if (!localStorage.getItem("mw_seed_figures_v1")) {
-  FIGURE_EXAMPLES.forEach(function (ex) {
-    if (!concepts.some(function (c) { return c.id === ex.id; })) {
-      concepts.push(JSON.parse(JSON.stringify(ex)));
-    }
-  });
-  saveConcepts(concepts);
-  localStorage.setItem("mw_seed_figures_v1", "1");
-}
-
-// 그림 2차(원·각도·쌓기나무) 예제 1회 넣기
-const FIGURE_EXAMPLES2 = [
-  {
-    id: "example-fig-03", school: "초등학교", grade: "3학년",
-    unit_big: "원", unit_mid: "원의 중심과 반지름 (그림 예제)",
-    keywords: ["원", "중심", "반지름", "지름"],
-    blocks: [
-      { type: "figure", figure_type: "circle_fig",
-        heading: { "1": "1. 원의 각 부분", "3": "1. 원에 중심·반지름·지름을 직접 표시하시오." },
-        params: { showRadius: true, showDiameter: true, showCircumference: false, width: 60 },
-        labels: [
-          { key: "jungsim", text: "중심", blank: false },
-          { key: "banjireum", text: "반지름", blank: true },
-          { key: "jireum", text: "지름", blank: true },
-          { key: "wonju", text: "", blank: false }
-        ],
-        labelAdjust: {}, stage3: "frame" }
-    ]
-  },
-  {
-    id: "example-fig-04", school: "초등학교", grade: "4학년",
-    unit_big: "각도", unit_mid: "예각과 둔각, 직각 (그림 예제)",
-    keywords: ["각", "직각", "예각", "둔각"],
-    blocks: [
-      { type: "figure", figure_type: "angle_fig",
-        heading: { "1": "1. 직각", "3": "1. 직각을 직접 그리시오." },
-        params: { degrees: 90, width: 55 },
-        labels: [{ key: "angle", text: "직각", blank: false }], labelAdjust: {}, stage3: "frame" },
-      { type: "figure", figure_type: "angle_fig",
-        heading: { "1": "2. 예각 (직각보다 작은 각)" },
-        params: { degrees: 45, width: 55 },
-        labels: [{ key: "angle", text: "", blank: true }], labelAdjust: {}, stage3: "frame" }
-    ]
-  },
-  {
-    id: "example-fig-05", school: "초등학교", grade: "6학년",
-    unit_big: "공간과 입체", unit_mid: "쌓기나무 (그림 예제)",
-    keywords: ["쌓기나무", "위", "앞", "옆"],
-    blocks: [
-      { type: "figure", figure_type: "solid_fig",
-        heading: { "1": "1. 쌓기나무 모양", "3": "1. 아래 모양을 보고 쌓기나무의 개수를 세어 보시오." },
-        params: { solid: "stack", layers: [[2, 1], [1, 2]], width: 60 },
-        labels: [], labelAdjust: {}, stage3: "frame" }
-    ]
-  }
-];
-if (!localStorage.getItem("mw_seed_figures2_v1")) {
-  FIGURE_EXAMPLES2.forEach(function (ex) {
-    if (!concepts.some(function (c) { return c.id === ex.id; })) {
-      concepts.push(JSON.parse(JSON.stringify(ex)));
-    }
-  });
-  saveConcepts(concepts);
-  localStorage.setItem("mw_seed_figures2_v1", "1");
-}
-
-// 수식 예제 1회 넣기 (검수용, 삭제해도 다시 생기지 않음)
-if (!localStorage.getItem("mw_seed_formula_v1")) {
-  if (!concepts.some(function (c) { return c.id === FORMULA_EXAMPLE.id; })) {
-    concepts.push(JSON.parse(JSON.stringify(FORMULA_EXAMPLE)));
-    saveConcepts(concepts);
-  }
-  localStorage.setItem("mw_seed_formula_v1", "1");
+if (!concepts) concepts = [];
+// 개발 검수용으로 자동으로 넣었던 예제 개념(일차함수 기본 예제·그림 예제·수식 예제)은
+// 실제 교육과정이 완성되어 더 이상 넣지 않고, 이전에 들어간 것이 있으면 한 번 정리한다.
+if (!localStorage.getItem("mw_cleanup_demos_v1")) {
+  const demoIds = ["mid2-linear-func-01", "example-fig-01", "example-fig-02",
+    "example-fig-03", "example-fig-04", "example-fig-05", "example-formula-01"];
+  const before = concepts.length;
+  concepts = concepts.filter(function (c) { return demoIds.indexOf(c.id) < 0; });
+  if (concepts.length !== before) saveConcepts(concepts);
+  localStorage.setItem("mw_cleanup_demos_v1", "1");
 }
 
 // 미리 만든 개념: 초3-1 24개 1회 넣기 (넣은 뒤 수정·삭제 자유, 지워도 다시 안 생김)

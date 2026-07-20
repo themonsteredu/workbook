@@ -102,21 +102,31 @@
         },
         {
           "type": "figure",
-          "figure_type": "bond_fig",
+          "figure_type": "corr_table",
           "heading": {
-            "1": "2. 인수로 나타내기 (12 = 4 × 3)",
-            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+            "1": "2. 2를 거듭 곱하기 (n → 2ⁿ)",
+            "3": "2. 표를 완성해 보시오."
           },
           "params": {
-            "whole": 12,
-            "part1": 4,
-            "part2": 3,
-            "op": "×",
-            "width": 62
+            "topLabel": "n",
+            "botLabel": "2ⁿ",
+            "inputs": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "outputs": [
+              2,
+              4,
+              8,
+              16
+            ],
+            "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "blank"
+          "stage3": "frame"
         },
         {
           "type": "table",
@@ -243,7 +253,7 @@
           "heading": {
             "1": "1. 약수의 개수"
           },
-          "body": "* $a^{m}\\times b^{n}$ 꼴의 약수의 개수는 (m+1)(n+1)이다.",
+          "body": "* a, b가 서로 다른 소수일 때, $a^{m}\\times b^{n}$ 꼴의 약수의 개수는 (m+1)(n+1)이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -283,7 +293,7 @@
             },
             {
               "term": "약수",
-              "meaning": "소인수들을 곱하여 만들 수 있는 수"
+              "meaning": "어떤 수를 나누어떨어지게 하는 수"
             }
           ]
         },
@@ -328,15 +338,15 @@
           "type": "figure",
           "figure_type": "bond_fig",
           "heading": {
-            "1": "2. 인수로 나타내기 (12 = 4 × 3)",
-            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+            "1": "2. 최대공약수 6 = 2 × 3 (12와 18의 공통 소인수)",
+            "3": "2. 빈 곳을 채워 보시오."
           },
           "params": {
-            "whole": 12,
-            "part1": 4,
+            "whole": 6,
+            "part1": 2,
             "part2": 3,
             "op": "×",
-            "width": 62
+            "width": 65
           },
           "labels": [],
           "labelAdjust": {},
@@ -402,15 +412,15 @@
           "type": "figure",
           "figure_type": "bond_fig",
           "heading": {
-            "1": "2. 인수로 나타내기 (12 = 4 × 3)",
-            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+            "1": "2. 최소공배수 36 = 2²×3² = 4 × 9",
+            "3": "2. 빈 곳을 채워 보시오."
           },
           "params": {
-            "whole": 12,
+            "whole": 36,
             "part1": 4,
-            "part2": 3,
+            "part2": 9,
             "op": "×",
-            "width": 62
+            "width": 65
           },
           "labels": [],
           "labelAdjust": {},
@@ -475,21 +485,29 @@
         },
         {
           "type": "figure",
-          "figure_type": "bond_fig",
+          "figure_type": "corr_table",
           "heading": {
-            "1": "2. 인수로 나타내기 (12 = 4 × 3)",
-            "3": "2. 빈 곳에 알맞은 수를 써 보시오."
+            "1": "2. 6분·8분 간격 버스가 함께 출발하는 때 (최소공배수 24)",
+            "3": "2. 표를 완성해 보시오."
           },
           "params": {
-            "whole": 12,
-            "part1": 4,
-            "part2": 3,
-            "op": "×",
-            "width": 62
+            "topLabel": "차례",
+            "botLabel": "함께 출발(분 뒤)",
+            "inputs": [
+              1,
+              2,
+              3
+            ],
+            "outputs": [
+              24,
+              48,
+              72
+            ],
+            "width": 100
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "blank"
+          "stage3": "frame"
         },
         {
           "type": "table",

@@ -431,23 +431,23 @@
           "type": "figure",
           "figure_type": "corr_table",
           "heading": {
-            "1": "2. 식의 값 (x → 3x)",
+            "1": "2. 제곱근의 값 (x → √x)",
             "3": "2. 표를 완성해 보시오."
           },
           "params": {
             "topLabel": "x",
-            "botLabel": "3x",
+            "botLabel": "√x",
             "inputs": [
+              1,
+              4,
+              9,
+              16
+            ],
+            "outputs": [
               1,
               2,
               3,
               4
-            ],
-            "outputs": [
-              3,
-              6,
-              9,
-              12
             ],
             "width": 100
           },
@@ -515,23 +515,23 @@
           "type": "figure",
           "figure_type": "corr_table",
           "heading": {
-            "1": "2. 식의 값 (x → 3x)",
+            "1": "2. 제곱근의 값 (x → √x)",
             "3": "2. 표를 완성해 보시오."
           },
           "params": {
             "topLabel": "x",
-            "botLabel": "3x",
+            "botLabel": "√x",
             "inputs": [
+              1,
+              4,
+              9,
+              16
+            ],
+            "outputs": [
               1,
               2,
               3,
               4
-            ],
-            "outputs": [
-              3,
-              6,
-              9,
-              12
             ],
             "width": 100
           },
@@ -600,23 +600,23 @@
           "type": "figure",
           "figure_type": "corr_table",
           "heading": {
-            "1": "2. 식의 값 (x → 3x)",
+            "1": "2. 제곱근의 값 (x → √x)",
             "3": "2. 표를 완성해 보시오."
           },
           "params": {
             "topLabel": "x",
-            "botLabel": "3x",
+            "botLabel": "√x",
             "inputs": [
+              1,
+              4,
+              9,
+              16
+            ],
+            "outputs": [
               1,
               2,
               3,
               4
-            ],
-            "outputs": [
-              3,
-              6,
-              9,
-              12
             ],
             "width": 100
           },
@@ -684,23 +684,23 @@
           "type": "figure",
           "figure_type": "corr_table",
           "heading": {
-            "1": "2. 식의 값 (x → 3x)",
+            "1": "2. 제곱근의 값 (x → √x)",
             "3": "2. 표를 완성해 보시오."
           },
           "params": {
             "topLabel": "x",
-            "botLabel": "3x",
+            "botLabel": "√x",
             "inputs": [
+              1,
+              4,
+              9,
+              16
+            ],
+            "outputs": [
               1,
               2,
               3,
               4
-            ],
-            "outputs": [
-              3,
-              6,
-              9,
-              12
             ],
             "width": 100
           },
@@ -769,23 +769,23 @@
           "type": "figure",
           "figure_type": "corr_table",
           "heading": {
-            "1": "2. 식의 값 (x → 3x)",
+            "1": "2. 제곱근의 값 (x → √x)",
             "3": "2. 표를 완성해 보시오."
           },
           "params": {
             "topLabel": "x",
-            "botLabel": "3x",
+            "botLabel": "√x",
             "inputs": [
+              1,
+              4,
+              9,
+              16
+            ],
+            "outputs": [
               1,
               2,
               3,
               4
-            ],
-            "outputs": [
-              3,
-              6,
-              9,
-              12
             ],
             "width": 100
           },
@@ -1630,7 +1630,7 @@
       "keywords": [
         "근의 공식",
         "분모",
-        "판별식"
+        "이차방정식"
       ],
       "blocks": [
         {
@@ -1699,7 +1699,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* x²+3x+2=0 → x=−1, {{−2}}\n* 근의 공식의 분모는 {{2a}}\n* b²−4ac를 {{판별식}}이라 한다",
+          "body": "* x²+3x+2=0 → x=−1, {{−2}}\n* 근의 공식의 분모는 {{2a}}\n* 2x²+3x+1=0 → x=−1, {{−1/2}}",
           "stage3": {
             "mode": "lines",
             "lines": 3
@@ -1713,11 +1713,11 @@
       "school": "중학교",
       "grade": "중3",
       "unit_big": "4. 이차방정식",
-      "unit_mid": "이차방정식의 근의 개수(판별식)",
+      "unit_mid": "이차방정식의 근의 개수",
       "keywords": [
-        "판별식",
         "근의 개수",
-        "중근"
+        "중근",
+        "b²−4ac"
       ],
       "blocks": [
         {
@@ -1725,7 +1725,7 @@
           "heading": {
             "1": "1. 판별식과 근의 개수"
           },
-          "body": "* D=b²−4ac 가 D>0이면 서로 다른 두 실근, D=0이면 중근, D<0이면 실근이 없다.",
+          "body": "* 근의 공식에서 근호 안의 식 b²−4ac의 부호에 따라 근의 개수가 정해진다.\n* b²−4ac>0이면 서로 다른 두 근, =0이면 중근, <0이면 근이 없다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -1772,12 +1772,12 @@
           ],
           "rows": [
             {
-              "term": "판별식",
-              "meaning": "D = b²−4ac"
+              "term": "b²−4ac",
+              "meaning": "근호 안의 식 — 부호로 근의 개수를 판단"
             },
             {
               "term": "근의 개수",
-              "meaning": "판별식 b²−4ac의 부호로 판단"
+              "meaning": ">0 두 근, =0 중근, <0 없음"
             }
           ]
         },
@@ -1786,7 +1786,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* 판별식>0이면 서로 다른 {{두}} 실근\n* 판별식=0이면 {{중근}}\n* 판별식<0이면 실근이 {{없다}}",
+          "body": "* b²−4ac>0이면 서로 다른 {{두}} 근\n* b²−4ac=0이면 {{중근}}\n* b²−4ac<0이면 근이 {{없다}}",
           "stage3": {
             "mode": "lines",
             "lines": 3

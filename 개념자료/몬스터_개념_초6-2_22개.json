@@ -92,7 +92,7 @@
       "keywords": [
         "분수",
         "나눗셈",
-        "역수"
+        "곱셈으로 바꾸기"
       ],
       "blocks": [
         {
@@ -145,8 +145,8 @@
               "meaning": "÷ 분수 = × 뒤집은 분수"
             },
             {
-              "term": "역수",
-              "meaning": "분모와 분자를 바꾼 수"
+              "term": "뒤집은 분수",
+              "meaning": "분모와 분자를 바꾼 분수"
             }
           ]
         },
@@ -173,7 +173,7 @@
       "keywords": [
         "자연수",
         "분수",
-        "역수"
+        "곱셈으로 바꾸기"
       ],
       "blocks": [
         {
@@ -191,7 +191,7 @@
           "type": "figure",
           "figure_type": "fraction_fig",
           "heading": {
-            "1": "2. 역수로 바꾸기",
+            "1": "2. 분모와 분자를 바꾸어 곱하기",
             "3": "2. 그림으로 나타내어 보시오."
           },
           "params": {
@@ -222,8 +222,8 @@
           ],
           "rows": [
             {
-              "term": "역수",
-              "meaning": "분모·분자를 바꾼 수"
+              "term": "뒤집은 분수",
+              "meaning": "분모와 분자를 바꾼 분수"
             },
             {
               "term": "바꾸기",
@@ -999,7 +999,7 @@
           },
           "params": {
             "showRadius": true,
-            "showDiameter": false,
+            "showDiameter": true,
             "showCircumference": true,
             "width": 70
           },
@@ -1083,7 +1083,7 @@
           },
           "params": {
             "showRadius": true,
-            "showDiameter": false,
+            "showDiameter": true,
             "showCircumference": true,
             "width": 70
           },
@@ -1238,7 +1238,7 @@
           "heading": {
             "1": "1. 원의 넓이 활용"
           },
-          "body": "* 지름이 주어지면 반지름으로 바꾸어 넓이를 구한다.\n* 원의 넓이는 반지름의 곱(제곱)에 비례한다.",
+          "body": "* 지름이 주어지면 반지름으로 바꾸어 넓이를 구한다.\n* 반지름이 2배가 되면 넓이는 4배가 된다.",
           "stage3": {
             "mode": "lines",
             "lines": 2
@@ -1288,7 +1288,7 @@
             },
             {
               "term": "넓이 비교",
-              "meaning": "반지름의 제곱에 비례"
+              "meaning": "반지름이 2배면 넓이는 4배"
             }
           ]
         },

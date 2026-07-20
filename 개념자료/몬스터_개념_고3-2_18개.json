@@ -177,9 +177,9 @@
       "school": "고등학교",
       "grade": "고3",
       "unit_big": "2. 미분법",
-      "unit_mid": "자연상수 e와 자연로그",
+      "unit_mid": "무리수 e와 자연로그",
       "keywords": [
-        "자연상수",
+        "무리수 e",
         "자연로그"
       ],
       "blocks": [
@@ -188,7 +188,7 @@
           "heading": {
             "1": "1. e와 자연로그"
           },
-          "body": "* $\\lim_{n \\to \\infty} \\left(1+\\dfrac{1}{n}\\right)^{n}$ = e ≈ 2.718…을 자연상수라 한다.\n* 밑이 e인 로그 ln x를 자연로그라 한다.",
+          "body": "* $\\lim_{n \\to \\infty} \\left(1+\\dfrac{1}{n}\\right)^{n}$ = e ≈ 2.718…을 무리수 e라 한다.\n* 밑이 e인 로그 ln x를 자연로그라 한다.",
           "stage3": {
             "mode": "lines",
             "lines": 2
@@ -227,7 +227,7 @@
           ],
           "rows": [
             {
-              "term": "자연상수 e",
+              "term": "무리수 e",
               "meaning": "(1+1/n)ⁿ의 극한, 약 2.718"
             },
             {

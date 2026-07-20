@@ -71,7 +71,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* 275 + 158 = {{433}}\n* 346 + 179 = {{525}}\n* 68 + 57 = {{125}}",
+          "body": "* 275 + 158 = {{433}}\n* 346 + 179 = {{525}}\n* 507 + 265 = {{772}}",
           "stage3": {
             "mode": "lines",
             "lines": 3
@@ -148,7 +148,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* 320 − 175 = {{145}}\n* 412 − 138 = {{274}}\n* 150 − 76 = {{74}}",
+          "body": "* 320 − 175 = {{145}}\n* 412 − 138 = {{274}}\n* 500 − 176 = {{324}}",
           "stage3": {
             "mode": "lines",
             "lines": 3
@@ -517,7 +517,7 @@
             },
             {
               "term": "직각",
-              "meaning": "90도로 크기가 정해진 각"
+              "meaning": "종이를 반듯하게 두 번 접었을 때 생기는 각"
             }
           ]
         },
@@ -649,22 +649,16 @@
           "type": "figure",
           "figure_type": "fraction_fig",
           "heading": {
-            "1": "2. 12를 똑같이 4묶음으로 나눈 그림"
+            "1": "2. 12를 똑같이 4묶음으로 나누면 한 묶음은 3",
+            "3": "2. 12를 똑같이 4묶음으로 나누어 보시오."
           },
           "params": {
-            "model": "circle",
-            "den": 4,
-            "num": 1,
-            "width": 78,
-            "showCaption": true
+            "model": "group",
+            "groups": 4,
+            "per": 3,
+            "width": 92
           },
-          "labels": [
-            {
-              "key": "caption",
-              "text": "분수",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -727,22 +721,20 @@
         },
         {
           "type": "figure",
-          "figure_type": "column_calc",
+          "figure_type": "fraction_fig",
           "heading": {
-            "1": "2. 세로셈으로 알아보기",
-            "3": "2. 나눗셈을 세로셈으로 계산해 보시오."
+            "1": "2. 12 ÷ 4 = 3 — 몫은 한 묶음의 수",
+            "3": "2. 그림을 보고 나눗셈식을 써 보시오."
           },
           "params": {
-            "op": "÷",
-            "operands": [
-              12,
-              4
-            ],
-            "width": 55
+            "model": "group",
+            "groups": 4,
+            "per": 3,
+            "width": 92
           },
           "labels": [],
           "labelAdjust": {},
-          "stage3": "answer_blank"
+          "stage3": "frame"
         },
         {
           "type": "table",

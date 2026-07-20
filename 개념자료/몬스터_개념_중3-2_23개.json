@@ -396,10 +396,10 @@
       "school": "중학교",
       "grade": "중3",
       "unit_big": "1. 이차함수와 그래프",
-      "unit_mid": "이차함수의 최댓값·최솟값",
+      "unit_mid": "이차함수의 그래프와 꼭짓점 (가장 높은·낮은 점)",
       "keywords": [
-        "최댓값",
-        "최솟값"
+        "꼭짓점",
+        "그래프"
       ],
       "blocks": [
         {
@@ -407,7 +407,7 @@
           "heading": {
             "1": "1. 최댓값·최솟값"
           },
-          "body": "* a>0이면 꼭짓점에서 최솟값, a<0이면 꼭짓점에서 최댓값을 가진다.",
+          "body": "* a>0이면 꼭짓점이 그래프에서 가장 낮은 점, a<0이면 가장 높은 점이다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -445,12 +445,12 @@
           ],
           "rows": [
             {
-              "term": "최솟값",
-              "meaning": "a>0, 꼭짓점의 y값"
+              "term": "가장 낮은 점",
+              "meaning": "a>0일 때의 꼭짓점"
             },
             {
-              "term": "최댓값",
-              "meaning": "a<0, 꼭짓점의 y값"
+              "term": "가장 높은 점",
+              "meaning": "a<0일 때의 꼭짓점"
             }
           ]
         },
@@ -459,7 +459,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* y=(x−1)²+2는 x=1에서 최솟값 {{2}}\n* a>0이면 {{최솟값}}을 가진다\n* a<0이면 {{최댓값}}을 가진다",
+          "body": "* y=(x−1)²+2의 꼭짓점은 (1, {{2}})\n* a>0이면 꼭짓점이 가장 {{낮은}} 점\n* a<0이면 꼭짓점이 가장 {{높은}} 점",
           "stage3": {
             "mode": "lines",
             "lines": 3
@@ -486,7 +486,7 @@
           "heading": {
             "1": "1. 이차함수의 활용"
           },
-          "body": "* 넓이·포물선 운동 등에서 이차함수를 세우고 꼭짓점으로 최대·최소를 구한다.",
+          "body": "* 넓이·포물선 운동 등에서 이차함수를 세우고 꼭짓점을 이용해 그래프를 해석한다.",
           "stage3": {
             "mode": "lines",
             "lines": 1
@@ -528,8 +528,8 @@
               "meaning": "넓이·운동 등 실생활 문제에 적용"
             },
             {
-              "term": "최대·최소",
-              "meaning": "꼭짓점에서 최댓값·최솟값을 가짐"
+              "term": "꼭짓점",
+              "meaning": "그래프에서 가장 높거나 낮은 점"
             }
           ]
         },
@@ -538,7 +538,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* 넓이의 최댓값 문제에 {{이차함수}}를 이용한다\n* 최댓값·최솟값은 {{꼭짓점}}에서 나온다\n* 식을 세워 꼭짓점을 {{구한다}}",
+          "body": "* 실생활 문제에 {{이차함수}}를 이용한다\n* 그래프에서 가장 높은(낮은) 점은 {{꼭짓점}}이다\n* 식을 세워 꼭짓점을 {{구한다}}",
           "stage3": {
             "mode": "lines",
             "lines": 3
@@ -951,29 +951,16 @@
         },
         {
           "type": "figure",
-          "figure_type": "circle_fig",
+          "figure_type": "circle_proof",
           "heading": {
             "1": "2. 현과 수직이등분선",
             "3": "2. 원을 그려 보시오."
           },
           "params": {
-            "showRadius": true,
-            "showDiameter": false,
-            "showCircumference": false,
+            "kind": "chord_perp",
             "width": 70
           },
-          "labels": [
-            {
-              "key": "jungsim",
-              "text": "중심",
-              "blank": false
-            },
-            {
-              "key": "banjireum",
-              "text": "반지름",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -1062,29 +1049,16 @@
         },
         {
           "type": "figure",
-          "figure_type": "circle_fig",
+          "figure_type": "circle_proof",
           "heading": {
             "1": "2. 원의 접선",
             "3": "2. 원을 그려 보시오."
           },
           "params": {
-            "showRadius": true,
-            "showDiameter": false,
-            "showCircumference": false,
+            "kind": "two_tangents",
             "width": 70
           },
-          "labels": [
-            {
-              "key": "jungsim",
-              "text": "중심",
-              "blank": false
-            },
-            {
-              "key": "banjireum",
-              "text": "반지름",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -1171,29 +1145,16 @@
         },
         {
           "type": "figure",
-          "figure_type": "circle_fig",
+          "figure_type": "circle_proof",
           "heading": {
             "1": "2. 외접하는 사각형",
             "3": "2. 원을 그려 보시오."
           },
           "params": {
-            "showRadius": true,
-            "showDiameter": false,
-            "showCircumference": false,
+            "kind": "two_tangents",
             "width": 70
           },
-          "labels": [
-            {
-              "key": "jungsim",
-              "text": "중심",
-              "blank": false
-            },
-            {
-              "key": "banjireum",
-              "text": "반지름",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -1282,29 +1243,16 @@
         },
         {
           "type": "figure",
-          "figure_type": "circle_fig",
+          "figure_type": "circle_proof",
           "heading": {
             "1": "2. 원주각과 중심각",
             "3": "2. 원을 그려 보시오."
           },
           "params": {
-            "showRadius": true,
-            "showDiameter": false,
-            "showCircumference": false,
+            "kind": "inscribed",
             "width": 70
           },
-          "labels": [
-            {
-              "key": "jungsim",
-              "text": "중심",
-              "blank": false
-            },
-            {
-              "key": "banjireum",
-              "text": "반지름",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -1393,29 +1341,16 @@
         },
         {
           "type": "figure",
-          "figure_type": "circle_fig",
+          "figure_type": "circle_proof",
           "heading": {
             "1": "2. 원주각의 성질",
             "3": "2. 원을 그려 보시오."
           },
           "params": {
-            "showRadius": true,
-            "showDiameter": false,
-            "showCircumference": false,
+            "kind": "inscribed",
             "width": 70
           },
-          "labels": [
-            {
-              "key": "jungsim",
-              "text": "중심",
-              "blank": false
-            },
-            {
-              "key": "banjireum",
-              "text": "반지름",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -1503,29 +1438,16 @@
         },
         {
           "type": "figure",
-          "figure_type": "circle_fig",
+          "figure_type": "circle_proof",
           "heading": {
             "1": "2. 한 원 위의 네 점",
             "3": "2. 원을 그려 보시오."
           },
           "params": {
-            "showRadius": true,
-            "showDiameter": false,
-            "showCircumference": false,
+            "kind": "inscribed",
             "width": 70
           },
-          "labels": [
-            {
-              "key": "jungsim",
-              "text": "중심",
-              "blank": false
-            },
-            {
-              "key": "banjireum",
-              "text": "반지름",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -1598,7 +1520,7 @@
       "keywords": [
         "접선",
         "현",
-        "접현각"
+        "원주각"
       ],
       "blocks": [
         {
@@ -1614,29 +1536,16 @@
         },
         {
           "type": "figure",
-          "figure_type": "circle_fig",
+          "figure_type": "circle_proof",
           "heading": {
             "1": "2. 접선과 현이 이루는 각",
             "3": "2. 원을 그려 보시오."
           },
           "params": {
-            "showRadius": true,
-            "showDiameter": false,
-            "showCircumference": false,
+            "kind": "tangent_chord",
             "width": 70
           },
-          "labels": [
-            {
-              "key": "jungsim",
-              "text": "중심",
-              "blank": false
-            },
-            {
-              "key": "banjireum",
-              "text": "반지름",
-              "blank": false
-            }
-          ],
+          "labels": [],
           "labelAdjust": {},
           "stage3": "frame"
         },
@@ -1651,7 +1560,7 @@
           ],
           "rows": [
             {
-              "term": "접현각",
+              "term": "접선과 현이 이루는 각",
               "meaning": "접선과 현이 이루는 각"
             },
             {
@@ -1665,7 +1574,7 @@
           "heading": {
             "1": "4. 예시"
           },
-          "body": "* 접선과 현이 이루는 각은 그 현에 대한 {{원주각}}과 같다\n* 이를 접현각이라 {{한다}}\n* 각을 원주각으로 바꿔 {{구한다}}",
+          "body": "* 접선과 현이 이루는 각은 그 현에 대한 {{원주각}}과 같다\n* 반원의 원주각은 {{90}}°임을 이용한다\n* 각을 원주각으로 바꿔 {{구한다}}",
           "stage3": {
             "mode": "lines",
             "lines": 3
@@ -2000,29 +1909,33 @@
           "type": "figure",
           "figure_type": "stat_chart",
           "heading": {
-            "1": "2. 자료의 분포",
-            "3": "2. 그래프로 나타내어 보시오."
+            "1": "2. 산점도 — 공부 시간(시간)과 점수",
+            "3": "2. 산점도로 나타내어 보시오."
           },
           "params": {
-            "chart": "bar",
-            "unit": "",
+            "chart": "scatter",
+            "unit": "점",
             "width": 100,
             "cats": [
               {
-                "name": "A",
-                "value": 3
+                "name": "1",
+                "value": 60
               },
               {
-                "name": "B",
-                "value": 6
+                "name": "2",
+                "value": 70
               },
               {
-                "name": "C",
-                "value": 4
+                "name": "3",
+                "value": 75
               },
               {
-                "name": "D",
-                "value": 2
+                "name": "4",
+                "value": 85
+              },
+              {
+                "name": "5",
+                "value": 90
               }
             ]
           },

@@ -1319,7 +1319,7 @@
             "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "chart": "bar",
+            "chart": "picto",
             "unit": "명",
             "cats": [
               {

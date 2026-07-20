@@ -1020,20 +1020,20 @@
           "type": "figure",
           "figure_type": "corr_table",
           "heading": {
-            "1": "2. 산술평균은 항상 5 이상",
+            "1": "2. 합이 10일 때 기하평균은 항상 5 이하",
             "3": "2. 표를 완성해 보시오."
           },
           "params": {
             "topLabel": "a와 b",
-            "botLabel": "산술평균",
+            "botLabel": "기하평균",
             "inputs": [
               "1과 9",
               "2와 8",
               "5와 5"
             ],
             "outputs": [
-              5,
-              5,
+              3,
+              4,
               5
             ],
             "width": 100

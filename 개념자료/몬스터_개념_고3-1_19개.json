@@ -465,6 +465,14 @@
               {
                 "name": "4",
                 "value": 10
+              },
+              {
+                "name": "5",
+                "value": 8
+              },
+              {
+                "name": "6",
+                "value": 12
               }
             ]
           },
@@ -1255,20 +1263,45 @@
         },
         {
           "type": "figure",
-          "figure_type": "coord_graph",
+          "figure_type": "stat_chart",
           "heading": {
             "1": "2. 확률밀도함수 곡선 (넓이 = 확률)",
             "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "curve": "parabola",
-            "a": -1,
-            "p": 0,
-            "q": 3,
-            "unit": 40,
-            "slope": 1,
-            "yIntercept": 0,
-            "width": 100
+            "chart": "line",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "−3",
+                "value": 1
+              },
+              {
+                "name": "−2",
+                "value": 5
+              },
+              {
+                "name": "−1",
+                "value": 12
+              },
+              {
+                "name": "0",
+                "value": 16
+              },
+              {
+                "name": "1",
+                "value": 12
+              },
+              {
+                "name": "2",
+                "value": 5
+              },
+              {
+                "name": "3",
+                "value": 1
+              }
+            ]
           },
           "labels": [],
           "labelAdjust": {},
@@ -1332,20 +1365,45 @@
         },
         {
           "type": "figure",
-          "figure_type": "coord_graph",
+          "figure_type": "stat_chart",
           "heading": {
             "1": "2. 종 모양의 정규분포 곡선",
             "3": "2. 그래프로 나타내어 보시오."
           },
           "params": {
-            "curve": "parabola",
-            "a": -1,
-            "p": 0,
-            "q": 3,
-            "unit": 40,
-            "slope": 1,
-            "yIntercept": 0,
-            "width": 100
+            "chart": "line",
+            "unit": "",
+            "width": 100,
+            "cats": [
+              {
+                "name": "−3",
+                "value": 1
+              },
+              {
+                "name": "−2",
+                "value": 5
+              },
+              {
+                "name": "−1",
+                "value": 12
+              },
+              {
+                "name": "0",
+                "value": 16
+              },
+              {
+                "name": "1",
+                "value": 12
+              },
+              {
+                "name": "2",
+                "value": 5
+              },
+              {
+                "name": "3",
+                "value": 1
+              }
+            ]
           },
           "labels": [],
           "labelAdjust": {},

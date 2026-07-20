@@ -1397,7 +1397,16 @@ function renderColumnCalc(block, stage) {
 
   function dig(n, i) { return Math.floor(Math.abs(n) / Math.pow(10, i)) % 10; }
   function len(n) { return String(Math.abs(n)).length; }
-  const cols = Math.max.apply(null, rowsNums.map(len).concat([len(answer)]));
+  // 곱하는 수가 두 자리 이상이면 부분곱(과정) 줄을 만든다
+  let partials = [];
+  if (op === "×" && Math.abs(b) >= 10) {
+    for (let i = 0; i < len(b); i++) {
+      const d = dig(b, i);
+      if (d > 0) partials.push({ val: a * d, shift: i });
+    }
+    if (partials.length < 2) partials = [];
+  }
+  const cols = Math.max.apply(null, rowsNums.map(len).concat([len(answer)]).concat(partials.map(function (q) { return len(q.val) + q.shift; })));
 
   const cellW = 30, digitFs = 22;
   const padL = 34, padR = 12;
@@ -1410,7 +1419,9 @@ function renderColumnCalc(block, stage) {
   const topPad = carrySpace + 6;
   function opBaseY(k) { return topPad + k * rowH + 24; }
   const lineY = topPad + nOps * rowH + 4;
-  const answerY = lineY + 28;
+  function partY(k) { return lineY + 28 + k * rowH; }
+  const line2Y = partials.length ? partY(partials.length - 1) + 14 : 0;
+  const answerY = partials.length ? line2Y + 28 : lineY + 28;
   const H = answerY + 10;
 
   let s = "";
@@ -1451,6 +1462,24 @@ function renderColumnCalc(block, stage) {
   });
   // 계산선
   s += '<line x1="' + (colX(cols - 1) - cellW) + '" y1="' + lineY + '" x2="' + rightX + '" y2="' + lineY + '" stroke="#111" stroke-width="2"/>';
+  // 부분곱 : (두 자리 수 이상)× 곱셈의 과정 줄
+  partials.forEach(function (q, k) {
+    const y = partY(k);
+    const nl = len(q.val);
+    if (blankAns) {
+      for (let pl = q.shift; pl < q.shift + nl; pl++) {
+        s += '<line x1="' + (colX(pl) - 10) + '" y1="' + (y + 3) + '" x2="' + (colX(pl) + 10) + '" y2="' + (y + 3) + '" stroke="#999" stroke-width="1.3" stroke-dasharray="2,2"/>';
+      }
+    } else {
+      for (let pl = 0; pl < nl; pl++) {
+        s += '<text x="' + colX(pl + q.shift) + '" y="' + y + '" text-anchor="middle" font-size="' + digitFs + '" fill="#111">' + dig(q.val, pl) + "</text>";
+      }
+    }
+    if (k === partials.length - 1) {
+      s += '<text x="' + (colX(cols - 1) - cellW * 0.72) + '" y="' + y + '" text-anchor="middle" font-size="' + digitFs + '" fill="#111">+</text>';
+      s += '<line x1="' + (colX(cols - 1) - cellW) + '" y1="' + line2Y + '" x2="' + rightX + '" y2="' + line2Y + '" stroke="#111" stroke-width="2"/>';
+    }
+  });
   // 답 (또는 빈칸)
   if (blankAns) {
     for (let pl = 0; pl < cols; pl++) {

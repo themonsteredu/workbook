@@ -936,7 +936,8 @@
               "0.6",
               "0.7"
             ],
-            "width": 58
+            "width": 58,
+            "showCarry": true
           },
           "labels": [],
           "labelAdjust": {},
@@ -1011,7 +1012,8 @@
               "1.2",
               "0.7"
             ],
-            "width": 58
+            "width": 58,
+            "showCarry": true
           },
           "labels": [],
           "labelAdjust": {},
